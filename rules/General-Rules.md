@@ -95,7 +95,7 @@ Kept separate from the project files. Format is fixed:
 - **NFC normalized**, mark order per Translit §5.1
 - **One file per text.** Lines numbered by position; the line is the citation unit
 - **Punctuation and all other out-of-scope characters removed at ingestion** (Translit §10, Translit §16.1), except editorial apparatus. Clause division is carried by line breaks
-- **Editorial apparatus is kept, in all three blocks** — a parenthesized label naming a source, `(Assyrian adds:)`, and square brackets around added material. The label is always English, and this is the only place non-Syriac characters stand in the Syriac block
+- **Editorial apparatus is kept in all three blocks** — square brackets mark material treated as an addition or insertion, whether or not it is present in the source of record; a parenthesized English label identifies a distinct source or witness where needed, e.g. `(Assyrian adds:)`.
 - **Rubrics removed at ingestion.** A rubric directing repetition is executed, not recorded: the repeated clause is written out in full, one line per repetition
 - **Straight apostrophes** (`'`), never curly
 
@@ -106,7 +106,7 @@ Three blocks in fixed order: pointed Syriac, canonical transliteration, English.
 - All three hold the **same number of lines**; line *n* of each is the same clause
 - The transliteration block **reproduces mechanically from the Syriac** (Translit §12), never typed independently. A transliteration left behind by a revision to the Syriac is the most damaging error this format admits, because every block still reads correctly alone
 - Stanza breaks, if used, appear identically in all three blocks
-- **Square brackets mark added material, and which kind is read from the blocks.** Material bracketed in the Syriac block is text added from another witness or tradition; it enters context strings and is cited under §10.3. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13)
+- **Square brackets mark added or inserted material.** Material bracketed in the Syriac block appears bracketed in all three blocks, enters context strings, and is cited under §10.3. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).
 - **Parentheses mark editorial apparatus**, never prayed text and never in a context string. An added line may change a text's line count against another witness; recording that is the point
 
 Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark (Translit §15).
