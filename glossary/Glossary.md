@@ -388,7 +388,7 @@ nāpēq (1) — comes forth (1)
 
 ܒܪܵܐ   [b-r]   {noun m.sg.emph.}   (search: bra)
 brā (3) — the Son (3)
-* [waḇrā] · "He who from the Father [and the Son] comes forth" (Creed Line 17)
+* [waḇrā] · "He who from the Father [and the Son] comes forth" (Catholic Creed Line 17)
 * wlaḇrā · "Glory to the Father, to the Son..." (Abun Line 15)
 * waḇrā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
