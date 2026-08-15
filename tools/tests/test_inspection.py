@@ -53,7 +53,7 @@ class PageStateInspectionTests(unittest.TestCase):
         )
 
     def test_conflicting_bgdkpt_points_are_issue(self):
-        state = inspect_normalized_text("ܒ\u0741\u0742")
+        state = inspect_normalized_text("ܒ\u0742\u0741")
         self.assertIn("conflicting-bgdkpt-state", [issue.code for issue in state.issues])
 
     def test_multiple_vowels_on_one_carrier_are_issue(self):
