@@ -1,0 +1,45 @@
+name: Confirm sawqa root
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.event.pull_request.head.ref == 'agent/confirm-sawqa-root'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Apply exact reviewed replacements
+        shell: python
+        run: |
+          from pathlib import Path
+
+          changes = {
+              Path('glossary/Glossary.md'): (
+                  'ܣܵܘܩܵܐ   [s-w-q?]   {noun m.sg.emph.}',
+                  'ܣܵܘܩܵܐ   [s-w-q]   {noun m.sg.emph.}',
+              ),
+              Path('rules/General-Rules.md'): (
+                  'where only the nominal pattern supports it, mark it provisional — [s-w-q?].',
+                  'where only the nominal pattern supports it, mark the root provisional with `?` until external evidence establishes it.',
+              ),
+          }
+          for path, (old, new) in changes.items():
+              s = path.read_text(encoding='utf-8')
+              n = s.count(old)
+              if n != 1:
+                  raise SystemExit(f'{path}: expected exactly one occurrence, found {n}')
+              path.write_text(s.replace(old, new), encoding='utf-8', newline='\n')
+      - name: Commit canonical change
+        run: |
+          git config user.name 'syriacbatmabraham'
+          git config user.email 'batmabraham@gmail.com'
+          git add glossary/Glossary.md rules/General-Rules.md
+          git diff --cached --check
+          test "$(git diff --cached --numstat | wc -l)" -eq 2
+          git commit -m 'Confirm sawqa root'
+          git push origin HEAD:main
