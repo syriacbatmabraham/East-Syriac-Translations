@@ -27,7 +27,7 @@ def _parser() -> argparse.ArgumentParser:
     destination.add_argument(
         "--check",
         action="store_true",
-        help="write nothing; exit 0 if already normalized, 1 if changes are needed, 2 if flags/issues exist",
+        help="write nothing; exit 0 if already normalized, 1 if changes are needed, 2 if blocking flags/issues exist",
     )
     parser.add_argument(
         "--report-changes",
@@ -68,6 +68,15 @@ def _print_page_state_issues(audit) -> None:
         )
 
 
+def _print_page_state_notices(audit) -> None:
+    for notice in audit.notices:
+        print(
+            f"PAGE CHECK {notice.code} at word {notice.word}, letter {notice.letter}: "
+            f"{notice.codepoint} — {notice.message}",
+            file=sys.stderr,
+        )
+
+
 def _print_page_state_report(text: str) -> None:
     report = format_page_state_report(text)
     print("PAGE-STATE AUDIT", file=sys.stderr)
@@ -100,11 +109,11 @@ def main(argv: list[str] | None = None) -> int:
     result = normalize_text(original)
     audit = inspect_normalized_text(result.text)
 
-    # The page-state audit is intentionally mandatory during this validation
-    # phase. It is written to stderr so normalized Syriac on stdout stays clean
-    # and can still be redirected or piped into later deterministic stages.
+    # Mandatory during the validation phase. stderr keeps normalized Syriac on
+    # stdout clean for redirection/piping into later deterministic stages.
     _print_flags(result)
     _print_page_state_issues(audit)
+    _print_page_state_notices(audit)
     _print_page_state_report(result.text)
     if args.report_changes:
         _print_changes(result)
@@ -114,9 +123,9 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         return 1 if result.text != original else 0
 
-    # Refuse persistent writes when either source-normalization flags or
-    # suspicious normalized page-states exist. The normalized text can still be
-    # inspected safely on stdout by omitting --output/--in-place.
+    # Page-only notices (currently adjacent occultans ambiguity) do not make the
+    # encoded Syriac invalid, so they do not block normalization writes. They
+    # must, however, be resolved from the page before forward transliteration.
     if (result.flags or audit.issues) and (args.in_place or args.output):
         print("error: refusing to write input with unresolved flags/page-state issues; review the source first", file=sys.stderr)
         return 2
