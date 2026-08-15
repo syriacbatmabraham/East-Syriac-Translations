@@ -969,26 +969,26 @@ nesġōḏ (1) — we reverence (1)
 mārūṯāḵ (1) — Your Lordship (1)
 * lmārūṯāḵ · "We reverence Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
 
-ܐܲܡܝܼܢܵܐ   [ʾ-m-n]   (search: amina)
+ܐܲܡܝܼܢܵܐ   [ʾ-m-n]   {adj. m.sg.emph.}   (search: amina)
 ʾamīnā (1) — continual (1)
 * ʾamīnā · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 4)
 
-ܫܲܠܘܵܐ   [š-l-ʾ]   (search: shalwa)
+ܫܲܠܘܵܐ   [š-l-ʾ]   {noun m.sg.emph.}   (search: shalwa)
 šalwā (1) — ceasing (1)
 * dlā šalwā · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 4)
 
-ܢܲܣܸܩ   [s-l-q]   (search: naseq)
+ܢܲܣܸܩ   [s-l-q]   {Aphel impf. 1c.pl.}   (search: naseq)
 naseq (1) — we lift up (1)
 * naseq · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 4)
 
-ܬܠܝܼܬ݂ܵܝܘܼܬ݂ܵܟ݂   [t-l-t]   (search: tlitayutak)
+ܬܠܝܼܬ݂ܵܝܘܼܬ݂ܵܟ݂   [t-l-t]   {noun f.sg.emph. + 2ms suff.}   (search: tlitayutak)
 tlīṯāyūṯāḵ (1) — Your...Trinity (1)
 * laṯlīṯāyūṯāḵ · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
 
-ܡܫܲܒܲܚܬܵܐ   [š-b-ḥ]   (search: mshabahta)
+ܡܫܲܒܲܚܬܵܐ   [š-b-ḥ]   {adj. f.sg.emph.}   (search: mshabahta)
 mšabaḥtā (1) — glorious (1)
 * mšabaḥtā · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
 
-ܟܠܥܸܕܵܢ   [k-l + ʿ-d-n]   (search: kledan)
+ܟܠܥܸܕܵܢ   [k-l + ʿ-d-n]   {quant. + noun m.sg.abs.}   (search: kledan)
 klʿedān (1) — every moment (1)
 * bḵlʿedān · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
