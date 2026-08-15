@@ -46,7 +46,7 @@ it does.
 | Aphel | causative — brings the Peal action about | `naseq` we lift up, i.e. cause to go up |
 | Ettaphal | passive of Aphel | — |
 | Shaphel | older causative, usually lexicalized | — |
-| Eshtaphal | passive Shaphel | — |
+| Eshtaphal | passive of Shaphel | — |
 
 A **phrase** is tabled in its own section below and governs the rendering of its
 components. Each component entry still records the occurrence, but points to the phrase
@@ -678,7 +678,7 @@ saḇrā (1) — hope (1)
 
 ܥܸܕܵܢ   [ʿ-d-n]   {noun m.sg.abs.}   (search: edan)
 ʿedān (1) — moment (1)
-* ʿedān · "In every moment, forever" (Tešbōḥtā Line 3)
+* bḵl · "In every moment, forever" (Tešbōḥtā Line 3)
 
 ܚܲܢܵܢܵܐ   [ḥ-n-n]   {adj. m.sg.emph.}   (search: hanana)
 ḥanānā (1) — Gracious One (1)
