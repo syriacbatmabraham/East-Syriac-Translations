@@ -30,6 +30,7 @@ jobs:
               "parts=s.rstrip('\\n').split('\\n\\n')": "parts=re.split(r'\\n{2,}',s.rstrip('\\n'))",
               "'Creed':'Creed_in_Syriac.txt',": "'Creed':'Creed_in_Syriac.txt','Catholic Creed':'Creed_in_Syriac.txt',",
               "\"Assyrian Slotha d'Sapra II\":'Ferial_Slotha_d_Sapra_II.txt'": "\"Assyrian Ferial Slotha d'Sapra II\":'Ferial_Slotha_d_Sapra_II.txt'",
+              "claims.get((\"Assyrian Slotha d'Sapra II\",n),[])": "claims.get((\"Assyrian Ferial Slotha d'Sapra II\",n),[])",
               "CITE_RE=re.compile(r'\\((?P<label>.+?)(?:,)?\\s+Line\\s+(?P<line>\\d+)\\)$')": "CITE_RE=re.compile(r'^(?P<label>.+?)(?:,)?\\s+Line\\s+(?P<line>\\d+)$')",
               "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)$')": "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)(?:\\s+→\\s+.*)?$')",
               "contexts=' || '.join(b['context'] for b in e['bullets'])": "contexts=' || '.join(b['context'] for b in e['bullets']).casefold()",
