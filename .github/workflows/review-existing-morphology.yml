@@ -1,0 +1,29 @@
+name: Apply reviewed morphology corrections
+on:
+  pull_request_target:
+    types: [opened]
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.event.pull_request.head.ref == 'agent/trigger-morphology-corrections'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Apply reviewed corrections
+        run: |
+          set -euo pipefail
+          python .cleanup/review_existing_morphology.py
+          rm -rf .cleanup
+          rm -f .github/workflows/review-existing-morphology.yml
+          git diff --check
+          test ! -e .cleanup
+          test ! -e .github/workflows/review-existing-morphology.yml
+          git config user.name 'syriacbatmabraham'
+          git config user.email 'batmabraham@users.noreply.github.com'
+          git add -A
+          git commit -m 'Correct reviewed morphology fields'
+          git push origin HEAD:main
