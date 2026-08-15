@@ -938,7 +938,7 @@ hwāyā (1) — be (1)
 hwāyhēyn (1) — their being (1)
 * dahwāyhēyn · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
 
-ܣܵܘܩܵܐ   [s-w-q?]   {noun m.sg.emph.}   (search: sawqa)
+ܣܵܘܩܵܐ   [s-w-q]   {noun m.sg.emph.}   (search: sawqa)
 sāwqā (1) — the Breathing (1)
 * wsāwqā · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 

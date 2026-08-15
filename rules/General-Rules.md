@@ -164,7 +164,7 @@ The text files carry no header of their own, which would break the three-block p
 
     Everything else takes SEDRA's reading, including every III-weak root, which SEDRA writes with final alaph.
 
-    **Where SEDRA carries no root**, establish it from the Peshitta or patristic usage (§12) and write it plainly; where only the nominal pattern supports it, mark it provisional — [s-w-q?].
+    **Where SEDRA carries no root**, establish it from the Peshitta or patristic usage (§12) and write it plainly; where only the nominal pattern supports it, mark the root provisional with `?` until external evidence establishes it.
 
     **Where no root applies, the field holds a declared marker instead**: `[—]` not yet established, `[prop. noun]`, `[Gk. loan]`, or the word class where naming it says more than a bare dash. A marker is not a part of speech standing in the root field (§10.1); it is a statement that no root governs the form.
 
