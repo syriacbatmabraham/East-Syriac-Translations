@@ -33,6 +33,12 @@ jobs:
               "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)$')": "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)(?:\\s+→\\s+.*)?$')",
               "contexts=' || '.join(b['context'] for b in e['bullets'])": "contexts=' || '.join(b['context'] for b in e['bullets']).casefold()",
               "segs=[x for x in cand.split('...') if x]": "segs=[x.casefold() for x in cand.split('...') if x]",
+              "if '[' not in tr:en=re.sub(r'\\[[^\\]]*\\]','',en)\n else:en=en.replace('[','').replace(']','')": "if '[' not in tr:en=re.sub(r'\\[[^\\]]*\\]','',en)\n else:pass",
+              "words=token_words(tr);form_words=b['form'].split();found=[]": "words=token_words(tr);form_words=b['form'].replace('[','').replace(']','').split();found=[]",
+              "idx=positions_for_claim(words,form.split(),used)": "idx=positions_for_claim(words,form.replace('[','').replace(']','').split(),used)",
+              "if w.strip('[]') in {'ʾāmēyn','hallēlūyā'}:used.add(j)": "w0=w.strip('[]');\n   if w0 in {'ʾāmēyn','hallēlūyā'} or w0.endswith('ʾāmēyn'):used.add(j)",
+              "first_line_seen={}": "claimed_line_texts=set()\nfor (lab,ln),cs0 in claims.items():\n tr0,err0=source_line(lab,ln,'tr')\n if not err0 and cs0:claimed_line_texts.add(clean_editorial_label(tr0).strip())\ndef mark_inline_repetitions(words,used):\n changed=True\n while changed:\n  changed=False\n  for start in range(len(words)):\n   for width in range(1,(len(words)-start)//2+1):\n    a=range(start,start+width);b=range(start+width,start+2*width)\n    if words[start:start+width]==words[start+width:start+2*width] and all(x in used for x in a) and not all(x in used for x in b):\n     used.update(b);changed=True\n return used\nfirst_line_seen={}",
+              "if idx is not None:used.update(idx)\n  for j,w in enumerate(words):": "if idx is not None:used.update(idx)\n  if not claimsets and cleantr in claimed_line_texts:used.update(range(len(words)))\n  mark_inline_repetitions(words,used)\n  for j,w in enumerate(words):",
           }
           for old, new in replacements.items():
               if old not in s:
