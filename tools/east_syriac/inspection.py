@@ -3,8 +3,8 @@
 The normalizer answers "what canonical codepoints represent this page-state?".
 This module answers the complementary human-review question: "what does the
 machine believe is written on each letter?" It operates only on normalized
-Syriac and does not transliterate. A later transliteration layer may supply
-canonical word labels for the report header without changing the audit logic.
+Syriac. Canonical transliteration may supply word labels for the report header
+without changing the page-state analysis.
 """
 
 from __future__ import annotations
@@ -203,6 +203,17 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
     if QUSSHAYA in marks and RUKKAKHA in marks:
         issues.append(PageStateIssue("conflicting-bgdkpt-state", "The same bgdkpt letter carries both qūššāyā and rūkkākā.", word, letter, base))
 
+    if OCCULTANS_ABOVE in marks and OCCULTANS_BELOW in marks:
+        issues.append(
+            PageStateIssue(
+                "dual-occultans-unrepresentable",
+                "The same carrier has occultans both above and below; current canonical notation has no reversible representation for this state.",
+                word,
+                letter,
+                base,
+            )
+        )
+
     vowel_marks = [mark for mark in marks if mark in EAST_MULTI_DOT_VOWELS or mark in {RWAHA, HBASA_ESASA_DOTTED}]
     if len(vowel_marks) > 1:
         issues.append(PageStateIssue("multiple-vowels-on-carrier", "More than one East Syriac vowel page-state occurs on the same letter.", word, letter, base))
@@ -222,13 +233,7 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
 
 
 def _occultans_notices(word_index: int, letters: tuple[LetterState, ...]) -> list[PageStateNotice]:
-    """Flag the encoded-source asymmetry of adjacent occultans marks.
-
-    Two adjacent U+0747 (or U+0748) marks encode both one spanning line and two
-    independent lines. Normalization cannot decide which the page shows. This is
-    not a malformed normalized string, so it is a notice rather than a blocking
-    page-state issue; forward transliteration must resolve it from the page.
-    """
+    """Flag the encoded-source asymmetry of adjacent occultans marks."""
 
     notices: list[PageStateNotice] = []
     for index in range(len(letters) - 1):
@@ -269,6 +274,20 @@ def inspect_normalized_text(text: str) -> PageStateReport:
         words.append(WordState(word_index, current_line, word_text, letter_tuple))
         for letter_index, letter_state in enumerate(letter_tuple, start=1):
             issues.extend(_letter_issues(letter_state.base, letter_state.marks, word_index, letter_index))
+            if (
+                letter_index == len(letter_tuple)
+                and (BETWEEN_ABOVE in letter_state.marks or BETWEEN_BELOW in letter_state.marks)
+            ):
+                mark = BETWEEN_BELOW if BETWEEN_BELOW in letter_state.marks else BETWEEN_ABOVE
+                issues.append(
+                    PageStateIssue(
+                        "between-point-without-next-letter",
+                        "A between-letter point occurs on the final letter of the word, so there is no following letter for the page-state to stand between.",
+                        word_index,
+                        letter_index,
+                        mark,
+                    )
+                )
         notices.extend(_occultans_notices(word_index, letter_tuple))
         current = []
 
@@ -293,7 +312,6 @@ def inspect_normalized_text(text: str) -> PageStateReport:
             i = j
             continue
 
-        # Editorial square brackets do not divide an orthographic word.
         if char in "[]":
             i += 1
             continue
