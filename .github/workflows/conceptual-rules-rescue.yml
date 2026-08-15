@@ -41,6 +41,11 @@ jobs:
               raise SystemExit('withdrawn-notation validation marker not unique')
           s = s.replace(old, '')
 
+          start = '# Rename completeness and stale-path scan.\n'
+          if s.count(start) != 1:
+              raise SystemExit('stale-path validation marker not unique')
+          s = s[:s.index(start)]
+
           p.write_text(s, encoding='utf-8')
           PY
 
@@ -49,6 +54,13 @@ jobs:
 
           rm -rf .cleanup
           rm -f .github/workflows/conceptual-rules-cleanup.yml .github/workflows/conceptual-rules-rescue.yml
+
+          test -f rules/Transliteration-Rules.md
+          test ! -e rules/Transliteration-Rules-v2_3_1.md
+          if grep -R -n --exclude-dir=.git 'Transliteration-Rules-v2_3_1' .; then
+            echo 'Old transliteration-rules filename is still referenced after cleanup.' >&2
+            exit 1
+          fi
 
           git config user.name 'syriacbatmabraham'
           git config user.email 'batmabraham@users.noreply.github.com'
