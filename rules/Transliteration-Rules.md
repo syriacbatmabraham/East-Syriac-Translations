@@ -26,6 +26,7 @@ The system must satisfy:
 
 - **Reversible.** From the canonical string alone, the pointed Syriac orthography can be reconstructed exactly.
 - **Injective on orthography.** Two distinct pointed spellings never yield the same string.
+- **Canonical Unicode form.** The canonical Latin string is stored in NFC. A canonically equivalent decomposed Latin string is not a second accepted spelling.
 
 ### What this system does *not* claim
 
@@ -47,7 +48,7 @@ The same applies wherever a grapheme serves two functions: ʾālap̄ as consonan
 
 ### Case
 
-Case is not a feature of the page. The canonical string is therefore **entirely lowercase**; all capitalization belongs to the English layer. Māryā is written `māryā` in the canonical string and capitalized only on the English side.
+Case is not a feature of the Syriac page. The **Syriac-derived transliteration is lowercase**; all capitalization of Syriac words belongs to the English layer. Māryā is written `māryā` in the canonical string and capitalized only on the English side. Literal editorial apparatus (§2) is not Syriac-derived transliteration and preserves its supplied case exactly, e.g. `(Assyrian Ferial adds:)`.
 
 ---
 
@@ -64,6 +65,15 @@ Editorial apparatus is preserved literally alongside the letter-for-letter mappi
 Syriac inside editorial brackets transliterates normally. English-only interpretive brackets have no transliteration counterpart.
 
 Example: `ʾaḇā [waḇrā] nāpēq`
+
+### 2.1 Parenthesis grammar
+
+Parentheses have two in-scope uses, so the inverse grammar must distinguish them mechanically.
+
+- A parenthetical payload that parses **completely as one or two canonical Syriac letter-units**, optionally preceded by `_` for a line below, is occultans notation (§6).
+- Any other balanced parenthetical payload is editorial apparatus and is preserved literally.
+
+Therefore an editorial label whose entire contents would itself be legal occultans syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with occultans `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
 
 ---
 
@@ -173,6 +183,18 @@ For `ā` and `ē`, the mater is written as its own letter (`ʾ` or `y`) — **ex
 
 Worked: `brēh` (internal ē, no mater) · `hēyn` (ē + yodh) · `lmēʾṯā` (internal ē + ʾālap̄; final ā + ʾālap̄ by convention) · `ʿālm̈ē` (final ē + ʾālap̄) · `nāpēq` (internal ē, no mater).
 
+#### Exact boundary of the final-mater shorthand
+
+The implied-final-ʾālap̄ convention suppresses **only a bare final ʾālap̄ immediately following its zqāpā or zlāmā-qašyā carrier, with no editorial delimiter between the two letters**. This restriction is required for reversibility.
+
+- `[ܡܵܐ]` → `[mā]`
+- `ܡܵ[ܐ]` → `mā[ʾ]`
+- `[ܡܵ]ܐ` → `[mā]ʾ`
+- `[ܡܵ][ܐ]` → `[mā][ʾ]`
+- a final ʾālap̄ carrying any in-scope mark is explicit, never suppressed.
+
+The inverse inserts the implied bare ʾālap̄ immediately after the final vowel carrier, so editorial placement is reconstructed exactly.
+
 **Word-final `e` (and `a`) followed by a written ʾālap̄.** `a` and `e` take no matres, but a written ʾālap̄ is still a letter on the page and is recorded as `ʾ` per §3.1 — it is not analyzed as a mater. Nothing else in the system produces word-final `eʾ`, so the sequence is unambiguous and reverses cleanly. Worked: `tēʾteʾ`, `nehweʾ` (Abun).
 
 **Two dots below is not always a vowel.** The same page position carries the mark of §17. Distinguish by shape: zlāmā is two dots level or angular; §17's mark is the two-dot mark that is neither.
@@ -190,7 +212,7 @@ A consonant written with **no vowel point** is transliterated as the bare conson
 
 ---
 
-## 5. Syāmē
+## 5. Syāmē and Canonical Mark Serialization
 
 Syāmē are a page-mark and must be represented.
 
@@ -201,7 +223,7 @@ Syāmē are a page-mark and must be represented.
 
 Placement follows the page strictly and is not normalized to a conventional position.
 
-### 5.1 Mark order — the general rule
+### 5.1 Syriac mark order — the general rule
 
 Where a Syriac letter carries more than one combining mark, storage order is deterministic:
 
@@ -221,6 +243,19 @@ The order is a **storage convention, not a claim about phonological or visual pr
 
 - **Carrier-borne vowel (`ī`, `ō`, `ū`).** The vowel sits on the mater and is written as a precomposed letter; syāmē follows it: `ī̈`, `ō̈`, `ṻ`. Worked: `ʾī̈dāwhy`.
 - **Consonant-borne vowel (`a`, `e`, `ā`, `ē`).** The vowel is a separate letter following the consonant; syāmē attaches to the consonant and therefore stands **before** the vowel letter: `m̈ē`, never `mē̈`. Worked: `ʿālm̈ē`, `ḥaÿē`, `paḡr̈ē`, `lmīẗē`, `daḥṭāḧē`, `šmaÿā`, `nāš̈ā`.
+
+### 5.3 Canonical Latin unit order
+
+For inversion to have one grammar, all marks belonging to one Syriac carrier serialize in this order:
+
+1. superscript ʾālap̄ `ᵃ`, if present;
+2. the consonant/bgdkpt/carrier-vowel symbol with graphical combining marks (§§5, 17, 18), stored in NFC;
+3. §7 point **on** the carrier — below `_` before above `^` if both occur;
+4. the Class-B vowel, if present;
+5. §7 point **between** this carrier and the next — below `__` before above `^^` if both occur;
+6. any occultans wrapper (§6) surrounds the complete one- or two-letter unit(s).
+
+Examples already in force follow this order: `m_n`, `qā^^ʿēyn`, `šba(q_n)`.
 
 ---
 
@@ -243,13 +278,13 @@ A line above or below a letter, or spanning two letters.
 
 The `_` at the head of the wrap marks a line below and cannot be confused with §7's `_`, which always follows its carrier.
 
-### 6.1 The spanning convention and its exception form
+### 6.1 Spanning and adjacent-line distinction
 
-`(xy)` asserts **one** line covering two letters. Two *separate* lines on adjacent letters are written `(x)(y)`.
+`(xy)` asserts **one page-confirmed line** covering two letters. Two page-confirmed separate lines on adjacent letters are written `(x)(y)`. The same distinction applies below: `(_xy)` versus `(_x)(_y)`.
 
-This exception form is required by §9.1 and is what makes the convention legal: without it, a wrong prediction would be invisible.
+**No automatic adjacency inference is permitted.** Encoded source represents an above line with U+0747 on each carrying letter and a below line with U+0748 on each carrying letter. Repetition therefore encodes both one spanning line and two separate adjacent lines. Normalized Unicode cannot decide between them. The page-state audit must surface the ambiguity, and canonical forward transliteration must receive the page decision before choosing one wrapper or two.
 
-**Encoding limitation.** A spanning line is encoded U+0747 on **both** letters, because Unicode has no character for a line spanning two Syriac letters. The stored source therefore cannot distinguish one spanning line from two separate lines — the canonical string can, and the source cannot. This is a property of the encoding, not of the notation; see §16.6.
+A two-letter span may not be inferred across an editorial square-bracket boundary. If a witness ever establishes such a state, the notation must be extended explicitly rather than guessed.
 
 ---
 
@@ -277,7 +312,7 @@ A point standing **between** two letters is never a vowel or a bgdkpt point, wha
 | point above, between this letter and the next | `^^` |
 | point below, between this letter and the next | `__` |
 
-**Placement against a vowel.** A marker for a point *on* a letter follows the letter immediately, before the vowel. A marker for a point *between* letters follows the whole letter-plus-vowel unit, because the mark stands after everything belonging to the first letter.
+**Placement against a vowel.** A marker for a point *on* a letter follows the decorated carrier and precedes the Class-B vowel. A marker for a point *between* letters follows the whole carrier-plus-vowel unit. Where both above and below occur in the same position, below precedes above as fixed by §5.3: on-letter `_^`, between-letter `__^^`.
 
 Worked: ܡ̣ܢ → `m_n`, distinct from ܡܲܢ → `man`. · ܩ᷸ܵܥܹܝܢ → `qā^^ʿēyn` (Abun), the point standing between qoph and ʿē.
 
@@ -312,11 +347,11 @@ Conventions must be re-verified against attested text whenever new material is w
 
 ### 9.2 Conventions in force
 
-1. **Word-final `ā` implies mater ʾālap̄.** Exception form: `ă`.
-2. **Word-final `ē` implies mater ʾālap̄.** Exception form: `ĕ`. An explicitly written yodh gives `ēy` and is not an exception.
+1. **Word-final `ā` implies a bare immediately-following mater ʾālap̄ in the same editorial sequence.** Exception form: `ă`. Exact boundary: §4.2.
+2. **Word-final `ē` implies a bare immediately-following mater ʾālap̄ in the same editorial sequence.** Exception form: `ĕ`. An explicitly written yodh gives `ēy` and is not an exception. Exact boundary: §4.2.
 3. **Prosthetic ʾālap̄ is written `ʾ`** and requires no special mark. *(No exception form needed: this is a letter mapping, not a prediction.)*
 4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
-5. **An occultans line written on two adjacent letters is one spanning line.** Exception form: `(x)(y)` (§6.1).
+5. **Retired as a predictive convention.** Adjacent encoded occultans marks do not imply a span. Span versus separate lines is established from the page and represented under §6.1.
 
 ### 9.3 Reserved
 
@@ -370,8 +405,7 @@ A canonical string is **valid** if and only if:
 
 Condition 2 is the Glossary-identity check. A collision means either an entry has been duplicated or the morphology/root analysis has not yet separated two genuinely distinct forms.
 
-**Round-trip asymmetry.** A spanning occultans line (§6.1) is recorded in the string but cannot be distinguished from two separate lines in the encoded source. Round-trip cannot detect a failure of that convention; only the page can.
-
+**Round-trip asymmetry.** A page-confirmed spanning occultans line and two page-confirmed separate adjacent lines reverse to the same repeated Unicode marks. Round-trip therefore proves the encoded Syriac exactly, but cannot by itself prove that the span/separate decision matched the physical page. The page-state audit remains authoritative for that distinction.
 
 ---
 
@@ -417,7 +451,7 @@ Removal is silent and needs no record; §10 licenses it and the stored line is t
 Also normalized at ingestion:
 
 - **U+0724 FINAL SEMKATH → U+0723.** A positional shape, not a distinct letter.
-- **U+1DF8 → `^^`**, **U+1DFA → `__`** (§7). These are the encodings for a point standing between two letters.
+- **U+1DF8 and U+1DFA remain the normalized between-letter page-states.** They transliterate later as `^^` and `__` respectively (§7); ingestion does not replace Syriac-layer codepoints with ASCII notation.
 - **U+0324, U+0740, U+0744 → the two-dots-below page-state** (§17).
 - **U+032E → the breve-below page-state** (§18).
 
@@ -439,7 +473,9 @@ Normalize every combining sequence to §5.1 before comparison or round-trip vali
 
 Ingestion is per-witness. Where witnesses disagree after normalization, the disagreement is textual and belongs to the source hierarchy (General Rules §1), not to this file.
 
-**Do not resolve by majority vote.** Witnesses may share an ancestor or encoding source, so a vote can count copies rather than independent readings. The designated source of record governs; variants are recorded rather than averaged.### 16.6 West Syriac vowel codepoints — refused, never mapped
+**Do not resolve by majority vote.** Witnesses may share an ancestor or encoding source, so a vote can count copies rather than independent readings. The designated source of record governs; variants are recorded rather than averaged.
+
+### 16.6 West Syriac vowel codepoints — refused, never mapped
 
 The East Syriac vowels are the **dotted** forms: U+0732, U+0735, U+0738, U+0739, U+073C, U+073F. The West Syriac equivalents are separate characters: U+0730, U+0731, U+0733, U+0734, U+0736, U+0737, U+073A, U+073B, U+073D, U+073E.
 
@@ -448,9 +484,13 @@ The East Syriac vowels are the **dotted** forms: U+0732, U+0735, U+0738, U+0739,
 - **In a source of record:** raises a flag. Either the source is not what it was taken to be, or the block has a seam (§16.4).
 - **In a corpus search:** a West-vocalized token **carries no evidence about East Syriac pointing**. Distribution and lexical range may be cited from it; a vowel or a bgdkpt point may not.
 
-### 16.7 Unrepresentable page-states
+### 16.7 Unrepresentable or source-lossy page-states
 
-A spanning occultans line (§6.1) is encoded U+0747 on both letters because no single character exists for it. The encoded source is therefore lossy at that point, and the canonical string carries information the stored Syriac does not. A mismatch caused by that lossy source encoding is expected and must be checked against the page rather than treated as an ordinary round-trip failure.
+A page-confirmed spanning occultans line is encoded by placing U+0747 (above) or U+0748 (below) on both covered letters because Unicode has no character for one line spanning two Syriac letters. The stored source is therefore lossy with respect to span versus separate adjacent lines; resolve that distinction against the page under §6.1.
+
+A carrier bearing **both** U+0747 and U+0748 simultaneously has no canonical notation in the present system. It is a blocking page-state requiring source/rule review, not a license to invent nested notation.
+
+Likewise, U+1DF8/U+1DFA on the final orthographic letter of a word with no following letter is not a coherent "between-letter" page-state and is blocking. (Where final `ā`/`ē` suppresses a written mater under §4.2, that ʾālap̄ is present in the normalized Syriac and therefore satisfies the following-letter requirement.)
 
 ---
 
@@ -464,7 +504,7 @@ Two dots beneath a letter, distinct from zlāmā by shape and environment.
 
 **Function is not recorded.** The same graphical page-state receives the same notation regardless of grammatical interpretation.
 
-ASCII: `:` after the carrying letter.
+ASCII convenience for search/input aids: `:` after the carrying letter. **This is not canonical transliteration, is never stored as the canonical string, and is not accepted by the canonical inverse parser.**
 
 ---
 
@@ -476,4 +516,4 @@ An arc beneath a letter, opening downward. Graphically distinct from rūkkākā,
 
 **No collision.** Every other mark in the system occupies a different position or shape: macron above for soft `p̄` and `ḡ`, macron below for soft `ḇ ḏ ḵ ṯ`, breve *above* for the word-final Class-B exceptions `ă ĕ`, dot above for hard, diaeresis above for syāmē, diaeresis below for §17. The space below a pe is free precisely because pe is one of the two letters whose soft form takes a macron above.
 
-ASCII: `%` after the carrying letter.
+ASCII convenience for search/input aids: `%` after the carrying letter. **This is not canonical transliteration, is never stored as the canonical string, and is not accepted by the canonical inverse parser.**
