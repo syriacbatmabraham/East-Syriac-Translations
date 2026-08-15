@@ -9,6 +9,7 @@ import sys
 
 from east_syriac.inspection import format_page_state_report, inspect_normalized_text
 from east_syriac.normalization import normalize_text
+from east_syriac.transliteration import TransliterationError, transliterate_text
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -77,8 +78,23 @@ def _print_page_state_notices(audit) -> None:
         )
 
 
-def _print_page_state_report(text: str) -> None:
-    report = format_page_state_report(text)
+def _word_labels(normalized: str, result, audit) -> tuple[str, ...] | None:
+    if result.flags or audit.issues or audit.notices:
+        return None
+    try:
+        return transliterate_text(normalized).word_labels
+    except TransliterationError as exc:
+        # This is intentionally visible: a clean normalized page-state can still
+        # expose a canonical-grammar ambiguity such as an editorial label `(h)`.
+        print(
+            f"TRANSLITERATION CHECK {exc.code}: canonical audit headers deferred — {exc.message}",
+            file=sys.stderr,
+        )
+        return None
+
+
+def _print_page_state_report(text: str, labels: tuple[str, ...] | None) -> None:
+    report = format_page_state_report(text, labels)
     print("PAGE-STATE AUDIT", file=sys.stderr)
     if report:
         print(report, file=sys.stderr)
@@ -109,12 +125,11 @@ def main(argv: list[str] | None = None) -> int:
     result = normalize_text(original)
     audit = inspect_normalized_text(result.text)
 
-    # Mandatory during the validation phase. stderr keeps normalized Syriac on
-    # stdout clean for redirection/piping into later deterministic stages.
     _print_flags(result)
     _print_page_state_issues(audit)
     _print_page_state_notices(audit)
-    _print_page_state_report(result.text)
+    labels = _word_labels(result.text, result, audit)
+    _print_page_state_report(result.text, labels)
     if args.report_changes:
         _print_changes(result)
 
@@ -123,9 +138,9 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         return 1 if result.text != original else 0
 
-    # Page-only notices (currently adjacent occultans ambiguity) do not make the
-    # encoded Syriac invalid, so they do not block normalization writes. They
-    # must, however, be resolved from the page before forward transliteration.
+    # Page-only notices do not make encoded Syriac invalid and therefore do not
+    # block normalization writes. They do defer canonical transliteration until
+    # the page supplies the missing span/separate decision.
     if (result.flags or audit.issues) and (args.in_place or args.output):
         print("error: refusing to write input with unresolved flags/page-state issues; review the source first", file=sys.stderr)
         return 2

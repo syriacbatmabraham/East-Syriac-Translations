@@ -1,0 +1,283 @@
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+import unittest
+import unicodedata
+
+TOOLS = Path(__file__).resolve().parents[1]
+if str(TOOLS) not in sys.path:
+    sys.path.insert(0, str(TOOLS))
+
+from east_syriac.normalization import (
+    BGDKPT,
+    BETWEEN_ABOVE,
+    BETWEEN_BELOW,
+    BREVE_BELOW,
+    GENERIC_DOT_ABOVE,
+    GENERIC_DOT_BELOW,
+    HBASA_ESASA_DOTTED,
+    OCCULTANS_ABOVE,
+    OCCULTANS_BELOW,
+    QUSSHAYA,
+    RUKKAKHA,
+    RWAHA,
+    SUPERSCRIPT_ALAPH,
+    SYAME,
+    TWO_DOTS_BELOW,
+    normalize_text,
+)
+from east_syriac.transliteration import TransliterationError, transliterate_text
+from east_syriac.transliteration_inverse import UNIT_REVERSE, reverse_transliterate
+
+
+class TransliterationTests(unittest.TestCase):
+    def assert_round_trip(self, source: str, resolutions=None, expected: str | None = None):
+        normalized = normalize_text(source)
+        self.assertFalse(normalized.flags)
+        forward = transliterate_text(normalized.text, resolutions)
+        if expected is not None:
+            self.assertEqual(forward.text, expected)
+        reverse = reverse_transliterate(forward.text)
+        self.assertEqual(reverse.text, normalized.text)
+        self.assertEqual(
+            transliterate_text(reverse.text, reverse.occultans_resolutions).text,
+            forward.text,
+        )
+        return forward, reverse
+
+    def test_alaha_exact(self):
+        self.assert_round_trip("ܠܐܲܠܵܗܵܐ", expected="lʾalāhā")
+
+    def test_bare_consonant_inventory(self):
+        self.assert_round_trip(
+            "ܐܒܓܕܗܘܙܚܛܝܟܠܡܢܣܥܦܨܩܪܫܬ",
+            expected="ʾbgdhwzḥṭyklmnsʿpṣqršt",
+        )
+
+    def test_every_bgdkpt_state_round_trips(self):
+        for base in BGDKPT:
+            for mark in ("", QUSSHAYA, RUKKAKHA):
+                with self.subTest(base=base, mark=mark):
+                    self.assert_round_trip(base + mark)
+
+    def test_all_vowel_classes_round_trip(self):
+        for source in (
+            "ܡ\u0732",
+            "ܡ\u0735",
+            "ܡ\u0738",
+            "ܡ\u0739",
+            "ܘ" + RWAHA,
+            "ܘ" + HBASA_ESASA_DOTTED,
+            "ܝ" + HBASA_ESASA_DOTTED,
+        ):
+            with self.subTest(source=source):
+                self.assert_round_trip(source)
+
+    def test_word_final_mater_conventions(self):
+        cases = {
+            "ܡܵܐ": "mā",
+            "ܡܵ": "mă",
+            "ܡܹܐ": "mē",
+            "ܡܹ": "mĕ",
+            "ܡܲܐ": "maʾ",
+            "ܡܸܐ": "meʾ",
+        }
+        for source, expected in cases.items():
+            with self.subTest(source=source):
+                self.assert_round_trip(source, expected=expected)
+
+    def test_marked_final_alaph_remains_explicit(self):
+        self.assert_round_trip("ܡܵܐ̈", expected="māʾ̈")
+
+    def test_editorial_boundary_prevents_mater_suppression(self):
+        cases = {
+            "[ܡܵܐ]": "[mā]",
+            "ܡܵ[ܐ]": "mā[ʾ]",
+            "[ܡܵ]ܐ": "[mā]ʾ",
+            "[ܡܵ][ܐ]": "[mā][ʾ]",
+            "ܡܵ[]ܐ": "mā[]ʾ",
+            "[[ܡܵܐ]]": "[[mā]]",
+        }
+        for source, expected in cases.items():
+            with self.subTest(source=source):
+                forward, _ = self.assert_round_trip(source, expected=expected)
+                self.assertEqual(forward.word_labels, (expected,))
+
+    def test_syame_and_precomposition(self):
+        self.assert_round_trip("ܒܝܵܘ̈ܡܲܝ", expected="byāẅmay")
+
+    def test_on_letter_and_between_letter_points(self):
+        self.assert_round_trip("ܡ̣ܢ", expected="m_n")
+        self.assert_round_trip("ܩ᷸ܵܥܹܝܢ", expected="qā^^ʿēyn")
+
+    def test_special_marks_round_trip(self):
+        for mark in (
+            SYAME,
+            TWO_DOTS_BELOW,
+            BREVE_BELOW,
+            SUPERSCRIPT_ALAPH,
+            BETWEEN_ABOVE,
+            BETWEEN_BELOW,
+        ):
+            with self.subTest(mark=f"U+{ord(mark):04X}"):
+                source = "ܡ" + mark + ("ܢ" if mark in {BETWEEN_ABOVE, BETWEEN_BELOW} else "")
+                self.assert_round_trip(source)
+
+    def test_dense_legal_state_round_trips(self):
+        source = (
+            "ܡ"
+            + BETWEEN_BELOW
+            + GENERIC_DOT_BELOW
+            + TWO_DOTS_BELOW
+            + BREVE_BELOW
+            + BETWEEN_ABOVE
+            + GENERIC_DOT_ABOVE
+            + SYAME
+            + "ܢ"
+        )
+        self.assert_round_trip(source)
+
+    def test_single_occultans_examples(self):
+        self.assert_round_trip("ܘܐ݇ܢܵܫܵ̈ܐ", expected="w(ʾ)nāš̈ā")
+        self.assert_round_trip("ܗ݇ܝܼ", expected="(h)ī")
+
+    def test_occultans_span_and_separate_are_distinct(self):
+        source = "ܫܒܲܩ̣݇ܢ݇"
+        self.assert_round_trip(
+            source,
+            {(1, 3, "above"): "span"},
+            "šba(q_n)",
+        )
+        self.assert_round_trip(
+            source,
+            {(1, 3, "above"): "separate"},
+            "šba(q_)(n)",
+        )
+
+    def test_adjacent_occultans_requires_page_resolution(self):
+        normalized = normalize_text("ܡ݇ܢ݇").text
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text(normalized)
+        self.assertEqual(caught.exception.code, "occultans-resolution-required")
+
+    def test_below_occultans_span(self):
+        source = normalize_text("ܡ" + OCCULTANS_BELOW + "ܢ" + OCCULTANS_BELOW).text
+        self.assert_round_trip(source, {(1, 1, "below"): "span"}, "(_mn)")
+
+    def test_three_adjacent_occultans_pairs(self):
+        source = normalize_text("ܡ݇ܢ݇ܠ݇").text
+        cases = (
+            ({(1, 1, "above"): "separate", (1, 2, "above"): "separate"}, "(m)(n)(l)"),
+            ({(1, 1, "above"): "span", (1, 2, "above"): "separate"}, "(mn)(l)"),
+            ({(1, 1, "above"): "separate", (1, 2, "above"): "span"}, "(m)(nl)"),
+        )
+        for resolutions, expected in cases:
+            with self.subTest(expected=expected):
+                self.assert_round_trip(source, resolutions, expected)
+
+    def test_overlapping_occultans_spans_are_rejected(self):
+        source = normalize_text("ܡ݇ܢ݇ܠ݇").text
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text(
+                source,
+                {(1, 1, "above"): "span", (1, 2, "above"): "span"},
+            )
+        self.assertEqual(caught.exception.code, "overlapping-occultans-span")
+
+    def test_occultans_span_cannot_cross_editorial_boundary(self):
+        source = normalize_text("ܡ݇[ܢ݇]").text
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text(source, {(1, 1, "above"): "span"})
+        self.assertEqual(caught.exception.code, "occultans-span-crosses-editorial-boundary")
+
+    def test_unused_occultans_resolution_is_rejected(self):
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text("ܡܢ", {(1, 1, "above"): "span"})
+        self.assertEqual(caught.exception.code, "unused-occultans-resolution")
+
+    def test_editorial_apparatus_is_preserved(self):
+        self.assert_round_trip(
+            "(Witness A: 2) ܐ[ܒ]ܐ",
+            expected="(Witness A: 2) ʾ[b]ʾ",
+        )
+        self.assert_round_trip(
+            "(Assyrian Ferial adds:) [ܘܚܵܕ݂ܝܵ̈ܢ]",
+            expected="(Assyrian Ferial adds:) [wḥāḏÿān]",
+        )
+
+    def test_editorial_parenthesis_that_collides_with_occultans_is_rejected(self):
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text("(h) ܐ")
+        self.assertEqual(caught.exception.code, "ambiguous-editorial-parenthesis")
+
+    def test_forward_requires_clean_normalized_input(self):
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text("ܒ\u0307")
+        self.assertEqual(caught.exception.code, "input-not-normalized")
+
+    def test_reverse_requires_nfc(self):
+        decomposed = unicodedata.normalize("NFD", "ḃ")
+        self.assertNotEqual(decomposed, "ḃ")
+        with self.assertRaises(TransliterationError) as caught:
+            reverse_transliterate(decomposed)
+        self.assertEqual(caught.exception.code, "canonical-not-nfc")
+
+    def test_final_exception_vowel_is_rejected_internally(self):
+        with self.assertRaises(TransliterationError) as caught:
+            reverse_transliterate("măn")
+        self.assertEqual(caught.exception.code, "final-vowel-exception-not-final")
+
+    def test_ascii_conveniences_are_not_canonical(self):
+        for text in ("m:", "m%"):
+            with self.subTest(text=text):
+                with self.assertRaises(TransliterationError):
+                    reverse_transliterate(text)
+
+    def test_representative_confirmed_forms(self):
+        pairs = (
+            ("ܡܗܲܝܡܢܝܼܢܲܢ ܒܚܲܕ ܐܲܠܵܗܵܐ ܐܲܒ݂ܵܐ ܐܲܚܝܼܕ ܟܠ", "mhaymnīnan bḥad ʾalāhā ʾaḇā ʾaḥīd kl"),
+            ("ܒܘܼܟ݂ܪܵܐ ܕܟ݂ܠܗܹܝܢ ܒܸܪ̈ܝܵܬ݂ܵܐ", "būḵrā dḵlhēyn ber̈yāṯā"),
+            ("ܘܚܲܫ ܘܐܸܙܕ݁ܩܸܦ ܒܝܵܘ̈ܡܲܝ ܦܲܢܛܝܼܘܿܣ ܦܝܼܠܵܛܘܿܣ", "wḥaš wʾezḋqep byāẅmay panṭīōs pīlāṭōs"),
+            ("ܕܲܦܬ݂ܝܼܚܘܼ ܬܲܪܥܹܗ ܠܬܲܝܵ̇ܒܹ̈ܐ", "dapṯīḥū tarʿēh ltay^āb̈ē"),
+            ("ܘܙܵܡ̇ܪܵ̈ܢ ܘܲܡܗܲܠ̈ܠܵܢ", "wzām^r̈ān wamhal̈lān"),
+        )
+        for source, expected in pairs:
+            with self.subTest(expected=expected):
+                self.assert_round_trip(source, expected=expected)
+
+    def test_every_generated_canonical_unit_round_trips(self):
+        # UNIT_REVERSE is generated from all canonical base states × supported
+        # visual/on-letter/vowel/between-letter combinations. Its constructor
+        # raises immediately if two Syriac states collide on one Latin unit.
+        for canonical, spec in UNIT_REVERSE.items():
+            with self.subTest(canonical=canonical):
+                # A between-letter point needs a following orthographic letter.
+                # Put those generated units before a bare nun; other units can
+                # be tested as one-letter words. Final-mater behavior has its
+                # own dedicated tests above.
+                has_between = BETWEEN_ABOVE in spec.marks or BETWEEN_BELOW in spec.marks
+                text = canonical + ("n" if has_between else "")
+                reverse = reverse_transliterate(text)
+                self.assertEqual(
+                    transliterate_text(reverse.text, reverse.occultans_resolutions).text,
+                    text,
+                )
+
+    def test_unit_grammar_has_no_prefix_segmentation_collision(self):
+        # A unit may prefix a longer decorated form (b -> bā), but that suffix
+        # must never begin another legal unit; otherwise concatenated words
+        # could have two parses.
+        starts = {key[0] for key in UNIT_REVERSE}
+        keys = set(UNIT_REVERSE)
+        for key in keys:
+            for cut in range(1, len(key)):
+                if key[:cut] in keys and key[cut] in starts:
+                    self.fail(
+                        f"canonical segmentation collision: {key!r} begins with "
+                        f"unit {key[:cut]!r} and leaves unit-starting suffix {key[cut:]!r}"
+                    )
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -77,6 +77,18 @@ class PageStateInspectionTests(unittest.TestCase):
                 state = inspect_normalized_text(source)
                 self.assertIn(expected, [issue.code for issue in state.issues])
 
+    def test_occultans_above_and_below_same_carrier_is_unrepresentable(self):
+        state = inspect_normalized_text("ܡ\u0748\u0747")
+        self.assertIn("dual-occultans-unrepresentable", [issue.code for issue in state.issues])
+
+    def test_between_point_requires_following_letter(self):
+        state = inspect_normalized_text("ܡ\U00001df8")
+        self.assertIn("between-point-without-next-letter", [issue.code for issue in state.issues])
+        self.assertNotIn(
+            "between-point-without-next-letter",
+            [issue.code for issue in inspect_normalized_text("ܡ\U00001df8ܢ").issues],
+        )
+
     def test_word_labels_must_align_one_to_one(self):
         with self.assertRaises(ValueError):
             format_page_state_report("ܐ ܒ", ["ʾ"])
