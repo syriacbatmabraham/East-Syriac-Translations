@@ -1,4 +1,4 @@
-# Transliteration Rules v2.3.1 — Reversible Canonical Transliteration
+# Transliteration Rules — Reversible Canonical Transliteration
 
 ## Purpose
 
@@ -13,8 +13,6 @@ It is not a phonetic transcription.
 Apply silently. Do not restate unless asked or unless a rule bears on the current line.
 
 **Section numbering is stable.** Withdrawn sections are retained as withdrawal notes rather than renumbered, because stale cross-references have already cost this project real errors.
-
-**Versioning.** The third digit marks a revision that changes no rule — an audit-log row, a status update, a worked example. v2.3.1 is such a revision: §§1–18 are identical to v2.3, and only §9.3 and §15 have grown. Citations to "Translit §X" are unaffected by version.
 
 ---
 
@@ -120,15 +118,15 @@ There are **three** page-states, because *unmarked* is distinct from *marked*.
 
 *Note:* `k̇` has no precomposed Unicode form and requires U+0307 combining dot above. Flagged as a minor tooling cost.
 
-*The v2.2 note on dalath width is withdrawn in v2.3.* It asked the transliterator to judge whether a dot under a dalath was "measurably wider" than a neighbouring plain dalath point. With digital and printed sources the codepoint decides and no width judgment arises. The provision produced one recorded error — `dḏīlāḵ` for what the page shows as `ddīlāḵ` (Abun line 14).
+*An earlier note on dalath width is withdrawn.* It asked the transliterator to judge whether a dot under a dalath was "measurably wider" than a neighbouring plain dalath point. With digital and printed sources the codepoint decides and no width judgment arises. The provision produced one recorded error — `dḏīlāḵ` for what the page shows as `ddīlāḵ` (Abun line 14).
 
-### 3.3 The Undotted Stroke — *withdrawn in v2.3*
+### 3.3 The Undotted Stroke — *withdrawn*
 
-v2.2.4 defined `ř` for a stroke carrying neither the resh point above nor the dalath point below, treating it as a genuine third page-state.
+An earlier rule defined `ř` for a stroke carrying neither the resh point above nor the dalath point below, treating it as a genuine third page-state.
 
 **Withdrawn.** The provision assumed a manuscript source. In digital and printed sources a stroke either carries a codepoint or does not, and the one case that arises in practice — U+0716 under syāmē — is an encoding question handled by §16.2. Bare U+0716 normalizes to resh with a flag (§16.2). No undotted stroke was ever encountered in worked text.
 
-The caron notation is retired from §11 and §15 accordingly.
+The caron notation is retired entirely.
 
 ---
 
@@ -138,15 +136,15 @@ Vowel identifications and their **representation** divide into two classes, beca
 
 ### 4.1 Class A — carrier-borne vowels
 
-The vowel sign is borne by the mater letter itself. Presence of the mater is therefore inherent in the sign.
+These are single page-states in which the vowel sign is borne by the mater letter itself. The carrier is therefore part of the written vowel: it is neither inferred nor omitted.
 
-| Sign | Identification | Plene (mater present) | Defective (no mater) |
-|---|---|---|---|
-| yodh + ī-sign | ḥḇāṣā | `ī` | `ĭ` |
-| waw + one dot above | rwāḥā | `ō` | `ŏ` |
-| waw + one dot below | rḇāṣā / ʾeṣāṣā | `ū` | `ŭ` |
+| Sign | Identification | Translit. |
+|---|---|---|
+| yodh + ī-sign | ḥḇāṣā | `ī` |
+| waw + one dot above | rwāḥā | `ō` |
+| waw + one dot below | rḇāṣā / ʾeṣāṣā | `ū` |
 
-The breve above marks **absence of the mater letter on the page**, not vowel length or quality.
+**There is no defective Class-A notation.** The former `ĭ`, `ŏ`, and `ŭ` forms are withdrawn because no secure source-of-record page-state has established a carrierless counterpart to these three written vowels. A sign that appears to represent `ī`, `ō`, or `ū` without the expected yodh or waw is **flagged at ingestion, not transliterated by inference**. Establish the page-state from the witness before adding or normalizing any such form (§16).
 
 *Note on names.* Grammars differ: *rḇāṣā* names the /u/ vowel in one convention and the e-vowels in another, where Unicode uses *ʾeṣāṣā*. This file uses *rḇāṣā / ʾeṣāṣā* for /ū/. Nothing turns on the choice.
 
@@ -209,16 +207,19 @@ Placement follows the page strictly and is not normalized to a conventional posi
 
 ### 5.1 Mark order — the general rule
 
-Where a letter carries more than one mark, the canonical order in the string is:
+Where a Syriac letter carries more than one combining mark, storage order is deterministic:
 
-1. **By combining class, ascending.**
-2. **Within a class**, in the order `[vowel, bgdkpt point, syāmē]`.
+1. **Different canonical combining classes sort in ascending class order.** NFC performs this reordering.
+2. **Marks within the same class follow the project order below.** NFC does **not** reorder equal-class marks, so ingestion must do it explicitly.
+3. Store the result in **NFC**.
 
-Store **NFC**.
+The in-scope combining classes are:
 
-**Unicode enforces rule 1 automatically, and only rule 2 requires care.** The marks written *below* — zlāmā pšīqā, zlāmā qašyā, ḥḇāṣā/ʾeṣāṣā, rūkkākā, and the marks of §17 and §18 — are combining class 220. The marks written *above* — pṯāḥā, zqāpā, rwāḥā, qūššāyā, syāmē, the occultans line — are class 230. A 220 mark and a 230 mark are sorted by normalization no matter how the source stored them. **Two 230 marks are not**, and must be produced in the correct order at the source; §16.3 gives the ingestion rule.
+- **36** — superscript ʾālap̄ (U+0711). It therefore sorts before the below and above marks without a project tie-break.
+- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), occultans line below (§6)]`.
+- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, occultans line above (§6)]`.
 
-*This corrects v2.2.4, which asserted that a vowel point and syāmē were "both combining class 230" and concluded that every such pair required manual ordering. That is true only of the above-vowels. Of 21 double-marked letters in the Glossary at the time of the correction, 19 self-normalized and 2 did not.*
+The order is a **storage convention, not a claim about phonological or visual priority**. It exists because several distinct in-scope marks share class 220 or 230. After §16 has normalized source codepoints to page-states, two canonically equivalent witnesses must therefore produce the same combining sequence before comparison or round-trip validation.
 
 ### 5.2 Syāmē against a vowel on the same letter
 
@@ -303,8 +304,6 @@ Where two consonant letters are actually written, both appear — that is not ge
 
 **Note on qūššāyā.** Some forms traditionally described as geminated carry qūššāyā on the consonant in question. Whether that point marks gemination, hardness, or both is a question about scribal practice, not about notation. The system records the point as `ḋ` and claims nothing further.
 
-*This supersedes v2.2.4, which routed gemination to the parse field.*
-
 ---
 
 ## 9. Deterministic Conventions
@@ -356,40 +355,17 @@ Marks that cannot be read are not reconstructed and not invented. No notation is
 
 ---
 
-## 11. Search Keys
+## 11. Headword Identity and Search
 
-The canonical string is diacritic-heavy. Each glossary headword therefore carries **two** search keys, both non-authoritative and never used for decisions, citation, or display.
+### 11.1 Exact identity
 
-### 11.1 Exact key
-
-Mechanically generated, reversible, case-sensitive. For machine comparison.
-
-| Canonical | ASCII |
-|---|---|
-| ʾ | `'` |
-| ʿ | `` ` `` |
-| ḥ ṭ ṣ š | `H T S C` |
-| marked hard bgdkpt | `b! g! d! k! p! t!` |
-| marked soft bgdkpt | `b~ g~ d~ k~ p~ t~` |
-| unmarked bgdkpt | `b g d k p t` |
-| a e | `a e` |
-| ā ē ī ō ū | `A E I O U` |
-| defective (breve above) | append `*` → `A* E* I* O* U*` |
-| syāmē | `#` after carrying letter |
-| two dots below (§17) | `:` after carrying letter |
-| breve below (§18) | `%` after carrying letter |
-| superscript ʾālap̄ | `@` before carrier |
-| `( )` `[ ]` `^` `_` `^^` `__` | unchanged |
-
-Where a letter carries both a defective vowel and syāmē, the defective marker precedes: `A*#`.
-
-Example: `qaḋīštā` → `qad!ICtA`
+The **canonical headword string itself** is the exact reversible key for the indexed form. No second exact or ASCII surrogate key is stored. Where General Rules §10.17 deliberately merges environmentally varying bgdkpt pointing, the resulting unmarked headword is the exact identity of that **index form**; occurrence spellings remain fully pointed and reversible in their citations.
 
 ### 11.2 Fold key
 
-**One per headword.** Lowercase; all diacritics stripped; `ʾ` and `ʿ` dropped; notation characters dropped. Written in the entry as `(search: alaha)`.
+Each glossary headword carries **one additional, non-authoritative fold key**. It is lowercase; all diacritics are stripped; `ʾ` and `ʿ` are dropped; notation characters are dropped. It is written in the entry as `(search: alaha)`.
 
-Deliberately ambiguous. Collisions are expected and acceptable — `brā` "Son" and `brā` "he created" both fold to `bra`, and a reader distinguishes them at a glance. This key exists so that a human can find a form by typing what it sounds like.
+The fold key is deliberately ambiguous. Collisions are expected and acceptable — `brā` "Son" and `brā` "he created" both fold to `bra`, and the root field separates their entries. This key exists only so that a human can find a form by typing an approximate Latin spelling. It is never used for identity, decisions, citation, or display.
 
 ---
 
@@ -419,7 +395,7 @@ The project rebuilds the glossary from scratch in the new format rather than con
 | Gemination dropped | `qaddīšā` → `qaḋīšā`; doubling not recorded at all |
 | Three-state bgdkpt | inferred-soft forms must be re-checked against the page |
 | Class B matres | internal `ā`/`ē` with mater respelled (`āʾ`, `ēy`, `ēʾ`) |
-| Class A breve | forms with defective spelling respelled |
+| Class A carrier discipline | `ī`/`ō`/`ū` require their written yodh/waw carrier; an apparent carrierless state is flagged rather than encoded by inference |
 | Syāmē marking | all plural forms gain a carrier diaeresis, NFC ordered |
 | Tier 3 root blocks | dissolved; root becomes a field on each word entry |
 | Capitalization | canonical string fully lowercase; case lives on the English side |
@@ -429,7 +405,7 @@ The project rebuilds the glossary from scratch in the new format rather than con
 
 ## 14. Resolved and Withdrawn
 
-v2.2.4 carried four open questions. All are closed in v2.3. This section is retained as the record; nothing here is open.
+Four formerly open questions are retained here as withdrawal notes; nothing in this section is open.
 
 1. **Illegible pointing** — *no notation, deliberately.* The sources of record are printed and digital and do not produce unreadable marks. Handled case by case if it ever arises. See §10, Legibility.
 2. **Unlocatable pointing** — *resolved.* The mark in *šbaqn* was not a point of ambiguous carrier but an occultans **line spanning two letters**, above, covering qoph and nun. Notation in §6.1; convention 5 in §9.2. The separate question of a point standing *between* two letters is a real page-state and is now §7's `^^` / `__`, attested in `qā^^ʿēyn`.
@@ -490,7 +466,7 @@ Also normalized at ingestion:
 
 ### 16.3 Combining-mark order
 
-Normalize to the §5.1 order before comparison or round-trip validation (§12). In practice this means checking pairs of **class 230** marks only; a 220 mark against a 230 mark is ordered by NFC without intervention.
+Normalize every combining sequence to §5.1 before comparison or round-trip validation (§12). NFC orders marks of **different** canonical combining classes, but it does not repair the order of two marks that share a class. Ingestion must therefore enforce the §5.1 project order for both class **220** and class **230** sequences after page-state normalization.
 
 ### 16.4 Per-block ingestion
 
@@ -543,7 +519,7 @@ An arc beneath a letter, opening downward. Graphically distinct from rūkkākā,
 
 **Notation:** combining breve below (U+032E) on the transliterated letter — `p̮`. Encoded U+032E at source, so ingestion passes it through unchanged.
 
-**No collision.** Every other mark in the system occupies a different position or shape: macron above for soft `p̄` and `ḡ`, macron below for soft `ḇ ḏ ḵ ṯ`, breve *above* for the defective vowels `ă ĕ ĭ ŏ ŭ`, dot above for hard, diaeresis above for syāmē, diaeresis below for §17. The space below a pe is free precisely because pe is one of the two letters whose soft form takes a macron above.
+**No collision.** Every other mark in the system occupies a different position or shape: macron above for soft `p̄` and `ḡ`, macron below for soft `ḇ ḏ ḵ ṯ`, breve *above* for the word-final Class-B exceptions `ă ĕ`, dot above for hard, diaeresis above for syāmē, diaeresis below for §17. The space below a pe is free precisely because pe is one of the two letters whose soft form takes a macron above.
 
 Attested only on **pe**, in a narrow lexical environment — *napš̮ā*, *napš̮āṯā*, *takšap̮tā* — eight occurrences across the Hudra texts and Ps 97:22, all **unconfirmed**. In every case the pe carries the arc **and no rūkkākā dot**; earlier project transliterations writing `p̄` in these words recorded an inference, not the page.
 

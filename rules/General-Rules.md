@@ -144,18 +144,18 @@ The text files carry no header of their own, which would break the three-block p
     **A written-out repetition is cited once** — at its first line, or at its first occurrence within the line where the repetition is written inline. A repetition is the same text said again; a form recurring in a different grammatical role is not one, and is cited at each occurrence.
 
     **An alternate witness at the same textual locus does not create a second occurrence when it repeats the same form in the same grammatical role.** Count and cite it once. A different form or role is indexed separately.
-14. **Search keys.** Each headword carries a fold key, written `(search: alaha)` — lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`, and notation characters (`^` `_` `(` `)`) dropped (Translit §11.2). Collisions are acceptable.
+14. **Headword identity and search.** The canonical headword string itself is the exact reversible key for the indexed form, including any deliberate §10.17 merge normalization; no second exact key is stored. Each headword carries one additional fold key, written `(search: alaha)` — lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`, and notation characters (`^` `_` `(` `)` `[` `]`) dropped (Translit §11.2). Fold-key collisions are acceptable.
 15. **Where two Syriac words render as one English word**, the rendering names the other in square brackets after it: `metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]`. **The bracket binds to the rendering it immediately follows**, not to the entry.
 
     Narrow. Only where English is **one word doing the work of two Syriac words**. Not where English simply lacks a separate word for a Syriac one — that is ⌀ (§10.7) — nor where two Syriac words render as two English words, however tightly bound.
 16. **Acclamations that are never translated take no entry** — ܐܵܡܹܝܢ *ʾāmēyn*, ܗܲܠܹܠܘܼܝܵܐ *hallēlūyā*. They hold no rendering to record and no variance to track. Check 4 is satisfied without them.
-17. **Rūkkākā and qūššāyā do not by themselves make a second entry.** Two spellings of one form differing only in the bgdkpt point are **one entry**, each spelling recorded on its own occurrence. Spirantization is realization in environment, not a property of the lexeme.
+17. **Rūkkākā and qūššāyā do not by themselves make a second entry.** Two spellings of one form differing only in an environmentally varying bgdkpt point are **one entry**, each spelling recorded on its own occurrence. Spirantization is realization in environment, not a property of the lexeme.
 
-    **The headword is written unmarked at the merge point.** Where one merged spelling is itself unmarked, that spelling heads the entry. Where none is — the proclitic-softened initials of §10.2 are the standing case — the headword is written without the point as an **index form**, which is not a claim that any page shows a bare letter.
+    **The headword is written unmarked at every point deliberately merged under this rule.** Where one merged spelling is itself unmarked, that spelling heads the entry. Where none is — the proclitic-softened initials of §10.2 are the standing case — the headword is written without the point as an **index form**, which is not a claim that any page shows a bare letter.
 
-    **Points elsewhere in the word are left as attested.** A headword is the spelling of the form, not a stripped skeleton.
+    **All other points remain as attested.** A headword is the spelling of the indexed form, not a stripped skeleton.
 
-    **Exception: where the point carries a distinction.** Where the bgdkpt point is the only signal of a different morphological analysis, the two are different forms and take separate entries under §10.1. Merging is the default; splitting is a claim, recorded in the entry per §10.15.
+    **Where a bgdkpt point carries a form distinction, preserve it.** If the point is the only written signal of a different morphological analysis, the spellings are different forms and take separate entries with distinct `{...}` analyses under §10.1. Merging is the default; splitting is a morphological claim. Once that claim is made in the headwords, the checker does not strip the point again.
 18. **A common liturgical unit takes one set of entries.** A unit recurring across the office unchanged — the standard closing ܡܵܪܵܐ ܕܟܼܠ ܐܲܒ̣ܵܐ ܘܲܒ̣ܪܵܐ ܘܪܘܼܚܵܐ ܕܩܘܼܕ̣ܫܵܐ ܠܥܵܠܡܝܼܢ is the standing case — records its occurrences once, at the text where first confirmed. Check 4 is satisfied without it. Where a later witness differs in content, it is not the same unit and takes its own entries.
 19. **A rendering interrupted by other words takes `...` at the break** — `May...come`, `Your...Trinity`. Three ASCII periods, as §10.13. The rendering names only the English belonging to this form; the intervening words belong to their own entries.
 20. **The root field follows SEDRA** (§12.1), transliterated into this project's hyphenated form. Consult it; do not reconstruct from memory or cognate reasoning.
@@ -177,7 +177,7 @@ Run after every glossary write, and after any edit to a confirmed text. Each has
 3. Per-entry bullets == Σbase, and total == Σ(base+extra)
 4. Every source token has an attested form, except proclitics and *lā* (§10.2), untranslated acclamations (§10.16), repetitions and same-locus witness duplicates already cited (§10.13), and members of a common liturgical unit already entered (§10.18). Phrase-section bullets do not count toward coverage (§10.6)
 5. The converse of 4 — every non-exempt occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain
-6. No two entries share a canonical string **and** a root (Translit §12), comparing strings with bgdkpt points disregarded (§10.17)
+6. No two entries share the same canonical headword string **and** root (Translit §12). Compare the headwords exactly as stored; §10.17 has already removed only the bgdkpt distinctions that the Glossary has deliberately merged
 7. Every attested form is a token sequence of its cited transliteration line
 8. Every recorded rendering is traceable in that entry's own context strings, with `...` (§10.19) and the §10.15 bracket resolved first. A `→` phrase pointer is not a rendering and is exempt
 9. Every form entry has exactly one nonempty `{...}` field satisfying §10.1; the root field holds a root or a marker declared in §10.20, never a part of speech doing a root's work; the `{...}` field never holds a root
@@ -186,7 +186,7 @@ Run after every glossary write, and after any edit to a confirmed text. Each has
 **Syriac — in the Glossary and in every confirmed text**
 11. Round-trip: the pointing reconstructs from the canonical string, and the canonical string from the pointing
 12. Carrier discipline — each mark carries the codepoint that names what the carrier makes it (Translit §7): U+0741 and U+0742 only on bgdkpt, U+073C only on waw and yodh, U+073F only on waw, U+0323 and U+0307 never on bgdkpt
-13. Mark order within combining class 230 is `[vowel, bgdkpt point, syāmē]` (Translit §5.1). NFC will not do this for you, and two marks above a letter render identically in the wrong order
+13. Same-class combining-mark order follows Translit §5.1 for every in-scope sequence. Check both class 220 and class 230 explicitly; NFC orders unlike classes but does not reorder two marks that share a class
 14. One Syriac spelling transliterates one way across the corpus, and one transliteration maps back to one spelling
 
 **Files**
