@@ -112,7 +112,7 @@ The coverage contract includes:
 - word-final/mater shapes that must remain literal for later transliteration;
 - adjacent occultans as the known encoded-source/page asymmetry.
 
-The suite deliberately does **not** attempt every combinatorial arrangement of every mark. It closes every finite interface where behavior can differ, then requires genuinely new/unrecognized input to raise a review flag.
+The suite deliberately does **not** attempt every combinatorial arrangement of every mark. It closes every finite interface where behavior can differ, then requires genuinely new/unrecognized input to raise a review flag. The coverage is exhaustive relative to the current governing rules and Unicode/source grammar; genuinely new witness-specific encodings become new permanent regression cases when first encountered.
 
 ## Tests
 
