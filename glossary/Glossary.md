@@ -824,40 +824,40 @@ meṯkašpīn (1) — beseech (1)
 lēh (1) — Him (1)
 * lēh · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
-ܙܲܒ݂ܢܹ̈ܐ   [z-b-n]   (search: zabne)
+ܙܲܒ݂ܢܹ̈ܐ   [z-b-n]   {noun m.pl.emph.}   (search: zabne)
 zaḇn̈ē (1) — times (1)
 * zaḇn̈ē · "In all times and seasons" (Ferial Slotha d'Sapra I, Line 9)
 
-ܥܸܕܵܢܹ̈ܐ   [ʿ-d-n]   (search: edane)
+ܥܸܕܵܢܹ̈ܐ   [ʿ-d-n]   {noun m.pl.emph.}   (search: edane)
 ʿedān̈ē (1) — seasons (1)
 * wʿedān̈ē · "In all times and seasons" (Ferial Slotha d'Sapra I, Line 9)
 
-ܡܵܪܵܐ   [m-r-ʾ]   (search: mara)
+ܡܵܪܵܐ   [m-r-ʾ]   {noun m.sg.abs.}   (search: mara)
 mārā (1) — the Lord (1)
 * mārā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
-ܡܵܪܝ   [m-r-ʾ]   (search: mary)
+ܡܵܪܝ   [m-r-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: mary)
 māry (2) — my Lord (2)
 * māry · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 * māry · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
 
-ܡܩܲܕܡܵܢ̈   [q-d-m]   (search: mqadman)
+ܡܩܲܕܡܵܢ̈   [q-d-m]   {Pael active ptcp. f.pl.abs.}   (search: mqadman)
 mqadmān̈ (1) — early they come (1)
 * mqadmān̈ · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 
-ܒܵܪ̈ܟܵܢ   [b-r-k]   (search: barkan)
+ܒܵܪ̈ܟܵܢ   [b-r-k]   {Peal active ptcp. f.pl.abs.}   (search: barkan)
 bār̈kān (1) — they kneel (1)
 * wḇār̈kān · "They kneel and reverence" (Ferial Slotha d'Sapra II, Line 2)
 
-ܣܵ̈ܓ݂ܕܵܢ   [s-g-d]   (search: sagdan)
+ܣܵ̈ܓ݂ܕܵܢ   [s-g-d]   {Peal active ptcp. f.pl.abs.}   (search: sagdan)
 s̈āḡdān (1) — reverence (1)
 * ws̈āḡdān · "They kneel and reverence" (Ferial Slotha d'Sapra II, Line 2)
 
-ܙܵܡ̇ܪܵ̈ܢ   [z-m-r]   (search: zamran)
+ܙܵܡ̇ܪܵ̈ܢ   [z-m-r]   {Peal active ptcp. f.pl.abs.}   (search: zamran)
 zām^r̈ān (1) — sing (1)
 * wzām^r̈ān · "Sing and praise" (Ferial Slotha d'Sapra II, Line 3)
 
-ܡܗܲܠ̈ܠܵܢ   [h-l-l]   (search: mhallan)
+ܡܗܲܠ̈ܠܵܢ   [h-l-l]   {Pael active ptcp. f.pl.abs.}   (search: mhallan)
 mhal̈lān (1) — praise (1)
 * wamhal̈lān · "Sing and praise" (Ferial Slotha d'Sapra II, Line 3)
 
