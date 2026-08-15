@@ -17,7 +17,6 @@ source_records:
 
 confirmed_texts:
   Creed_in_Syriac.txt:
-    source_of_record: syro_malabar_editio_typica
     editorial_apparatus:
       - line: 17
         witness_label: Catholic
