@@ -1,0 +1,40 @@
+name: Morphology audit report
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print morphology inventory
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          s = Path('glossary/Glossary.md').read_text(encoding='utf-8')
+          lines = s.splitlines()
+          in_forms = False
+          rows=[]
+          for i,line in enumerate(lines):
+              if line.strip() == '## Forms': in_forms=True; continue
+              if not in_forms: continue
+              if not line or line.startswith('* ') or line.startswith('---') or line.startswith('#'): continue
+              m = re.match(r'^(\S.*?)\s{3}\[([^\]]+)\](?:\s{3}\{([^}]*)\})?\s{3}\(search:', line)
+              if not m: continue
+              syriac, root, morph = m.groups()
+              translit = ''
+              occ=[]
+              if i+1 < len(lines):
+                  translit = lines[i+1].split(' (',1)[0]
+              j=i+2
+              while j < len(lines) and lines[j].startswith('* '):
+                  occ.append(lines[j])
+                  j+=1
+              if morph is not None:
+                  rows.append((i+1,syriac,translit,root,morph,' || '.join(occ[:3])))
+          print('POPULATED_MORPHOLOGY_COUNT', len(rows))
+          for r in rows:
+              print('\t'.join(str(x) for x in r))
