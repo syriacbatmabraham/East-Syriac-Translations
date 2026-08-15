@@ -20,9 +20,9 @@ Apply silently. Do not restate unless asked or unless a rule bears on the curren
 
 ## 1. Governing Principle
 
-**The canonical string records the page and nothing but the page.**
+**The canonical string records the normalized Syriac block and nothing else.**
 
-Every mark on the page is represented. Nothing not on the page is added.
+Every in-scope mark and piece of editorial apparatus in that block is represented. Nothing not in the block is added.
 
 The system must satisfy:
 
@@ -55,16 +55,17 @@ Case is not a feature of the page. The canonical string is therefore **entirely 
 
 ## 2. Notation Beyond the Letter Tables
 
-Only two mechanisms depart from plain letter-for-letter mapping. Both record page features, not supplied information.
+Editorial apparatus is preserved literally alongside the letter-for-letter mapping.
 
 | Notation | Meaning | On reversal |
 |---|---|---|
-| `( )` | occultans line above (§6) | restore the line over the wrapped letter or letters |
-| `-…-` | parentheses or editorial brackets **in the source text** | restore source bracketing; type not distinguished (§10) |
+| `(x)` | occultans line above (§6) | restore the line over the wrapped letter or letters |
+| `[…]` | editorial addition or alternate | preserve the brackets |
+| `(English label:)` | source or witness label | preserve the label |
 
-Example: `ʾaḇā -waḇrā- nāpēq`
+Syriac inside editorial brackets transliterates normally. English-only interpretive brackets have no transliteration counterpart.
 
-There is **no mechanism for supplied information.** If a reading is not on the page, it is not recorded.
+Example: `ʾaḇā [waḇrā] nāpēq`
 
 ---
 
@@ -323,28 +324,19 @@ Conventions must be re-verified against attested text whenever new material is w
 1. **Word-final `ā` implies mater ʾālap̄.** Exception form: `ă`.
 2. **Word-final `ē` implies mater ʾālap̄.** Exception form: `ĕ`. An explicitly written yodh gives `ēy` and is not an exception.
 3. **Prosthetic ʾālap̄ is written `ʾ`** and requires no special mark. *(No exception form needed: this is a letter mapping, not a prediction.)*
-4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Hyphens carry a canonical meaning (§2) and may not be used for word-division traceability inside the string. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
+4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
 5. **An occultans line written on two adjacent letters is one spanning line.** Exception form: `(x)(y)` (§6.1).
 
-### 9.3 Audit log
+### 9.3 Audit log — withdrawn
 
-| Date | Convention | Finding |
-|---|---|---|
-| v2 → v2.2 | 2 (word-final ē) | **Wrong.** Stated "conventional yodh–ʾālap̄ writing." East Syriac writes ܹܐ — zlāmā qašyā + ʾālap̄, no yodh. Detected against ܥܵܠܡܹ̈ܐ, ܚܛܵܗܹ̈ܐ, ܚܲܝܹ̈ܐ, ܡܝܼܬܹ̈ܐ. Corrected. |
-| v2 → v2.2 | 1 (word-final ā) | Verified against ܐܲܠܵܗܵܐ, ܪܘܼܚܵܐ, ܡܵܪܝܵܐ, ܥܹܕ݁ܬܵܐ, ܒܬ݂ܘܼܠܬܵܐ. Held. |
-| v2.2 pass 2 | 1, 2 | Re-verified against the expanded Creed. New cases: internal `ēʾ` (ܠܡܹܐܬ݂ܵܐ), `ēy` (ܡܵܘܕܹ݁ܝܢܲܢ, ܐܵܡܹܝܢ), word-final `ē` (ܥܵܠܡܹ̈ܐ, ܕܲܚܛܵܗܹ̈ܐ, ܕܦܲܓ݂ܪܹ̈ܐ). Both held. |
-| v2.2.2 → v2.2.3 | 1, 2 | Re-verified against the Abun across three witnesses. Both held. New case: word-final `e` + ʾālap̄ (`tēʾteʾ`, `nehweʾ`), outside both conventions; resolved by the §4.2 note without adding a convention. |
-| v2.2.3 → v2.2.4 | 1, 2 | Re-verified against the Tešbōḥtā lʾalāhā. Both held. No new case reached. |
-| v2.2.4 → v2.3 | 1, 2 | Re-verified against the corrected Abun (22 lines, source of record). Word-final `ā` in *dbašmayā, šmaÿā, laḥmā, bīšā, ʾarʿā, nāš̈ā*; word-final `ē` in *ʿīr̈ē*. Both held. |
-| v2.2.4 → v2.3 | 5 (new) | Introduced on the attestation of `šba(q_n)`, one line spanning qoph and nun in the Abun. Exception form `(x)(y)` declared; not yet needed. |
-| v2.3 → v2.3.1 | 1, 2 | Re-verified across all three confirmed texts at once — Creed 21 lines, Abun 22, Tešbōḥtā 3, 226 tokens. Every canonical string reproduced mechanically from the Syriac; both conventions held with no new case reached. |
+Version history belongs to Git, not this specification. The conventions in force are §9.2.
 
 ---
 
 ## 10. Scope
 
 ### In scope
-Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the distinguishing point, two dots below (§17), the breve below (§18), matres, source parentheses.
+Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).
 
 ### Out of scope at word level
 **Out-of-scope characters are removed at ingestion (§16.1), not carried in the stored line.** The confirmed text contains in-scope orthography only.
@@ -387,7 +379,7 @@ Mechanically generated, reversible, case-sensitive. For machine comparison.
 | two dots below (§17) | `:` after carrying letter |
 | breve below (§18) | `%` after carrying letter |
 | superscript ʾālap̄ | `@` before carrier |
-| `( )` `-…-` `^` `_` `^^` `__` | unchanged |
+| `( )` `[ ]` `^` `_` `^^` `__` | unchanged |
 
 Where a letter carries both a defective vowel and syāmē, the defective marker precedes: `A*#`.
 
@@ -405,7 +397,7 @@ Deliberately ambiguous. Collisions are expected and acceptable — `brā` "Son" 
 
 A canonical string is **valid** if and only if:
 
-1. Unwrapping all `(…)` and `-…-` spans and applying the inverse tables reproduces the source pointing **exactly**, after the source has been normalized per §16 and setting aside anything excluded under §10 and recorded per General Rules §10.8; and
+1. Applying the inverse tables while preserving §2 editorial apparatus literally reproduces the normalized Syriac block **exactly**, setting aside anything excluded under §10 and recorded per General Rules §10.8; and
 2. No two distinct entries in the glossary share a canonical string *and* a root.
 
 Condition 2 is the injectivity check. Violations are one of:
@@ -446,53 +438,9 @@ v2.2.4 carried four open questions. All are closed in v2.3. This section is reta
 
 ---
 
-## 15. Rule Status
+## 15. Validation
 
-### Exercised against worked text
-
-Validated by full round-trip on the Creed (two passes):
-
-- **Three-state bgdkpt** — all three states attested in one text.
-- **Class B matres** — internal `āʾ` `ēʾ` `ēy` and the word-final ā/ē conventions.
-- **Syāmē on varied carriers** — resh, mem, yodh, waw, hē, taw; including carrier-plus-vowel (§5.2).
-- **The distinguishing point** — `m_n`, six occurrences, distinct from `man`.
-- **Source parentheses** — `-waḇrā-`.
-
-Extended by the Abun d-ba-Shmayā (three witnesses, then the source of record):
-
-- **The occultans line on one letter** (§6) — `w(ʾ)nāš̈ā`, `(h)ī`.
-- **The occultans line spanning two letters** (§6.1) — `šba(q_n)`.
-- **The single point below** (§7) — on a qoph, a carrier the Creed never exercised.
-- **The point above between two letters** (§7) — `qā^^ʿēyn`.
-- **Word-final `e` + ʾālap̄** (§4.2) — `tēʾteʾ`, `nehweʾ`.
-- **Codepoint normalization** (§16) — four witnesses, three conventions, reconciled to one page-state reading.
-- **§16.2** — U+0716 under syāmē in `ʿīr̈ē`, normalized to resh.
-- **§5.1** — the 220/230 split, verified across the Glossary; two 230+230 pairs required manual ordering and nineteen 220+230 pairs did not.
-
-Extended by the corrected texts, verified as a set (226 tokens, three texts):
-
-- **Full mechanical reproduction.** Every canonical string in all three confirmed texts regenerates from the pointed Syriac using §§3–7 and §9.2 alone. This is the strongest test the rules have been put to, and it passed without exception.
-- **`^^`** (§7) — `qā^^ʿēyn`, a point above standing between qoph and ʿē.
-- **The spanning occultans line** (§6.1) — `šba(q_n)`, one line covering qoph and nun, with the §7 point below on the qoph inside the span.
-- **§16.2** — U+0716 under syāmē in `ʿīr̈ē`, normalized to resh.
-
-Extended by the Tešbōḥtā lʾalāhā:
-
-- **§16.1 across a whole witness** — U+073F for every single point above and U+073C for every single point below, resolved by carrier throughout. Read at face value it yields *tešbōōḥtā*, *saḇĭrā*.
-
-### Untested — treat as provisional
-
-- `ă` / `ĕ` (§4.2) — no defective word-final ā or ē encountered.
-- `ŏ` / `ŭ` / `ĭ` (§4.1) — no defective carrier-borne vowel encountered.
-- `(_x)` and `(_xy)` (§6) — line below not yet on a securely located carrier in confirmed text.
-- `__` (§7) — point below between two letters not yet encountered.
-- `ᵃ` (§3.1) — superscript ʾālap̄ not encountered.
-- `:` (§17) and `%` (§18) — attested only in **unconfirmed** Hudra material; confirm against a source of record before treating as exercised.
-- `(x)(y)` (§9.2 conv. 5) — the exception form has not been needed.
-
-### Known font limitation
-
-U+1DF8, the encoding for a point above between two letters (§7), is absent from Meltho and from Noto Sans Syriac. Editors will show a placeholder glyph. The data is correct; the display is not. A Unicode-aware editor able to render characters as individual spacing glyphs will show the mark plainly.
+Validation requirements are §12 and General Rules §11. Corpus size, worked-text counts, and current test status belong to test output and Git history, not this specification.
 
 ---
 

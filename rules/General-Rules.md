@@ -95,7 +95,7 @@ Kept separate from the project files. Format is fixed:
 - **NFC normalized**, mark order per Translit §5.1
 - **One file per text.** Lines numbered by position; the line is the citation unit
 - **Punctuation and all other out-of-scope characters removed at ingestion** (Translit §10, Translit §16.1), except editorial apparatus. Clause division is carried by line breaks
-- **Editorial apparatus is kept in all three blocks** — square brackets mark material treated as an addition or insertion, whether or not it is present in the source of record; a parenthesized English label identifies a distinct source or witness where needed, e.g. `(Assyrian adds:)`.
+- **Editorial apparatus is preserved across all three blocks.** Syriac and transliteration carry the full variant; English may collapse shared wording and mark only what differs. A full English insertion from another source is used only for a whole line or clause.
 - **Rubrics removed at ingestion.** A rubric directing repetition is executed, not recorded: the repeated clause is written out in full, one line per repetition
 - **Straight apostrophes** (`'`), never curly
 
@@ -106,10 +106,10 @@ Three blocks in fixed order: pointed Syriac, canonical transliteration, English.
 - All three hold the **same number of lines**; line *n* of each is the same clause
 - The transliteration block **reproduces mechanically from the Syriac** (Translit §12), never typed independently. A transliteration left behind by a revision to the Syriac is the most damaging error this format admits, because every block still reads correctly alone
 - Stanza breaks, if used, appear identically in all three blocks
-- **Square brackets mark added or inserted material.** Material bracketed in the Syriac block appears bracketed in all three blocks, enters context strings, and is cited under §10.3. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).
-- **Parentheses mark editorial apparatus**, never prayed text and never in a context string. An added line may change a text's line count against another witness; recording that is the point
+- **Square brackets mark added or inserted material.** Material bracketed in the Syriac block is bracketed correspondingly in transliteration. English may collapse a variant into shared wording and bracket only what differs; a full bracketed insertion from another source is used only for a whole line or clause. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).
+- **Parentheses mark editorial apparatus**, never prayed text and never in a context string. A parenthesized English label identifies a distinct source or witness where needed.
 
-Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark (Translit §15).
+Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark.
 
 ### 9.2 Draft and confirmed
 
@@ -142,6 +142,8 @@ The text files carry no header of their own, which would break the three-block p
     **Two spans of one line either coincide exactly or do not overlap at all.** Once a phrase is the context for one word, every word inside it takes the same phrase. A line may carry several contexts; they partition it, never overlap. Enforced by §11.10b.
 
     **A written-out repetition is cited once** — at its first line, or at its first occurrence within the line where the repetition is written inline. A repetition is the same text said again; a form recurring in a different grammatical role is not one, and is cited at each occurrence.
+
+    **An alternate witness at the same textual locus does not create a second occurrence when it repeats the same form in the same grammatical role.** Count and cite it once. A different form or role is indexed separately.
 14. **Search keys.** Each headword carries a fold key, written `(search: alaha)` — lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`, and notation characters (`^` `_` `(` `)`) dropped (Translit §11.2). Collisions are acceptable.
 15. **Where two Syriac words render as one English word**, the rendering names the other in square brackets after it: `metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]`. **The bracket binds to the rendering it immediately follows**, not to the entry.
 
@@ -173,12 +175,12 @@ Run after every glossary write, and after any edit to a confirmed text. Each has
 1. Greek/Cyrillic homoglyph scan
 2. NFC normalization
 3. Per-entry bullets == Σbase, and total == Σ(base+extra)
-4. Every source token has an attested form, except proclitics and *lā* (§10.2), untranslated acclamations (§10.16), repetitions already cited (§10.13), and members of a common liturgical unit already entered (§10.18). Phrase-section bullets do not count toward coverage (§10.6)
-5. The converse of 4 — every occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain
+4. Every source token has an attested form, except proclitics and *lā* (§10.2), untranslated acclamations (§10.16), repetitions and same-locus witness duplicates already cited (§10.13), and members of a common liturgical unit already entered (§10.18). Phrase-section bullets do not count toward coverage (§10.6)
+5. The converse of 4 — every non-exempt occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain
 6. No two entries share a canonical string **and** a root (Translit §12), comparing strings with bgdkpt points disregarded (§10.17)
 7. Every attested form is a token sequence of its cited transliteration line
 8. Every recorded rendering is traceable in that entry's own context strings, with `...` (§10.19) and the §10.15 bracket resolved first. A `→` phrase pointer is not a rendering and is exempt
-9. The root field holds a root or a marker declared in §10.20, never a part of speech doing a root's work; the `{...}` field never holds a root (§10.1)
+9. Every form entry has exactly one nonempty `{...}` field satisfying §10.1; the root field holds a root or a marker declared in §10.20, never a part of speech doing a root's work; the `{...}` field never holds a root
 10. Context strings: **10a** — every context is a literal span of its cited line, taken from the English block with editorial labels and interpretive supplements removed and `...` stripped; **10b** — two contexts citing one line are identical or disjoint
 
 **Syriac — in the Glossary and in every confirmed text**
