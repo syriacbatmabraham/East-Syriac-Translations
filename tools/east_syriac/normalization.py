@@ -1,9 +1,9 @@
 """Deterministic East Syriac source-ingestion normalization.
 
 Implements the page-state normalization required by Transliteration Rules §16
-and combining-mark ordering required by §5.1.  This module deliberately does
-not transliterate: it produces the normalized Syriac representation that the
-transliteration layer will consume.
+and combining-mark ordering required by §5.1. This module deliberately does
+not transliterate: it produces the normalized Syriac representation consumed by
+later deterministic stages.
 """
 
 from __future__ import annotations
@@ -12,8 +12,7 @@ from dataclasses import dataclass
 import unicodedata
 
 
-# Syriac letters used by the project's consonant inventory (§3), plus U+0716
-# and U+0724 which are accepted only as ingestion inputs and normalized below.
+# Canonical consonant inventory, plus two ingestion-only letter artifacts.
 PROJECT_LETTERS = frozenset(
     {
         "\u0710",  # ALAPH
@@ -54,8 +53,7 @@ SEMKATH = "\u0723"
 SUPERSCRIPT_ALAPH = "\u0711"
 SYAME = "\u0308"
 
-# §16.1: single-dot source encodings collapse to a page-state and are then
-# re-encoded by carrier.  The output codepoints satisfy General Rules §11.12.
+# §16.1 single-dot aliases. Meaning is resolved by carrier, never codepoint name.
 SINGLE_ABOVE_INPUTS = frozenset({"\u0741", "\u073f", "\u0307"})
 SINGLE_BELOW_INPUTS = frozenset({"\u0742", "\u073c", "\u0323"})
 QUSSHAYA = "\u0741"
@@ -72,10 +70,7 @@ BREVE_BELOW = "\u032e"
 BETWEEN_ABOVE = "\U00001df8"
 BETWEEN_BELOW = "\U00001dfa"
 
-# East Syriac multi-dot vowels that pass through unchanged (§16.1).
 EAST_MULTI_DOT_VOWELS = frozenset({"\u0732", "\u0735", "\u0738", "\u0739"})
-
-# West Syriac vowels are refused, never mapped (§16.6).
 WEST_SYRIAC_VOWELS = frozenset(
     {
         "\u0730",
@@ -98,10 +93,9 @@ OCCULTANS_BELOW = "\u0748"
 SYRIAC_PUNCTUATION = frozenset(chr(cp) for cp in range(0x0700, 0x070E))
 SYRIAC_ABBREVIATION_MARK = "\u070f"
 PRESENTATIONAL = frozenset({"\u0640", "\u200c", "\u200d"})
-ACCENT_CANTILLATION = frozenset({"\u0749", "\u074a"})  # MUSIC, BARREKH
+ACCENT_CANTILLATION = frozenset({"\u0749", "\u074a"})
 LATIN_PUNCTUATION_SUBSTITUTES = frozenset(".,:;")
 
-# Marks understood by the normalized representation after carrier recoding.
 KNOWN_MARKS = frozenset(
     {
         SUPERSCRIPT_ALAPH,
@@ -124,9 +118,9 @@ KNOWN_MARKS = frozenset(
 
 # §5.1 project tie-break order for equal canonical combining classes.
 ORDER_220 = {
-    "\u0738": 0,  # vowel: dotted zlama horizontal
-    "\u0739": 0,  # vowel: dotted zlama angular
-    HBASA_ESASA_DOTTED: 0,  # carrier-borne vowel on waw/yodh
+    "\u0738": 0,
+    "\u0739": 0,
+    HBASA_ESASA_DOTTED: 0,
     RUKKAKHA: 1,
     GENERIC_DOT_BELOW: 2,
     TWO_DOTS_BELOW: 3,
@@ -134,9 +128,9 @@ ORDER_220 = {
     OCCULTANS_BELOW: 5,
 }
 ORDER_230 = {
-    "\u0732": 0,  # vowel: pthaha dotted
-    "\u0735": 0,  # vowel: zqapha dotted
-    RWAHA: 0,       # carrier-borne vowel on waw
+    "\u0732": 0,
+    "\u0735": 0,
+    RWAHA: 0,
     QUSSHAYA: 1,
     GENERIC_DOT_ABOVE: 2,
     SYAME: 3,
@@ -201,6 +195,14 @@ def _flag(text: str, index: int, char: str, code: str, message: str) -> Normaliz
     return NormalizationFlag(code, message, index, line, column, char)
 
 
+def _is_combining(char: str) -> bool:
+    return unicodedata.combining(char) != 0 or char == SUPERSCRIPT_ALAPH
+
+
+def _is_syriac_letter(char: str) -> bool:
+    return unicodedata.name(char, "").startswith("SYRIAC LETTER")
+
+
 def _canonical_single_point(base: str, mark: str) -> str:
     if mark in SINGLE_ABOVE_INPUTS:
         if base in BGDKPT:
@@ -217,14 +219,7 @@ def _canonical_single_point(base: str, mark: str) -> str:
 
 
 def _sort_marks(marks: list[str]) -> list[str]:
-    """Sort a combining sequence according to §5.1 without inventing order.
-
-    Different CCCs always sort ascending.  For CCC 220/230, the project tie-break
-    is applied only when every mark in that same-class bucket is recognized by
-    the corresponding project order.  Refused/unknown same-class marks retain
-    their source-relative order because the rules define no canonical tie-break
-    for them; their presence is flagged separately.
-    """
+    """Apply §5.1 without inventing an order for unresolved marks."""
 
     buckets: dict[int, list[tuple[int, str]]] = {}
     for pos, mark in enumerate(marks):
@@ -240,35 +235,72 @@ def _sort_marks(marks: list[str]) -> list[str]:
     return out
 
 
-def _is_combining(char: str) -> bool:
-    return unicodedata.combining(char) != 0 or char == SUPERSCRIPT_ALAPH
-
-
 def normalize_text(text: str) -> NormalizationResult:
-    """Normalize a raw East Syriac source block deterministically.
+    """Normalize a raw East Syriac block to canonical page-state encoding.
 
-    Parenthesized editorial labels are treated as non-Syriac apparatus: their
-    punctuation is preserved and their contents are not page-state interpreted.
-    Square-bracketed Syriac remains active input and is normalized normally.
+    Parenthesized editorial labels are opaque. Square-bracketed Syriac remains
+    active input. Anything outside those structures that is neither Syriac,
+    recognized combining input, nor whitespace is preserved and flagged rather
+    than silently admitted.
     """
 
     flags: list[NormalizationFlag] = []
     changes: list[NormalizationChange] = []
-
-    # Step 1: remove explicitly out-of-scope source characters before any
-    # page-state interpretation (§16.1).  Parenthetical editorial labels are
-    # opaque so their punctuation is not mistaken for Syriac punctuation.
     kept: list[tuple[str, int, bool]] = []
-    paren_depth = 0
-    unexpected_lines: set[int] = set()
+
+    paren_stack: list[int] = []
+    bracket_stack: list[int] = []
+    unexpected_latin_lines: set[int] = set()
+
+    # Step 1 — remove only licensed out-of-scope characters and classify every
+    # other source character before page-state interpretation.
     for index, char in enumerate(text):
         if char == "(":
-            paren_depth += 1
+            paren_stack.append(index)
             kept.append((char, index, True))
             continue
-        if char == ")" and paren_depth:
+
+        if char == ")":
+            if paren_stack:
+                kept.append((char, index, True))
+                paren_stack.pop()
+            else:
+                flags.append(
+                    _flag(
+                        text,
+                        index,
+                        char,
+                        "unmatched-closing-parenthesis",
+                        "Closing editorial parenthesis has no matching opener.",
+                    )
+                )
+                kept.append((char, index, False))
+            continue
+
+        # Everything inside an editorial label is preserved literally. The
+        # label is not Syriac orthography and is not page-state interpreted.
+        if paren_stack:
             kept.append((char, index, True))
-            paren_depth -= 1
+            continue
+
+        if char == "[":
+            bracket_stack.append(index)
+            kept.append((char, index, False))
+            continue
+        if char == "]":
+            if bracket_stack:
+                bracket_stack.pop()
+            else:
+                flags.append(
+                    _flag(
+                        text,
+                        index,
+                        char,
+                        "unmatched-closing-bracket",
+                        "Closing editorial bracket has no matching opener.",
+                    )
+                )
+            kept.append((char, index, False))
             continue
 
         removable = (
@@ -276,32 +308,11 @@ def normalize_text(text: str) -> NormalizationResult:
             or char == SYRIAC_ABBREVIATION_MARK
             or char in PRESENTATIONAL
             or char in ACCENT_CANTILLATION
-            or (paren_depth == 0 and char in LATIN_PUNCTUATION_SUBSTITUTES)
+            or char in LATIN_PUNCTUATION_SUBSTITUTES
         )
         if removable:
             changes.append(NormalizationChange("remove-out-of-scope", index, char, ""))
             continue
-
-        # A raw Syriac block can contain English only as parenthesized editorial
-        # apparatus.  Flagging Latin text elsewhere makes --in-place safe even
-        # if somebody accidentally points the normalizer at a full confirmed
-        # three-block file.  The text is preserved for inspection.
-        if paren_depth == 0 and (
-            "LATIN" in unicodedata.name(char, "") and unicodedata.category(char).startswith("L")
-            or char.isascii() and char.isdigit()
-        ):
-            line, _ = _line_column(text, index)
-            if line not in unexpected_lines:
-                flags.append(
-                    _flag(
-                        text,
-                        index,
-                        char,
-                        "unexpected-non-syriac-text",
-                        "Latin text or digits occur outside parenthesized editorial apparatus; raw Syriac block expected.",
-                    )
-                )
-                unexpected_lines.add(line)
 
         if char == "\ufeff":
             flags.append(
@@ -310,20 +321,72 @@ def normalize_text(text: str) -> NormalizationResult:
                     index,
                     char,
                     "byte-order-mark",
-                    "U+FEFF BOM is not part of the Syriac block; file hygiene requires UTF-8 without BOM.",
+                    "U+FEFF BOM is not part of the Syriac block; UTF-8 must have no BOM.",
                 )
             )
+            kept.append((char, index, False))
+            continue
 
-        kept.append((char, index, paren_depth > 0))
+        allowed = char.isspace() or _is_syriac_letter(char) or _is_combining(char)
+        if not allowed:
+            name = unicodedata.name(char, "")
+            is_latin_or_digit = (
+                ("LATIN" in name and unicodedata.category(char).startswith("L"))
+                or (char.isascii() and char.isdigit())
+            )
+            if is_latin_or_digit:
+                line, _ = _line_column(text, index)
+                if line not in unexpected_latin_lines:
+                    flags.append(
+                        _flag(
+                            text,
+                            index,
+                            char,
+                            "unexpected-non-syriac-text",
+                            "Latin text or digits occur outside parenthesized editorial apparatus.",
+                        )
+                    )
+                    unexpected_latin_lines.add(line)
+            else:
+                flags.append(
+                    _flag(
+                        text,
+                        index,
+                        char,
+                        "unexpected-codepoint",
+                        "Codepoint is not licensed in a raw Syriac block; it has been retained for review.",
+                    )
+                )
 
-    # Step 2: split into base+combining clusters while retaining original
-    # indices for diagnostics.  Editorial/non-Syriac characters simply pass.
+        kept.append((char, index, False))
+
+    for opening in paren_stack:
+        flags.append(
+            _flag(
+                text,
+                opening,
+                "(",
+                "unclosed-editorial-parenthesis",
+                "Editorial parenthesis is not closed before end of input.",
+            )
+        )
+    for opening in bracket_stack:
+        flags.append(
+            _flag(
+                text,
+                opening,
+                "[",
+                "unclosed-editorial-bracket",
+                "Editorial square bracket is not closed before end of input.",
+            )
+        )
+
+    # Step 2 — split into carrier+mark clusters and normalize page-state.
     out: list[str] = []
     i = 0
     while i < len(kept):
         base, base_index, base_editorial = kept[i]
 
-        # An orphan combining mark cannot be interpreted by carrier.
         if _is_combining(base):
             flags.append(
                 _flag(
@@ -331,7 +394,7 @@ def normalize_text(text: str) -> NormalizationResult:
                     base_index,
                     base,
                     "orphan-combining-mark",
-                    "Combining mark has no preceding carrier; source review required.",
+                    "Combining mark has no preceding Syriac carrier; source review required.",
                 )
             )
             out.append(base)
@@ -344,15 +407,13 @@ def normalize_text(text: str) -> NormalizationResult:
             marks.append(kept[j])
             j += 1
 
-        # Parenthesized editorial labels are not Syriac orthography.  Preserve
-        # their combining sequences for the later whole-file NFC hygiene pass.
         if base_editorial:
             out.append(base)
             out.extend(mark for mark, _, _ in marks)
             i = j
             continue
 
-        is_syriac_carrier = unicodedata.name(base, "").startswith("SYRIAC LETTER")
+        is_syriac_carrier = _is_syriac_letter(base)
         if marks and not is_syriac_carrier:
             out.append(base)
             for mark, mark_index, _ in marks:
@@ -384,12 +445,11 @@ def normalize_text(text: str) -> NormalizationResult:
                         base_index,
                         base,
                         "bare-u0716",
-                        "Bare U+0716 normalized to resh, but the source-level anomaly requires manual review.",
+                        "Bare U+0716 normalized to resh, but the source anomaly requires manual review.",
                     )
                 )
 
-        # Flag Syriac letters outside the project's consonant inventory.
-        if "SYRIAC LETTER" in unicodedata.name(base, "") and base not in PROJECT_LETTERS:
+        if _is_syriac_letter(base) and base not in PROJECT_LETTERS:
             flags.append(
                 _flag(
                     text,
@@ -420,7 +480,7 @@ def normalize_text(text: str) -> NormalizationResult:
                         mark_index,
                         mark,
                         "west-syriac-vowel",
-                        "West Syriac vowel codepoint is refused and has been left unmapped.",
+                        "West Syriac vowel is refused and has been left unmapped.",
                     )
                 )
             elif mark not in KNOWN_MARKS:
@@ -430,7 +490,7 @@ def normalize_text(text: str) -> NormalizationResult:
                         mark_index,
                         mark,
                         "unrecognized-combining-mark",
-                        "Combining mark is not represented by the current canonical system.",
+                        "Combining mark is not represented by the canonical system.",
                     )
                 )
 
@@ -439,35 +499,38 @@ def normalize_text(text: str) -> NormalizationResult:
             normalized_marks.append(new_mark)
 
         if above_count > 1:
-            first_index = next(idx for mark, idx, _ in marks if mark in SINGLE_ABOVE_INPUTS)
-            first_char = next(mark for mark, _, _ in marks if mark in SINGLE_ABOVE_INPUTS)
+            first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_ABOVE_INPUTS)
             flags.append(
                 _flag(
                     text,
                     first_index,
-                    first_char,
+                    first_mark,
                     "duplicate-single-point-above",
-                    "More than one single-point-above encoding occurs on one carrier.",
+                    "More than one single-point-above source encoding occurs on one carrier.",
                 )
             )
         if below_count > 1:
-            first_index = next(idx for mark, idx, _ in marks if mark in SINGLE_BELOW_INPUTS)
-            first_char = next(mark for mark, _, _ in marks if mark in SINGLE_BELOW_INPUTS)
+            first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_BELOW_INPUTS)
             flags.append(
                 _flag(
                     text,
                     first_index,
-                    first_char,
+                    first_mark,
                     "duplicate-single-point-below",
-                    "More than one single-point-below encoding occurs on one carrier.",
+                    "More than one single-point-below source encoding occurs on one carrier.",
                 )
             )
 
         ordered_marks = _sort_marks(normalized_marks)
         if ordered_marks != normalized_marks:
-            before = "".join(normalized_marks)
-            after = "".join(ordered_marks)
-            changes.append(NormalizationChange("mark-order", base_index, before, after))
+            changes.append(
+                NormalizationChange(
+                    "mark-order",
+                    base_index,
+                    "".join(normalized_marks),
+                    "".join(ordered_marks),
+                )
+            )
 
         out.append(normalized_base)
         out.extend(ordered_marks)
@@ -476,8 +539,6 @@ def normalize_text(text: str) -> NormalizationResult:
     pre_nfc = "".join(out)
     normalized = unicodedata.normalize("NFC", pre_nfc)
     if normalized != pre_nfc:
-        # One aggregate record is enough: exact character-level NFC edits are
-        # implementation details, whereas the resulting string is normative.
         changes.append(NormalizationChange("nfc", 0, pre_nfc, normalized))
 
     return NormalizationResult(normalized, tuple(flags), tuple(changes))
