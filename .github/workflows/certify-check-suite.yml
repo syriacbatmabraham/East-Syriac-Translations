@@ -1,0 +1,24 @@
+name: Certify check suite
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out certification branch
+        uses: actions/checkout@v4
+        with:
+          path: harness
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: subject
+      - name: Run General Rules section 11
+        run: python harness/tools/check_suite.py subject
