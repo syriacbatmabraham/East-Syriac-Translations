@@ -50,7 +50,6 @@ jobs:
           PY
 
           python .cleanup/conceptual_rules_cleanup.py
-          git diff --check
 
           rm -rf .cleanup
           rm -f .github/workflows/conceptual-rules-cleanup.yml .github/workflows/conceptual-rules-rescue.yml
@@ -61,6 +60,7 @@ jobs:
             echo 'Old transliteration-rules filename is still referenced after cleanup.' >&2
             exit 1
           fi
+          git diff --check
 
           git config user.name 'syriacbatmabraham'
           git config user.email 'batmabraham@users.noreply.github.com'
