@@ -2,6 +2,8 @@
 
 This corpus is deliberately synthetic. None of the strings need to be lexical Syriac. The goal is **complete input/state coverage**, not one fake word per rule.
 
+The executable suite currently contains **74 deterministic tests** across baseline normalization, page-state inspection, focused stress cases, and the exhaustive coverage matrix.
+
 ## Coverage contract
 
 The torture test is complete when all of the following are true:
