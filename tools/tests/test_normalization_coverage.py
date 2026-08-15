@@ -66,6 +66,7 @@ class ExhaustiveNormalizationCoverageTests(unittest.TestCase):
             | {ord(ch) for ch in PROJECT_LETTERS}
             | {ord(SUPERSCRIPT_ALAPH)}
             | {ord(ch) for ch in EAST_MULTI_DOT_VOWELS}
+            | {ord(HBASA_ESASA_DOTTED), ord(RWAHA)}
             | {ord(ch) for ch in WEST_SYRIAC_VOWELS}
             | {0x0740, 0x0741, 0x0742, 0x0743, 0x0744, 0x0745, 0x0746, 0x0747, 0x0748, 0x0749, 0x074A}
             | unsupported_letters
