@@ -34,6 +34,11 @@ it does.
 `quant.` marks a quantifier such as `kl` “all/every”; a pronominal suffix is named after `+`.
 `poss.` marks a possessive form such as `dīlāḵ`; an attached pronominal suffix is named after `+`.
 `indecl.` marks an indeclinable loan whose form does not express the ordinary Syriac inflectional distinctions.
+`verbal noun` marks a deverbal nominal lexeme, not an infinitive or finite verb form; it
+takes ordinary nominal gender, number, state, and pronominal-suffix morphology.
+A SEDRA `Participle Adjective` is recorded here as `adj.` when the attested form belongs
+to that lexical category; a homographic form parsed as a verb with active/passive
+participle tense remains `ptcp.`.
 
 **Verb stems.** The stem is named; what it does is read from here.
 
@@ -41,7 +46,7 @@ it does.
 |---|---|---|
 | Peal | the simple, base action | `nesġōḏ` we reverence |
 | Ethpeel | passive or reflexive of Peal | `ʾeṯīleḏ` he was begotten |
-| Pael | intensive, or makes a noun into a verb | `mšabaḥtā` glorified |
+| Pael | intensive, or makes a noun into a verb | `nṣaleʾ` we pray |
 | Ethpaal | passive or reflexive of Pael | `ʾeṫtaqanw` they were established |
 | Aphel | causative — brings the Peal action about | `naseq` we lift up, i.e. cause to go up |
 | Ettaphal | passive of Aphel | — |
@@ -93,7 +98,7 @@ mhaymnīnan (1) — we are faithful (1)
 * lʾaḇā · "Glory to the Father, to the Son..." (Abun Line 15)
 * ʾaḇā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
-ܐܲܚܝܼܕ   [ʾ-ḥ-d]   {Peal passive ptcp. m.sg.cst.}   (search: ahid)
+ܐܲܚܝܼܕ   [ʾ-ḥ-d]   {adj. m.sg.cst.}   (search: ahid)
 ʾaḥīd (1) — Holder (1)
 * ʾaḥīd · "...the Father, the Holder of all" (Creed Line 1)
 
@@ -130,7 +135,7 @@ māryā (1) — Mar Yah (1)
 ʾīšōʿ (1) — Isho (1)
 * ʾīšōʿ · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
-ܡܫܝܼܚܵܐ   [m-š-ḥ]   {Peal passive ptcp. m.sg.emph.}   (search: mshiha)
+ܡܫܝܼܚܵܐ   [m-š-ḥ]   {adj. m.sg.emph.}   (search: mshiha)
 mšīḥā (1) — M'shiha (1)
 * mšīḥā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
