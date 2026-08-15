@@ -64,7 +64,7 @@ Collisions are expected. Human discretion is expected
 
 ## Forms
 
-ܡܗܲܝܡܢܝܼܢܲܢ   [h-y-m-n]   {Pael active ptcp. m.pl. + 1cp encl.}   (search: mhaymninan)
+ܡܗܲܝܡܢܝܼܢܲܢ   [h-y-m-n]   {Pael active ptcp. m.pl.abs. + 1cp encl.}   (search: mhaymninan)
 mhaymnīnan (1) — we are faithful (1)
 * mhaymnīnan · "We are faithful to One God..." (Creed Line 1)
 
@@ -89,7 +89,7 @@ mhaymnīnan (1) — we are faithful (1)
 * lʾaḇā · "Glory to the Father, to the Son..." (Abun Line 15)
 * ʾaḇā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
-ܐܲܚܝܼܕ   [ʾ-ḥ-d]   {Peal passive ptcp. m.sg.abs.}   (search: ahid)
+ܐܲܚܝܼܕ   [ʾ-ḥ-d]   {Peal passive ptcp. m.sg.cst.}   (search: ahid)
 ʾaḥīd (1) — Holder (1)
 * ʾaḥīd · "...the Father, the Holder of all" (Creed Line 1)
 
@@ -126,11 +126,11 @@ māryā (1) — Mar Yah (1)
 ʾīšōʿ (1) — Isho (1)
 * ʾīšōʿ · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
-ܡܫܝܼܚܵܐ   [m-š-ḥ]   {noun m.sg.emph.}   (search: mshiha)
+ܡܫܝܼܚܵܐ   [m-š-ḥ]   {Peal passive ptcp. m.sg.emph.}   (search: mshiha)
 mšīḥā (1) — M'shiha (1)
 * mšīḥā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
-ܒܪܹܗ   [b-r]   {noun m.sg. + 3ms suff.}   (search: breh)
+ܒܪܹܗ   [b-r]   {noun m.sg.emph. + 3ms suff.}   (search: breh)
 brēh (1) — the Son (1)
 * brēh · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
@@ -167,7 +167,7 @@ m_n (11) — from (10), at (1)
 * m_n · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 * m_n · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg. + 3ms suff.}   (search: abuhy)
+ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abuhy)
 ʾaḇūhy (2) — His Father (2)
 * ʾaḇūhy · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * dʾaḇūhy · "Son of the Nature of His Father..." (Creed Line 7)
@@ -208,7 +208,7 @@ bar (1) — Son (1)
 kyānā (1) — Nature (1)
 * kyānā · "Son of the Nature of His Father..." (Creed Line 7)
 
-ܐܝܼ̈ܕܵܘܗܝ   [y-d]   {noun f.pl. + 3ms suff.}   (search: idawhy)
+ܐܝܼ̈ܕܵܘܗܝ   [y-d]   {noun f.pl.emph. + 3ms suff.}   (search: idawhy)
 ʾī̈dāwhy (1) — whose hands (1)
 * dḇʾī̈dāwhy · "...by whose hands the ages were established..." (Creed Line 7)
 
@@ -238,7 +238,7 @@ meṭl (2) — for (2)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
 
-ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg. + 1cp suff.}   (search: purqanan)
+ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
 * pūrqānan · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 
@@ -246,7 +246,7 @@ pūrqānan (1) — our salvation (1)
 nḥeṯ (1) — came down (1)
 * nḥeṯ · "...came down from Heaven" (Creed Line 8)
 
-ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}   (search: shmaya)
+ܫܡܲܝܵܐ   [š-m-y]   {noun c.pl.emph.}   (search: shmaya)
 šmayā (5) — Heaven (5)
 * šmayā · "...came down from Heaven" (Creed Line 8)
 * lašmayā · "He ascended to Heaven..." (Creed Line 14)
@@ -354,7 +354,7 @@ sleq (1) — ascended (1)
 yamīnā (1) — the Right Hand (1)
 * yamīnā · "...and sat at the Right Hand of His Father" (Creed Line 14)
 
-ܐܲܒ݂ܘܗܝ   [ʾ-b]   {noun m.sg. + 3ms suff.}   (search: abwhy)
+ܐܲܒ݂ܘܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abwhy)
 ʾaḇwhy (1) — His Father (1)
 * dʾaḇwhy · "...and sat at the Right Hand of His Father" (Creed Line 14)
 
@@ -379,8 +379,11 @@ mīẗē (1) — the dead (1)
 * lmīẗē · "...to judge the dead and the living" (Creed Line 15)
 
 ܚܲܝܹ̈ܐ   [ḥ-y-ʾ]   {adj. m.pl.emph.}   (search: haye)
-ḥaÿē (2) — living (1), life (1)
+ḥaÿē (1) — living (1)
 * walḥaÿē · "...to judge the dead and the living" (Creed Line 15)
+
+ܚܲܝܹ̈ܐ   [ḥ-y-ʾ]   {noun m.pl.emph.}   (search: haye)
+ḥaÿē (1) — life (1)
 * waḇḥaÿē · "...and life unto the Age of ages. Amen" (Creed Line 21)
 
 ܫܪܵܪܵܐ   [š-r-r]   {noun m.sg.emph.}   (search: shrara)
@@ -422,7 +425,7 @@ qaḋīštā (1) — holy (1)
 qāṯōlīqī (1) — Catholic (1)
 * qāṯōlīqī · "And to One holy and apostolic Catholic Church" (Creed Line 19)
 
-ܡܵܘܕܹ݁ܝܢܲܢ   [y-d-ʾ]   {Aphel active ptcp. m.pl. + 1cp encl.}   (search: mawdeynan)
+ܡܵܘܕܹ݁ܝܢܲܢ   [y-d-ʾ]   {Aphel active ptcp. m.pl.abs. + 1cp encl.}   (search: mawdeynan)
 māwḋēynan (1) — we confess (1)
 * māwḋēynan · "We confess One baptism for the release of sins" (Creed Line 20)
 
@@ -446,10 +449,13 @@ qyāmtā (1) — resurrection (1)
 paḡr̈ē (1) — bodies (1)
 * dpaḡr̈ē · "the resurrection of bodies..." (Creed Line 21)
 
-ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs./cst.}   (search: alam)
-ʿālam (4) — → ʿālam ʿālmīn (2), Eternity (2)
+ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.cst.}   (search: alam)
+ʿālam (2) — → ʿālam ʿālmīn (2)
 * dalʿālam · "...and life unto the Age of ages. Amen" (Creed Line 21) → ʿālam ʿālmīn
 * lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14) → ʿālam ʿālmīn
+
+ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
+ʿālam (2) — Eternity (2)
 * ʿālam · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
 * lʿālam · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
 
@@ -460,7 +466,7 @@ paḡr̈ē (1) — bodies (1)
 * lʿālmīn · "In every moment, forever" (Tešbōḥtā Line 3)
 * lʿālmīn · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
-ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg. + 1cp suff.}   (search: abun)
+ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph. + 1cp suff.}   (search: abun)
 ʾaḇūn (2) — our Father (2)
 * ʾaḇūn · "Our Father, who art in Heaven..." (Abun Line 1)
 * ʾaḇūn · "Our Father who art in Heaven" (Abun Line 4)
@@ -469,7 +475,7 @@ paḡr̈ē (1) — bodies (1)
 neṯqadaš (1) — hallowed be (1)
 * neṯqadaš · "...hallowed be Thy Name" (Abun Line 1)
 
-ܫܡܵܟ݂   [š-m]   {noun m.sg. + 2ms suff.}   (search: shmak)
+ܫܡܵܟ݂   [š-m]   {noun m.sg.emph. + 2ms suff.}   (search: shmak)
 šmāḵ (1) — Thy Name (1)
 * šmāḵ · "...hallowed be Thy Name" (Abun Line 1)
 
@@ -477,7 +483,7 @@ neṯqadaš (1) — hallowed be (1)
 tēʾteʾ (1) — May...come (1)
 * tēʾteʾ · "May Thy Kingdom come" (Abun Line 2)
 
-ܡܲܠܟ݁ܘܼܬ݂ܵܟ݂   [m-l-k]   {noun f.sg. + 2ms suff.}   (search: malkutak)
+ܡܲܠܟ݁ܘܼܬ݂ܵܟ݂   [m-l-k]   {noun f.sg.emph. + 2ms suff.}   (search: malkutak)
 malk̇ūṯāḵ (1) — Thy Kingdom (1)
 * malk̇ūṯāḵ · "May Thy Kingdom come" (Abun Line 2)
 
@@ -509,7 +515,7 @@ mlēyn (1) — are full (1)
 raḃūṯ (1) — the greatness of (1)
 * raḃūṯ · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
 
-ܫܘܼܒ݂ܚܵܟ݂   [š-b-ḥ]   {noun m.sg. + 2ms suff.}   (search: shubhak)
+ܫܘܼܒ݂ܚܵܟ݂   [š-b-ḥ]   {noun m.sg.emph. + 2ms suff.}   (search: shubhak)
 šūḇḥāḵ (1) — Thy glory (1)
 * šūḇḥāḵ · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
 
@@ -534,7 +540,7 @@ lāḵ (2) — to You (2)
 nehweʾ (1) — let...be (1)
 * nehweʾ · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
 
-ܨܸܒ݂ܝܵܢܵܟ݂   [ṣ-b-ʾ]   {noun m.sg. + 2ms suff.}   (search: sebyanak)
+ܨܸܒ݂ܝܵܢܵܟ݂   [ṣ-b-ʾ]   {noun m.sg.emph. + 2ms suff.}   (search: sebyanak)
 ṣeḇyānāḵ (2) — Thy desire (1), Your desire (1)
 * ṣeḇyānāḵ · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
 * waḇṣeḇyānāḵ · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
@@ -562,7 +568,7 @@ lan (2) — us (2)
 laḥmā (1) — the bread (1)
 * laḥmā · "Give us this day the bread we need" (Abun Line 10)
 
-ܣܘܼܢܩܵܢܲܢ   [s-n-q]   {noun m.sg. + 1cp suff.}   (search: sunqanan)
+ܣܘܼܢܩܵܢܲܢ   [s-n-q]   {noun m.sg.emph. + 1cp suff.}   (search: sunqanan)
 sūnqānan (1) — we need (1)
 * dsūnqānan · "Give us this day the bread we need" (Abun Line 10)
 
@@ -574,11 +580,11 @@ yāwmānā (1) — this day (1)
 šḇōq (1) — release (1)
 * wašḇōq · "And release us our debts and sins..." (Abun Line 11)
 
-ܚܵܘܒܲܝ̈ܢ   [ḥ-w-b]   {noun m.pl. + 1cp suff.}   (search: hawbayn)
+ܚܵܘܒܲܝ̈ܢ   [ḥ-w-b]   {noun m.pl.emph. + 1cp suff.}   (search: hawbayn)
 ḥāwbaÿn (1) — our debts (1)
 * ḥāwbaÿn · "And release us our debts and sins..." (Abun Line 11)
 
-ܚܛܵܗܲܝ̈ܢ   [ḥ-ṭ-ʾ]   {noun m.pl. + 1cp suff.}   (search: htahayn)
+ܚܛܵܗܲܝ̈ܢ   [ḥ-ṭ-ʾ]   {noun m.pl.emph. + 1cp suff.}   (search: htahayn)
 ḥṭāhaÿn (1) — sins (1)
 * waḥṭāhaÿn · "And release us our debts and sins..." (Abun Line 11)
 
@@ -590,7 +596,7 @@ yāwmānā (1) — this day (1)
 šba(q_n) (1) — have released (1)
 * šba(q_n) · "...as we have released our debtors" (Abun Line 11)
 
-ܚܲܝܵܒܲܝ̈ܢ   [ḥ-w-b]   {adj. m.pl. + 1cp suff.}   (search: hayabayn)
+ܚܲܝܵܒܲܝ̈ܢ   [ḥ-w-b]   {adj. m.pl.emph. + 1cp suff.}   (search: hayabayn)
 ḥayābaÿn (1) — our debtors (1)
 * lḥayābaÿn · "...as we have released our debtors" (Abun Line 11)
 
@@ -686,7 +692,7 @@ mraḥpānā (1) — Tender One (1)
 pṯīḥū (1) — is open (1)
 * dapṯīḥū · "Whose door is open to those who return" (Ferial Slotha d'Sapra I, Line 2)
 
-ܬܲܪܥܹܗ   [t-r-ʿ]   {noun m.sg. + 3ms suff.}   (search: tareh)
+ܬܲܪܥܹܗ   [t-r-ʿ]   {noun m.sg.emph. + 3ms suff.}   (search: tareh)
 tarʿēh (1) — whose door (1)
 * tarʿēh · "Whose door is open to those who return" (Ferial Slotha d'Sapra I, Line 2)
 
@@ -706,7 +712,7 @@ q^ārē (1) — calls (1)
 ḥaṭāÿē (1) — sinners (1)
 * lḥaṭāÿē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
-ܨܹܐܕ݂ܵܘܗܝ   [ṣ-y-d]   {prep.}   (search: sedawhy)
+ܨܹܐܕ݂ܵܘܗܝ   [ṣ-y-d]   {prep. + 3ms suff.}   (search: sedawhy)
 ṣēʾḏāwhy (1) — unto Him (1)
 * dṣēʾḏāwhy · "...that unto Him they may draw near for returning" (Ferial Slotha d'Sapra I, Line 3)
 
@@ -718,7 +724,7 @@ neṯqarḇūn (1) — they may draw near (1)
 tyāḇūṯā (1) — returning (1)
 * laṯyāḇūṯā · "...that unto Him they may draw near for returning" (Ferial Slotha d'Sapra I, Line 3)
 
-ܦܬܲܚܠܵܗ̇   [p-t-ḥ]   {verb + prep. suff.}   (search: ptahlah)
+ܦܬܲܚܠܵܗ̇   [p-t-ḥ]   {Peal impv. 2m.sg. + prep. l + 3fs suff.}   (search: ptahlah)
 ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
@@ -810,7 +816,7 @@ q^ārēyn (1) — call (1)
 meṯkašpīn (1) — beseech (1)
 * wmeṯkašpīn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
-ܠܹܗ   [l]   {prep.}   (search: leh)
+ܠܹܗ   [l]   {prep. + 3ms suff.}   (search: leh)
 lēh (1) — Him (1)
 * lēh · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
@@ -895,7 +901,7 @@ remzāḵ (1) — by Your beckoning (1)
 ʾeṫtaqan (1) — have been established (1)
 * ʾeṫtaqan · "[Those] who by Your beckoning have been established" (Ferial Slotha d'Sapra II, Line 9)
 
-ܐܲܝܠܸܝܢ   [ʾ-y-n-ʾ]   {rel. pron.}   (search: ayleyn)
+ܐܲܝܠܸܝܢ   [ʾ-y-n-ʾ]   {rel. pron. c.pl.}   (search: ayleyn)
 ʾayleyn (1) — those (1)
 * ʾayleyn · "[Those] who by Your beckoning have been established" (Assyrian Ferial Slotha d'Sapra II, Line 9)
 
@@ -911,7 +917,7 @@ remzāḵ (1) — by Your beckoning (1)
 hwāyā (1) — be (1)
 * lahwāyā · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
-ܐܲܢ݇ܬ݁ܘܼ   [ʾ-n-t]   {pron.}   (search: antu)
+ܐܲܢ݇ܬ݁ܘܼ   [ʾ-n-t]   {pron. 2m.sg. + 3ms encl.}   (search: antu)
 ʾa(n)ṫū (1) — You are (1)
 * dʾa(n)ṫū · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
 
