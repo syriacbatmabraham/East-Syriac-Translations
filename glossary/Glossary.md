@@ -945,27 +945,27 @@ nšamṯā (1) — Breath (1)
 ḥayaÿn (1) — our life (1)
 * dḥayaÿn · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 
-ܢܨܲܠܸܐ   [ṣ-l-ʾ]   (search: nsale)
+ܢܨܲܠܸܐ   [ṣ-l-ʾ]   {Pael impf. 1c.pl.}   (search: nsale)
 nṣaleʾ (1) — let us pray (1)
 * nṣaleʾ · "Let us pray. Peace be with us" (Ferial Slotha d'Ramsha, Line 1)
 
-ܥܲܡܲܢ   [ʿ-m-m]   (search: aman)
+ܥܲܡܲܢ   [ʿ-m-m]   {prep. + 1cp suff.}   (search: aman)
 ʿaman (1) — with us (1)
 * ʿaman · "Let us pray. Peace be with us" (Ferial Slotha d'Ramsha, Line 1)
 
-ܢܵܘܕܸܐ   [y-d-ʾ]   (search: nawde)
+ܢܵܘܕܸܐ   [y-d-ʾ]   {Aphel impf. 1c.pl.}   (search: nawde)
 nāwdeʾ (1) — we confess unto (1)
 * nāwdeʾ · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
 
-ܐܲܠܵܗܘܼܬ݂ܵܟ݂   [ʾ-l-h]   (search: alahutak)
+ܐܲܠܵܗܘܼܬ݂ܵܟ݂   [ʾ-l-h]   {noun f.sg.emph. + 2ms suff.}   (search: alahutak)
 ʾalāhūṯāḵ (1) — Your Divinity (1)
 * lʾalāhūṯāḵ · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
 
-ܢܸܣܓ݁ܘܿܕ݂   [s-g-d]   (search: nesgod)
+ܢܸܣܓ݁ܘܿܕ݂   [s-g-d]   {Peal impf. 1c.pl.}   (search: nesgod)
 nesġōḏ (1) — we reverence (1)
 * wnesġōḏ · "We reverence Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
 
-ܡܵܪܘܼܬ݂ܵܟ݂   [m-r-ʾ]   (search: marutak)
+ܡܵܪܘܼܬ݂ܵܟ݂   [m-r-ʾ]   {noun f.sg.emph. + 2ms suff.}   (search: marutak)
 mārūṯāḵ (1) — Your Lordship (1)
 * lmārūṯāḵ · "We reverence Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
 
