@@ -31,6 +31,10 @@ Syriac grammar knows only noun, verb and particle; this field is finer, so a wor
 files as a particle may be recorded here as `adv.`, `prep.` or `conj.` where that is what
 it does.
 
+`quant.` marks a quantifier such as `kl` “all/every”; a pronominal suffix is named after `+`.
+`poss.` marks a possessive form such as `dīlāḵ`; an attached pronominal suffix is named after `+`.
+`indecl.` marks an indeclinable loan whose form does not express the ordinary Syriac inflectional distinctions.
+
 **Verb stems.** The stem is named; what it does is read from here.
 
 | stem | force | example |
@@ -246,7 +250,7 @@ pūrqānan (1) — our salvation (1)
 nḥeṯ (1) — came down (1)
 * nḥeṯ · "...came down from Heaven" (Creed Line 8)
 
-ܫܡܲܝܵܐ   [š-m-y]   {noun c.pl.emph.}   (search: shmaya)
+ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}   (search: shmaya)
 šmayā (5) — Heaven (5)
 * šmayā · "...came down from Heaven" (Creed Line 8)
 * lašmayā · "He ascended to Heaven..." (Creed Line 14)
@@ -421,7 +425,7 @@ qaḋīštā (1) — holy (1)
 šlīḥaytā (1) — apostolic (1)
 * wašlīḥaytā · "And to One holy and apostolic Catholic Church" (Creed Line 19)
 
-ܩܵܬ݂ܘܿܠܝܼܩܝܼ   [Gk. loan]   {adj.}   (search: qatoliqi)
+ܩܵܬ݂ܘܿܠܝܼܩܝܼ   [Gk. loan]   {adj. indecl.}   (search: qatoliqi)
 qāṯōlīqī (1) — Catholic (1)
 * qāṯōlīqī · "And to One holy and apostolic Catholic Church" (Creed Line 19)
 
