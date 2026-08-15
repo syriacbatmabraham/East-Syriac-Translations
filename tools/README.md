@@ -137,6 +137,8 @@ python -m unittest discover -s tools/tests -v
 
 The tests cover carrier-sensitive single-point normalization, U+0716, final semkath, two-dots-below aliases, West Syriac refusal, unrecognized marks, §5.1 order for combining classes 220 and 230, NFC behavior, idempotence, write-safety guards, page-state reporting, normalized-state invariants, and the synthetic torture corpus.
 
+GitHub Actions runs compilation and the complete test suite on tooling pushes and pull requests via `.github/workflows/tools-tests.yml`.
+
 ## Intended pipeline
 
 The machinery is being built in stages:
