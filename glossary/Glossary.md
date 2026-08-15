@@ -788,35 +788,35 @@ gazāḵ (1) — Your treasure (1)
 špīʿā (1) — overflowing (1)
 * wašpīʿā · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 
-ܟܵܠܹ̇ܐ   [k-l-ʾ]   (search: kale)
+ܟܵܠܹ̇ܐ   [k-l-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: kale)
 kāl^ē (1) — withhold (1)
 * dlā kāl^ē · "O Good One, who does not withhold His mercies..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܪܲ̈ܚܡܵܘܗܝ   [r-ḥ-m]   (search: rahmawhy)
+ܪܲ̈ܚܡܵܘܗܝ   [r-ḥ-m]   {noun m.pl.emph. + 3ms suff.}   (search: rahmawhy)
 r̈aḥmāwhy (1) — His mercies (1)
 * r̈aḥmāwhy · "O Good One, who does not withhold His mercies..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܡܵܘܗܒ݂ܵܬܹܗ̈   [y-h-b]   (search: mawhbateh)
+ܡܵܘܗܒ݂ܵܬܹܗ̈   [y-h-b]   {noun f.pl.emph. + 3ms suff.}   (search: mawhbateh)
 māwhḇātēḧ (1) — His gifts (1)
 * wmāwhḇātēḧ · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܣܢܝܼ̈ܩܹܐ   [s-n-q]   (search: sniqe)
+ܣܢܝܼ̈ܩܹܐ   [s-n-q]   {Peal passive ptcp. m.pl.emph.}   (search: sniqe)
 snī̈qē (1) — the needy (1)
 * snī̈qē · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܐܲܠܝܼܨܹ̈ܐ   [ʾ-l-ṣ]   (search: alise)
+ܐܲܠܝܼܨܹ̈ܐ   [ʾ-l-ṣ]   {Peal passive ptcp. m.pl.emph.}   (search: alise)
 ʾalīṣ̈ē (1) — afflicted (1)
 * wʾalīṣ̈ē · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 
-ܥܲܒ݂ܕܵܘ̈ܗܝ   [ʿ-b-d]   (search: abdawhy)
+ܥܲܒ݂ܕܵܘ̈ܗܝ   [ʿ-b-d]   {noun m.pl.emph. + 3ms suff.}   (search: abdawhy)
 ʿaḇdāẅhy (1) — His servants (1)
 * ʿaḇdāẅhy · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
-ܩܵ̇ܪܹܝܢ   [q-r-ʾ]   (search: qareyn)
+ܩܵ̇ܪܹܝܢ   [q-r-ʾ]   {Peal active ptcp. m.pl.abs.}   (search: qareyn)
 q^ārēyn (1) — call (1)
 * dq^ārēyn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
-ܡܸܬ݂ܟܲܫܦܝܼܢ   [k-š-p]   (search: metkashpin)
+ܡܸܬ݂ܟܲܫܦܝܼܢ   [k-š-p]   {Ethpaal ptcp. m.pl.abs.}   (search: metkashpin)
 meṯkašpīn (1) — beseech (1)
 * wmeṯkašpīn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
