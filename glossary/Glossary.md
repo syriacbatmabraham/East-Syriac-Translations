@@ -46,7 +46,7 @@ it does.
 | Aphel | causative — brings the Peal action about | `naseq` we lift up, i.e. cause to go up |
 | Ettaphal | passive of Aphel | — |
 | Shaphel | older causative, usually lexicalized | — |
-| Eshtaphal | passive of Shaphel | — |
+| Eshtaphal | passive Shaphel | — |
 
 A **phrase** is tabled in its own section below and governs the rendering of its
 components. Each component entry still records the occurrence, but points to the phrase
@@ -917,7 +917,7 @@ remzāḵ (1) — by Your beckoning (1)
 ʾetaÿ (1) — have come (1)
 * ʾetaÿ · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
-ܗܘܵܝܵܐ   [h-w-ʾ]   (search: hwaya)
+ܗܘܵܝܵܐ   [h-w-ʾ]   {verbal noun m.sg.emph.}   (search: hwaya)
 hwāyā (1) — be (1)
 * lahwāyā · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
