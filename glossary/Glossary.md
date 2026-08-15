@@ -925,23 +925,23 @@ hwāyā (1) — be (1)
 ʾa(n)ṫū (1) — You are (1)
 * dʾa(n)ṫū · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
 
-ܥܸܠܬ݂ܵܐ   [ʿ-l-l]   (search: elta)
+ܥܸܠܬ݂ܵܐ   [ʿ-l-l]   {noun f.sg.emph.}   (search: elta)
 ʿelṯā (1) — the Cause (1)
 * ʿelṯā · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
 
-ܗܘܵܝܗܹܝܢ   [h-w-ʾ]   (search: hwayheyn)
+ܗܘܵܝܗܹܝܢ   [h-w-ʾ]   {verbal noun m.sg.emph. + 3fp suff.}   (search: hwayheyn)
 hwāyhēyn (1) — their being (1)
 * dahwāyhēyn · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
 
-ܣܵܘܩܵܐ   [s-w-q?]   (search: sawqa)
+ܣܵܘܩܵܐ   [s-w-q?]   {noun m.sg.emph.}   (search: sawqa)
 sāwqā (1) — the Breathing (1)
 * wsāwqā · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 
-ܢܫܲܡܬ݂ܵܐ   [n-š-m]   (search: nshamta)
+ܢܫܲܡܬ݂ܵܐ   [n-š-m]   {noun f.sg.emph.}   (search: nshamta)
 nšamṯā (1) — Breath (1)
 * wanšamṯā · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 
-ܚܲܝܲܝ̈ܢ   [ḥ-y-ʾ]   (search: hayayn)
+ܚܲܝܲܝ̈ܢ   [ḥ-y-ʾ]   {noun m.pl.emph. + 1cp suff.}   (search: hayayn)
 ḥayaÿn (1) — our life (1)
 * dḥayaÿn · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 
