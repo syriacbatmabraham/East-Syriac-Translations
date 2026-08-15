@@ -868,11 +868,11 @@ mhal̈lān (1) — praise (1)
 
 ܚܵܕ݂ܝܵ̈ܢ   [ḥ-d-y]   {Peal active ptcp. f.pl.abs.}   (search: hadyan)
 ḥāḏÿān (1) — rejoice (1)
-* wḥāḏÿān · "[Rejoice and exult]" (Assyrian Slotha d'Sapra II, Line 4)
+* wḥāḏÿān · "[Rejoice and exult]" (Assyrian Ferial Slotha d'Sapra II, Line 4)
 
 ܕܵܝ̈ܨܵܢ   [d-w-ṣ]   {Peal active ptcp. f.pl.abs.}   (search: daysan)
 dāÿṣān (1) — exult (1)
-* wḏāÿṣān · "[Rejoice and exult]" (Assyrian Slotha d'Sapra II, Line 4)
+* wḏāÿṣān · "[Rejoice and exult]" (Assyrian Ferial Slotha d'Sapra II, Line 4)
 
 ܫܵ̈ܐܠܵܢ   [š-ʾ-l]   {Peal active ptcp. f.pl.abs.}   (search: shalan)
 š̈āʾlān (1) — ask (1)
@@ -912,11 +912,11 @@ remzāḵ (1) — by Your beckoning (1)
 
 ܐܲܝܠܸܝܢ   [ʾ-y-n-ʾ]   {rel. pron. c.pl.}   (search: ayleyn)
 ʾayleyn (1) — those (1)
-* ʾayleyn · "[Those] who by Your beckoning have been established" (Assyrian Slotha d'Sapra II, Line 9)
+* ʾayleyn · "[Those] who by Your beckoning have been established" (Assyrian Ferial Slotha d'Sapra II, Line 9)
 
 ܐܸܬ݁ܬܲܩܲܢܝ̈   [t-q-n]   {Ethpaal perf. 3f.pl.}   (search: ettaqany)
 ʾeṫtaqanÿ (1) — have been established (1)
-* ʾeṫtaqanÿ · "[Those] who by Your beckoning have been established" (Assyrian Slotha d'Sapra II, Line 9)
+* ʾeṫtaqanÿ · "[Those] who by Your beckoning have been established" (Assyrian Ferial Slotha d'Sapra II, Line 9)
 
 ܐܸܬܲܝ̈   [ʾ-t-ʾ]   {Peal perf. 3f.pl.}   (search: etay)
 ʾetaÿ (1) — have come (1)

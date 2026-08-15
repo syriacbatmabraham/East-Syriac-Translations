@@ -31,5 +31,12 @@ confirmed_texts:
     source_of_record: breviarium_chaldaicum
   Ferial_Slotha_d_Sapra_II.txt:
     source_of_record: breviarium_chaldaicum
+    editorial_apparatus:
+      - line: 4
+        witness_label: Assyrian Ferial Slotha d'Sapra II
+        reading: "[wḥāḏÿān wḏāÿṣān]"
+      - line: 9
+        witness_label: Assyrian Ferial Slotha d'Sapra II
+        reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
   Ferial_Slotha_d_Ramsha.txt:
     source_of_record: breviarium_chaldaicum
