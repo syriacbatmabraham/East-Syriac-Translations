@@ -73,7 +73,22 @@ VOWEL_NAMES = {
 
 @dataclass(frozen=True)
 class PageStateIssue:
-    """A suspicious normalized page-state requiring review."""
+    """A suspicious normalized page-state requiring correction/review."""
+
+    code: str
+    message: str
+    word: int
+    letter: int
+    char: str
+
+    @property
+    def codepoint(self) -> str:
+        return f"U+{ord(self.char):04X}"
+
+
+@dataclass(frozen=True)
+class PageStateNotice:
+    """A page-only ambiguity that normalized Unicode cannot settle."""
 
     code: str
     message: str
@@ -115,6 +130,7 @@ class WordState:
 class PageStateReport:
     words: tuple[WordState, ...]
     issues: tuple[PageStateIssue, ...]
+    notices: tuple[PageStateNotice, ...] = ()
 
     @property
     def ok(self) -> bool:
@@ -205,17 +221,39 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
     return issues
 
 
-def inspect_normalized_text(text: str) -> PageStateReport:
-    """Return every Syriac word as normalized letter+mark page-states.
+def _occultans_notices(word_index: int, letters: tuple[LetterState, ...]) -> list[PageStateNotice]:
+    """Flag the encoded-source asymmetry of adjacent occultans marks.
 
-    Square editorial brackets are transparent for word division, matching
-    Transliteration Rules §9.2 convention 4. Any other non-Syriac material
-    terminates a word. Parenthesized English labels are therefore skipped
-    naturally, while bracketed Syriac is still inspected.
+    Two adjacent U+0747 (or U+0748) marks encode both one spanning line and two
+    independent lines. Normalization cannot decide which the page shows. This is
+    not a malformed normalized string, so it is a notice rather than a blocking
+    page-state issue; forward transliteration must resolve it from the page.
     """
+
+    notices: list[PageStateNotice] = []
+    for index in range(len(letters) - 1):
+        left = letters[index]
+        right = letters[index + 1]
+        for mark, side in ((OCCULTANS_ABOVE, "above"), (OCCULTANS_BELOW, "below")):
+            if mark in left.marks and mark in right.marks:
+                notices.append(
+                    PageStateNotice(
+                        "adjacent-occultans-page-check",
+                        f"Adjacent occultans lines {side}: encoded source cannot distinguish one spanning line from two separate lines; check the page before transliteration.",
+                        word_index,
+                        index + 1,
+                        mark,
+                    )
+                )
+    return notices
+
+
+def inspect_normalized_text(text: str) -> PageStateReport:
+    """Return every Syriac word as normalized letter+mark page-states."""
 
     words: list[WordState] = []
     issues: list[PageStateIssue] = []
+    notices: list[PageStateNotice] = []
     current: list[LetterState] = []
     current_line = 1
     line = 1
@@ -227,9 +265,11 @@ def inspect_normalized_text(text: str) -> PageStateReport:
             return
         word_index = len(words) + 1
         word_text = "".join(letter.text for letter in current)
-        words.append(WordState(word_index, current_line, word_text, tuple(current)))
-        for letter_index, letter_state in enumerate(current, start=1):
+        letter_tuple = tuple(current)
+        words.append(WordState(word_index, current_line, word_text, letter_tuple))
+        for letter_index, letter_state in enumerate(letter_tuple, start=1):
             issues.extend(_letter_issues(letter_state.base, letter_state.marks, word_index, letter_index))
+        notices.extend(_occultans_notices(word_index, letter_tuple))
         current = []
 
     while i < len(text):
@@ -264,17 +304,11 @@ def inspect_normalized_text(text: str) -> PageStateReport:
         i += 1
 
     flush()
-    return PageStateReport(tuple(words), tuple(issues))
+    return PageStateReport(tuple(words), tuple(issues), tuple(notices))
 
 
 def format_page_state_report(text: str, word_labels: Sequence[str] | None = None) -> str:
-    """Format the page-state audit for a human checking against a source page.
-
-    Until canonical transliteration exists, the normalized Syriac word is used
-    as the header label. The transliteration layer will later pass one canonical
-    label per word, producing headers such as ``Word 1: *lʾalāhā*`` without
-    changing the letter-by-letter audit.
-    """
+    """Format the page-state audit for a human checking against a source page."""
 
     report = inspect_normalized_text(text)
     if word_labels is not None and len(word_labels) != len(report.words):
