@@ -3,6 +3,7 @@
 from .inspection import (
     LetterState,
     PageStateIssue,
+    PageStateNotice,
     PageStateReport,
     WordState,
     format_page_state_report,
@@ -21,6 +22,7 @@ __all__ = [
     "NormalizationFlag",
     "NormalizationResult",
     "PageStateIssue",
+    "PageStateNotice",
     "PageStateReport",
     "WordState",
     "format_page_state_report",
