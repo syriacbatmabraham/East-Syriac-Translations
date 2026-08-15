@@ -678,7 +678,7 @@ saḇrā (1) — hope (1)
 
 ܥܸܕܵܢ   [ʿ-d-n]   {noun m.sg.abs.}   (search: edan)
 ʿedān (1) — moment (1)
-* bḵl · "In every moment, forever" (Tešbōḥtā Line 3)
+* ʿedān · "In every moment, forever" (Tešbōḥtā Line 3)
 
 ܚܲܢܵܢܵܐ   [ḥ-n-n]   {adj. m.sg.emph.}   (search: hanana)
 ḥanānā (1) — Gracious One (1)
