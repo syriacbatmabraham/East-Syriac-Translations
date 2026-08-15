@@ -704,15 +704,15 @@ tarʿēh (1) — whose door (1)
 tay^āb̈ē (1) — those who return (1)
 * ltay^āb̈ē · "Whose door is open to those who return" (Ferial Slotha d'Sapra I, Line 2)
 
-ܐܲܡܝܼܢܘܼ   [ʾ-m-n]   (search: aminu)
+ܐܲܡܝܼܢܘܼ   [ʾ-m-n]   {noun f.sg.abs.}   (search: aminu)
 ʾamīnū (1) — continually (1)
 * wbaʾmīnū · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
-ܩܵ̇ܪܹܐ   [q-r-ʾ]   (search: qare)
+ܩܵ̇ܪܹܐ   [q-r-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: qare)
 q^ārē (1) — calls (1)
 * q^ārē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
-ܚܲܛܵܝܹ̈ܐ   [ḥ-ṭ-ʾ]   (search: hataye)
+ܚܲܛܵܝܹ̈ܐ   [ḥ-ṭ-ʾ]   {adj. m.pl.emph.}   (search: hataye)
 ḥaṭāÿē (1) — sinners (1)
 * lḥaṭāÿē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
@@ -720,11 +720,11 @@ q^ārē (1) — calls (1)
 ṣēʾḏāwhy (1) — unto Him (1)
 * dṣēʾḏāwhy · "...that unto Him they may draw near for returning" (Ferial Slotha d'Sapra I, Line 3)
 
-ܢܸܬ݂ܩܲܪܒ݂ܘܼܢ   [q-r-b]   (search: netqarbun)
+ܢܸܬ݂ܩܲܪܒ݂ܘܼܢ   [q-r-b]   {Ethpaal impf. 3m.pl.}   (search: netqarbun)
 neṯqarḇūn (1) — they may draw near (1)
 * neṯqarḇūn · "...that unto Him they may draw near for returning" (Ferial Slotha d'Sapra I, Line 3)
 
-ܬܝܵܒ݂ܘܼܬ݂ܵܐ   [t-w-b]   (search: tyabuta)
+ܬܝܵܒ݂ܘܼܬ݂ܵܐ   [t-w-b]   {noun f.sg.emph.}   (search: tyabuta)
 tyāḇūṯā (1) — returning (1)
 * laṯyāḇūṯā · "...that unto Him they may draw near for returning" (Ferial Slotha d'Sapra I, Line 3)
 
@@ -732,23 +732,23 @@ tyāḇūṯā (1) — returning (1)
 ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
-ܡܵܪܲܢ   [m-r-ʾ]   (search: maran)
+ܡܵܪܲܢ   [m-r-ʾ]   {noun m.sg.emph. + 1cp suff.}   (search: maran)
 māran (1) — our Lord (1)
 * māran · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
-ܐܲܠܵܗܲܢ   [ʾ-l-h]   (search: alahan)
+ܐܲܠܵܗܲܢ   [ʾ-l-h]   {noun m.sg.emph. + 1cp suff.}   (search: alahan)
 ʾalāhan (1) — our God (1)
 * wʾalāhan · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
-ܬܲܪܥܵܐ   [t-r-ʿ]   (search: tara)
+ܬܲܪܥܵܐ   [t-r-ʿ]   {noun m.sg.emph.}   (search: tara)
 tarʿā (1) — the door (1)
 * tarʿā · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
 
-ܪܲ̈ܚܡܹܐ   [r-ḥ-m]   (search: rahme)
+ܪܲ̈ܚܡܹܐ   [r-ḥ-m]   {noun m.pl.emph.}   (search: rahme)
 r̈aḥmē (1) — mercies (1)
 * dr̈aḥmē · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
 
-ܨܠܘܿܬܲܢ   [ṣ-l-ʾ]   (search: slotan)
+ܨܠܘܿܬܲܢ   [ṣ-l-ʾ]   {noun f.sg.emph. + 1cp suff.}   (search: slotan)
 ṣlōtan (1) — our prayer (1)
 * laṣlōtan · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
 
