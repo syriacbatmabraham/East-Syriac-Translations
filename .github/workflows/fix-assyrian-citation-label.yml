@@ -1,0 +1,38 @@
+name: Fix Assyrian citation label
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Replace exactly four stale citation labels
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('glossary/Glossary.md')
+          s = p.read_text(encoding='utf-8')
+          old = "Assyrian Ferial Slotha d'Sapra II"
+          new = "Assyrian Slotha d'Sapra II"
+          count = s.count(old)
+          if count != 4:
+              raise SystemExit(f'expected exactly 4 stale labels, found {count}')
+          p.write_text(s.replace(old, new), encoding='utf-8')
+      - name: Commit guarded correction to main
+        run: |
+          git diff --check
+          test "$(git diff --numstat glossary/Glossary.md | awk '{print $1+$2}')" = "8"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add glossary/Glossary.md
+          git commit -m "Normalize Assyrian witness citation label"
+          git push origin HEAD:main
