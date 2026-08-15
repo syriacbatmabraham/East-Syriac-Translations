@@ -861,27 +861,27 @@ zām^r̈ān (1) — sing (1)
 mhal̈lān (1) — praise (1)
 * wamhal̈lān · "Sing and praise" (Ferial Slotha d'Sapra II, Line 3)
 
-ܚܵܕ݂ܝܵ̈ܢ   [ḥ-d-y]   (search: hadyan)
+ܚܵܕ݂ܝܵ̈ܢ   [ḥ-d-y]   {Peal active ptcp. f.pl.abs.}   (search: hadyan)
 ḥāḏÿān (1) — rejoice (1)
 * wḥāḏÿān · "[Rejoice and exult]" (Assyrian Ferial Slotha d'Sapra II, Line 4)
 
-ܕܵܝ̈ܨܵܢ   [d-w-ṣ]   (search: daysan)
+ܕܵܝ̈ܨܵܢ   [d-w-ṣ]   {Peal active ptcp. f.pl.abs.}   (search: daysan)
 dāÿṣān (1) — exult (1)
 * wḏāÿṣān · "[Rejoice and exult]" (Assyrian Ferial Slotha d'Sapra II, Line 4)
 
-ܫܵ̈ܐܠܵܢ   [š-ʾ-l]   (search: shalan)
+ܫܵ̈ܐܠܵܢ   [š-ʾ-l]   {Peal active ptcp. f.pl.abs.}   (search: shalan)
 š̈āʾlān (1) — ask (1)
 * wš̈āʾlān · "Ask and entreat" (Ferial Slotha d'Sapra II, Line 5)
 
-ܡܦܝܼ̈ܣܵܢ   [p-y-s]   (search: mpisan)
+ܡܦܝܼ̈ܣܵܢ   [p-y-s]   {Aphel active ptcp. f.pl.abs.}   (search: mpisan)
 mpī̈sān (1) — entreat (1)
 * wampī̈sān · "Ask and entreat" (Ferial Slotha d'Sapra II, Line 5)
 
-ܒܵܥ̈ܝܵܢ   [b-ʿ-ʾ]   (search: bayan)
+ܒܵܥ̈ܝܵܢ   [b-ʿ-ʾ]   {Peal active ptcp. f.pl.abs.}   (search: bayan)
 bāʿ̈yān (1) — seek (1)
 * wḇāʿ̈yān · "Seek and beseech" (Ferial Slotha d'Sapra II, Line 6)
 
-ܡܸܬ݂ܟܲܫ̈ܦܵܢ   [k-š-p]   (search: metkashpan)
+ܡܸܬ݂ܟܲܫ̈ܦܵܢ   [k-š-p]   {Ethpaal ptcp. f.pl.abs.}   (search: metkashpan)
 meṯkaš̈pān (1) — beseech (1)
 * wmeṯkaš̈pān · "Seek and beseech" (Ferial Slotha d'Sapra II, Line 6)
 
