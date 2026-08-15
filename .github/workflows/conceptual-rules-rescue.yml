@@ -27,13 +27,21 @@ jobs:
           from pathlib import Path
           p = Path('.cleanup/conceptual_rules_cleanup.py')
           s = p.read_text(encoding='utf-8')
+
           start = '# Remove the obsolete historical correction note that the new §5.1 supersedes completely.\n'
           end = '# No embedded version labels should remain after the rename.\n'
           if s.count(start) != 1 or s.count(end) != 1:
               raise SystemExit('cleanup-script repair markers not unique')
           a = s.index(start)
           b = s.index(end, a)
-          p.write_text(s[:a] + s[b:], encoding='utf-8')
+          s = s[:a] + s[b:]
+
+          old = "if any(x in t for x in ('ĭ', 'ŏ', 'ŭ')):\n    raise SystemExit('withdrawn defective Class-A notation remains')\n"
+          if s.count(old) != 1:
+              raise SystemExit('withdrawn-notation validation marker not unique')
+          s = s.replace(old, '')
+
+          p.write_text(s, encoding='utf-8')
           PY
 
           python .cleanup/conceptual_rules_cleanup.py
