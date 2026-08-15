@@ -17,11 +17,16 @@ source_records:
 
 confirmed_texts:
   Creed_in_Syriac.txt:
+    source_of_record: syro_malabar_editio_typica
     editorial_apparatus:
       - line: 17
         witness_label: Catholic
         reading: "[waḇrā]"
         source: syro_malabar_editio_typica
+  Our_Father_in_Syriac.txt:
+    source_of_record: breviarium_chaldaicum
+  Teshbhotha_l-Alaha.txt:
+    source_of_record: breviarium_chaldaicum
   Ferial_Slotha_d_Sapra_I.txt:
     source_of_record: breviarium_chaldaicum
   Ferial_Slotha_d_Sapra_II.txt:
