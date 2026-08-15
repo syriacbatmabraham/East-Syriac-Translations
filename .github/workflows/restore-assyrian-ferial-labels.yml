@@ -1,0 +1,92 @@
+name: Restore Assyrian Ferial witness labels
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch-main:
+    if: github.head_ref == 'agent/restore-assyrian-ferial-labels'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Apply guarded witness-label corrections
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def replace_exact(path, old, new, expected):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              count = s.count(old)
+              if count != expected:
+                  raise SystemExit(f'{path}: expected {expected} occurrences, found {count}: {old!r}')
+              p.write_text(s.replace(old, new), encoding='utf-8')
+
+          replace_exact(
+              'glossary/Glossary.md',
+              "Assyrian Slotha d'Sapra II",
+              "Assyrian Ferial Slotha d'Sapra II",
+              4,
+          )
+
+          old_rule = "**A word inserted from another witness carries that witness's name in front of the label** — `(Assyrian Slotha d'Sapra II, Line 4)`. The qualifier marks the word, not the text: there is no separate confirmed text for the witness, and the citation points at the same line of the same file as an unqualified one."
+          new_rule = "**A word inserted from another witness carries that witness's name in front of the complete text label** — `(Assyrian Ferial Slotha d'Sapra II, Line 4)`. The witness qualifier preserves any distinction needed to identify the alternate office or day-class (`Ferial`, `Sunday`, `Festive`, etc.). The qualifier marks the word, not the text: there is no separate confirmed text for the witness, and the citation points at the same line of the same file as an unqualified one."
+          replace_exact('rules/General-Rules.md', old_rule, new_rule, 1)
+
+          replace_exact(
+              'confirmed-texts/Ferial_Slotha_d_Sapra_II.txt',
+              '(Assyrian adds:)',
+              '(Assyrian Ferial adds:)',
+              3,
+          )
+          replace_exact(
+              'confirmed-texts/Ferial_Slotha_d_Sapra_II.txt',
+              '(Assyrian:)',
+              '(Assyrian Ferial:)',
+              3,
+          )
+
+          old_meta = "  Ferial_Slotha_d_Sapra_II.txt:\n    source_of_record: breviarium_chaldaicum\n"
+          new_meta = "  Ferial_Slotha_d_Sapra_II.txt:\n    source_of_record: breviarium_chaldaicum\n    editorial_apparatus:\n      - line: 4\n        witness_label: Assyrian Ferial Slotha d'Sapra II\n        reading: \"[wḥāḏÿān wḏāÿṣān]\"\n      - line: 9\n        witness_label: Assyrian Ferial Slotha d'Sapra II\n        reading: \"[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]\"\n"
+          replace_exact('sources/sources.yaml', old_meta, new_meta, 1)
+
+          expected = {
+              'glossary/Glossary.md',
+              'rules/General-Rules.md',
+              'confirmed-texts/Ferial_Slotha_d_Sapra_II.txt',
+              'sources/sources.yaml',
+          }
+          import subprocess
+          changed = set(subprocess.check_output(['git','diff','--name-only'], text=True).splitlines())
+          if changed != expected:
+              raise SystemExit(f'unexpected changed files: {sorted(changed)}')
+      - name: Validate and commit
+        run: |
+          git diff --check
+          python - <<'PY'
+          from pathlib import Path
+          s = Path('confirmed-texts/Ferial_Slotha_d_Sapra_II.txt').read_text(encoding='utf-8')
+          blocks = s.rstrip('\n').split('\n\n')
+          if len(blocks) != 3 or len({len(b.splitlines()) for b in blocks}) != 1:
+              raise SystemExit('Ferial Sapra II three-block alignment changed')
+          if s.count('(Assyrian Ferial adds:)') != 3 or s.count('(Assyrian Ferial:)') != 3:
+              raise SystemExit('canonical witness labels not present in all three blocks')
+          g = Path('glossary/Glossary.md').read_text(encoding='utf-8')
+          if g.count("Assyrian Ferial Slotha d'Sapra II") != 4:
+              raise SystemExit('Glossary witness citation count is not four')
+          if "Assyrian Slotha d'Sapra II" in g:
+              raise SystemExit('stale shortened Assyrian citation remains')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add glossary/Glossary.md rules/General-Rules.md confirmed-texts/Ferial_Slotha_d_Sapra_II.txt sources/sources.yaml
+          git commit -m 'Restore Assyrian Ferial witness specificity'
+          git push origin HEAD:main
