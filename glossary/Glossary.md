@@ -35,7 +35,7 @@ it does.
 
 | stem | force | example |
 |---|---|---|
-| Peal | the simple, base action | `nesġōḏ` we bow down |
+| Peal | the simple, base action | `nesġōḏ` we reverence |
 | Ethpeel | passive or reflexive of Peal | `ʾeṯīleḏ` he was begotten |
 | Pael | intensive, or makes a noun into a verb | `mšabaḥtā` glorified |
 | Ethpaal | passive or reflexive of Pael | `ʾeṫtaqanw` they were established |
@@ -843,11 +843,11 @@ mqadmān̈ (1) — early they come (1)
 
 ܒܵܪ̈ܟܵܢ   [b-r-k]   (search: barkan)
 bār̈kān (1) — they kneel (1)
-* wḇār̈kān · "They kneel and bow down" (Ferial Slotha d'Sapra II, Line 2)
+* wḇār̈kān · "They kneel and reverence" (Ferial Slotha d'Sapra II, Line 2)
 
 ܣܵ̈ܓ݂ܕܵܢ   [s-g-d]   (search: sagdan)
-s̈āḡdān (1) — bow down (1)
-* ws̈āḡdān · "They kneel and bow down" (Ferial Slotha d'Sapra II, Line 2)
+s̈āḡdān (1) — reverence (1)
+* ws̈āḡdān · "They kneel and reverence" (Ferial Slotha d'Sapra II, Line 2)
 
 ܙܵܡ̇ܪܵ̈ܢ   [z-m-r]   (search: zamran)
 zām^r̈ān (1) — sing (1)
@@ -958,12 +958,12 @@ nāwdeʾ (1) — we confess unto (1)
 * lʾalāhūṯāḵ · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
 
 ܢܸܣܓ݁ܘܿܕ݂   [s-g-d]   (search: nesgod)
-nesġōḏ (1) — we bow down (1)
-* wnesġōḏ · "We bow down to Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
+nesġōḏ (1) — we reverence (1)
+* wnesġōḏ · "We reverence Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
 
 ܡܵܪܘܼܬ݂ܵܟ݂   [m-r-ʾ]   (search: marutak)
 mārūṯāḵ (1) — Your Lordship (1)
-* lmārūṯāḵ · "We bow down to Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
+* lmārūṯāḵ · "We reverence Your Lordship" (Ferial Slotha d'Ramsha, Line 3)
 
 ܐܲܡܝܼܢܵܐ   [ʾ-m-n]   (search: amina)
 ʾamīnā (1) — continual (1)
