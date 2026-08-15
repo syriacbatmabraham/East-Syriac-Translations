@@ -1,0 +1,79 @@
+name: Apply morphology clarifications
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-morphology-clarifications.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Apply reviewed clarifications
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          gp = Path('glossary/Glossary.md')
+          g = gp.read_text(encoding='utf-8')
+
+          replacements = {
+              "ܫܡܲܝܵܐ   [š-m-y]   {noun c.pl.emph.}   (search: shmaya)":
+              "ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}   (search: shmaya)",
+              "ܩܵܬ݂ܘܿܠܝܼܩܝܼ   [Gk. loan]   {adj.}   (search: qatoliqi)":
+              "ܩܵܬ݂ܘܿܠܝܼܩܝܼ   [Gk. loan]   {adj. indecl.}   (search: qatoliqi)",
+          }
+          for old, new in replacements.items():
+              if g.count(old) != 1:
+                  raise SystemExit(f'expected exactly one Glossary match: {old!r}')
+              g = g.replace(old, new)
+
+          anchor = """`particle` is written out, never abbreviated, so that it cannot be read as `ptcp.` Native
+          Syriac grammar knows only noun, verb and particle; this field is finer, so a word SEDRA
+          files as a particle may be recorded here as `adv.`, `prep.` or `conj.` where that is what
+          it does.
+          """
+          addition = anchor + """
+          `quant.` marks a quantifier such as `kl` “all/every”; a pronominal suffix is named after `+`.
+          `poss.` marks a possessive form such as `dīlāḵ`; an attached pronominal suffix is named after `+`.
+          `indecl.` marks an indeclinable loan whose form does not express the ordinary Syriac inflectional distinctions.
+          """
+          if g.count(anchor) != 1:
+              raise SystemExit('Glossary class-definition anchor did not match exactly')
+          g = g.replace(anchor, addition)
+          gp.write_text(g, encoding='utf-8', newline='\n')
+
+          rp = Path('rules/General-Rules.md')
+          r = rp.read_text(encoding='utf-8')
+          old = "for a noun or adjective, gender, number and state; for a finite verb, stem, tense, person, gender and number; for a participle, stem, voice where the stem distinguishes it, gender, number and state. Pronominal suffixes and enclitics are named after `+`. An invariable word carries its class alone."
+          new = "for a noun or adjective, gender, number and state; for a finite verb, stem, tense, person, gender and number; for a participle, stem, voice where the stem distinguishes it, gender, number and state. An indeclinable loan carries `indecl.` rather than invented inflectional features. Pronominal suffixes and enclitics are named after `+`. An invariable word carries its class alone."
+          if r.count(old) != 1:
+              raise SystemExit('General Rules §10.1 anchor did not match exactly')
+          r = r.replace(old, new)
+          rp.write_text(r, encoding='utf-8', newline='\n')
+
+          # Guard the Heaven/heavens contrast and the user's s-g-d family.
+          assert "ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}" in g
+          assert "ܫܡܲܝܵ̈ܐ   [š-m-y]   {noun c.pl.emph.}" in g
+          assert "s̈āḡdān (1) — reverence (1)" in g
+          assert "nesġōḏ (1) — we reverence (1)" in g
+          assert "bow down" not in g
+          PY
+
+          rm -f .github/workflows/apply-morphology-clarifications.yml
+          git diff --check
+          git config user.name 'syriacbatmabraham'
+          git config user.email 'batmabraham@users.noreply.github.com'
+          git add glossary/Glossary.md rules/General-Rules.md .github/workflows/apply-morphology-clarifications.yml
+          git commit -m 'Clarify morphology classes and Heaven'
+          git push origin HEAD:main
