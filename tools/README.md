@@ -94,6 +94,8 @@ Keeping the engine separate from the CLI is deliberate. The same functions can l
 
 `normalization-stress-corpus.md` defines the compact human-readable torture corpus. `tests/test_normalization_coverage.py` enforces the exhaustive boundary programmatically.
 
+The executable suite currently contains **74 deterministic tests** across baseline normalization, page-state inspection, focused stress cases, and the exhaustive coverage matrix.
+
 The coverage contract includes:
 
 - every assigned codepoint in U+0700–U+074F;
