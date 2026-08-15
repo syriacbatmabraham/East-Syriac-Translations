@@ -752,39 +752,39 @@ r̈aḥmē (1) — mercies (1)
 ṣlōtan (1) — our prayer (1)
 * laṣlōtan · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
 
-ܩܲܒܸ݁ܠܹܝܗ̇   [q-b-l]   (search: qabeleyh)
+ܩܲܒܸ݁ܠܹܝܗ̇   [q-b-l]   {Pael impv. 2m.sg. + 3fs suff.}   (search: qabeleyh)
 qaḃelēyh^ (1) — accept (1)
 * wqaḃelēyh^ · "And accept our pleading" (Ferial Slotha d'Sapra I, Line 5)
 
-ܒܵܥܘܼܬܲܢ   [b-ʿ-ʾ]   (search: bautan)
+ܒܵܥܘܼܬܲܢ   [b-ʿ-ʾ]   {noun f.sg.emph. + 1cp suff.}   (search: bautan)
 bāʿūtan (1) — our pleading (1)
 * lḇāʿūtan · "And accept our pleading" (Ferial Slotha d'Sapra I, Line 5)
 
-ܦܲܢܵܐ   [p-n-ʾ]   (search: pana)
+ܦܲܢܵܐ   [p-n-ʾ]   {Pael impv. 2m.sg.}   (search: pana)
 panā (1) — render (1)
 * wpanā · "And render, in Your mercies, our requests" (Ferial Slotha d'Sapra I, Line 6)
 
-ܪܲ̈ܚܡܲܝܟ   [r-ḥ-m]   (search: rahmayk)
+ܪܲ̈ܚܡܲܝܟ   [r-ḥ-m]   {noun m.pl.emph. + 2ms suff.}   (search: rahmayk)
 r̈aḥmayk (1) — Your mercies (1)
 * br̈aḥmayk · "And render, in Your mercies, our requests" (Ferial Slotha d'Sapra I, Line 6)
 
-ܫܹ̈ܐܠܵܬܲܢ   [š-ʾ-l]   (search: shelatan)
+ܫܹ̈ܐܠܵܬܲܢ   [š-ʾ-l]   {noun f.pl.emph. + 1cp suff.}   (search: shelatan)
 š̈ēʾlātan (1) — our requests (1)
 * š̈ēʾlātan · "And render, in Your mercies, our requests" (Ferial Slotha d'Sapra I, Line 6)
 
-ܒܹܝܬ݂   [b-y-t]   (search: beyt)
+ܒܹܝܬ݂   [b-y-t]   {noun m.sg.cst.}   (search: beyt)
 bēyṯ (1) — the house of (1)
 * bēyṯ · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 
-ܓܲܙܵܟ݂   [g-z]   (search: gazak)
+ܓܲܙܵܟ݂   [g-z]   {noun m.sg.emph. + 2ms suff.}   (search: gazak)
 gazāḵ (1) — Your treasure (1)
 * gazāḵ · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 
-ܥܲܬ݁ܝܼܪܵܐ   [ʿ-t-r]   (search: atira)
+ܥܲܬ݁ܝܼܪܵܐ   [ʿ-t-r]   {adj. m.sg.emph.}   (search: atira)
 ʿaṫīrā (1) — rich (1)
 * ʿaṫīrā · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 
-ܫܦܝܼܥܵܐ   [š-p-ʿ]   (search: shpia)
+ܫܦܝܼܥܵܐ   [š-p-ʿ]   {adj. m.sg.emph.}   (search: shpia)
 špīʿā (1) — overflowing (1)
 * wašpīʿā · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 
