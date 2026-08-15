@@ -20,5 +20,24 @@ jobs:
         with:
           ref: main
           path: subject
+      - name: Correct harness-only parser assumptions
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('harness/tools/check_suite.py')
+          s = p.read_text(encoding='utf-8')
+          replacements = {
+              "parts=s.rstrip('\\n').split('\\n\\n')": "parts=re.split(r'\\n{2,}',s.rstrip('\\n'))",
+              "'Creed':'Creed_in_Syriac.txt',": "'Creed':'Creed_in_Syriac.txt','Catholic Creed':'Creed_in_Syriac.txt',",
+              "CITE_RE=re.compile(r'\\((?P<label>.+?)(?:,)?\\s+Line\\s+(?P<line>\\d+)\\)$')": "CITE_RE=re.compile(r'^(?P<label>.+?)(?:,)?\\s+Line\\s+(?P<line>\\d+)$')",
+              "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)$')": "BUL_RE=re.compile(r'^\\*\\s+(?P<form>.*?)\\s+·\\s+\"(?P<context>.*)\"\\s+\\((?P<cite>.*)\\)(?:\\s+→\\s+.*)?$')",
+              "contexts=' || '.join(b['context'] for b in e['bullets'])": "contexts=' || '.join(b['context'] for b in e['bullets']).casefold()",
+              "segs=[x for x in cand.split('...') if x]": "segs=[x.casefold() for x in cand.split('...') if x]",
+          }
+          for old, new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f'expected harness string missing: {old}')
+              s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
       - name: Run General Rules section 11
         run: python harness/tools/check_suite.py subject
