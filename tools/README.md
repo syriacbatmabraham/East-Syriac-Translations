@@ -6,20 +6,11 @@ The code in this directory implements mechanical parts of the East Syriac Transl
 
 `normalize.py` implements source-ingestion normalization from **Transliteration Rules §16** and same-class combining-mark order from **§5.1**. It accepts a raw Syriac block and produces the normalized Syriac representation that later transliteration code will consume.
 
-The normalizer is intentionally conservative:
-
-- transformations explicitly licensed by the rules are automatic;
-- refused or unrecognized page-states are preserved and flagged;
-- West Syriac vowels are never mapped into East Syriac vowels;
-- bare U+0716 becomes resh but always raises the required review flag;
-- arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged rather than silently admitted;
-- malformed editorial brackets/parentheses are flagged;
-- persistent writes are refused while any blocking review flag/page-state issue exists;
-- Latin text outside parenthesized editorial apparatus is flagged, which also protects against accidentally running the tool in-place on a complete three-block confirmed text.
+The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain.
 
 ## Mandatory page-state audit
 
-During the validation phase every normalization run prints a human-readable, letter-by-letter audit to stderr. It states what the machine believes is present on each Syriac carrier, for example:
+During validation every normalization run prints a human-readable, letter-by-letter audit to stderr. It states what the machine believes is present on each Syriac carrier:
 
 ```text
 Word 1: *lʾalāhā*
@@ -30,39 +21,22 @@ Heh (zqāpā: ā)
 Alaph
 ```
 
-Until canonical transliteration is implemented, the header displays the normalized Syriac token instead. The audit API already accepts one canonical label per word, so forward transliteration can supply `*lʾalāhā*` automatically without changing the letter analysis.
+Until canonical transliteration exists, the header displays the normalized Syriac token. The audit API already accepts one canonical label per word, so forward transliteration can supply `*lʾalāhā*` automatically without changing the letter analysis.
 
-The post-normalization audit also detects contradictions that Unicode normalization alone cannot catch, such as two vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, and duplicate marks.
+The post-normalization audit detects contradictions Unicode normalization alone cannot catch: multiple vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, and duplicate marks.
 
-Adjacent occultans marks are different: encoded Syriac cannot distinguish one spanning line from two separate adjacent lines. They therefore emit a non-blocking `PAGE CHECK` notice. The normalized Syriac may be stored, but the page must settle the span before forward transliteration chooses `(xy)` versus `(x)(y)`.
+Adjacent occultans marks are a page-only ambiguity. Encoded Syriac cannot distinguish one spanning line from two separate adjacent lines, so the audit emits a non-blocking `PAGE CHECK`. The normalized Syriac may be stored, but the page must settle the span before forward transliteration chooses `(xy)` versus `(x)(y)`.
 
 ### Typical use
 
-Inspect normalization without changing a file:
-
 ```bash
 python tools/normalize.py source.txt > normalized.txt
-```
-
-The normalized Syriac goes to stdout; flags, page-state issues/notices, and the mandatory audit go to stderr.
-
-Show every deterministic codepoint change as well:
-
-```bash
 python tools/normalize.py source.txt --report-changes > normalized.txt
-```
-
-Normalize a clean, review-free source in place:
-
-```bash
 python tools/normalize.py source.txt --in-place
-```
-
-Check whether a source is already normalized without writing anything:
-
-```bash
 python tools/normalize.py source.txt --check
 ```
+
+Normalized Syriac goes to stdout; flags, page-state issues/notices, and the mandatory audit go to stderr.
 
 `--check` exit status:
 
@@ -72,7 +46,7 @@ python tools/normalize.py source.txt --check
 
 A page-only notice such as adjacent occultans does not make the encoded Syriac invalid and therefore does not change the normalization exit code. It must be resolved before transliteration.
 
-The first CLI intentionally works on the **Syriac layer only**, not on a complete confirmed-text file. Confirmed-text parsing belongs in the later check-suite layer, where all three blocks can be validated together without risking the transliteration or English blocks.
+The first CLI intentionally works on the **Syriac layer only**, not on a complete confirmed-text file.
 
 ### Library API
 
@@ -83,12 +57,10 @@ result = normalize_text(syriac)
 audit = inspect_normalized_text(result.text)
 
 result.text       # normalized Syriac
-result.flags      # source-ingestion conditions requiring review
+result.flags      # source-ingestion review conditions
 audit.issues      # contradictory/suspicious normalized states
 audit.notices     # page-only ambiguities such as adjacent occultans
 ```
-
-Keeping the engine separate from the CLI is deliberate. The same functions can later be called by transliteration, round-trip validation, repository checks, or an interactive application without shelling out to a script.
 
 ## Final torture coverage
 
@@ -96,27 +68,11 @@ Keeping the engine separate from the CLI is deliberate. The same functions can l
 
 The executable suite currently contains **74 deterministic tests** across baseline normalization, page-state inspection, focused stress cases, and the exhaustive coverage matrix.
 
-The coverage contract includes:
+Coverage includes every assigned codepoint in U+0700–U+074F; every extra generic codepoint named by the rules; all bgdkpt states; every carrier-sensitive single-point alias × carrier class; all East Syriac vowel/special states and aliases; every West Syriac vowel refusal; all assigned non-project Syriac letters/unsupported marks; editorial structure, word division, and removable debris; arbitrary unknown non-combining codepoints; malformed clusters and impossible normalized states; positional/mater pass-through forms; and the adjacent-occultans source/page asymmetry.
 
-- every assigned codepoint in U+0700–U+074F;
-- every extra generic codepoint named by the rules;
-- all six bgdkpt letters in hard, soft, and unmarked states;
-- every single-point source alias across every carrier class that changes its meaning;
-- every East Syriac vowel and special mark;
-- every two-dots-below alias;
-- every West Syriac vowel refusal;
-- all assigned non-project Syriac letters and unsupported Syriac marks;
-- editorial structure, word division, and all explicitly removable debris;
-- arbitrary unknown non-combining codepoints;
-- malformed clusters and impossible normalized states;
-- word-final/mater shapes that must remain literal for later transliteration;
-- adjacent occultans as the known encoded-source/page asymmetry.
-
-The suite deliberately does **not** attempt every combinatorial arrangement of every mark. It closes every finite interface where behavior can differ, then requires genuinely new/unrecognized input to raise a review flag. The coverage is exhaustive relative to the current governing rules and Unicode/source grammar; genuinely new witness-specific encodings become new permanent regression cases when first encountered.
+The suite does **not** attempt every mathematical combination of marks. It closes every finite interface where behavior can differ, then requires genuinely new/unrecognized input to raise a review flag. Coverage is exhaustive relative to the current governing rules and Unicode/source grammar; genuinely new witness-specific encodings become permanent regression cases when first encountered.
 
 ## Tests
-
-Run:
 
 ```bash
 python -m unittest discover -s tools/tests -v
@@ -126,12 +82,12 @@ GitHub Actions runs compilation and the deterministic test suite on tooling chan
 
 ## Intended pipeline
 
-1. **Normalize source codepoints to page-state** — current phase.
+1. **Normalize source codepoints to page-state**.
 2. **Human page-state audit** — currently mandatory for page comparison.
-3. **Canonical transliteration** — normalized Syriac → reversible Latin string; its word tokens become the audit headers automatically.
+3. **Canonical transliteration** — normalized Syriac → reversible Latin string; its word tokens become audit headers automatically.
 4. **Inverse transliteration** — canonical string → normalized Syriac.
-5. **Round-trip checks** — enforce Transliteration Rules §12 and General Rules §11.11–14.
-6. **Confirmed-text parser/checker** — validate the three equal line blocks and derive transliteration mechanically.
-7. **Glossary/corpus checks** — coverage, identity, citations, contexts, morphology, and the remainder of General Rules §11.
+5. **Round-trip checks** — Transliteration Rules §12 and General Rules §11.11–14.
+6. **Confirmed-text parser/checker** — validate equal blocks and derive transliteration mechanically.
+7. **Glossary/corpus checks** — remainder of General Rules §11.
 
 Each stage remains deterministic and independently testable.
