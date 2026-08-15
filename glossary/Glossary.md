@@ -885,23 +885,23 @@ bāʿ̈yān (1) — seek (1)
 meṯkaš̈pān (1) — beseech (1)
 * wmeṯkaš̈pān · "Seek and beseech" (Ferial Slotha d'Sapra II, Line 6)
 
-ܡܵܘ̈ܕܝܵܢ   [y-d-ʾ]   (search: mawdyan)
+ܡܵܘ̈ܕܝܵܢ   [y-d-ʾ]   {Aphel active ptcp. f.pl.abs.}   (search: mawdyan)
 māẅdyān (1) — confess (1)
 * wmāẅdyān · "And confess and glorify" (Ferial Slotha d'Sapra II, Line 7)
 
-ܡܫܲܒ݁ܚܵܢ̈   [š-b-ḥ]   (search: mshabhan)
+ܡܫܲܒ݁ܚܵܢ̈   [š-b-ḥ]   {Pael active ptcp. f.pl.abs.}   (search: mshabhan)
 mšaḃḥān̈ (1) — glorify (1)
 * wamšaḃḥān̈ · "And confess and glorify" (Ferial Slotha d'Sapra II, Line 7)
 
-ܒܪܲܝܬ݁   [b-r-ʾ]   (search: brayt)
+ܒܪܲܝܬ݁   [b-r-ʾ]   {Peal perf. 2m.sg.}   (search: brayt)
 brayṫ (1) — You have created (1)
 * daḇrayṫ · "All of them, the creatures You have created" (Ferial Slotha d'Sapra II, Line 8)
 
-ܪܸܡܙܵܟ݂   [r-m-z]   (search: remzak)
+ܪܸܡܙܵܟ݂   [r-m-z]   {noun m.sg.emph. + 2ms suff.}   (search: remzak)
 remzāḵ (1) — by Your beckoning (1)
 * daḇremzāḵ · "[Those] who by Your beckoning have been established" (Ferial Slotha d'Sapra II, Line 9)
 
-ܐܸܬ݁ܬܲܩܲܢ   [t-q-n]   (search: ettaqan)
+ܐܸܬ݁ܬܲܩܲܢ   [t-q-n]   {Ethpaal perf. 3f.pl.}   (search: ettaqan)
 ʾeṫtaqan (1) — have been established (1)
 * ʾeṫtaqan · "[Those] who by Your beckoning have been established" (Ferial Slotha d'Sapra II, Line 9)
 
@@ -909,11 +909,11 @@ remzāḵ (1) — by Your beckoning (1)
 ʾayleyn (1) — those (1)
 * ʾayleyn · "[Those] who by Your beckoning have been established" (Assyrian Ferial Slotha d'Sapra II, Line 9)
 
-ܐܸܬ݁ܬܲܩܲܢܝ̈   [t-q-n]   (search: ettaqany)
+ܐܸܬ݁ܬܲܩܲܢܝ̈   [t-q-n]   {Ethpaal perf. 3f.pl.}   (search: ettaqany)
 ʾeṫtaqanÿ (1) — have been established (1)
 * ʾeṫtaqanÿ · "[Those] who by Your beckoning have been established" (Assyrian Ferial Slotha d'Sapra II, Line 9)
 
-ܐܸܬܲܝ̈   [ʾ-t-ʾ]   (search: etay)
+ܐܸܬܲܝ̈   [ʾ-t-ʾ]   {Peal perf. 3f.pl.}   (search: etay)
 ʾetaÿ (1) — have come (1)
 * ʾetaÿ · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
