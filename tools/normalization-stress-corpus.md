@@ -4,7 +4,7 @@ This corpus is deliberately synthetic. None of the strings need to be lexical Sy
 
 ## Coverage contract
 
-The torture test is considered complete when all of the following are true:
+The torture test is complete when all of the following are true:
 
 1. Every assigned codepoint in the core Syriac block **U+0700–U+074F** has an explicit expected disposition: pass, normalize, remove, refuse/flag, or unsupported-letter/mark flag.
 2. Every extra generic codepoint named by the rules is exercised: U+0307, U+0323, U+0308, U+0324, U+032E, U+1DF8, U+1DFA, U+0640, U+200C, U+200D, and U+FEFF.
@@ -43,9 +43,9 @@ The same suite separately forces:
 
 ---
 
-## T2 — the complete single-point matrix
+## T2 — complete single-point matrix
 
-There are three source encodings for a point above and three for a point below. Their meaning depends on carrier, so the test generates the full matrix rather than writing twenty-four visible pseudo-words.
+There are three source encodings for a point above and three for a point below. Their meaning depends on carrier, so the test generates the full matrix instead of writing twenty-four visible pseudo-words.
 
 ### Above aliases
 
