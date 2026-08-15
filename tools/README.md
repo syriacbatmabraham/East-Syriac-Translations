@@ -12,16 +12,14 @@ The normalizer is intentionally conservative:
 - refused or unrecognized page-states are preserved and flagged;
 - West Syriac vowels are never mapped into East Syriac vowels;
 - bare U+0716 becomes resh but always raises the required review flag;
-- persistent writes are refused while any review flag exists;
+- arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged rather than silently admitted;
+- malformed editorial brackets/parentheses are flagged;
+- persistent writes are refused while any blocking review flag/page-state issue exists;
 - Latin text outside parenthesized editorial apparatus is flagged, which also protects against accidentally running the tool in-place on a complete three-block confirmed text.
 
 ## Mandatory page-state audit
 
-Normalization is followed immediately by a **human-readable letter-by-letter audit**. During this validation phase the CLI prints this audit on every run. It goes to stderr, so normalized Syriac on stdout remains clean for redirection and later deterministic pipeline stages.
-
-The purpose is not to tell the reviewer what a word ought to contain. It states exactly what the machine believes is present on each normalized carrier.
-
-For example, once canonical transliteration is connected to the audit, the normalized Syriac `ܠܐܲܠܵܗܵܐ` will display as:
+During the validation phase every normalization run prints a human-readable, letter-by-letter audit to stderr. It states what the machine believes is present on each Syriac carrier, for example:
 
 ```text
 Word 1: *lʾalāhā*
@@ -32,25 +30,11 @@ Heh (zqāpā: ā)
 Alaph
 ```
 
-Until the transliteration layer is implemented, the same report uses the normalized Syriac word itself as the header. The audit API already accepts one canonical label per word, so the later transliterator can replace the header automatically without changing the letter analysis.
+Until canonical transliteration is implemented, the header displays the normalized Syriac token instead. The audit API already accepts one canonical label per word, so forward transliteration can supply `*lʾalāhā*` automatically without changing the letter analysis.
 
-Every mark on a letter is named. Dense states therefore remain visible, for example:
+The post-normalization audit also detects contradictions that Unicode normalization alone cannot catch, such as two vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, and duplicate marks.
 
-```text
-Mim (zqāpā: ā; single point above; syāmē; occultans line above)
-```
-
-The audit also checks normalized-state invariants that Unicode normalization alone cannot establish. Examples include:
-
-- qūššāyā/rūkkākā on an invalid carrier;
-- both qūššāyā and rūkkākā on the same bgdkpt letter;
-- more than one East Syriac vowel state on one carrier;
-- duplicate normalized marks;
-- canonical carrier-vowel codepoints on the wrong carrier.
-
-A page-state issue blocks `--in-place` and `--output` exactly like a source-normalization flag. This keeps a syntactically normalized but implausible page-state from silently entering project data.
-
-The audit is deliberately a separate layer (`east_syriac.inspection`) rather than being folded into transliteration. It can therefore remain in the workflow for as long as human page comparison is useful, even after transliteration becomes fully automatic.
+Adjacent occultans marks are different: encoded Syriac cannot distinguish one spanning line from two separate adjacent lines. They therefore emit a non-blocking `PAGE CHECK` notice. The normalized Syriac may be stored, but the page must settle the span before forward transliteration chooses `(xy)` versus `(x)(y)`.
 
 ### Typical use
 
@@ -60,7 +44,7 @@ Inspect normalization without changing a file:
 python tools/normalize.py source.txt > normalized.txt
 ```
 
-The normalized Syriac goes to `normalized.txt`; the letter-by-letter page-state audit appears in the terminal.
+The normalized Syriac goes to stdout; flags, page-state issues/notices, and the mandatory audit go to stderr.
 
 Show every deterministic codepoint change as well:
 
@@ -82,73 +66,70 @@ python tools/normalize.py source.txt --check
 
 `--check` exit status:
 
-- `0` — already normalized, no normalization flags or page-state issues;
-- `1` — deterministic normalization changes are needed, no flags/issues;
-- `2` — at least one condition requires review (or a CLI/file error occurred).
+- `0` — already normalized, no blocking flags/issues;
+- `1` — deterministic normalization changes are needed, no blocking flags/issues;
+- `2` — at least one condition requires correction/review (or a CLI/file error occurred).
+
+A page-only notice such as adjacent occultans does not make the encoded Syriac invalid and therefore does not change the normalization exit code. It must be resolved before transliteration.
 
 The first CLI intentionally works on the **Syriac layer only**, not on a complete confirmed-text file. Confirmed-text parsing belongs in the later check-suite layer, where all three blocks can be validated together without risking the transliteration or English blocks.
 
 ### Library API
 
-The reusable normalization implementation lives in `east_syriac.normalization`:
-
 ```python
-from east_syriac.normalization import normalize_text
+from east_syriac import normalize_text, inspect_normalized_text, format_page_state_report
 
 result = normalize_text(syriac)
-result.text       # normalized Syriac
-result.flags      # conditions requiring source review
-result.changes    # deterministic transformations performed
-```
-
-The page-state layer lives in `east_syriac.inspection`:
-
-```python
-from east_syriac.inspection import inspect_normalized_text, format_page_state_report
-
 audit = inspect_normalized_text(result.text)
-audit.words       # structured word/letter/mark states
-audit.issues      # implausible normalized page-states
 
-print(format_page_state_report(result.text))
+result.text       # normalized Syriac
+result.flags      # source-ingestion conditions requiring review
+audit.issues      # contradictory/suspicious normalized states
+audit.notices     # page-only ambiguities such as adjacent occultans
 ```
 
-Later, canonical transliteration can supply the report headers without re-parsing the page-state:
+Keeping the engine separate from the CLI is deliberate. The same functions can later be called by transliteration, round-trip validation, repository checks, or an interactive application without shelling out to a script.
 
-```python
-format_page_state_report(result.text, word_labels=["lʾalāhā"])
-```
+## Final torture coverage
 
-Keeping the engines separate from the CLI is deliberate. The same functions can later be called by transliteration, round-trip validation, repository checks, or an interactive application without shelling out to a script.
+`normalization-stress-corpus.md` defines the compact human-readable torture corpus. `tests/test_normalization_coverage.py` enforces the exhaustive boundary programmatically.
 
-## Synthetic stress corpus
+The coverage contract includes:
 
-`normalization-stress-corpus.md` contains deliberately imaginary Syriac pseudo-words designed to force unusual normalization paths and implausible normalized states. It includes carrier-sensitive aliases, maximal same-class mark stacks, U+0716, between-letter points, typesetting debris, every West Syriac vowel class, contradictory bgdkpt states, multiple vowels on one carrier, and duplicate marks.
+- every assigned codepoint in U+0700–U+074F;
+- every extra generic codepoint named by the rules;
+- all six bgdkpt letters in hard, soft, and unmarked states;
+- every single-point source alias across every carrier class that changes its meaning;
+- every East Syriac vowel and special mark;
+- every two-dots-below alias;
+- every West Syriac vowel refusal;
+- all assigned non-project Syriac letters and unsupported Syriac marks;
+- editorial structure, word division, and all explicitly removable debris;
+- arbitrary unknown non-combining codepoints;
+- malformed clusters and impossible normalized states;
+- word-final/mater shapes that must remain literal for later transliteration;
+- adjacent occultans as the known encoded-source/page asymmetry.
 
-The corresponding executable regression cases live in `tests/test_normalization_stress.py`. When a real source exposes a new strange encoding or page-state, reduce it to the smallest possible synthetic case and add it to both the corpus and tests.
+The suite deliberately does **not** attempt every combinatorial arrangement of every mark. It closes every finite interface where behavior can differ, then requires genuinely new/unrecognized input to raise a review flag.
 
 ## Tests
 
-The normalization layer uses only the Python standard library. Run:
+Run:
 
 ```bash
 python -m unittest discover -s tools/tests -v
 ```
 
-The tests cover carrier-sensitive single-point normalization, U+0716, final semkath, two-dots-below aliases, West Syriac refusal, unrecognized marks, §5.1 order for combining classes 220 and 230, NFC behavior, idempotence, write-safety guards, page-state reporting, normalized-state invariants, and the synthetic torture corpus.
-
-GitHub Actions runs compilation and the complete test suite on tooling pushes and pull requests via `.github/workflows/tools-tests.yml`.
+GitHub Actions runs compilation and the deterministic test suite on tooling changes.
 
 ## Intended pipeline
 
-The machinery is being built in stages:
-
 1. **Normalize source codepoints to page-state** — current phase.
-2. **Expose normalized page-state letter by letter for human verification** — current phase; intentionally retained during early use.
-3. **Canonical transliteration** — normalized Syriac → reversible Latin string; its word tokens will become the audit headers automatically.
+2. **Human page-state audit** — currently mandatory for page comparison.
+3. **Canonical transliteration** — normalized Syriac → reversible Latin string; its word tokens become the audit headers automatically.
 4. **Inverse transliteration** — canonical string → normalized Syriac.
 5. **Round-trip checks** — enforce Transliteration Rules §12 and General Rules §11.11–14.
 6. **Confirmed-text parser/checker** — validate the three equal line blocks and derive transliteration mechanically.
 7. **Glossary/corpus checks** — coverage, identity, citations, contexts, morphology, and the remainder of General Rules §11.
 
-Each stage should remain deterministic and independently testable.
+Each stage remains deterministic and independently testable.
