@@ -1,0 +1,31 @@
+# Machine-readable source-of-record metadata.
+# Only explicit designations are recorded; omission is not a source inference.
+
+source_records:
+  ksawa_d_mazmore:
+    title: Ksawa d-Mazmore
+    governs: Psalms
+  breviarium_chaldaicum:
+    title: Breviarium Chaldaicum
+    governs: Hours
+  syro_malabar_editio_typica:
+    title: Editio Typica of the Syro-Malabar Church
+    governs: Qurbana and Anaphoras
+  east_syriac_mosul_peshitta:
+    title: East Syriac Mosul Peshitta
+    governs: Scripture other than Psalms
+
+confirmed_texts:
+  Creed_in_Syriac.txt:
+    source_of_record: syro_malabar_editio_typica
+    editorial_apparatus:
+      - line: 17
+        witness_label: Catholic
+        reading: "[waḇrā]"
+        source: syro_malabar_editio_typica
+  Ferial_Slotha_d_Sapra_I.txt:
+    source_of_record: breviarium_chaldaicum
+  Ferial_Slotha_d_Sapra_II.txt:
+    source_of_record: breviarium_chaldaicum
+  Ferial_Slotha_d_Ramsha.txt:
+    source_of_record: breviarium_chaldaicum

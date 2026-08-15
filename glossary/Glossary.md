@@ -6,12 +6,17 @@ stripped from the headword and retained on each occurrence.
 Format:
 ```
 <Syriac headword>   [root]   {part of speech + morphology}   (search: <fold key>)
-<canonical transliteration> (total) — <rendering> (n), ...
+<canonical transliteration> (decision total) — <rendering> (n), ...
 * <attested form> · "<English context>" (Text Line n)
 ```
 
 The `{...}` field records the **part of speech and the morphology of the form**, never a
-root. `[—]` marks a root not yet established (§10.20).
+root. Together, canonical headword + root + `{...}` morphology uniquely identify an entry.
+`[—]` marks a root not yet established (§10.20).
+
+Counts are **indexed decision counts**, not raw corpus-token totals. Repetitions, same-locus
+witness duplicates, and common liturgical units excluded by General Rules §§10.13 and 10.18
+do not increment them; `+n` records indexed decisions omitted from bullets under §10.11.
 
 Abbreviations: person `1 2 3` · gender `m f c` · number `sg pl` · state `abs cst emph` ·
 `perf impf impv inf` · `active ptcp. passive ptcp.` (`ptcp.` alone where the stem does not
@@ -28,7 +33,7 @@ it does.
 
 **Verb stems.** The stem is named; what it does is read from here.
 
-| stem | force | attested |
+| stem | force | example |
 |---|---|---|
 | Peal | the simple, base action | `nesġōḏ` we bow down |
 | Ethpeel | passive or reflexive of Peal | `ʾeṯīleḏ` he was begotten |

@@ -12,6 +12,6 @@ The source hierarchy and rules for witness collation are defined in `rules/Gener
 
 ## What belongs here
 
-Machine-readable provenance metadata may be added here as the project develops (for example, a `sources.yaml` file mapping each confirmed text to its designated source of record and relevant witness notes).
+Machine-readable source-of-record designations are stored in `sources.yaml`. Only explicit designations belong there; the absence of a text from the mapping must never be interpreted as an inferred source choice.
 
 Do not add scans, PDFs, fonts, downloaded corpora, or other third-party source files to this public repository until their redistribution rights have been checked. Local/private source material should remain outside version control or in an ignored private-source directory.

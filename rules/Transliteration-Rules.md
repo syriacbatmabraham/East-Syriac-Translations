@@ -12,7 +12,7 @@ It is not a phonetic transcription.
 
 Apply silently. Do not restate unless asked or unless a rule bears on the current line.
 
-**Section numbering is stable.** Withdrawn sections are retained as withdrawal notes rather than renumbered, because stale cross-references have already cost this project real errors.
+**Section numbering is stable.** A retired section number remains reserved rather than shifting later cross-references.
 
 ---
 
@@ -37,13 +37,13 @@ These are true homographs. The transliteration is correct in collapsing them, be
 
 The same applies wherever a grapheme serves two functions: ʾālap̄ as consonant and ʾālap̄ as mater are one letter and receive one transliteration; yodh as consonant and yodh as mater likewise. The distinction is analytical, not graphic, and does not belong in the string.
 
-**The glossary key is form + root, not form alone.**
+**Glossary entry identity is canonical headword + root + morphology, not form alone.**
 
 ### Corollary — where resolution lives
 
-- **Homographs** (§1) are separated by the **root** field.
+- **Homographs** (§1) are separated by the **root** field; if canonical headword and root are both identical, `{...}` morphology completes the Glossary identity (General Rules §10.1).
 - **Pronunciation is out of scope entirely.** Gemination, vowel quality, and hardness or softness not marked on the page are not recorded anywhere — not in the string, not in a field. The page does not mark them, so the project does not carry them.
-- The **parse field** carries one thing only: an **exclusion record** — a mark that survives ingestion yet cannot be represented in the string. Since ingestion removes every out-of-scope character (§10, §16.1), this field currently has **no instances**. See General Rules §10.8.
+- The **parse field** carries one thing only: an **exclusion record** — a mark that survives ingestion yet cannot be represented in the string. See General Rules §10.8 for the exclusion rule.
 
 ### Case
 
@@ -93,7 +93,7 @@ Example: `ʾaḇā [waḇrā] nāpēq`
 `ܘ` = `w` only when consonantal; as vowel carrier see §4.
 `ܝ` = `y` only when consonantal; as vowel carrier or mater see §4.
 
-**Superscript ʾālap̄** (U+0711), a small ʾālap̄ written above the line as a mark rather than a letter, is transliterated `ᵃ` preceding its carrier. Recorded graphically; no function is claimed. *Untested — not encountered in worked text.*
+**Superscript ʾālap̄** (U+0711), a small ʾālap̄ written above the line as a mark rather than a letter, is transliterated `ᵃ` preceding its carrier. Recorded graphically; no function is claimed.
 
 **ܖ (U+0716)** is not a letter of this system. It is an encoding artifact and is resolved at ingestion; see §16.2.
 
@@ -116,17 +116,13 @@ There are **three** page-states, because *unmarked* is distinct from *marked*.
 - If the point is absent, the letter is written bare. A lexically secure soft or hard reading is **not** recorded, here or anywhere.
 - **Never** substitute readability spellings (`v, gh, kh, ph, th`).
 
-*Note:* `k̇` has no precomposed Unicode form and requires U+0307 combining dot above. Flagged as a minor tooling cost.
+*Note:* `k̇` has no precomposed Unicode form and requires U+0307 combining dot above.
 
-*An earlier note on dalath width is withdrawn.* It asked the transliterator to judge whether a dot under a dalath was "measurably wider" than a neighbouring plain dalath point. With digital and printed sources the codepoint decides and no width judgment arises. The provision produced one recorded error — `dḏīlāḵ` for what the page shows as `ddīlāḵ` (Abun line 14).
+**Do not infer bgdkpt state from glyph width.** Read the normalized point/page-state under §16; if the source does not encode or securely show a point, record the letter as unmarked.
 
-### 3.3 The Undotted Stroke — *withdrawn*
+### 3.3 Reserved — no third resh/dalath state
 
-An earlier rule defined `ř` for a stroke carrying neither the resh point above nor the dalath point below, treating it as a genuine third page-state.
-
-**Withdrawn.** The provision assumed a manuscript source. In digital and printed sources a stroke either carries a codepoint or does not, and the one case that arises in practice — U+0716 under syāmē — is an encoding question handled by §16.2. Bare U+0716 normalizes to resh with a flag (§16.2). No undotted stroke was ever encountered in worked text.
-
-The caron notation is retired entirely.
+No separate canonical consonant state is defined for an undotted resh/dalath-like stroke. U+0716 is handled only by the ingestion rule in §16.2.
 
 ---
 
@@ -144,7 +140,7 @@ These are single page-states in which the vowel sign is borne by the mater lette
 | waw + one dot above | rwāḥā | `ō` |
 | waw + one dot below | rḇāṣā / ʾeṣāṣā | `ū` |
 
-**There is no defective Class-A notation.** The former `ĭ`, `ŏ`, and `ŭ` forms are withdrawn because no secure source-of-record page-state has established a carrierless counterpart to these three written vowels. A sign that appears to represent `ī`, `ō`, or `ū` without the expected yodh or waw is **flagged at ingestion, not transliterated by inference**. Establish the page-state from the witness before adding or normalizing any such form (§16).
+**There is no carrierless Class-A notation.** `ĭ`, `ŏ`, and `ŭ` are not valid canonical symbols. A sign that appears to represent `ī`, `ō`, or `ū` without the expected yodh or waw is **flagged at ingestion, not transliterated by inference**. Establish the page-state from the witness before adding or normalizing any such form (§16).
 
 *Note on names.* Grammars differ: *rḇāṣā* names the /u/ vowel in one convention and the e-vowels in another, where Unicode uses *ʾeṣāṣā*. This file uses *rḇāṣā / ʾeṣāṣā* for /ū/. Nothing turns on the choice.
 
@@ -179,7 +175,7 @@ Worked: `brēh` (internal ē, no mater) · `hēyn` (ē + yodh) · `lmēʾṯā` 
 
 **Word-final `e` (and `a`) followed by a written ʾālap̄.** `a` and `e` take no matres, but a written ʾālap̄ is still a letter on the page and is recorded as `ʾ` per §3.1 — it is not analyzed as a mater. Nothing else in the system produces word-final `eʾ`, so the sequence is unambiguous and reverses cleanly. Worked: `tēʾteʾ`, `nehweʾ` (Abun).
 
-**Two dots below is not always a vowel.** The same page position carries the mark of §17. Distinguish by shape: zlāmā is two dots level or angular; §17's mark is the two-dot mark that is neither, and in practice sits on taw, hē, waw, and ʾālap̄ in the environments listed there.
+**Two dots below is not always a vowel.** The same page position carries the mark of §17. Distinguish by shape: zlāmā is two dots level or angular; §17's mark is the two-dot mark that is neither.
 
 ### 4.3 Diphthongs
 
@@ -255,8 +251,6 @@ This exception form is required by §9.1 and is what makes the convention legal:
 
 **Encoding limitation.** A spanning line is encoded U+0747 on **both** letters, because Unicode has no character for a line spanning two Syriac letters. The stored source therefore cannot distinguish one spanning line from two separate lines — the canonical string can, and the source cannot. This is a property of the encoding, not of the notation; see §16.6.
 
-*Status: line above attested on one letter (`w(ʾ)nāš̈ā`, `(h)ī`) and spanning two (`šba(q_n)`), both in the Abun. Line below not yet attested on a securely located carrier in confirmed text.*
-
 ---
 
 ## 7. The Single Point
@@ -288,8 +282,6 @@ A point standing **between** two letters is never a vowel or a bgdkpt point, wha
 Worked: ܡ̣ܢ → `m_n`, distinct from ܡܲܢ → `man`. · ܩ᷸ܵܥܹܝܢ → `qā^^ʿēyn` (Abun), the point standing between qoph and ʿē.
 
 Above and below are kept separate because the opposition is itself the distinction being drawn (hāw / hū).
-
-*Status: `^` and `_` attested; `^^` attested (`qā^^ʿēyn`); `__` not yet attested.*
 
 ---
 
@@ -326,9 +318,9 @@ Conventions must be re-verified against attested text whenever new material is w
 4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
 5. **An occultans line written on two adjacent letters is one spanning line.** Exception form: `(x)(y)` (§6.1).
 
-### 9.3 Audit log — withdrawn
+### 9.3 Reserved
 
-Version history belongs to Git, not this specification. The conventions in force are §9.2.
+Reserved.
 
 ---
 
@@ -341,17 +333,17 @@ Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the dist
 **Out-of-scope characters are removed at ingestion (§16.1), not carried in the stored line.** The confirmed text contains in-scope orthography only.
 
 - **Punctuation.** The Syriac punctuation repertoire (U+0700–U+070D) and any Latin substitute a typist has used for it. Clause division is carried by line breaks and visual layout. Where a particular working file needs punctuation for reading, it is added there by hand; it is not part of the confirmed text and no entry records it.
-- **Accent and cantillation points.** None has been encountered in this project's sources.
+- **Accent and cantillation points.**
 - **Abbreviation and numeral marks.**
 - **Scribal correction marks and marginalia.**
 - **Presentational characters.** Tatweel / kashida elongation (ـ), zero-width joiners and non-joiners, and line-fill strokes. Artifacts of justification and typesetting, not orthography. ܒܝܵـܘ̈ܡܲܝ is ingested as ܒܝܵܘ̈ܡܲܝ and transliterates `byāẅmay`.
 
-**Consequence for the parse field.** Because ingestion removes out-of-scope characters before anything else runs, the stored line and the canonical string agree at every point, and the round-trip (§12) has nothing to except. The exclusion record of General Rules §10.8 therefore has **no current instances** — the two tatweel notes that formerly held it are retired with this rule. The provision remains for the case it was written against: a mark that survives ingestion because it *is* in scope, yet cannot be represented. None is known.
+**Consequence for the parse field.** If an in-scope mark survives ingestion but the canonical notation cannot represent it, record the exclusion under General Rules §10.8 and flag the word. Otherwise the stored line and canonical string must agree at every in-scope point.
 
 A word's canonical string is reversible **with respect to its segmental and vocalic orthography**, which after ingestion is the whole of what the stored line contains.
 
 ### Legibility
-Marks that cannot be read are not reconstructed and not invented. No notation is provided for illegible pointing: the sources of record are printed and digital, which do not produce it, and an unreadable mark in a liturgical text is dealt with case by case rather than encoded.
+Marks that cannot be read are not reconstructed or invented. An unreadable in-scope mark is flagged for source review; no provisional canonical symbol is created merely to fill the gap.
 
 ---
 
@@ -359,7 +351,7 @@ Marks that cannot be read are not reconstructed and not invented. No notation is
 
 ### 11.1 Exact identity
 
-The **canonical headword string itself** is the exact reversible key for the indexed form. No second exact or ASCII surrogate key is stored. Where General Rules §10.17 deliberately merges environmentally varying bgdkpt pointing, the resulting unmarked headword is the exact identity of that **index form**; occurrence spellings remain fully pointed and reversible in their citations.
+The **canonical headword string itself** is the exact reversible **orthographic** key for the indexed form. No second exact or ASCII surrogate key is stored. Where General Rules §10.17 deliberately merges environmentally varying bgdkpt pointing, the resulting unmarked headword is the orthographic identity of that **index form**; occurrence spellings remain fully pointed and reversible in their citations. Full Glossary entry identity is canonical headword + root + `{...}` morphology (General Rules §10.1).
 
 ### 11.2 Fold key
 
@@ -374,65 +366,36 @@ The fold key is deliberately ambiguous. Collisions are expected and acceptable �
 A canonical string is **valid** if and only if:
 
 1. Applying the inverse tables while preserving §2 editorial apparatus literally reproduces the normalized Syriac block **exactly**, setting aside anything excluded under §10 and recorded per General Rules §10.8; and
-2. No two distinct entries in the glossary share a canonical string *and* a root.
+2. No two distinct entries in the glossary share a canonical headword string, root, *and* `{...}` morphology.
 
-Condition 2 is the injectivity check. Violations are one of:
-- a transliteration error, or
-- a genuine homograph, which must be separated by the root field.
+Condition 2 is the Glossary-identity check. A collision means either an entry has been duplicated or the morphology/root analysis has not yet separated two genuinely distinct forms.
 
-**One known asymmetry.** A spanning occultans line (§6.1) is recorded in the string but cannot be distinguished from two separate lines in the encoded source. Round-trip cannot detect a failure of that convention; only the page can.
+**Round-trip asymmetry.** A spanning occultans line (§6.1) is recorded in the string but cannot be distinguished from two separate lines in the encoded source. Round-trip cannot detect a failure of that convention; only the page can.
 
-This test is mechanical and should be automated in the eventual SQLite pipeline.
 
 ---
 
-## 13. Difference from the Old Clean-Glossary
+## 13. Reserved
 
-The project rebuilds the glossary from scratch in the new format rather than converting the old one; the old Clean-Glossary is kept only for reference.
-
-| Change | Effect |
-|---|---|
-| Gemination dropped | `qaddīšā` → `qaḋīšā`; doubling not recorded at all |
-| Three-state bgdkpt | inferred-soft forms must be re-checked against the page |
-| Class B matres | internal `ā`/`ē` with mater respelled (`āʾ`, `ēy`, `ēʾ`) |
-| Class A carrier discipline | `ī`/`ō`/`ū` require their written yodh/waw carrier; an apparent carrierless state is flagged rather than encoded by inference |
-| Syāmē marking | all plural forms gain a carrier diaeresis, NFC ordered |
-| Tier 3 root blocks | dissolved; root becomes a field on each word entry |
-| Capitalization | canonical string fully lowercase; case lives on the English side |
-| Parse field | reduced to exclusion records only, of which there are currently none |
+Reserved.
 
 ---
 
-## 14. Resolved and Withdrawn
+## 14. Reserved
 
-Four formerly open questions are retained here as withdrawal notes; nothing in this section is open.
-
-1. **Illegible pointing** — *no notation, deliberately.* The sources of record are printed and digital and do not produce unreadable marks. Handled case by case if it ever arises. See §10, Legibility.
-2. **Unlocatable pointing** — *resolved.* The mark in *šbaqn* was not a point of ambiguous carrier but an occultans **line spanning two letters**, above, covering qoph and nun. Notation in §6.1; convention 5 in §9.2. The separate question of a point standing *between* two letters is a real page-state and is now §7's `^^` / `__`, attested in `qā^^ʿēyn`.
-3. **Two dots below** — *resolved.* Now §17.
-4. **Breve below on pe** — *resolved.* Confirmed as an arc, graphically distinct from rūkkākā, and carrying no accompanying rūkkākā dot. Now §18.
+Reserved.
 
 ---
 
 ## 15. Validation
 
-Validation requirements are §12 and General Rules §11. Corpus size, worked-text counts, and current test status belong to test output and Git history, not this specification.
+Validation requirements are §12 and General Rules §11. Corpus reports and test output do not belong in this specification.
 
 ---
 
 ## 16. Source Ingestion — Codepoint Normalization
 
-Digital witnesses do not agree on which codepoint encodes a given mark. They encode by *appearance* — "a dot below" — using whatever renders correctly in their font. The canonical string records the page, so ingestion must map codepoints to page-states before §§3–7 apply.
-
-Four witnesses of the Abun used three conventions:
-
-| Page-state | Witness 1 / 3 | Witness 2 | Witness 4 |
-|---|---|---|---|
-| rūkkākā | U+0742 RUKKAKHA | U+073C HBASA-ESASA DOTTED | U+073C |
-| qūššāyā | U+0741 QUSHSHAYA | U+073F RWAHA | U+073F |
-| single point below (§7) | U+0323 COMBINING DOT BELOW | U+0742 RUKKAKHA | U+0742 |
-
-Note that U+0742 means rūkkākā in one convention and the §7 point in another. Reading codepoints at face value across witnesses produces silent corruption, not an error.
+Digital witnesses may use different codepoints for the same visible page-state, and the same codepoint may serve different page-states in different carrier environments. Canonical transliteration therefore normalizes **page-state first**, then applies §§3–7. Reading source codepoints as universal semantic labels is prohibited.
 
 ### 16.1 Normalize to page-state
 
@@ -462,7 +425,7 @@ Also normalized at ingestion:
 
 **ܖ (U+0716) carrying syāmē is resh.** The resh point and syāmē occupy the same position and the script suppresses the former; some typists encode the result with U+0716, others with U+072A. Both are resh. Normalize to ܪ and transliterate `r̈`. This holds whether or not a vowel point stands between the two in the stored sequence — in ܥܝܼܖܹ̈ܐ the zlāmā qašyā intervenes, and the rule applies.
 
-**Bare U+0716 normalizes to resh and raises a flag.** Of 999 occurrences across the patristic corpus, 954 carry syāmē; the 45 bare cases fall in words that plainly want a resh, in files that encode resh correctly elsewhere. The reading is secure. The flag exists because what is being normalized is a *source error*, and a source that carries typing errors is a fact worth knowing about the source. If a bare U+0716 ever falls where dalath is lexically possible, the flag is the only thing between the project and a silent letter substitution.
+**Bare U+0716 normalizes to resh and raises a flag.** Treat the normalization as a source-level anomaly, not as evidence for a new consonant. If the lexical context permits dalath or otherwise leaves the reading uncertain, require manual source review before confirmation.
 
 ### 16.3 Combining-mark order
 
@@ -470,30 +433,24 @@ Normalize every combining sequence to §5.1 before comparison or round-trip vali
 
 ### 16.4 Per-block ingestion
 
-**The audit runs per block, not per file.** A single file may carry more than one codepoint convention, split along a textual seam — pasted-in psalm verses, a quoted Father, an interleaved rubric — because the compiler drew the blocks from different digital sources.
-
-Detected in a Hudra unit on the three Doctors: the hymn body encodes rūkkākā as U+0742 and qūššāyā as U+0741, while the interleaved Psalm 34 verses encode the same two marks as U+0323 and U+0307. The split follows the seam exactly.
-
-Audit each block whose provenance may differ, and record where the seams fall.
+**The audit runs per block, not per file.** A single file may contain blocks drawn from different digital sources or encoding conventions. Audit each block whose provenance may differ, and record where the seams fall.
 
 ### 16.5 Witness collation
 
 Ingestion is per-witness. Where witnesses disagree after normalization, the disagreement is textual and belongs to the source hierarchy (General Rules §1), not to this file.
 
-**Do not resolve by majority vote.** Witnesses sharing a codepoint convention frequently share an ancestor and therefore share errors, so a vote counts copies rather than readings. In the Abun collation the lone dissenting witness was correct on every contested point where the majority was overruled, and the printed source of record overruled all three digital witnesses — including on the syāmē of ܕܒܲܫܡܲܝܵܐ, where every digital witness carried a mark the page does not.
-
-### 16.6 West Syriac vowel codepoints — refused, never mapped
+**Do not resolve by majority vote.** Witnesses may share an ancestor or encoding source, so a vote can count copies rather than independent readings. The designated source of record governs; variants are recorded rather than averaged.### 16.6 West Syriac vowel codepoints — refused, never mapped
 
 The East Syriac vowels are the **dotted** forms: U+0732, U+0735, U+0738, U+0739, U+073C, U+073F. The West Syriac equivalents are separate characters: U+0730, U+0731, U+0733, U+0734, U+0736, U+0737, U+073A, U+073B, U+073D, U+073E.
 
 **These are never normalized into East Syriac vowels.** A West Syriac sign is a different mark, not a different encoding of the same mark, and mapping one to the other fabricates a reading the page does not contain.
 
 - **In a source of record:** raises a flag. Either the source is not what it was taken to be, or the block has a seam (§16.4).
-- **In a corpus search:** expected and harmless, but the token is West-vocalized and **carries no evidence about pointing**. Distribution and lexical range may be cited from it; a vowel or a bgdkpt point may not. The patristic corpus is overwhelmingly West-vocalized apart from Narsai, so this is the ordinary case, not the exception.
+- **In a corpus search:** a West-vocalized token **carries no evidence about East Syriac pointing**. Distribution and lexical range may be cited from it; a vowel or a bgdkpt point may not.
 
 ### 16.7 Unrepresentable page-states
 
-A spanning occultans line (§6.1) is encoded U+0747 on both letters because no single character exists for it. The encoded source is therefore lossy at that point, and the canonical string carries information the stored Syriac does not. This is the only known case; it is recorded here so that a mismatch between string and source at such a word is recognized as expected rather than treated as an error.
+A spanning occultans line (§6.1) is encoded U+0747 on both letters because no single character exists for it. The encoded source is therefore lossy at that point, and the canonical string carries information the stored Syriac does not. A mismatch caused by that lossy source encoding is expected and must be checked against the page rather than treated as an ordinary round-trip failure.
 
 ---
 
@@ -505,9 +462,7 @@ Two dots beneath a letter, distinct from zlāmā by shape and environment.
 
 **Encodings normalized to this page-state:** U+0324, U+0740 SYRIAC FEMININE DOT, U+0744 SYRIAC TWO VERTICAL DOTS BELOW. In East Syriac and Estrangela the feminine dot takes the form of two dots below, which is why the Syriac-specific codepoint and the generic one both occur for one appearance.
 
-**Function is not recorded.** On the final taw of a 3fs perfect the mark is the feminine dot in the ordinary grammatical sense; on waw and hē in the pronouns it is evidently something else. Both are the same mark on the page, and §§6–7's graphical principle applies: position and shape are enough to write it, and identification is not a prerequisite for transcription.
-
-Attested on taw (*zāʿat, naṭrat, ʾagnat, negdat, ʾeṫtnīḥat*), on waw and hē (*hū, hī, hwā, hwaw, hwaytōn*), and on ʾālap̄ — 14+ occurrences across five Hudra texts, all **unconfirmed**. Confirm against a source of record before treating as exercised.
+**Function is not recorded.** The same graphical page-state receives the same notation regardless of grammatical interpretation.
 
 ASCII: `:` after the carrying letter.
 
@@ -520,7 +475,5 @@ An arc beneath a letter, opening downward. Graphically distinct from rūkkākā,
 **Notation:** combining breve below (U+032E) on the transliterated letter — `p̮`. Encoded U+032E at source, so ingestion passes it through unchanged.
 
 **No collision.** Every other mark in the system occupies a different position or shape: macron above for soft `p̄` and `ḡ`, macron below for soft `ḇ ḏ ḵ ṯ`, breve *above* for the word-final Class-B exceptions `ă ĕ`, dot above for hard, diaeresis above for syāmē, diaeresis below for §17. The space below a pe is free precisely because pe is one of the two letters whose soft form takes a macron above.
-
-Attested only on **pe**, in a narrow lexical environment — *napš̮ā*, *napš̮āṯā*, *takšap̮tā* — eight occurrences across the Hudra texts and Ps 97:22, all **unconfirmed**. In every case the pe carries the arc **and no rūkkākā dot**; earlier project transliterations writing `p̄` in these words recorded an inference, not the page.
 
 ASCII: `%` after the carrying letter.
