@@ -1,4 +1,4 @@
-name: Apply staged conceptual cleanup
+name: Apply reviewed conceptual cleanup
 
 on:
   pull_request_target:
@@ -18,22 +18,151 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Apply and verify staged patch
+      - name: Apply reviewed edits and verify hashes
         shell: bash
         run: |
           set -euo pipefail
-          cat .cleanup/patch.b64.* | tr -d '\n' | base64 -d > /tmp/conceptual-cleanup.patch
-          git apply --check /tmp/conceptual-cleanup.patch
-          git apply /tmp/conceptual-cleanup.patch
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
 
-          test "$(git hash-object rules/General-Rules.md)" = "4d00e2fe38460dcf6dfb5eacec89fd05b9b72067"
-          test "$(git hash-object rules/Transliteration-Rules-v2_3_1.md)" = "9ca2f3d0bb9dbe463e1502b0b2a93ff804308d68"
-          test "$(git hash-object glossary/Glossary.md)" = "dfa0743af1ab80cfa01b6de7f268eaa6c0a2fdf1"
+          def replace_exact(path, old, new, expected=1):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              found = s.count(old)
+              if found != expected:
+                  raise SystemExit(f'{path}: expected {expected} matches, found {found}: {old[:80]!r}')
+              p.write_text(s.replace(old, new), encoding='utf-8')
+
+          def replace_section(path, start, end, replacement):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8')
+              if s.count(start) != 1 or s.count(end) != 1:
+                  raise SystemExit(f'{path}: section markers not unique')
+              a = s.index(start)
+              b = s.index(end, a)
+              p.write_text(s[:a] + replacement + s[b:], encoding='utf-8')
+
+          general = 'rules/General-Rules.md'
+          replace_exact(
+              general,
+              '- **Editorial apparatus is kept in all three blocks** — square brackets mark material treated as an addition or insertion, whether or not it is present in the source of record; a parenthesized English label identifies a distinct source or witness where needed, e.g. `(Assyrian adds:)`.',
+              '- **Editorial apparatus is preserved across all three blocks.** Syriac and transliteration carry the full variant; English may collapse shared wording and mark only what differs. A full English insertion from another source is used only for a whole line or clause.'
+          )
+          replace_exact(
+              general,
+              '- **Square brackets mark added or inserted material.** Material bracketed in the Syriac block appears bracketed in all three blocks, enters context strings, and is cited under §10.3. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).',
+              '- **Square brackets mark added or inserted material.** Material bracketed in the Syriac block is bracketed correspondingly in transliteration. English may collapse a variant into shared wording and bracket only what differs; a full bracketed insertion from another source is used only for a whole line or clause. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).'
+          )
+          replace_exact(
+              general,
+              '- **Parentheses mark editorial apparatus**, never prayed text and never in a context string. An added line may change a text\'s line count against another witness; recording that is the point',
+              '- **Parentheses mark editorial apparatus**, never prayed text and never in a context string. A parenthesized English label identifies a distinct source or witness where needed.'
+          )
+          replace_exact(
+              general,
+              'Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark (Translit §15).',
+              'Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark.'
+          )
+          repeat_rule = '    **A written-out repetition is cited once** — at its first line, or at its first occurrence within the line where the repetition is written inline. A repetition is the same text said again; a form recurring in a different grammatical role is not one, and is cited at each occurrence.'
+          replace_exact(
+              general,
+              repeat_rule,
+              repeat_rule + '\n\n    **An alternate witness at the same textual locus does not create a second occurrence when it repeats the same form in the same grammatical role.** Count and cite it once. A different form or role is indexed separately.'
+          )
+          replace_exact(
+              general,
+              '4. Every source token has an attested form, except proclitics and *lā* (§10.2), untranslated acclamations (§10.16), repetitions already cited (§10.13), and members of a common liturgical unit already entered (§10.18). Phrase-section bullets do not count toward coverage (§10.6)',
+              '4. Every source token has an attested form, except proclitics and *lā* (§10.2), untranslated acclamations (§10.16), repetitions and same-locus witness duplicates already cited (§10.13), and members of a common liturgical unit already entered (§10.18). Phrase-section bullets do not count toward coverage (§10.6)'
+          )
+          replace_exact(
+              general,
+              '5. The converse of 4 — every occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain',
+              '5. The converse of 4 — every non-exempt occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain'
+          )
+          replace_exact(
+              general,
+              '9. The root field holds a root or a marker declared in §10.20, never a part of speech doing a root\'s work; the `{...}` field never holds a root (§10.1)',
+              '9. Every form entry has exactly one nonempty `{...}` field satisfying §10.1; the root field holds a root or a marker declared in §10.20, never a part of speech doing a root\'s work; the `{...}` field never holds a root'
+          )
+
+          translit = 'rules/Transliteration-Rules-v2_3_1.md'
+          replace_exact(
+              translit,
+              '**The canonical string records the page and nothing but the page.**\n\nEvery mark on the page is represented. Nothing not on the page is added.',
+              '**The canonical string records the normalized Syriac block and nothing else.**\n\nEvery in-scope mark and piece of editorial apparatus in that block is represented. Nothing not in the block is added.'
+          )
+          replace_section(
+              translit,
+              '## 2. Notation Beyond the Letter Tables\n',
+              '\n---\n\n## 3. Consonants',
+              '''## 2. Notation Beyond the Letter Tables\n\nEditorial apparatus is preserved literally alongside the letter-for-letter mapping.\n\n| Notation | Meaning | On reversal |\n|---|---|---|\n| `(x)` | occultans line above (§6) | restore the line over the wrapped letter or letters |\n| `[…]` | editorial addition or alternate | preserve the brackets |\n| `(English label:)` | source or witness label | preserve the label |\n\nSyriac inside editorial brackets transliterates normally. English-only interpretive brackets have no transliteration counterpart.\n\nExample: `ʾaḇā [waḇrā] nāpēq`\n'''
+          )
+          replace_exact(
+              translit,
+              '4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Hyphens carry a canonical meaning (§2) and may not be used for word-division traceability inside the string. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.',
+              '4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.'
+          )
+          replace_section(
+              translit,
+              '### 9.3 Audit log\n',
+              '\n---\n\n## 10. Scope',
+              '### 9.3 Audit log — withdrawn\n\nVersion history belongs to Git, not this specification. The conventions in force are §9.2.\n'
+          )
+          replace_exact(
+              translit,
+              'Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the distinguishing point, two dots below (§17), the breve below (§18), matres, source parentheses.',
+              'Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).'
+          )
+          replace_exact(
+              translit,
+              '| `( )` `-…-` `^` `_` `^^` `__` | unchanged |',
+              '| `( )` `[ ]` `^` `_` `^^` `__` | unchanged |'
+          )
+          replace_exact(
+              translit,
+              '1. Unwrapping all `(…)` and `-…-` spans and applying the inverse tables reproduces the source pointing **exactly**, after the source has been normalized per §16 and setting aside anything excluded under §10 and recorded per General Rules §10.8; and',
+              '1. Applying the inverse tables while preserving §2 editorial apparatus literally reproduces the normalized Syriac block **exactly**, setting aside anything excluded under §10 and recorded per General Rules §10.8; and'
+          )
+          replace_section(
+              translit,
+              '## 15. Rule Status\n',
+              '\n---\n\n## 16. Source Ingestion',
+              '## 15. Validation\n\nValidation requirements are §12 and General Rules §11. Corpus size, worked-text counts, and current test status belong to test output and Git history, not this specification.\n'
+          )
+
+          glossary = 'glossary/Glossary.md'
+          replace_exact(
+              glossary,
+              'ܙܲܒ݂ܢܹ̈ܐ   [z-m-n]   (search: zabne)',
+              'ܙܲܒ݂ܢܹ̈ܐ   [z-b-n]   (search: zabne)'
+          )
+          replace_exact(
+              glossary,
+              '''(ʾ)nāš̈ā (2) — men (2)\n* w(ʾ)nāš̈ā · "Watchers and men cry out to You..." (Abun Line 6)\n* w(ʾ)nāš̈ā · "Watchers and men cry out to You..." (Abun Line 22)''',
+              '''(ʾ)nāš̈ā (1) — men (1)\n* w(ʾ)nāš̈ā · "Watchers and men cry out to You..." (Abun Line 6)'''
+          )
+          replace_exact(
+              glossary,
+              '"Let Thy desire be: on earth as it is in Heaven" (Abun Line 9)',
+              '"let Thy desire be: on earth as it is in Heaven" (Abun Line 9)',
+              expected=6
+          )
+
+          expected = {
+              general: '4d00e2fe38460dcf6dfb5eacec89fd05b9b72067',
+              translit: '9ca2f3d0bb9dbe463e1502b0b2a93ff804308d68',
+              glossary: 'dfa0743af1ab80cfa01b6de7f268eaa6c0a2fdf1',
+          }
+          for path, want in expected.items():
+              got = subprocess.check_output(['git', 'hash-object', path], text=True).strip()
+              if got != want:
+                  raise SystemExit(f'{path}: hash mismatch {got} != {want}')
+          PY
+
           git diff --check
-
           rm -rf .cleanup
           rm -f .github/workflows/apply-conceptual-cleanup.yml .github/workflows/cleanup-trigger.yml
-
           git config user.name "syriacbatmabraham"
           git config user.email "batmabraham@users.noreply.github.com"
           git add -A
