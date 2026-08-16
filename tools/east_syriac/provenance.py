@@ -1,7 +1,7 @@
 """Deterministic provenance checks for confirmed-text source metadata.
 
 The project deliberately keeps source-of-record designations outside the three-block
-confirmed text files.  This module parses the small, controlled YAML subset used by
+confirmed text files. This module parses the small, controlled YAML subset used by
 `sources/sources.yaml` without introducing a runtime YAML dependency, then verifies
 that the authoritative corpus and the registry agree exactly.
 """
@@ -42,12 +42,14 @@ class SourceRegistryFormatError(ValueError):
 
 
 def _scalar(value: str) -> str:
+    """Decode the simple scalar forms used by the controlled registry subset."""
+
     value = value.strip()
     if len(value) >= 2 and value[0] == value[-1] == '"':
-        # The registry currently uses only simple double-quoted strings in the
-        # nested apparatus.  Scalar fields consumed here are normally plain,
-        # but supporting the common escapes keeps the subset unsurprising.
-        return bytes(value[1:-1], "utf-8").decode("unicode_escape")
+        # Preserve Unicode literally. Only the two escapes needed by the
+        # registry's human-readable strings are interpreted here; this is not a
+        # general YAML parser.
+        return value[1:-1].replace(r"\"", '"').replace(r"\\", "\\")
     if len(value) >= 2 and value[0] == value[-1] == "'":
         return value[1:-1].replace("''", "'")
     return value
@@ -57,21 +59,24 @@ def parse_source_registry(text: str) -> SourceRegistry:
     """Parse the controlled top-level subset of `sources.yaml` used by checks.
 
     Only the top-level `source_records` and `confirmed_texts` mappings and the
-    scalar fields immediately below each entry are needed here.  Deeper witness
-    apparatus remains valid YAML data but is intentionally ignored by this
-    parser; an apparatus insertion need not be promoted into a separate source
-    record merely to satisfy corpus provenance.
+    scalar fields immediately below each confirmed-text entry are needed here.
+    Deeper witness apparatus remains valid YAML data but is intentionally
+    ignored by this parser; an apparatus insertion need not be promoted into a
+    separate source record merely to satisfy corpus provenance.
     """
 
     section: str | None = None
     current_key: str | None = None
     source_records: set[str] = set()
     confirmed: dict[str, dict[str, str]] = {}
+    saw_source_records = False
+    saw_confirmed_texts = False
 
     for line_no, raw in enumerate(text.splitlines(), start=1):
         if not raw.strip() or raw.lstrip().startswith("#"):
             continue
-        if raw[: len(raw) - len(raw.lstrip(" \t"))].find("\t") != -1:
+        indentation = raw[: len(raw) - len(raw.lstrip(" \t"))]
+        if "\t" in indentation:
             raise SourceRegistryFormatError(
                 "tab-indentation",
                 "sources.yaml must use spaces, not tabs, for indentation.",
@@ -89,7 +94,14 @@ def parse_source_registry(text: str) -> SourceRegistry:
                     line_no,
                 )
             name = stripped[:-1]
-            section = name if name in {"source_records", "confirmed_texts"} else None
+            if name == "source_records":
+                saw_source_records = True
+                section = name
+            elif name == "confirmed_texts":
+                saw_confirmed_texts = True
+                section = name
+            else:
+                section = None
             current_key = None
             continue
 
@@ -130,6 +142,17 @@ def parse_source_registry(text: str) -> SourceRegistry:
 
         # Nested editorial apparatus and source-record descriptive fields are
         # outside the provenance identity needed by the checker.
+
+    if not saw_source_records:
+        raise SourceRegistryFormatError(
+            "missing-source-records-section",
+            "sources.yaml must contain a top-level source_records mapping.",
+        )
+    if not saw_confirmed_texts:
+        raise SourceRegistryFormatError(
+            "missing-confirmed-texts-section",
+            "sources.yaml must contain a top-level confirmed_texts mapping.",
+        )
 
     entries = tuple(
         ConfirmedTextProvenance(
