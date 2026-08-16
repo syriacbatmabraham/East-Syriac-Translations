@@ -23,9 +23,9 @@ Heh (zqāpā: ā)
 Alaph
 ```
 
-If a page-only ambiguity prevents automatic transliteration—under the present implementation, an unresolved adjacent occultans span/separate question—the audit keeps the Syriac header and prints the required `PAGE CHECK` rather than guessing. The project's treatment and terminology for the apparent spanning-line case are under separate review; this cleanup does not change that model.
+If adjacent same-direction line codepoints occur, normalized Unicode alone cannot tell whether the page shows two separate one-letter strokes or one physical line spanning the pair. The audit therefore keeps the Syriac header and requires a `PAGE CHECK` rather than guessing. A page-confirmed upper span joining a consonant cluster is treated as **marheṭānā**, not as a two-letter occultans. The confirmed `q-n` span in `šba(q_n)` is the standing example.
 
-The post-normalization audit detects contradictions Unicode normalization alone cannot catch: multiple vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, duplicate marks, and occultans simultaneously above and below one carrier. The last state is in-scope Unicode but has no reversible notation under the current canonical rules, so it is blocking rather than silently encoded.
+The post-normalization audit detects contradictions Unicode normalization alone cannot catch: multiple vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, duplicate marks, and the same carrier bearing both an upper and lower line mark. The last state is in-scope Unicode but has no reversible notation under the current canonical rules, so it is blocking rather than silently encoded.
 
 ### Normalization use
 
@@ -57,11 +57,19 @@ The implementation includes:
 - word-final `ā/ă` and `ē/ĕ` conventions;
 - syāmē, the distinguishing point, between-letter points, two dots below, breve below, and superscript ʾālap̄;
 - editorial square brackets and parenthesized source/witness apparatus;
-- one-letter and, under the present rules, page-resolved two-letter occultans notation above or below;
+- one-letter line wrappers above/below and page-resolved two-letter spanning-line wrappers;
 - strict NFC canonical strings;
 - canonicality checking by re-forwarding every inverse parse.
 
 The final-mater shorthand is deliberately narrow: a bare final ʾālap̄ is suppressed only when it immediately follows its zqāpā/zlāmā-qašyā carrier with no editorial delimiter between them. Thus `[ܡܵܐ]` gives `[mā]`, while `ܡܵ[ܐ]` gives `mā[ʾ]` and `[ܡܵ][ܐ]` gives `[mā][ʾ]`.
+
+### One-letter lines and marheṭānā spans
+
+A wrapper around one canonical letter-unit, such as `(h)`, records a line carried by that one letter. The project does not infer from the graphic stroke alone whether a traditional one-letter line is functioning as *mṭalqānā* or *mhaggyānā*.
+
+A wrapper around **two** canonical letter-units, such as `(q_n)`, records **one page-confirmed physical line spanning the two letters**. Where the page establishes the familiar upper cluster line, this is marheṭānā: the two consonants are read as a vowelless cluster rather than either consonant being suppressed. Therefore `šba(q_n)` must not be normalized to a one-letter line on qoph.
+
+The normalized Syriac storage convention uses the available Syriac line codepoint on both covered letters for a span, so that same Unicode sequence is also capable of representing two separate adjacent one-letter lines. The physical page resolves that grouping. The canonical wrappers preserve the resolution: `(xy)` is one span; `(x)(y)` is two separate lines.
 
 ### Transliteration use
 
@@ -70,7 +78,7 @@ python tools/transliterate.py normalized.txt > canonical.txt
 python tools/transliterate.py canonical.txt --reverse > normalized.txt
 ```
 
-Under the current implementation, when adjacent same-direction occultans marks occur, encoded Syriac cannot say whether the page shows one span or two separate lines. Supply the page decision explicitly:
+When adjacent same-direction line marks occur, supply the page grouping explicitly:
 
 ```bash
 python tools/transliterate.py normalized.txt \
@@ -79,6 +87,8 @@ python tools/transliterate.py normalized.txt \
 python tools/transliterate.py normalized.txt \
   --occultans-separate 1:3:above
 ```
+
+The `--occultans-*` option names are retained for compatibility with the first transliteration-engine release. They now mean **line grouping**, not a claim that a two-letter span is occultans. `span` selects one physical two-letter line (marheṭānā for the attested upper cluster case); `separate` selects two adjacent one-letter lines.
 
 Coordinates are `WORD:LETTER:above|below`, with the letter being the left member of the adjacent pair. The forward CLI prints the letter-by-letter audit with canonical headers to stderr and the canonical transliteration to stdout.
 
@@ -100,7 +110,7 @@ reversed_text = reverse_transliterate(canonical.text)
 assert reversed_text.text == normalized.text
 ```
 
-`reverse_transliterate()` also returns the span/separate occultans decisions encoded by the canonical wrappers under the present model.
+`reverse_transliterate()` also returns the page grouping encoded by adjacent wrappers. The current public field/API retains the historical `occultans_resolutions` name for compatibility; semantically it is span/separate **line-grouping metadata**.
 
 ## Phase 3: confirmed-text parser/checker
 
@@ -120,7 +130,7 @@ The checker validates:
 
 Block detection does **not** assume that every blank line ends a block. A stanza break is itself a blank logical line, so the parser searches for the unique pair of separator runs that yields three equal layers with the same stanza pattern. This lets stanza breaks remain legal without making the three-layer format ambiguous.
 
-The stored transliteration is not an authority for ordinary orthography. The checker derives Latin from Syriac. Under the present occultans implementation, the sole exception is page-only adjacent-line grouping: encoded Syriac cannot recover whether the page shows one span or two separate lines. The checker may recover that decision from the stored canonical line **only when the entire canonical line already reverses exactly to the Syriac line**. This exception is under review with the occultans model and should not be read as a settled page-metadata design.
+The stored transliteration is not an authority for ordinary orthography. The checker derives Latin from Syriac. The sole exception is page-only grouping metadata for adjacent same-direction line marks: normalized Syriac cannot recover whether the page showed one span or two separate lines. The checker may recover that grouping from the stored canonical line **only when the entire canonical line already reverses exactly to the Syriac line**. In the confirmed Our Father, this preserves the page-confirmed marheṭānā grouping of `šba(q_n)` without treating the Latin as an independent orthographic authority.
 
 ### Confirmed-text use
 
@@ -192,9 +202,9 @@ GitHub Actions runs compilation and the full deterministic suite on tooling push
 ## Intended pipeline
 
 1. **Normalize source codepoints to page-state**.
-2. **Human page-state audit** — mandatory for page comparison.
-3. **Canonical transliteration** — normalized Syriac → reversible Latin string.
-4. **Inverse transliteration** — canonical string → normalized Syriac.
+2. **Human page-state audit** — mandatory for page comparison, including span/separate grouping when Unicode is lossy.
+3. **Canonical transliteration** — normalized Syriac → reversible Latin string, preserving one-letter lines and page-confirmed marheṭānā spans.
+4. **Inverse transliteration** — canonical string → normalized Syriac plus any page-only line-grouping metadata.
 5. **Round-trip checks** — Transliteration Rules §12 and General Rules §11.11–14.
 6. **Confirmed-text parser/checker** — equal layers, file hygiene, stanza alignment, mechanically fresh transliteration, and source-registry provenance.
 7. **Glossary/corpus checks** — remainder of General Rules §11.
