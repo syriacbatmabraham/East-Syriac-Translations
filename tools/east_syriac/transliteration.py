@@ -9,8 +9,8 @@ from .normalization import (
     PROJECT_LETTERS, BGDKPT, WAW, YODH, SUPERSCRIPT_ALAPH, SYAME,
     QUSSHAYA, RUKKAKHA, RWAHA, HBASA_ESASA_DOTTED,
     GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW, TWO_DOTS_BELOW, BREVE_BELOW,
-    BETWEEN_ABOVE, BETWEEN_BELOW, OCCULTANS_ABOVE, OCCULTANS_BELOW,
-    normalize_text,
+    BETWEEN_ABOVE, BETWEEN_BELOW, MARHETANA_ABOVE, MARHETANA_BELOW,
+    OCCULTANS_ABOVE, OCCULTANS_BELOW, normalize_text,
 )
 from .inspection import inspect_normalized_text
 
@@ -20,7 +20,14 @@ ZQAPHA = "\u0735"
 ZLAMA_PSHIQA = "\u0738"
 ZLAMA_QASHYA = "\u0739"
 
+MARHETANA_TIE_ABOVE = "\u2040"  # CHARACTER TIE
+MARHETANA_TIE_BELOW = "\u203f"  # UNDERTIE
+
 Direction = Literal["above", "below"]
+
+# Kept as compatibility aliases for callers written against the earlier
+# page-resolution API. Canonical normalized Syriac now encodes spans directly
+# with U+035E/U+035F, so nonempty resolution mappings are rejected.
 Resolution = Literal["span", "separate"]
 OccultansResolutionKey = tuple[int, int, Direction]
 OccultansResolutions = Mapping[OccultansResolutionKey, Resolution]
@@ -42,6 +49,8 @@ class TransliterationResult:
 @dataclass(frozen=True)
 class ReverseTransliterationResult:
     text: str
+    # Deprecated compatibility field. Span/separate grouping is no longer
+    # stored outside the Syriac text, so canonical inversions return {}.
     occultans_resolutions: dict[OccultansResolutionKey, Resolution]
 
 
@@ -69,6 +78,7 @@ class _ParsedToken:
     bracket_depth: int = 0
     occultans: Direction | None = None
     occultans_group: int | None = None
+    marhetana: Direction | None = None
     vowel_token: str | None = None
 
 
@@ -168,10 +178,13 @@ def _letter_base_symbol(base: str, marks: set[str]) -> tuple[str, set[str], bool
 def _render_core(tok: _SourceToken, final_letter: bool, has_suppressed_mater: bool) -> str:
     marks=set(tok.marks)
     if OCCULTANS_ABOVE in marks and OCCULTANS_BELOW in marks:
-        raise TransliterationError("dual-occultans", "A carrier with occultans both above and below has no canonical notation.")
+        raise TransliterationError("dual-one-letter-lines", "A carrier with one-letter lines both above and below has no canonical notation.")
+    if MARHETANA_ABOVE in marks and MARHETANA_BELOW in marks:
+        raise TransliterationError("dual-marhetana", "A carrier beginning spans both above and below has no canonical notation.")
     prefix = "ᵃ" if SUPERSCRIPT_ALAPH in marks else ""
     marks.discard(SUPERSCRIPT_ALAPH)
     marks.discard(OCCULTANS_ABOVE); marks.discard(OCCULTANS_BELOW)
+    marks.discard(MARHETANA_ABOVE); marks.discard(MARHETANA_BELOW)
     symbol, remaining, carrier_vowel = _letter_base_symbol(tok.base or "", marks)
 
     visuals=[]
@@ -211,11 +224,6 @@ def _render_core(tok: _SourceToken, final_letter: bool, has_suppressed_mater: bo
     return unicodedata.normalize("NFC", prefix+decorated+on+vowel+between)
 
 
-def _resolution_key(tok: _SourceToken, direction: Direction) -> OccultansResolutionKey:
-    assert tok.word is not None and tok.letter is not None
-    return (tok.word, tok.letter, direction)
-
-
 def _matching_parenthesis(text: str, start: int) -> int:
     depth = 0
     for i in range(start, len(text)):
@@ -229,7 +237,7 @@ def _matching_parenthesis(text: str, start: int) -> int:
 
 
 def _validate_source_parentheses(text: str) -> None:
-    from .transliteration_inverse import parse_occultans_payload
+    from .transliteration_inverse import parse_reserved_line_payload
     i = 0
     while i < len(text):
         if text[i] != "(":
@@ -237,39 +245,69 @@ def _validate_source_parentheses(text: str) -> None:
             continue
         end = _matching_parenthesis(text, i)
         content = text[i + 1:end]
-        if parse_occultans_payload(content) is not None:
+        if parse_reserved_line_payload(content) is not None:
             raise TransliterationError(
                 "ambiguous-editorial-parenthesis",
-                f"Editorial apparatus {text[i:end+1]!r} is indistinguishable from occultans notation; disambiguate the label.",
+                f"Editorial apparatus {text[i:end+1]!r} is indistinguishable from reserved line-mark syntax; disambiguate the label.",
             )
         i = end + 1
+
+
+def _validate_marhetana_adjacency(tokens: list[_SourceToken], letters_by_word: dict[int, list[int]]) -> None:
+    for word, inds in letters_by_word.items():
+        for pos, index in enumerate(inds):
+            tok = tokens[index]
+            marks = set(tok.marks)
+            span_marks = marks & {MARHETANA_ABOVE, MARHETANA_BELOW}
+            if not span_marks:
+                continue
+            if pos == len(inds) - 1:
+                raise TransliterationError(
+                    "marhetana-without-next-letter",
+                    f"Word {word}, letter {tok.letter} begins a two-letter span but has no following letter.",
+                )
+            next_index = inds[pos + 1]
+            if next_index != index + 1:
+                raise TransliterationError(
+                    "marhetana-crosses-editorial-boundary",
+                    f"Word {word}, letter {tok.letter} begins a two-letter span across editorial material; canonical notation does not permit that state.",
+                )
 
 
 def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | None = None) -> TransliterationResult:
     """Transliterate clean normalized Syriac to the canonical reversible string."""
     _validate_forward_input(text)
     _validate_source_parentheses(text)
+
     resolutions=dict(occultans_resolutions or {})
+    if resolutions:
+        raise TransliterationError(
+            "obsolete-occultans-resolution",
+            "Span/separate metadata is obsolete. Encode a two-letter span directly in normalized Syriac with U+035E (above) or U+035F (below); repeated U+0747/U+0748 denotes separate one-letter lines.",
+        )
+
     tokens=_parse_source(text)
     letters_by_word: dict[int,list[int]]={}
     for idx,t in enumerate(tokens):
         if t.kind=="letter" and t.word is not None:
             letters_by_word.setdefault(t.word,[]).append(idx)
 
-    # Final mater convention: suppress only a bare final alaph that shares the
-    # editorial bracket context of its vowel-bearing carrier.
+    _validate_marhetana_adjacency(tokens, letters_by_word)
+
+    # Final mater convention: suppress only a bare final alaph that is literally
+    # adjacent to its vowel-bearing carrier and is not the second base of a
+    # marheṭānā/double-diacritic span.
     suppressed_by_prev: set[int]=set()
     for word, inds in letters_by_word.items():
-        if len(inds) < 2: continue
-        last=tokens[inds[-1]]; prev=tokens[inds[-2]]
-        # The shorthand is legal only when the bare final alaph is literally
-        # adjacent to its vowel-bearing carrier in the normalized source.  A
-        # square-bracket delimiter between them must remain visible so reversal
-        # can restore editorial placement exactly.
+        if len(inds) < 2:
+            continue
+        last=tokens[inds[-1]]
+        prev=tokens[inds[-2]]
         if (
             last.base == ALAPH
             and not last.marks
             and inds[-1] == inds[-2] + 1
+            and not ({MARHETANA_ABOVE, MARHETANA_BELOW} & set(prev.marks))
             and (ZQAPHA in prev.marks or ZLAMA_QASHYA in prev.marks)
         ):
             last.suppressed = True
@@ -280,40 +318,9 @@ def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | 
         last_visible=visible[-1] if visible else None
         for i in inds:
             t=tokens[i]
-            if t.suppressed: continue
+            if t.suppressed:
+                continue
             t.core=_render_core(t, i==last_visible, i in suppressed_by_prev)
-
-    # Validate/resolve adjacent occultans and calculate span starts.
-    span_starts: dict[int,tuple[int,Direction]]={}
-    span_seconds: set[int]=set()
-    used_resolution_keys:set[OccultansResolutionKey]=set()
-    for word, inds in letters_by_word.items():
-        vis=[i for i in inds if not tokens[i].suppressed]
-        for pos in range(len(vis)-1):
-            li,ri=vis[pos],vis[pos+1]
-            left,right=tokens[li],tokens[ri]
-            for mark,direction in ((OCCULTANS_ABOVE,"above"),(OCCULTANS_BELOW,"below")):
-                if mark in left.marks and mark in right.marks:
-                    key=_resolution_key(left,direction)
-                    if key not in resolutions:
-                        raise TransliterationError("occultans-resolution-required", f"Page resolution required for word {word}, letters {left.letter}-{right.letter}, {direction}.")
-                    decision=resolutions[key]
-                    used_resolution_keys.add(key)
-                    if decision not in {"span","separate"}:
-                        raise TransliterationError("invalid-occultans-resolution", f"Invalid resolution {decision!r} for {key}.")
-                    if decision=="span":
-                        if li in span_seconds or ri in span_seconds or li in span_starts:
-                            raise TransliterationError("overlapping-occultans-span", "Occultans spans may cover at most two letters and may not overlap.")
-                        # A span cannot cross editorial bracket delimiters in the
-                        # current canonical grammar.
-                        between=tokens[li+1:ri]
-                        if any(x.kind=="literal" and x.text in "[]" for x in between):
-                            raise TransliterationError("occultans-span-crosses-editorial-boundary", "A two-letter occultans span cannot cross an editorial bracket boundary.")
-                        span_starts[li]=(ri,direction); span_seconds.add(ri)
-
-    extra=set(resolutions)-used_resolution_keys
-    if extra:
-        raise TransliterationError("unused-occultans-resolution", f"Resolution supplied for non-ambiguous pair: {sorted(extra)!r}")
 
     out=[]
     word_label_parts: dict[int,list[str]]={w:[] for w in letters_by_word}
@@ -325,12 +332,10 @@ def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | 
             out.append(t.text)
             # Square editorial brackets are transparent to word division and
             # therefore belong in the canonical word label when they occur
-            # inside/around that word.  Other literals terminate a word.
+            # inside/around that word. Other literals terminate a word.
             if t.text in "[]":
                 candidate = t.word if t.word is not None else active_word
                 if candidate is None:
-                    # An opening bracket may precede the first letter. Look
-                    # ahead to the next letter before any word-breaking literal.
                     j=i+1
                     while j < len(tokens) and tokens[j].kind=="literal" and tokens[j].text in "[]":
                         j+=1
@@ -343,31 +348,27 @@ def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | 
                 active_word=None
             i+=1
             continue
+
         if t.suppressed:
             active_word=t.word
             i+=1
             continue
-        if i in span_seconds:
-            active_word=t.word
-            i+=1
-            continue
-        if i in span_starts:
-            ri,direction=span_starts[i]
-            right=tokens[ri]
-            content=t.core+right.core
-            rendered=f"({'_' if direction=='below' else ''}{content})"
-            out.append(rendered)
-            if t.word is not None:
-                word_label_parts[t.word].append(rendered)
-                active_word=t.word
-            i=ri+1
-            continue
+
         direction=None
-        if OCCULTANS_ABOVE in t.marks: direction="above"
-        if OCCULTANS_BELOW in t.marks: direction="below"
+        if OCCULTANS_ABOVE in t.marks:
+            direction="above"
+        if OCCULTANS_BELOW in t.marks:
+            direction="below"
+
         rendered=t.core
         if direction:
             rendered=f"({'_' if direction=='below' else ''}{rendered})"
+
+        if MARHETANA_ABOVE in t.marks:
+            rendered += MARHETANA_TIE_ABOVE
+        elif MARHETANA_BELOW in t.marks:
+            rendered += MARHETANA_TIE_BELOW
+
         out.append(rendered)
         if t.word is not None:
             word_label_parts[t.word].append(rendered)
@@ -376,8 +377,6 @@ def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | 
 
     labels=tuple("".join(word_label_parts[w]) for w in sorted(word_label_parts))
     return TransliterationResult(unicodedata.normalize("NFC","".join(out)), labels)
-
-
 
 
 def round_trip(text: str, occultans_resolutions: OccultansResolutions | None = None) -> bool:
