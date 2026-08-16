@@ -303,4 +303,4 @@ def reverse_transliterate(text: str) -> ReverseTransliterationResult:
     regenerated=transliterate_text(syriac).text
     if regenerated!=text:
         raise TransliterationError("noncanonical-transliteration",f"Input is parseable but not canonical; canonical form is {regenerated!r}.")
-    return ReverseTransliterationResult(syriac,{})
+    return ReverseTransliterationResult(syriac)
