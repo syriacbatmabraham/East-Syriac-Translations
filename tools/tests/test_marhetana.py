@@ -8,42 +8,69 @@ TOOLS = Path(__file__).resolve().parents[1]
 if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
-from east_syriac.transliteration import transliterate_text
+from east_syriac.inspection import inspect_normalized_text
+from east_syriac.normalization import MARHETANA_ABOVE, MARHETANA_BELOW, normalize_text
+from east_syriac.transliteration import TransliterationError, transliterate_text
 from east_syriac.transliteration_inverse import reverse_transliterate
 
 
-MARHETANA_SOURCE = "ܫܒܲܩ̣݇ܢ݇"
-MARHETANA_CANONICAL = "šba(q_n)"
+MARHETANA_SOURCE = "ܫܒܲܩ̣͞ܢ"
+MARHETANA_CANONICAL = "šbaq_⁀n"
+SEPARATE_SOURCE = "ܫܒܲܩ̣݇ܢ݇"
 SEPARATE_CANONICAL = "šba(q_)(n)"
 
 
 class MarhetanaModelTests(unittest.TestCase):
     def test_confirmed_qoph_nun_marhetana_span_round_trips(self):
+        norm = normalize_text(MARHETANA_SOURCE)
+        self.assertTrue(norm.ok, norm.flags)
+        self.assertEqual(norm.text, MARHETANA_SOURCE)
+        self.assertEqual(transliterate_text(MARHETANA_SOURCE).text, MARHETANA_CANONICAL)
         reverse = reverse_transliterate(MARHETANA_CANONICAL)
         self.assertEqual(reverse.text, MARHETANA_SOURCE)
-        self.assertEqual(reverse.occultans_resolutions, {(1, 3, "above"): "span"})
-        self.assertEqual(
-            transliterate_text(MARHETANA_SOURCE, reverse.occultans_resolutions).text,
-            MARHETANA_CANONICAL,
-        )
+        self.assertEqual(reverse.occultans_resolutions, {})
 
-    def test_span_and_two_separate_lines_share_unicode_but_not_page_metadata(self):
-        span = reverse_transliterate(MARHETANA_CANONICAL)
-        separate = reverse_transliterate(SEPARATE_CANONICAL)
+    def test_span_and_separate_lines_are_distinct_in_both_layers(self):
+        self.assertNotEqual(MARHETANA_SOURCE, SEPARATE_SOURCE)
+        self.assertNotEqual(MARHETANA_CANONICAL, SEPARATE_CANONICAL)
+        self.assertEqual(transliterate_text(SEPARATE_SOURCE).text, SEPARATE_CANONICAL)
+        self.assertEqual(reverse_transliterate(SEPARATE_CANONICAL).text, SEPARATE_SOURCE)
+        self.assertEqual(reverse_transliterate(MARHETANA_CANONICAL).text, MARHETANA_SOURCE)
 
-        self.assertEqual(span.text, separate.text)
-        self.assertEqual(span.text, MARHETANA_SOURCE)
-        self.assertEqual(span.occultans_resolutions[(1, 3, "above")], "span")
-        self.assertEqual(separate.occultans_resolutions[(1, 3, "above")], "separate")
+    def test_lower_span_uses_double_macron_below_and_undertie(self):
+        source = "ܡ͟ܢ"
+        canonical = "m‿n"
+        self.assertEqual(transliterate_text(source).text, canonical)
+        self.assertEqual(reverse_transliterate(canonical).text, source)
 
-        self.assertEqual(
-            transliterate_text(MARHETANA_SOURCE, span.occultans_resolutions).text,
-            MARHETANA_CANONICAL,
-        )
-        self.assertEqual(
-            transliterate_text(MARHETANA_SOURCE, separate.occultans_resolutions).text,
-            SEPARATE_CANONICAL,
-        )
+    def test_legacy_two_letter_parenthetical_span_is_rejected(self):
+        with self.assertRaises(TransliterationError) as caught:
+            reverse_transliterate("šba(q_n)")
+        self.assertEqual(caught.exception.code, "legacy-two-letter-line-wrapper")
+
+    def test_obsolete_resolution_metadata_is_rejected(self):
+        with self.assertRaises(TransliterationError) as caught:
+            transliterate_text(SEPARATE_SOURCE, {(1, 3, "above"): "span"})
+        self.assertEqual(caught.exception.code, "obsolete-occultans-resolution")
+
+    def test_span_requires_following_letter(self):
+        source = "ܡ" + MARHETANA_ABOVE
+        report = inspect_normalized_text(source)
+        self.assertIn("marhetana-without-next-letter", [issue.code for issue in report.issues])
+        with self.assertRaises(TransliterationError):
+            transliterate_text(source)
+
+    def test_overlapping_spans_are_blocking(self):
+        source = "ܡ" + MARHETANA_ABOVE + "ܢ" + MARHETANA_ABOVE + "ܐ"
+        report = inspect_normalized_text(source)
+        self.assertIn("overlapping-marhetana-spans", [issue.code for issue in report.issues])
+
+    def test_double_diacritics_are_known_normalized_marks(self):
+        for mark in (MARHETANA_ABOVE, MARHETANA_BELOW):
+            source = "ܡ" + mark + "ܢ"
+            result = normalize_text(source)
+            self.assertTrue(result.ok, result.flags)
+            self.assertEqual(result.text, source)
 
 
 if __name__ == "__main__":
