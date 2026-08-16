@@ -9,7 +9,12 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 from east_syriac.inspection import inspect_normalized_text
-from east_syriac.normalization import WEST_SYRIAC_VOWELS, normalize_text
+from east_syriac.normalization import (
+    MARHETANA_ABOVE,
+    MARHETANA_BELOW,
+    WEST_SYRIAC_VOWELS,
+    normalize_text,
+)
 
 
 class SyntheticNormalizationStressTests(unittest.TestCase):
@@ -57,6 +62,16 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
             "ܡ\u0738\u0323\u0324\u032e\u0748",
         )
 
+    def test_span_classes_follow_ordinary_canonical_order(self):
+        self.assert_clean(
+            "ܡ" + MARHETANA_ABOVE + "\u0308\u0323\u0735" + "ܢ",
+            "ܡ\u0323\u0735\u0308" + MARHETANA_ABOVE + "ܢ",
+        )
+        self.assert_clean(
+            "ܡ" + MARHETANA_BELOW + "\u0308\u0323\u0735" + "ܢ",
+            "ܡ\u0323\u0735\u0308" + MARHETANA_BELOW + "ܢ",
+        )
+
     def test_mixed_combining_classes_and_superscript_alaph(self):
         self.assert_clean(
             "ܡ\u0747\u0711\u0323\u0735",
@@ -65,6 +80,9 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
 
     def test_between_letter_points_survive_as_distinct_states(self):
         self.assert_clean("ܩ\U00001df8ܥ ܡ\U00001dfaܢ", "ܩ\U00001df8ܥ ܡ\U00001dfaܢ")
+
+    def test_direct_two_letter_spans_survive_as_distinct_states(self):
+        self.assert_clean("ܩ" + MARHETANA_ABOVE + "ܢ ܡ" + MARHETANA_BELOW + "ܢ", "ܩ" + MARHETANA_ABOVE + "ܢ ܡ" + MARHETANA_BELOW + "ܢ")
 
     def test_legal_dense_above_stack(self):
         self.assert_clean(
@@ -158,6 +176,14 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
         self.assertFalse(result.flags)
         audit = inspect_normalized_text(result.text)
         self.assertIn("duplicate-normalized-mark", [issue.code for issue in audit.issues])
+
+    def test_span_without_second_base_is_caught_after_normalization(self):
+        for mark in (MARHETANA_ABOVE, MARHETANA_BELOW):
+            with self.subTest(mark=f"U+{ord(mark):04X}"):
+                result = normalize_text("ܡ" + mark)
+                self.assertFalse(result.flags)
+                audit = inspect_normalized_text(result.text)
+                self.assertIn("marhetana-without-next-letter", [issue.code for issue in audit.issues])
 
 
 if __name__ == "__main__":
