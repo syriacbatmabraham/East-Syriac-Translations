@@ -21,3 +21,5 @@ jobs:
         run: python -m compileall -q tools
       - name: Run deterministic tool tests
         run: python -m unittest discover -s tools/tests -v
+      - name: Check confirmed corpus
+        run: python tools/check_confirmed_text.py confirmed-texts
