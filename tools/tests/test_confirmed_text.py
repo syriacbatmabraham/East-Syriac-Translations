@@ -42,6 +42,14 @@ class ConfirmedTextParserTests(unittest.TestCase):
         self.assertEqual(doc.transliteration_lines[1], "")
         self.assertEqual(doc.english_lines[1], "")
 
+    def test_misaligned_stanza_breaks_are_rejected(self):
+        # Each apparent layer can be made three lines long, but the blank-line
+        # position differs. General Rules §9.1.1 requires stanza breaks to align.
+        text = "ܐܒ\n\nܓܕ\n\nʾb\ngd\nx\n\none\n\ntwo\n"
+        with self.assertRaises(ConfirmedTextFormatError) as caught:
+            parse_confirmed_text(text)
+        self.assertEqual(caught.exception.code, "stanza-break-mismatch")
+
     def test_separator_runs_may_have_more_than_one_blank_line(self):
         text = make_file("ܐܒ", "ʾb", "one", separator="\n\n\n")
         doc = parse_confirmed_text(text)
