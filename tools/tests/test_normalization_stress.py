@@ -115,6 +115,14 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
         result = normalize_text("\u0308ܡܐ")
         self.assertIn("orphan-combining-mark", [flag.code for flag in result.flags])
 
+    def test_unsupported_nonbreaking_space_requires_review(self):
+        result = normalize_text("ܐ\u00a0ܒ")
+        self.assertIn("unsupported-whitespace", [flag.code for flag in result.flags])
+
+    def test_unsupported_tab_requires_review_even_in_editorial_label(self):
+        result = normalize_text("(Witness\tA) ܐ")
+        self.assertIn("unsupported-whitespace", [flag.code for flag in result.flags])
+
     def test_duplicate_single_point_above_aliases_require_review(self):
         result = normalize_text("ܒ\u0307\u0741ܐ")
         self.assertIn("duplicate-single-point-above", [flag.code for flag in result.flags])
