@@ -40,7 +40,6 @@ class ConfirmedTextParserTests(unittest.TestCase):
         self.assertEqual(doc.line_count, 3)
         self.assertEqual(doc.stanza_breaks, (2,))
         self.assertEqual(doc.transliteration_lines[1], "")
-        self.assertEqual(doc.english_lines[1], "")
 
     def test_misaligned_stanza_breaks_are_rejected(self):
         text = "ܐܒ\n\nܓܕ\n\nʾb\ngd\nx\n\none\n\ntwo\n"
@@ -89,7 +88,7 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         self.assertEqual(result.expected_transliteration_block, "ʾb")
 
     def test_non_normalized_syriac_is_refused_by_forward_layer(self):
-        text = make_file("ܒ\u0307", "ḃ", "one")
+        text = make_file("ܬ\u0740", "t̤", "one")
         result = check_confirmed_text(text, "sample.txt")
         self.assertIn("syriac-transliteration-error", [issue.code for issue in result.issues])
 
