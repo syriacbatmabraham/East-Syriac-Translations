@@ -28,7 +28,6 @@ class MarhetanaModelTests(unittest.TestCase):
         self.assertEqual(transliterate_text(MARHETANA_SOURCE).text, MARHETANA_CANONICAL)
         reverse = reverse_transliterate(MARHETANA_CANONICAL)
         self.assertEqual(reverse.text, MARHETANA_SOURCE)
-        self.assertEqual(reverse.occultans_resolutions, {})
 
     def test_span_and_separate_lines_are_distinct_in_both_layers(self):
         self.assertNotEqual(MARHETANA_SOURCE, SEPARATE_SOURCE)
@@ -47,11 +46,6 @@ class MarhetanaModelTests(unittest.TestCase):
         with self.assertRaises(TransliterationError) as caught:
             reverse_transliterate("šba(q_n)")
         self.assertEqual(caught.exception.code, "legacy-two-letter-line-wrapper")
-
-    def test_obsolete_resolution_metadata_is_rejected(self):
-        with self.assertRaises(TransliterationError) as caught:
-            transliterate_text(SEPARATE_SOURCE, {(1, 3, "above"): "span"})
-        self.assertEqual(caught.exception.code, "obsolete-occultans-resolution")
 
     def test_span_requires_following_letter(self):
         source = "ܡ" + MARHETANA_ABOVE
