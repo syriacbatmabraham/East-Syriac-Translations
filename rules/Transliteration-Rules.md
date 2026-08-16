@@ -151,11 +151,13 @@ These are single page-states in which the vowel sign is borne by the mater lette
 
 | Sign | Identification | Translit. |
 |---|---|---|
-| yodh + ī-sign | ḥḇāṣā | `ī` |
-| waw + one dot above | rwāḥā | `ō` |
-| waw + one dot below | rḇāṣā / ʾeṣāṣā | `ū` |
+| yodh + U+073C ḥḇāṣā sign | ḥḇāṣā | `ī` |
+| waw + U+073F rwāḥā sign | rwāḥā | `ō` |
+| waw + U+073C rḇāṣā / ʾeṣāṣā sign | rḇāṣā / ʾeṣāṣā | `ū` |
 
-**There is no carrierless Class-A notation.** `ĭ`, `ŏ`, and `ŭ` are not valid canonical symbols. A sign that appears to represent `ī`, `ō`, or `ū` without the expected yodh or waw is **flagged at ingestion, not transliterated by inference**. Establish the page-state from the witness before adding or normalizing any such form (§16).
+These identities are established by the **normalized mark itself**, not from the fact that a dot happens to sit on yodh or waw. A generic U+0307/U+0323 point on either carrier remains the §7 single point and transliterates as `^`/`_`.
+
+**There is no carrierless Class-A notation.** `ĭ`, `ŏ`, and `ŭ` are not valid canonical symbols. An explicit U+073C/U+073F on an impossible carrier is **flagged at ingestion, not repaired by inference**. Establish the page-state from the witness before confirming any such form (§16).
 
 *Note on names.* Grammars differ: *rḇāṣā* names the /u/ vowel in one convention and the e-vowels in another, where Unicode uses *ʾeṣāṣā*. This file uses *rḇāṣā / ʾeṣāṣā* for /ū/. Nothing turns on the choice.
 
@@ -333,14 +335,18 @@ A single point above or below a letter, or standing between two letters, that is
 
 The test is positional, not functional. Purpose is not recorded.
 
-**Disambiguation by carrier.** A single point on a letter is read from the letter it sits on:
+**Identity is direct, not carrier-inferred.** The canonical Syriac codepoint records which point the page audit has established. A carrier never changes that identity automatically:
 
-| Carrier | Point above | Point below |
-|---|---|---|
-| bgdkpt | qūššāyā (§3.2) | rūkkākā (§3.2) |
-| waw | rwāḥā `ō` (§4.1) | rḇāṣā `ū` (§4.1) |
-| yodh | §7 | ḥḇāṣā `ī` (§4.1) |
-| any other letter | §7 | §7 |
+| Normalized mark | Identity |
+|---|---|
+| U+0307 COMBINING DOT ABOVE | §7 generic point above |
+| U+0323 COMBINING DOT BELOW | §7 generic point below |
+| U+0741 SYRIAC QUSHSHAYA | qūššāyā (§3.2) |
+| U+0742 SYRIAC RUKKAKHA | rūkkākā (§3.2) |
+| U+073F SYRIAC RWAHA | rwāḥā `ō` on waw (§4.1) |
+| U+073C SYRIAC HBASA-ESASA DOTTED | `ī` on yodh or `ū` on waw (§4.1) |
+
+U+0307/U+0323 remain §7 even on bgdkpt, waw, or yodh. Conversely, U+0741/U+0742/U+073F/U+073C are not converted to generic points merely because they occur on an unexpected carrier; that is a page-state problem to review. If a digital witness has used the wrong point codepoint as a visual approximation, the **human page audit corrects the canonical Syriac codepoint before confirmation** (§16). The normalizer does not guess the intended identity from the carrier.
 
 A point standing **between** two letters is never a vowel or a bgdkpt point, whatever the letters are, and is always §7.
 
@@ -473,14 +479,20 @@ Validation requirements are §12 and General Rules §11. Corpus reports and test
 
 ## 16. Source Ingestion — Codepoint Normalization
 
-Digital witnesses may use different codepoints for the same visible page-state, and the same codepoint may serve different page-states in different carrier environments. Canonical transliteration therefore normalizes **page-state first**, then applies §§3–7. Reading source codepoints as universal semantic labels is prohibited.
+Digital witnesses may use an inappropriate Unicode point codepoint as a visual approximation. Canonical normalization therefore establishes **page-state first**, but it does **not** reinterpret a single point from the letter carrying it. Reading the carrier as a semantic disambiguator is prohibited. Where the digital encoding and the printed page disagree, the human page audit corrects the canonical Syriac codepoint before confirmation.
 
 ### 16.1 Normalize to page-state
 
-Collapse the single-dot marks to two classes, then read by carrier per §7:
+The six in-scope single-point codepoints retain direct identities:
 
-- **single point above** — U+0741, U+073F, U+0307
-- **single point below** — U+0742, U+073C, U+0323
+- **U+0307** — generic single point above (§7), on any carrier;
+- **U+0323** — generic single point below (§7), on any carrier;
+- **U+0741** — qūššāyā (§3.2);
+- **U+0742** — rūkkākā (§3.2);
+- **U+073F** — rwāḥā (§4.1);
+- **U+073C** — ḥḇāṣā / rḇāṣā-ʾeṣāṣā carrier-vowel mark (§4.1).
+
+There is **no automatic conversion among these six marks**. An explicit semantic mark on an impossible carrier is retained and flagged by the page-state checker; a generic U+0307/U+0323 remains generic on bgdkpt, waw, and yodh. If a raw witness encoded a visually similar but semantically wrong point, page review supplies the correction before transliteration.
 
 Multi-dot signs (U+0732 pṯāḥā, U+0735 zqāpā, U+0738 zlāmā pšīqā, U+0739 zlāmā qašyā) are unambiguous single codepoints and pass through unchanged.
 

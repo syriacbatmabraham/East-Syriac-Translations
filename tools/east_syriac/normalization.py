@@ -53,9 +53,9 @@ SEMKATH = "\u0723"
 SUPERSCRIPT_ALAPH = "\u0711"
 SYAME = "\u0308"
 
-# §16.1 single-dot aliases. Meaning is resolved by carrier, never codepoint name.
-SINGLE_ABOVE_INPUTS = frozenset({"\u0741", "\u073f", "\u0307"})
-SINGLE_BELOW_INPUTS = frozenset({"\u0742", "\u073c", "\u0323"})
+# §16.1 single-point states are direct canonical identities. The page audit
+# establishes which mark is present; normalization never reinterprets a point
+# from the letter carrying it.
 QUSSHAYA = "\u0741"
 RUKKAKHA = "\u0742"
 RWAHA = "\u073f"
@@ -211,21 +211,6 @@ def _is_combining(char: str) -> bool:
 
 def _is_syriac_letter(char: str) -> bool:
     return unicodedata.name(char, "").startswith("SYRIAC LETTER")
-
-
-def _canonical_single_point(base: str, mark: str) -> str:
-    if mark in SINGLE_ABOVE_INPUTS:
-        if base in BGDKPT:
-            return QUSSHAYA
-        if base == WAW:
-            return RWAHA
-        return GENERIC_DOT_ABOVE
-
-    if base in BGDKPT:
-        return RUKKAKHA
-    if base in {WAW, YODH}:
-        return HBASA_ESASA_DOTTED
-    return GENERIC_DOT_BELOW
 
 
 def _sort_marks(marks: list[str]) -> list[str]:
@@ -495,17 +480,9 @@ def normalize_text(text: str) -> NormalizationResult:
             )
 
         normalized_marks: list[str] = []
-        above_count = 0
-        below_count = 0
         for mark, mark_index, _ in marks:
             new_mark = mark
-            if mark in SINGLE_ABOVE_INPUTS:
-                new_mark = _canonical_single_point(normalized_base, mark)
-                above_count += 1
-            elif mark in SINGLE_BELOW_INPUTS:
-                new_mark = _canonical_single_point(normalized_base, mark)
-                below_count += 1
-            elif mark in TWO_DOTS_BELOW_INPUTS:
+            if mark in TWO_DOTS_BELOW_INPUTS:
                 new_mark = TWO_DOTS_BELOW
             elif mark in WEST_SYRIAC_VOWELS:
                 flags.append(
@@ -531,29 +508,6 @@ def normalize_text(text: str) -> NormalizationResult:
             if new_mark != mark:
                 changes.append(NormalizationChange("normalize-page-state", mark_index, mark, new_mark))
             normalized_marks.append(new_mark)
-
-        if above_count > 1:
-            first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_ABOVE_INPUTS)
-            flags.append(
-                _flag(
-                    text,
-                    first_index,
-                    first_mark,
-                    "duplicate-single-point-above",
-                    "More than one single-point-above source encoding occurs on one carrier.",
-                )
-            )
-        if below_count > 1:
-            first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_BELOW_INPUTS)
-            flags.append(
-                _flag(
-                    text,
-                    first_index,
-                    first_mark,
-                    "duplicate-single-point-below",
-                    "More than one single-point-below source encoding occurs on one carrier.",
-                )
-            )
 
         ordered_marks = _sort_marks(normalized_marks)
         if ordered_marks != normalized_marks:

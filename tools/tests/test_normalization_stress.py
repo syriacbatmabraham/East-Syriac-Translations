@@ -26,20 +26,21 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
         self.assertFalse(result.flags)
         self.assertFalse(inspect_normalized_text(result.text).issues)
 
-    def test_bgdkpt_single_point_aliases(self):
+    def test_explicit_bgdkpt_points_stay_explicit(self):
+        self.assert_clean("ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742", "ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742")
+
+    def test_generic_points_stay_generic(self):
+        self.assert_clean("ܡ\u0307ܢ\u0323", "ܡ\u0307ܢ\u0323")
+
+    def test_waw_yodh_and_bgdkpt_do_not_reinterpret_generic_points(self):
         self.assert_clean(
-            "ܒ\u0307ܕ\u073cܓ\u0741ܬ\u0323",
-            "ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742",
+            "ܘ\u0307ܘ\u0323ܝ\u0307ܝ\u0323ܒ\u0307ܕ\u0323",
+            "ܘ\u0307ܘ\u0323ܝ\u0307ܝ\u0323ܒ\u0307ܕ\u0323",
         )
 
-    def test_non_bgdkpt_single_point_aliases(self):
-        self.assert_clean("ܡ\u0741ܢ\u0742", "ܡ\u0307ܢ\u0323")
-
-    def test_waw_and_yodh_carrier_resolution(self):
-        self.assert_clean(
-            "ܘ\u0307ܘ\u0323ܝ\u0742ܝ\u073f",
-            "ܘ\u073fܘ\u073cܝ\u073cܝ\u0307",
-        )
+    def test_psalm_11_waw_generic_point_states(self):
+        self.assert_clean("ܘ\u0307\u0308\u0735ܠ", "ܘ\u0735\u0307\u0308ܠ")
+        self.assert_clean("ܘ\u0323ܠ", "ܘ\u0323ܠ")
 
     def test_final_semkath_inside_imaginary_word(self):
         self.assert_clean("ܡ\u0724ܐ", "ܡ\u0723ܐ")
@@ -141,17 +142,16 @@ class SyntheticNormalizationStressTests(unittest.TestCase):
         result = normalize_text("(Witness\tA) ܐ")
         self.assertIn("unsupported-whitespace", [flag.code for flag in result.flags])
 
-    def test_duplicate_single_point_above_aliases_require_review(self):
-        result = normalize_text("ܒ\u0307\u0741ܐ")
-        self.assertIn("duplicate-single-point-above", [flag.code for flag in result.flags])
-        audit = inspect_normalized_text(result.text)
-        self.assertIn("duplicate-normalized-mark", [issue.code for issue in audit.issues])
+    def test_distinct_point_identities_can_coexist(self):
+        above = normalize_text("ܒ\u0307\u0741ܐ")
+        self.assertEqual(above.text, "ܒ\u0741\u0307ܐ")
+        self.assertFalse(above.flags)
+        self.assertFalse(inspect_normalized_text(above.text).issues)
 
-    def test_duplicate_single_point_below_aliases_require_review(self):
-        result = normalize_text("ܕ\u0323\u0742ܐ")
-        self.assertIn("duplicate-single-point-below", [flag.code for flag in result.flags])
-        audit = inspect_normalized_text(result.text)
-        self.assertIn("duplicate-normalized-mark", [issue.code for issue in audit.issues])
+        below = normalize_text("ܕ\u0323\u0742ܐ")
+        self.assertEqual(below.text, "ܕ\u0742\u0323ܐ")
+        self.assertFalse(below.flags)
+        self.assertFalse(inspect_normalized_text(below.text).issues)
 
     def test_contradictory_hard_and_soft_state_is_caught_after_normalization(self):
         result = normalize_text("ܒ\u0741\u0742ܐ")

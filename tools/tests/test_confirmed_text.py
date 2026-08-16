@@ -89,7 +89,7 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         self.assertEqual(result.expected_transliteration_block, "ʾb")
 
     def test_non_normalized_syriac_is_refused_by_forward_layer(self):
-        text = make_file("ܒ\u0307", "ḃ", "one")
+        text = make_file("ܬ\u0740", "t̤", "one")
         result = check_confirmed_text(text, "sample.txt")
         self.assertIn("syriac-transliteration-error", [issue.code for issue in result.issues])
 
