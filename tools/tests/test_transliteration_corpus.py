@@ -10,6 +10,7 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 from east_syriac.confirmed_text import check_confirmed_text_path
+from east_syriac.provenance import check_source_registry_path
 
 
 class ConfirmedCorpusTransliterationTests(unittest.TestCase):
@@ -35,6 +36,21 @@ class ConfirmedCorpusTransliterationTests(unittest.TestCase):
                 )
                 self.assertIsNotNone(result.document)
                 self.assertIsNotNone(result.expected_transliteration_block)
+
+    def test_confirmed_corpus_matches_source_registry(self):
+        issues = check_source_registry_path(
+            ROOT / "sources" / "sources.yaml",
+            ROOT / "confirmed-texts",
+        )
+        self.assertFalse(
+            issues,
+            "\n".join(
+                f"{issue.code}"
+                f"{' ' + issue.filename if issue.filename is not None else ''}: "
+                f"{issue.message}"
+                for issue in issues
+            ),
+        )
 
 
 if __name__ == "__main__":
