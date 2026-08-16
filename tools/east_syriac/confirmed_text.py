@@ -31,6 +31,7 @@ from .transliteration_inverse import reverse_transliterate
 BLOCK_NAMES = ("syriac", "transliteration", "english")
 CURLY_APOSTROPHES = frozenset({"\u2018", "\u2019", "\u201b"})
 ALLOWED_SUFFIXES = frozenset({".txt", ".md"})
+ALLOWED_CONFIRMED_WHITESPACE = frozenset({" ", "\n"})
 
 
 class ConfirmedTextFormatError(ValueError):
@@ -255,6 +256,20 @@ def _hygiene_issues(text: str, filename: str | None) -> list[ConfirmedTextIssue]
                 line=_line_number(text, first),
             )
         )
+
+    for index, char in enumerate(text):
+        if char == "\r":
+            # Diagnosed above as a line-ending error rather than a second
+            # whitespace error.
+            continue
+        if char.isspace() and char not in ALLOWED_CONFIRMED_WHITESPACE:
+            issues.append(
+                ConfirmedTextIssue(
+                    "unsupported-whitespace",
+                    f"Confirmed text contains unsupported whitespace U+{ord(char):04X}; only U+0020 SPACE and LF are permitted.",
+                    line=_line_number(text, index),
+                )
+            )
 
     if unicodedata.normalize("NFC", text) != text:
         issues.append(
