@@ -91,7 +91,7 @@ Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or pra
 
 Kept separate from the project files. Format is fixed:
 
-- **Plain UTF-8** (`.txt` or `.md`), no BOM, **LF** endings, no trailing whitespace
+- **Plain UTF-8** (`.txt` or `.md`), no BOM, **LF** endings, no trailing whitespace. The only permitted whitespace codepoints are **U+0020 SPACE** within a line and **U+000A LF** between lines; tabs, non-breaking spaces, thin spaces, and other Unicode whitespace are invalid
 - **NFC normalized**, mark order per Translit §5.1
 - **One file per text.** Lines numbered by position; the line is the citation unit
 - **Punctuation and all other out-of-scope characters removed at ingestion** (Translit §10, Translit §16.1), except editorial apparatus. Clause division is carried by line breaks
@@ -115,7 +115,7 @@ Rich-text formats are never the authoritative copy — they can split a letter f
 
 A text under work is a **draft** and is not citable: no entry may name one. It becomes confirmed when its source of record is designated (§1.1), its codepoint audit is run (§7), its blocks round-trip (§11.11), its English is settled, and the check suite passes. Entries are built only then, and a confirmed text is not edited without rerunning §11.
 
-The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; the source of record is designated per §1.1 and checked against the page.
+The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; every confirmed filename has one registry entry containing its stable `citation_label` and `source_of_record`. The source of record is designated per §1.1 and checked against the page. The deterministic confirmed-corpus checker verifies the filename/registry correspondence and source designation.
 
 ## 10. Glossary Principle
 
@@ -125,7 +125,7 @@ The text files carry no header of their own, which would break the three-block p
    **Where a proclitic carries a vowel belonging to the head lexeme, the headword restores it** — ܘܒܲܐܡܝܼܢܘܼ *wbaʾmīnū* gives the headword *ʾamīnū*, not *ʾmīnū*.
 
    **The negative particle ܠܵܐ *lā* takes no entry**, and is handled exactly as a proclitic — retained on the attested form of the word it negates, absent from the headword, not counted separately. Whether written solid or separate.
-3. Each occurrence records its English context and a citation. **A citation names the text and the line.** Standing alone: `(Creed Line 5)`, `(Tešbōḥtā Line 2)`. One file, one text, one label. A unit belonging to an office carries the office in its label: `(Ferial Slotha d'Ramsha, Line 3)`. An office name alone is not a label — the unit is. Where a text's own numbering is standard, it is used instead. **A citation string, once written, is reused exactly**; a label is fixed by first use, changing only for a rendering change or correction.
+3. Each occurrence records its English context and a citation. **A citation names the text and the line.** Standing alone: `(Creed Line 5)`, `(Teshbhotha l'Alaha Line 2)`. One file, one text, one stable label. The label is the `citation_label` recorded for that confirmed file in `sources/sources.yaml`. A unit belonging to an office carries the office in its label: `(Ferial Slotha d'Ramsha, Line 3)`. An office name alone is not a label — the unit is. Where a text's own numbering is standard, it is used instead. **A citation string, once written, is reused exactly**; a label is fixed by first use, changing only for a rendering change or correction.
 
    **A word inserted from another witness carries that witness's name in front of the complete text label** — `(Assyrian Ferial Slotha d'Sapra II, Line 4)`. The witness qualifier preserves any distinction needed to identify the alternate office or day-class (`Ferial`, `Sunday`, `Festive`, etc.). The qualifier marks the word, not the text: there is no separate confirmed text for the witness, and the citation points at the same line of the same file as an unqualified one.
 4. Variance is recorded, not suppressed. Each rendering carries its own **decision count**. Glossary counts measure indexed translation decisions under these rules, not raw corpus-token frequency. Keep repeated terms stable (§3), but do not flatten a genuine split.
@@ -191,7 +191,7 @@ Run after every glossary write, and after any edit to a confirmed text. **Diagno
 
 **Files**
 15. Three blocks of equal length in every confirmed text, the transliteration derived from the Syriac (§9.1.1)
-16. Hygiene per §9.1 — UTF-8 without BOM, LF endings, no trailing whitespace, NFC, straight apostrophes
+16. Hygiene per §9.1 — UTF-8 without BOM, LF endings, U+0020/LF as the only whitespace, no trailing whitespace, NFC, straight apostrophes
 
 Corruption here is silent rather than noisy — a wrong codepoint renders correctly, a dropped mark reverses without complaint, a stale citation points at a section that still exists.
 
@@ -208,11 +208,12 @@ Order of resort:
 
 ### 12.1 Standing corpora and lexica
 
-Bulk-downloadable and greppable. Grep the whole corpus; do not sample. Read each repository's own documentation for contents and licence; recorded here is only what that documentation does not say.
+Bulk-downloadable and greppable. Grep the whole relevant corpus; do not sample when exhaustive retrieval is available. Read each repository's own documentation for contents and licence before use.
 
-- **`ETCBC/peshitta`** — `plain/0.1/<Book>.txt`. **Unvocalized**, Leiden critical edition on a **West Syriac** manuscript base. Good for lexical distribution and translation equivalence. **Never for pointing, and not the Mosul text** — re-check every reading against the source of record (§1) before it enters an entry. OT only; never let its counts settle a question about a text outside it.
+- **`ETCBC/peshitta`** — prefer the repository's current `plain/0.2/<Book>.txt` plain-text release rather than the older `plain/0.1` snapshot. **Unvocalized Old Testament only.** The electronic text follows the VTS main text for books whose VTS editions are available and Codex Ambrosianus for the remaining books; it is therefore not accurately described as one manuscript base. Good for lexical distribution and translation equivalence. **Never for East Syriac pointing, and not the Mosul source of record** — re-check every reading against §1 before it enters an entry. The upstream project describes this repository as stable/unsupported, so do not assume a newer path without checking its README.
+- **`ETCBC/syriac`** — a newer Text-Fabric Syriac dataset with word-level morphology and a growing selection of Peshitta and other Syriac texts. Useful as a secondary morphology/distribution cross-check where the relevant book is actually present. It is explicitly a work in progress and does **not** contain the complete Peshitta, so its absence of a form is never negative evidence for the whole corpus and it never replaces the source of record.
 - **`srophe/syriac-corpus`** — `data/tei/*.xml`. Strip tags after splitting on `<text`; author and title sit in `<author>` and `<title>`. **Narsai** is fully vocalized East Syriac and the highest-value witness here; **Ishoʿyahb III** is the closest register to the hymns. Otherwise **mostly West Syriac vocalization** — see Translit §16.6 on what may be cited from a West-vocalized token.
-- **`peshitta/sedrajs`** — `sedra/`. Comma-delimited, ASCII-transliterated: `A`=ܐ `B`=ܒ `G`=ܓ `D`=ܕ `H`=ܗ `O`=ܘ `Z`=ܙ `K`=ܚ `Y`=ܛ `;`=ܝ `C`=ܟ `L`=ܠ `M`=ܡ `N`=ܢ `S`=ܣ `E`=ܥ `I`=ܦ `/`=ܨ `X`=ܩ `R`=ܪ `W`=ܫ `T`=ܬ. ENGLISH links by id to LEXEMES, LEXEMES by id to ROOTS. Verbs are glossed without "to". Glosses are **NT-particular**; liturgical and OT vocabulary may be absent. Root conventions differ from this project's — see §10.20.
+- **`peshitta/sedrajs`** — `sedra/`. Comma-delimited, ASCII-transliterated: `A`=ܐ `B`=ܒ `G`=ܓ `D`=ܕ `H`=ܗ `O`=ܘ `Z`=ܙ `K`=ܚ `Y`=ܛ `;`=ܝ `C`=ܟ `L`=ܠ `M`=ܡ `N`=ܢ `S`=ܣ `E`=ܥ `I`=ܦ `/`=ܨ `X`=ܩ `R`=ܪ `W`=ܫ `T`=ܬ. ENGLISH links by id to LEXEMES, LEXEMES by id to ROOTS. Verbs are glossed without "to". Glosses are **NT-particular**; liturgical and OT vocabulary may be absent. Root conventions differ from this project's — see §10.20. The conversion code is MIT-licensed, but the bundled SEDRA III database carries its own academic-use and redistribution conditions; preserve those terms.
 - **SEDRA 4 API** — `sedra.bethmardutho.org`, for what the local file does not cover. A remote call.
 
 ### 12.2 Reporting
