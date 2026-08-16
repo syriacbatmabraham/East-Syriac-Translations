@@ -63,12 +63,17 @@ HBASA_ESASA_DOTTED = "\u073c"
 GENERIC_DOT_ABOVE = "\u0307"
 GENERIC_DOT_BELOW = "\u0323"
 
-# §16.1 / §§17–18.
+# §16.1 / §§6–7 / §§17–18.
 TWO_DOTS_BELOW_INPUTS = frozenset({"\u0324", "\u0740", "\u0744"})
 TWO_DOTS_BELOW = "\u0324"
 BREVE_BELOW = "\u032e"
 BETWEEN_ABOVE = "\U00001df8"
 BETWEEN_BELOW = "\U00001dfa"
+
+# Two-base spanning page-states. These are general-use Unicode double
+# diacritics: the mark follows the first base and spans the next base as well.
+MARHETANA_ABOVE = "\u035e"  # COMBINING DOUBLE MACRON
+MARHETANA_BELOW = "\u035f"  # COMBINING DOUBLE MACRON BELOW
 
 EAST_MULTI_DOT_VOWELS = frozenset({"\u0732", "\u0735", "\u0738", "\u0739"})
 WEST_SYRIAC_VOWELS = frozenset(
@@ -86,6 +91,8 @@ WEST_SYRIAC_VOWELS = frozenset(
     }
 )
 
+# One-letter line marks. Historical code names retain "occultans" for API
+# compatibility; the rules do not infer phonological function from the stroke.
 OCCULTANS_ABOVE = "\u0747"
 OCCULTANS_BELOW = "\u0748"
 
@@ -111,6 +118,8 @@ KNOWN_MARKS = frozenset(
         BREVE_BELOW,
         BETWEEN_ABOVE,
         BETWEEN_BELOW,
+        MARHETANA_ABOVE,
+        MARHETANA_BELOW,
         OCCULTANS_ABOVE,
         OCCULTANS_BELOW,
         *EAST_MULTI_DOT_VOWELS,

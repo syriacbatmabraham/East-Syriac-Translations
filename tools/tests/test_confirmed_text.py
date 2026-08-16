@@ -43,8 +43,6 @@ class ConfirmedTextParserTests(unittest.TestCase):
         self.assertEqual(doc.english_lines[1], "")
 
     def test_misaligned_stanza_breaks_are_rejected(self):
-        # Each apparent layer can be made three lines long, but the blank-line
-        # position differs. General Rules §9.1.1 requires stanza breaks to align.
         text = "ܐܒ\n\nܓܕ\n\nʾb\ngd\nx\n\none\n\ntwo\n"
         with self.assertRaises(ConfirmedTextFormatError) as caught:
             parse_confirmed_text(text)
@@ -91,27 +89,32 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         self.assertEqual(result.expected_transliteration_block, "ʾb")
 
     def test_non_normalized_syriac_is_refused_by_forward_layer(self):
-        # Generic dot above on beth is a source alias; normalized Syriac must use
-        # the canonical qūššāyā codepoint instead.
         text = make_file("ܒ\u0307", "ḃ", "one")
         result = check_confirmed_text(text, "sample.txt")
         self.assertIn("syriac-transliteration-error", [issue.code for issue in result.issues])
 
-    def test_page_only_occultans_decision_may_be_recovered_from_exact_canonical(self):
-        source = "ܡ\u0747ܢ\u0747"
-        text = make_file(source, "(mn)", "one")
+    def test_direct_marhetana_is_derived_from_syriac(self):
+        source = "ܡ\u035eܢ"
+        text = make_file(source, "m⁀n", "one")
         result = check_confirmed_text(text, "sample.txt")
         self.assertTrue(result.ok, result.issues)
-        self.assertEqual(result.expected_transliteration_block, "(mn)")
+        self.assertEqual(result.expected_transliteration_block, "m⁀n")
 
-    def test_page_only_occultans_is_not_trusted_from_stale_canonical(self):
-        source = "ܡ\u0747ܢ\u0747"
-        text = make_file(source, "(mg)", "one")
+    def test_stale_marhetana_latin_does_not_block_expected_derivation(self):
+        source = "ܡ\u035eܢ"
+        text = make_file(source, "m⁀g", "one")
         result = check_confirmed_text(text, "sample.txt")
         codes = [issue.code for issue in result.issues]
         self.assertIn("reverse-round-trip-mismatch", codes)
-        self.assertIn("occultans-page-resolution-required", codes)
-        self.assertIsNone(result.expected_transliteration_block)
+        self.assertIn("stale-transliteration", codes)
+        self.assertEqual(result.expected_transliteration_block, "m⁀n")
+
+    def test_adjacent_one_letter_lines_need_no_page_metadata(self):
+        source = "ܡ\u0747ܢ\u0747"
+        text = make_file(source, "(m)(n)", "one")
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertTrue(result.ok, result.issues)
+        self.assertEqual(result.expected_transliteration_block, "(m)(n)")
 
     def test_bom_is_reported_but_file_is_still_analyzed(self):
         data = ("\ufeff" + make_file("ܐܒ", "ʾb", "one")).encode("utf-8")

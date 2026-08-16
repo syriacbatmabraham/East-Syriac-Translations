@@ -58,7 +58,7 @@ components. Each component entry still records the occurrence, but points to the
 with `→` in place of a rendering of its own (§10.6).
 
 **Search keys** are lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`,
-and notation characters (`^` `_` `(` `)` `[` `]`) dropped. Collisions are expected. Human discretion is expected.
+and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped. Collisions are expected. Human discretion is expected.
 
 ---
 
@@ -601,9 +601,9 @@ yāwmānā (1) — this day (1)
 ḥnan (1) — we (1)
 * ḥnan · "...as we have released our debtors" (Our Father Line 11)
 
-ܫܒܲܩ̣݇ܢ݇   [š-b-q]   {Peal perf. 1c.pl.}   (search: shbaqn)
-šba(q_n) (1) — have released (1)
-* šba(q_n) · "...as we have released our debtors" (Our Father Line 11)
+ܫܒܲܩ̣͞ܢ   [š-b-q]   {Peal perf. 1c.pl.}   (search: shbaqn)
+šbaq_⁀n (1) — have released (1)
+* šbaq_⁀n · "...as we have released our debtors" (Our Father Line 11)
 
 ܚܲܝܵܒܲܝ̈ܢ   [ḥ-w-b]   {adj. m.pl.emph. + 1cp suff.}   (search: hayabayn)
 ḥayābaÿn (1) — our debtors (1)

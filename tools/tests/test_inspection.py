@@ -48,7 +48,7 @@ class PageStateInspectionTests(unittest.TestCase):
     def test_multiple_marks_on_one_letter_are_all_reported(self):
         report = format_page_state_report("ܡ\u0735\u0307\u0308\u0747")
         self.assertIn(
-            "Mim (zqāpā: ā; single point above; syāmē; occultans line above)",
+            "Mim (zqāpā: ā; single point above; syāmē; one-letter line above)",
             report,
         )
 
@@ -77,9 +77,9 @@ class PageStateInspectionTests(unittest.TestCase):
                 state = inspect_normalized_text(source)
                 self.assertIn(expected, [issue.code for issue in state.issues])
 
-    def test_occultans_above_and_below_same_carrier_is_unrepresentable(self):
+    def test_one_letter_lines_above_and_below_same_carrier_are_unrepresentable(self):
         state = inspect_normalized_text("ܡ\u0748\u0747")
-        self.assertIn("dual-occultans-unrepresentable", [issue.code for issue in state.issues])
+        self.assertIn("dual-one-letter-lines-unrepresentable", [issue.code for issue in state.issues])
 
     def test_between_point_requires_following_letter(self):
         state = inspect_normalized_text("ܡ\U00001df8")

@@ -1,14 +1,14 @@
 """Parser and validator for fixed three-block confirmed-text files.
 
 A confirmed text is authoritative Syriac, mechanically derived canonical
-transliteration, and settled English in three aligned blocks.  This module
+transliteration, and settled English in three aligned blocks. This module
 checks the structural and file-hygiene requirements from General Rules §9.1,
-§9.1.1, and §11.15–16, then re-derives transliteration from the Syriac layer.
+§9.1.1, and §11.15–16, then independently re-derives transliteration from the
+Syriac layer.
 
-The stored transliteration is never treated as authority for ordinary
-orthography.  Its only reusable information is the page-only occultans
-span/separate decision, and even that is trusted only when the stored canonical
-line reverses exactly to the Syriac line.
+The stored transliteration never supplies page-state information to the Syriac
+layer. Canonical Syriac now carries two-letter spanning lines directly with
+U+035E/U+035F, so forward validation is independent of the stored Latin.
 """
 
 from __future__ import annotations
@@ -17,14 +17,7 @@ from dataclasses import dataclass
 from pathlib import Path, PurePath
 import unicodedata
 
-from .inspection import inspect_normalized_text
-from .normalization import OCCULTANS_ABOVE, OCCULTANS_BELOW
-from .transliteration import (
-    OccultansResolutionKey,
-    OccultansResolutions,
-    TransliterationError,
-    transliterate_text,
-)
+from .transliteration import TransliterationError, transliterate_text
 from .transliteration_inverse import reverse_transliterate
 
 
@@ -133,7 +126,7 @@ def parse_confirmed_text(text: str) -> ConfirmedTextDocument:
     """Parse a confirmed-text string without assuming blank lines are only separators.
 
     A stanza break is itself a blank logical line and may appear inside every
-    block.  Block boundaries are therefore inferred by searching for the unique
+    block. Block boundaries are therefore inferred by searching for the unique
     pair of blank-line runs that yields three equal-length blocks with identical
     stanza-break positions.
     """
@@ -141,8 +134,6 @@ def parse_confirmed_text(text: str) -> ConfirmedTextDocument:
     if not text:
         raise ConfirmedTextFormatError("empty-file", "Confirmed text is empty.")
 
-    # One terminal LF is ordinary file termination rather than a logical line.
-    # Additional terminal blank lines remain visible and make the structure fail.
     body = text[:-1] if text.endswith("\n") else text
     if not body:
         raise ConfirmedTextFormatError("empty-file", "Confirmed text has no content lines.")
@@ -166,7 +157,6 @@ def parse_confirmed_text(text: str) -> ConfirmedTextDocument:
             if _valid_partition(blocks):
                 candidates.append(blocks)
 
-    # De-duplicate partitions that can arise only from identical run boundaries.
     unique: list[tuple[tuple[str, ...], tuple[str, ...], tuple[str, ...]]] = []
     for candidate in candidates:
         if candidate not in unique:
@@ -182,7 +172,6 @@ def parse_confirmed_text(text: str) -> ConfirmedTextDocument:
             "More than one three-block partition satisfies equal-line and stanza alignment; block boundaries are ambiguous.",
         )
 
-    # Give more specific diagnostics for the common no-stanza case.
     if len(runs) == 2:
         blocks = _segments_for_runs(lines, runs[0], runs[1])
         lengths = tuple(len(block) for block in blocks)
@@ -202,8 +191,6 @@ def parse_confirmed_text(text: str) -> ConfirmedTextDocument:
                 "Stanza-break positions do not match across the three blocks.",
             )
 
-    # If any pair gives equal lengths but stanza positions disagree, name that
-    # failure rather than reducing it to a generic parse error.
     for i, first in enumerate(runs[:-1]):
         for second in runs[i + 1 :]:
             blocks = _segments_for_runs(lines, first, second)
@@ -259,8 +246,6 @@ def _hygiene_issues(text: str, filename: str | None) -> list[ConfirmedTextIssue]
 
     for index, char in enumerate(text):
         if char == "\r":
-            # Diagnosed above as a line-ending error rather than a second
-            # whitespace error.
             continue
         if char.isspace() and char not in ALLOWED_CONFIRMED_WHITESPACE:
             issues.append(
@@ -308,22 +293,6 @@ def _preview(text: str, limit: int = 90) -> str:
     return repr(text[: limit - 1] + "…")
 
 
-def _occultans_keys_for_source(line: str) -> set[OccultansResolutionKey]:
-    keys: set[OccultansResolutionKey] = set()
-    audit = inspect_normalized_text(line)
-    for notice in audit.notices:
-        if notice.code != "adjacent-occultans-page-check":
-            continue
-        if notice.char == OCCULTANS_ABOVE:
-            direction = "above"
-        elif notice.char == OCCULTANS_BELOW:
-            direction = "below"
-        else:
-            continue
-        keys.add((notice.word, notice.letter, direction))
-    return keys
-
-
 def _check_aligned_document(
     document: ConfirmedTextDocument,
 ) -> tuple[list[ConfirmedTextIssue], tuple[str | None, ...]]:
@@ -343,8 +312,6 @@ def _check_aligned_document(
             expected_lines.append("")
             continue
 
-        reverse = None
-        reverse_exact = False
         try:
             reverse = reverse_transliterate(canonical)
         except TransliterationError as exc:
@@ -357,8 +324,7 @@ def _check_aligned_document(
                 )
             )
         else:
-            reverse_exact = reverse.text == syriac
-            if not reverse_exact:
+            if reverse.text != syriac:
                 issues.append(
                     ConfirmedTextIssue(
                         "reverse-round-trip-mismatch",
@@ -369,28 +335,11 @@ def _check_aligned_document(
                     )
                 )
 
-        source_occultans = _occultans_keys_for_source(syriac)
-        resolutions: OccultansResolutions | None = None
-        if source_occultans:
-            # Encoded Syriac cannot tell span from separate adjacent lines.  The
-            # confirmed Latin may carry that page fact only when it otherwise
-            # proves itself by reversing exactly to this Syriac line.
-            if reverse is not None and reverse_exact:
-                resolutions = reverse.occultans_resolutions
-            else:
-                issues.append(
-                    ConfirmedTextIssue(
-                        "occultans-page-resolution-required",
-                        "Syriac contains adjacent occultans whose span/separate state is page-only, but the stored Latin cannot be trusted to supply it because the line does not reverse exactly.",
-                        line=index,
-                        block="syriac",
-                    )
-                )
-                expected_lines.append(None)
-                continue
-
+        # Independent forward derivation. No information is recovered from the
+        # stored Latin: all page-state distinctions, including two-letter spans,
+        # are already present in canonical normalized Syriac.
         try:
-            forward = transliterate_text(syriac, resolutions)
+            forward = transliterate_text(syriac)
         except TransliterationError as exc:
             issues.append(
                 ConfirmedTextIssue(

@@ -107,7 +107,7 @@ Three blocks in fixed order: pointed Syriac, canonical transliteration, English.
 - The transliteration block **reproduces mechanically from the Syriac** (Translit §12), never typed independently. A transliteration left behind by a revision to the Syriac is the most damaging error this format admits, because every block still reads correctly alone
 - Stanza breaks, if used, appear identically in all three blocks
 - **Square brackets mark added or inserted material.** Material bracketed in the Syriac block is bracketed correspondingly in transliteration. English may collapse a variant into shared wording and bracket only what differs; a full bracketed insertion from another source is used only for a whole line or clause. Material bracketed only in the English block is an interpretive supplement — `And [we are faithful] to One Mar Yah` — and never enters one (§10.13).
-- **Parentheses mark editorial apparatus**, never prayed text and never in a context string. A parenthesized English label identifies a distinct source or witness where needed.
+- **Parentheses in the Syriac/English apparatus mark editorial material**, never prayed text and never a context string. In the canonical transliteration block, parentheses also have the narrowly defined one-letter line use of Translit §6.1; two-letter spans use `⁀`/`‿`, not parentheses. A parenthesized English label identifies a distinct source or witness where needed.
 
 Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark.
 
@@ -144,7 +144,7 @@ The text files carry no header of their own, which would break the three-block p
     **A written-out repetition is cited once** — at its first line, or at its first occurrence within the line where the repetition is written inline. A repetition is the same text said again; a form recurring in a different grammatical role is not one, and is cited at each occurrence.
 
     **An alternate witness at the same textual locus does not create a second occurrence when it repeats the same form in the same grammatical role.** Count and cite it once. A different form or role is indexed separately.
-14. **Headword identity and search.** The canonical headword string itself is the exact reversible **orthographic** key for the indexed form, including any deliberate §10.17 merge normalization; no second exact orthographic key is stored. Full Glossary entry identity is **canonical headword + root + `{...}` morphology** (§10.1). Each headword carries one additional fold key, written `(search: alaha)` — lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`, and notation characters (`^` `_` `(` `)` `[` `]`) dropped (Translit §11.2). Fold-key collisions are acceptable.
+14. **Headword identity and search.** The canonical headword string itself is the exact reversible **orthographic** key for the indexed form, including any deliberate §10.17 merge normalization; no second exact orthographic key is stored. Full Glossary entry identity is **canonical headword + root + `{...}` morphology** (§10.1). Each headword carries one additional fold key, written `(search: alaha)` — lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`, and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped (Translit §11.2). Fold-key collisions are acceptable.
 15. **Where two Syriac words render as one English word**, the rendering names the other in square brackets after it: `metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]`. **The bracket binds to the rendering it immediately follows**, not to the entry.
 
     Narrow. Only where English is **one word doing the work of two Syriac words**. Not where English simply lacks a separate word for a Syriac one — that is ⌀ (§10.7) — nor where two Syriac words render as two English words, however tightly bound.
@@ -185,9 +185,9 @@ Run after every glossary write, and after any edit to a confirmed text. **Diagno
 
 **Syriac — in the Glossary and in every confirmed text**
 11. Round-trip: the pointing reconstructs from the canonical string, and the canonical string from the pointing
-12. Carrier discipline — each mark carries the codepoint that names what the carrier makes it (Translit §7): U+0741 and U+0742 only on bgdkpt, U+073C only on waw and yodh, U+073F only on waw, U+0323 and U+0307 never on bgdkpt
-13. Same-class combining-mark order follows Translit §5.1 for every in-scope sequence. Check both class 220 and class 230 explicitly; NFC orders unlike classes but does not reorder two marks that share a class
-14. One Syriac spelling transliterates one way across the corpus, and one transliteration maps back to one spelling
+12. Carrier discipline — each mark carries the codepoint that names what the carrier makes it (Translit §7): U+0741 and U+0742 only on bgdkpt, U+073C only on waw and yodh, U+073F only on waw, U+0323 and U+0307 never on bgdkpt; U+035E/U+035F only begin a two-letter span with an immediately following base in the same orthographic word
+13. Combining-mark order follows Translit §5.1 for every in-scope sequence. Check class 220 and class 230 project tie-breaks explicitly; canonical Unicode ordering places the U+035F/U+035E span states in classes 233/234 after those marks
+14. One Syriac spelling transliterates one way across the corpus, and one transliteration maps back to one spelling. In particular, a direct two-letter span and two adjacent one-letter lines must remain distinct in **both** layers (`ܡ͞ܢ` ↔ `m⁀n`; `ܡ݇ܢ݇` ↔ `(m)(n)`)
 
 **Files**
 15. Three blocks of equal length in every confirmed text, the transliteration derived from the Syriac (§9.1.1)

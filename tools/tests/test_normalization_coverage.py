@@ -22,6 +22,8 @@ from east_syriac.normalization import (
     GENERIC_DOT_BELOW,
     HBASA_ESASA_DOTTED,
     LATIN_PUNCTUATION_SUBSTITUTES,
+    MARHETANA_ABOVE,
+    MARHETANA_BELOW,
     OCCULTANS_ABOVE,
     OCCULTANS_BELOW,
     PRESENTATIONAL,
@@ -117,6 +119,8 @@ class ExhaustiveNormalizationCoverageTests(unittest.TestCase):
             MIM + SYAME, MIM + BREVE_BELOW,
             MIM + BETWEEN_ABOVE + NUN,
             MIM + BETWEEN_BELOW + NUN,
+            MIM + MARHETANA_ABOVE + NUN,
+            MIM + MARHETANA_BELOW + NUN,
             MIM + OCCULTANS_ABOVE, MIM + OCCULTANS_BELOW,
             MIM + SUPERSCRIPT_ALAPH,
         ]
@@ -220,21 +224,31 @@ class ExhaustiveNormalizationCoverageTests(unittest.TestCase):
             MIM + SYAME + SYAME: "duplicate-normalized-mark",
             MIM + QUSSHAYA: "qūššāyā-invalid-carrier",
             MIM + HBASA_ESASA_DOTTED: "carrier-vowel-invalid-carrier",
-            MIM + OCCULTANS_BELOW + OCCULTANS_ABOVE: "dual-occultans-unrepresentable",
+            MIM + OCCULTANS_BELOW + OCCULTANS_ABOVE: "dual-one-letter-lines-unrepresentable",
             MIM + BETWEEN_ABOVE: "between-point-without-next-letter",
+            MIM + MARHETANA_ABOVE: "marhetana-without-next-letter",
+            MIM + MARHETANA_ABOVE + MARHETANA_BELOW + NUN: "dual-marhetana-spans-unrepresentable",
         }
         for source, expected in cases.items():
             with self.subTest(source=source):
                 audit = inspect_normalized_text(source)
                 self.assertIn(expected, [issue.code for issue in audit.issues])
 
-    def test_adjacent_occultans_is_a_page_only_notice(self):
+    def test_adjacent_one_letter_lines_are_a_page_check_notice(self):
         for mark in (OCCULTANS_ABOVE, OCCULTANS_BELOW):
             with self.subTest(mark=f"U+{ord(mark):04X}"):
                 source = MIM + mark + NUN + mark
                 audit = inspect_normalized_text(source)
                 self.assertFalse(audit.issues)
-                self.assertIn("adjacent-occultans-page-check", [notice.code for notice in audit.notices])
+                self.assertIn("adjacent-one-letter-lines-page-check", [notice.code for notice in audit.notices])
+
+    def test_direct_spans_are_not_page_ambiguous(self):
+        for mark in (MARHETANA_ABOVE, MARHETANA_BELOW):
+            with self.subTest(mark=f"U+{ord(mark):04X}"):
+                source = MIM + mark + NUN
+                audit = inspect_normalized_text(source)
+                self.assertFalse(audit.issues)
+                self.assertFalse(audit.notices)
 
     def test_mater_and_word_final_shapes_remain_literal_for_later_transliteration(self):
         source = "ܡܵ ܡܵܐ ܡܹ ܡܹܐ ܡܹܝ"

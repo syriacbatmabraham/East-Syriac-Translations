@@ -29,6 +29,8 @@ from .normalization import (
     BREVE_BELOW,
     BETWEEN_ABOVE,
     BETWEEN_BELOW,
+    MARHETANA_ABOVE,
+    MARHETANA_BELOW,
     OCCULTANS_ABOVE,
     OCCULTANS_BELOW,
     EAST_MULTI_DOT_VOWELS,
@@ -88,7 +90,7 @@ class PageStateIssue:
 
 @dataclass(frozen=True)
 class PageStateNotice:
-    """A page-only ambiguity that normalized Unicode cannot settle."""
+    """A nonblocking page-check notice."""
 
     code: str
     message: str
@@ -174,10 +176,14 @@ def _mark_description(base: str, mark: str) -> str:
         return "single point above between this letter and the next"
     if mark == BETWEEN_BELOW:
         return "single point below between this letter and the next"
+    if mark == MARHETANA_ABOVE:
+        return "marheṭānā span above this letter and the next"
+    if mark == MARHETANA_BELOW:
+        return "two-letter spanning line below this letter and the next"
     if mark == OCCULTANS_ABOVE:
-        return "occultans line above"
+        return "one-letter line above"
     if mark == OCCULTANS_BELOW:
-        return "occultans line below"
+        return "one-letter line below"
     if mark == SUPERSCRIPT_ALAPH:
         return "superscript ʾālap̄"
     if mark in WEST_SYRIAC_VOWELS:
@@ -206,8 +212,19 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
     if OCCULTANS_ABOVE in marks and OCCULTANS_BELOW in marks:
         issues.append(
             PageStateIssue(
-                "dual-occultans-unrepresentable",
-                "The same carrier has occultans both above and below; current canonical notation has no reversible representation for this state.",
+                "dual-one-letter-lines-unrepresentable",
+                "The same carrier has one-letter lines both above and below; current canonical notation has no reversible representation for this state.",
+                word,
+                letter,
+                base,
+            )
+        )
+
+    if MARHETANA_ABOVE in marks and MARHETANA_BELOW in marks:
+        issues.append(
+            PageStateIssue(
+                "dual-marhetana-spans-unrepresentable",
+                "The same carrier begins spanning lines both above and below; no canonical notation is defined for this state.",
                 word,
                 letter,
                 base,
@@ -232,19 +249,28 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
     return issues
 
 
-def _occultans_notices(word_index: int, letters: tuple[LetterState, ...]) -> list[PageStateNotice]:
-    """Flag the encoded-source asymmetry of adjacent occultans marks."""
+def _one_letter_line_notices(word_index: int, letters: tuple[LetterState, ...]) -> list[PageStateNotice]:
+    """Flag adjacent one-letter line encodings for a page check.
+
+    Canonical normalized Syriac uses U+035E/U+035F for an actual two-letter
+    span. Repeated U+0747/U+0748 therefore means separate one-letter lines in
+    confirmed storage. A raw digital witness may nevertheless have used that
+    repeated encoding as an approximation, so the page should still be checked.
+    """
 
     notices: list[PageStateNotice] = []
     for index in range(len(letters) - 1):
         left = letters[index]
         right = letters[index + 1]
-        for mark, side in ((OCCULTANS_ABOVE, "above"), (OCCULTANS_BELOW, "below")):
+        for mark, side, replacement in (
+            (OCCULTANS_ABOVE, "above", "U+035E"),
+            (OCCULTANS_BELOW, "below", "U+035F"),
+        ):
             if mark in left.marks and mark in right.marks:
                 notices.append(
                     PageStateNotice(
-                        "adjacent-occultans-page-check",
-                        f"Adjacent occultans lines {side}: encoded source cannot distinguish one spanning line from two separate lines; check the page before transliteration.",
+                        "adjacent-one-letter-lines-page-check",
+                        f"Adjacent one-letter lines {side}: confirmed storage means two separate lines. If the page instead shows one two-letter span, encode it with {replacement} on the first letter.",
                         word_index,
                         index + 1,
                         mark,
@@ -274,21 +300,51 @@ def inspect_normalized_text(text: str) -> PageStateReport:
         words.append(WordState(word_index, current_line, word_text, letter_tuple))
         for letter_index, letter_state in enumerate(letter_tuple, start=1):
             issues.extend(_letter_issues(letter_state.base, letter_state.marks, word_index, letter_index))
-            if (
-                letter_index == len(letter_tuple)
-                and (BETWEEN_ABOVE in letter_state.marks or BETWEEN_BELOW in letter_state.marks)
-            ):
-                mark = BETWEEN_BELOW if BETWEEN_BELOW in letter_state.marks else BETWEEN_ABOVE
-                issues.append(
-                    PageStateIssue(
-                        "between-point-without-next-letter",
-                        "A between-letter point occurs on the final letter of the word, so there is no following letter for the page-state to stand between.",
-                        word_index,
-                        letter_index,
-                        mark,
+            if letter_index == len(letter_tuple):
+                if BETWEEN_ABOVE in letter_state.marks or BETWEEN_BELOW in letter_state.marks:
+                    mark = BETWEEN_BELOW if BETWEEN_BELOW in letter_state.marks else BETWEEN_ABOVE
+                    issues.append(
+                        PageStateIssue(
+                            "between-point-without-next-letter",
+                            "A between-letter point occurs on the final letter of the word, so there is no following letter for the page-state to stand between.",
+                            word_index,
+                            letter_index,
+                            mark,
+                        )
                     )
-                )
-        notices.extend(_occultans_notices(word_index, letter_tuple))
+                if MARHETANA_ABOVE in letter_state.marks or MARHETANA_BELOW in letter_state.marks:
+                    mark = MARHETANA_BELOW if MARHETANA_BELOW in letter_state.marks else MARHETANA_ABOVE
+                    issues.append(
+                        PageStateIssue(
+                            "marhetana-without-next-letter",
+                            "A two-letter spanning line begins on the final letter of the word, so there is no following letter for it to span.",
+                            word_index,
+                            letter_index,
+                            mark,
+                        )
+                    )
+
+        # Two consecutive starts in the same direction would overlap on the
+        # middle letter. Keep that state blocking until a real page requires it.
+        for index in range(len(letter_tuple) - 1):
+            left = letter_tuple[index]
+            right = letter_tuple[index + 1]
+            for mark, side in (
+                (MARHETANA_ABOVE, "above"),
+                (MARHETANA_BELOW, "below"),
+            ):
+                if mark in left.marks and mark in right.marks:
+                    issues.append(
+                        PageStateIssue(
+                            "overlapping-marhetana-spans",
+                            f"Two {side} spans would overlap on the middle letter; no canonical interpretation is defined for this state.",
+                            word_index,
+                            index + 2,
+                            mark,
+                        )
+                    )
+
+        notices.extend(_one_letter_line_notices(word_index, letter_tuple))
         current = []
 
     while i < len(text):
