@@ -6,7 +6,7 @@ The code in this directory implements mechanical parts of the East Syriac Transl
 
 `normalize.py` implements source-ingestion normalization from **Transliteration Rules §16** and same-class combining-mark order from **§5.1**. It accepts a raw Syriac block and produces the normalized Syriac representation consumed by transliteration.
 
-The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain.
+The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain. Project text whitespace is deliberately narrow: only U+0020 SPACE and U+000A LF are accepted; tabs, non-breaking spaces and other Unicode whitespace are retained and flagged for review.
 
 ## Mandatory page-state audit
 
@@ -23,7 +23,7 @@ Heh (zqāpā: ā)
 Alaph
 ```
 
-If a page-only ambiguity prevents automatic transliteration—currently an unresolved adjacent occultans span/separate question—the audit keeps the Syriac header and prints the required `PAGE CHECK` rather than guessing.
+If a page-only ambiguity prevents automatic transliteration—under the present implementation, an unresolved adjacent occultans span/separate question—the audit keeps the Syriac header and prints the required `PAGE CHECK` rather than guessing. The project's treatment and terminology for the apparent spanning-line case are under separate review; this cleanup does not change that model.
 
 The post-normalization audit detects contradictions Unicode normalization alone cannot catch: multiple vowels on one carrier, both qūššāyā and rūkkākā on one bgdkpt letter, invalid canonical carriers, duplicate marks, and occultans simultaneously above and below one carrier. The last state is in-scope Unicode but has no reversible notation under the current canonical rules, so it is blocking rather than silently encoded.
 
@@ -57,7 +57,7 @@ The implementation includes:
 - word-final `ā/ă` and `ē/ĕ` conventions;
 - syāmē, the distinguishing point, between-letter points, two dots below, breve below, and superscript ʾālap̄;
 - editorial square brackets and parenthesized source/witness apparatus;
-- one-letter and page-resolved two-letter occultans notation above or below;
+- one-letter and, under the present rules, page-resolved two-letter occultans notation above or below;
 - strict NFC canonical strings;
 - canonicality checking by re-forwarding every inverse parse.
 
@@ -70,7 +70,7 @@ python tools/transliterate.py normalized.txt > canonical.txt
 python tools/transliterate.py canonical.txt --reverse > normalized.txt
 ```
 
-When adjacent same-direction occultans marks occur, encoded Syriac cannot say whether the page shows one span or two separate lines. Supply the page decision explicitly:
+Under the current implementation, when adjacent same-direction occultans marks occur, encoded Syriac cannot say whether the page shows one span or two separate lines. Supply the page decision explicitly:
 
 ```bash
 python tools/transliterate.py normalized.txt \
@@ -100,63 +100,75 @@ reversed_text = reverse_transliterate(canonical.text)
 assert reversed_text.text == normalized.text
 ```
 
-`reverse_transliterate()` also returns the span/separate occultans decisions encoded by the canonical wrappers. Those decisions are the only page information the normalized Syriac codepoints themselves cannot recover.
+`reverse_transliterate()` also returns the span/separate occultans decisions encoded by the canonical wrappers under the present model.
 
 ## Phase 3: confirmed-text parser/checker
 
-`east_syriac.confirmed_text` implements General Rules §9.1, §9.1.1, and §11.15–16 for authoritative confirmed-text files. `check_confirmed_text.py` is the command-line front end.
+`east_syriac.confirmed_text` implements General Rules §9.1, §9.1.1, and §11.15–16 for authoritative confirmed-text files. `east_syriac.provenance` validates the source registry, and `check_confirmed_text.py` is the command-line front end for the combined corpus check.
 
 The checker validates:
 
-- strict UTF-8, no BOM, LF-only line endings, NFC, no trailing whitespace, straight apostrophes, and `.txt`/`.md` format;
+- strict UTF-8, no BOM, LF-only line endings, NFC, no trailing whitespace, straight apostrophes, `.txt`/`.md` format, and U+0020/LF as the only whitespace;
 - exactly three aligned layers: Syriac, canonical transliteration, English;
 - equal logical line counts across the three layers;
 - identical stanza-break positions across all three layers;
 - valid canonical inverse parsing on every transliteration line;
 - exact canonical → Syriac reconstruction;
-- fresh Syriac → canonical derivation and byte-for-byte comparison with the stored transliteration line.
+- fresh Syriac → canonical derivation and byte-for-byte comparison with the stored transliteration line;
+- one `sources/sources.yaml` record for every confirmed file and no stale registry records;
+- one declared `source_of_record` and one unique stable `citation_label` for every confirmed text.
 
 Block detection does **not** assume that every blank line ends a block. A stanza break is itself a blank logical line, so the parser searches for the unique pair of separator runs that yields three equal layers with the same stanza pattern. This lets stanza breaks remain legal without making the three-layer format ambiguous.
 
-The stored transliteration is not an authority for ordinary orthography. The checker derives Latin from Syriac. The sole exception is page-only adjacent-occultans grouping: encoded Syriac cannot recover whether the page shows one span or two separate lines. The checker may recover that decision from the stored canonical line **only when the entire canonical line already reverses exactly to the Syriac line**. If it does not, the checker requires page resolution rather than trusting stale Latin.
+The stored transliteration is not an authority for ordinary orthography. The checker derives Latin from Syriac. Under the present occultans implementation, the sole exception is page-only adjacent-line grouping: encoded Syriac cannot recover whether the page shows one span or two separate lines. The checker may recover that decision from the stored canonical line **only when the entire canonical line already reverses exactly to the Syriac line**. This exception is under review with the occultans model and should not be read as a settled page-metadata design.
 
 ### Confirmed-text use
 
-Check the whole authoritative corpus:
+Check the whole authoritative corpus and its provenance registry:
 
 ```bash
 python tools/check_confirmed_text.py
 ```
 
-Check selected files/directories:
+Check selected files/directories (the corpus-level provenance registry is still checked):
 
 ```bash
-python tools/check_confirmed_text.py confirmed-texts/Creed_in_Syriac.txt
+python tools/check_confirmed_text.py confirmed-texts/Creed.txt
 python tools/check_confirmed_text.py confirmed-texts
 ```
 
 Show the mechanically derived transliteration block when all page-only information is resolved:
 
 ```bash
-python tools/check_confirmed_text.py confirmed-texts/Creed_in_Syriac.txt --show-derived
+python tools/check_confirmed_text.py confirmed-texts/Creed.txt --show-derived
 ```
 
-Exit status is `0` when every checked file passes, `1` for validation failures, and `2` for file/selection errors. The checker never rewrites a confirmed text automatically; failures remain visible for review.
+Exit status is `0` when every checked file and corpus provenance pass, `1` for validation failures, and `2` for file/selection errors. The checker never rewrites a confirmed text automatically; failures remain visible for review.
 
-### Confirmed-text library API
+### Confirmed-text and provenance library APIs
 
 ```python
-from east_syriac import check_confirmed_text_path, parse_confirmed_text
+from east_syriac import (
+    check_confirmed_text_path,
+    check_source_registry_path,
+    parse_confirmed_text,
+)
 
-result = check_confirmed_text_path("confirmed-texts/Creed_in_Syriac.txt")
+result = check_confirmed_text_path("confirmed-texts/Creed.txt")
 assert result.ok
 assert result.document is not None
+
+provenance_issues = check_source_registry_path(
+    "sources/sources.yaml",
+    "confirmed-texts",
+)
+assert not provenance_issues
 
 # The expected Latin block was generated from Syriac, not copied from the file.
 expected = result.expected_transliteration_block
 ```
 
-The live corpus regression runs every current confirmed `.txt`/`.md` file through this same checker. Therefore a Syriac edit with stale transliteration, unequal layers, malformed stanza alignment, or file-hygiene corruption fails CI before it can enter a clean `main` branch.
+The live corpus regression runs every current confirmed `.txt`/`.md` file through the same content checker and separately verifies the source registry. Therefore a Syriac edit with stale transliteration, unequal layers, malformed stanza alignment, file-hygiene corruption, a missing source designation, or a stale confirmed filename fails CI.
 
 ## Validation
 
@@ -172,7 +184,8 @@ The normalization torture corpus remains in `normalization-stress-corpus.md`. Tr
 2. generated canonical-unit coverage with collision detection and exact round trips;
 3. a prefix/segmentation proof that concatenated canonical units cannot acquire a second parse;
 4. hostile confirmed-text structure/hygiene/staleness tests;
-5. live corpus regression through the full three-block checker.
+5. source-registry/provenance identity tests;
+6. live corpus regression through the full three-block checker and provenance registry.
 
 GitHub Actions runs compilation and the full deterministic suite on tooling pushes and pull requests.
 
@@ -183,7 +196,7 @@ GitHub Actions runs compilation and the full deterministic suite on tooling push
 3. **Canonical transliteration** — normalized Syriac → reversible Latin string.
 4. **Inverse transliteration** — canonical string → normalized Syriac.
 5. **Round-trip checks** — Transliteration Rules §12 and General Rules §11.11–14.
-6. **Confirmed-text parser/checker** — equal layers, file hygiene, stanza alignment, and mechanically fresh transliteration.
+6. **Confirmed-text parser/checker** — equal layers, file hygiene, stanza alignment, mechanically fresh transliteration, and source-registry provenance.
 7. **Glossary/corpus checks** — remainder of General Rules §11.
 
 Each stage remains deterministic and independently testable.
