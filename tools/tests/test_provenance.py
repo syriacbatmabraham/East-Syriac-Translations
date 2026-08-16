@@ -46,6 +46,12 @@ class ProvenanceTests(unittest.TestCase):
             {"Our_Father.txt", "Creed.txt"},
         )
 
+    def test_quoted_unicode_scalar_is_preserved(self):
+        text = REGISTRY.replace("citation_label: Creed", 'citation_label: "Teshbhotha l\'Alaha"')
+        registry = parse_source_registry(text)
+        creed = next(entry for entry in registry.confirmed_texts if entry.filename == "Creed.txt")
+        self.assertEqual(creed.citation_label, "Teshbhotha l'Alaha")
+
     def test_missing_provenance_is_reported(self):
         issues = check_source_registry(REGISTRY, {"Our_Father.txt", "Creed.txt", "Extra.txt"})
         self.assertIn("missing-provenance", [issue.code for issue in issues])
@@ -72,6 +78,10 @@ class ProvenanceTests(unittest.TestCase):
     def test_tab_indentation_is_rejected(self):
         issues = check_source_registry("source_records:\n\thours:\nconfirmed_texts:\n", set())
         self.assertEqual([issue.code for issue in issues], ["tab-indentation"])
+
+    def test_required_sections_are_checked(self):
+        issues = check_source_registry("source_records:\n  hours:\n", set())
+        self.assertEqual([issue.code for issue in issues], ["missing-confirmed-texts-section"])
 
 
 if __name__ == "__main__":
