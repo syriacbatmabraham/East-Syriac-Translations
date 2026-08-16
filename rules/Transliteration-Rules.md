@@ -58,9 +58,14 @@ Editorial apparatus is preserved literally alongside the letter-for-letter mappi
 
 | Notation | Meaning | On reversal |
 |---|---|---|
-| `(x)` / `(xy)` | one-letter line / one physical two-letter span (§6) | restore the line mark(s) on the wrapped letter or letters |
+| `(x)` | one-letter line above (§6.1) | restore U+0747 on that letter |
+| `(_x)` | one-letter line below (§6.1) | restore U+0748 on that letter |
+| `x⁀y` | one physical two-letter line above (§6.2) | restore U+035E after the first Syriac base |
+| `x‿y` | one physical two-letter line below (§6.2) | restore U+035F after the first Syriac base |
 | `[…]` | editorial addition or alternate | preserve the brackets |
 | `(English label:)` | source or witness label | preserve the label |
+
+`⁀` is U+2040 CHARACTER TIE. `‿` is U+203F UNDERTIE. They are canonical transliteration symbols, not combining marks on the Latin letters.
 
 Syriac inside editorial brackets transliterates normally. English-only interpretive brackets have no transliteration counterpart.
 
@@ -70,10 +75,10 @@ Example: `ʾaḇā [waḇrā] nāpēq`
 
 Parentheses have two in-scope uses, so the inverse grammar must distinguish them mechanically.
 
-- A parenthetical payload that parses **completely as one or two canonical Syriac letter-units**, optionally preceded by `_` for a line below, is line-mark notation (§6). One unit records a line on one letter; two units record one physical line spanning the pair.
-- Any other balanced parenthetical payload is editorial apparatus and is preserved literally.
+- A parenthetical payload that parses **completely as exactly one canonical Syriac letter-unit**, optionally preceded by `_` for a line below, is one-letter line notation (§6.1).
+- Any other balanced parenthetical payload is editorial apparatus and is preserved literally, **except** a retired two-unit line wrapper such as `(mn)` or `(_mn)`, which is invalid canonical transliteration and must be migrated to direct span encoding plus `⁀`/`‿` notation.
 
-Therefore an editorial label whose entire contents would itself be legal line-mark syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with the one-letter line notation `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
+Therefore an editorial label whose entire contents would itself be legal one-letter line syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with the one-letter line notation `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
 
 ---
 
@@ -185,13 +190,14 @@ Worked: `brēh` (internal ē, no mater) · `hēyn` (ē + yodh) · `lmēʾṯā` 
 
 #### Exact boundary of the final-mater shorthand
 
-The implied-final-ʾālap̄ convention suppresses **only a bare final ʾālap̄ immediately following its zqāpā or zlāmā-qašyā carrier, with no editorial delimiter between the two letters**. This restriction is required for reversibility.
+The implied-final-ʾālap̄ convention suppresses **only a bare final ʾālap̄ immediately following its zqāpā or zlāmā-qašyā carrier, with no editorial delimiter between the two letters and with no U+035E/U+035F span joining the carrier to that ʾālap̄**. This restriction is required for reversibility.
 
 - `[ܡܵܐ]` → `[mā]`
 - `ܡܵ[ܐ]` → `mā[ʾ]`
 - `[ܡܵ]ܐ` → `[mā]ʾ`
 - `[ܡܵ][ܐ]` → `[mā][ʾ]`
-- a final ʾālap̄ carrying any in-scope mark is explicit, never suppressed.
+- a final ʾālap̄ carrying any in-scope mark is explicit, never suppressed
+- a final ʾālap̄ that is the second base of a two-letter span is explicit, because `⁀`/`‿` must stand between two visible canonical letter-units
 
 The inverse inserts the implied bare ʾālap̄ immediately after the final vowel carrier, so editorial placement is reconstructed exactly.
 
@@ -234,8 +240,12 @@ Where a Syriac letter carries more than one combining mark, storage order is det
 The in-scope combining classes are:
 
 - **36** — superscript ʾālap̄ (U+0711). It therefore sorts before the below and above marks without a project tie-break.
-- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), line mark below (§6)]`.
-- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, line mark above (§6)]`.
+- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), one-letter line below (§6.1)]`.
+- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, one-letter line above (§6.1)]`.
+- **233** — U+035F COMBINING DOUBLE MACRON BELOW, the canonical lower two-letter span state (§6.2).
+- **234** — U+035E COMBINING DOUBLE MACRON, the canonical upper two-letter span state (§6.2).
+
+Classes 233 and 234 contain one in-scope project mark each and need no same-class tie-break. Their ordinary canonical combining classes place them after the class-220/class-230 marks on the first base.
 
 The order is a **storage convention, not a claim about phonological or visual priority**. It exists because several distinct in-scope marks share class 220 or 230. After §16 has normalized source codepoints to page-states, two canonically equivalent witnesses must therefore produce the same combining sequence before comparison or round-trip validation.
 
@@ -253,50 +263,67 @@ For inversion to have one grammar, all marks belonging to one Syriac carrier ser
 3. §7 point **on** the carrier — below `_` before above `^` if both occur;
 4. the Class-B vowel, if present;
 5. §7 point **between** this carrier and the next — below `__` before above `^^` if both occur;
-6. any line wrapper (§6) surrounds the complete one- or two-letter unit(s).
+6. a one-letter line wrapper (§6.1), if present, surrounds that complete one-letter unit;
+7. a two-letter span tie (§6.2), if present, follows the complete first unit and precedes the complete second unit: upper `⁀`, lower `‿`.
 
-Examples already in force follow this order: `m_n`, `qā^^ʿēyn`, `šba(q_n)`.
+Examples already in force follow this order: `m_n`, `qā^^ʿēyn`, `šbaq_⁀n`.
 
 ---
 
-## 6. One-Letter Lines and Marheṭānā Spans
+## 6. One-Letter Lines and Two-Letter Spans
 
-The project distinguishes **where the physical line is drawn** before asking what traditional function it serves.
+The project distinguishes **where the physical line is drawn** before asking what traditional function it serves. A line belonging to one letter and one physical line joining two letters are different normalized Syriac page-states and therefore different canonical transliterations.
 
 ### 6.1 One-letter line
 
 A line clearly belonging to one letter is recorded as a one-letter line. The same graphic stroke is traditionally described with names such as *mṭalqānā* and *mhaggyānā* in different functions. **The canonical string records the visible one-letter mark and does not infer its phonological function merely from the stroke.**
 
-| Page-state | Notation |
-|---|---|
-| line above one letter | `(x)` |
-| line below one letter | `(_x)` |
+| Page-state | Normalized Syriac | Notation |
+|---|---|---|
+| line above one letter | U+0747 on that letter | `(x)` |
+| line below one letter | U+0748 on that letter | `(_x)` |
 
 - `md(n)ītā` — the nun is on the page carrying a one-letter line
 - `w(ʾ)nāš̈ā`, `(h)ī` — prosthetic ʾālap̄ and enclitic hē, each carrying a one-letter line above
 
 The `_` at the head of the wrap marks a line below and cannot be confused with §7's `_`, which always follows its carrier.
 
-### 6.2 Two-letter spanning line; marheṭānā
+Two adjacent one-letter lines remain two marks: `(x)(y)` or `(_x)(_y)`. Their adjacency never creates a span automatically.
 
-A line clearly placed **above and between two consonants, spanning the pair**, is a different page-state from a line carried by the first consonant alone. In the attested cluster use represented by `šba(q_n)`, the project identifies this as **marheṭānā**: the line marks the qoph–nun sequence as a vowelless consonant cluster. It does **not** mark qoph or nun as silent.
+### 6.2 Two-letter spanning line; attested marheṭānā
 
-| Page-state | Notation |
-|---|---|
-| one line above spanning two letters | `(xy)` |
-| one line below spanning two letters, if page-confirmed | `(_xy)` |
+Unicode's general-use double-diacritic mechanism supplies a direct normalized encoding for one physical line spanning two adjacent bases. The combining mark is stored after the **first** base and extends over the immediately following base.
 
-- `šba(q_n)` — one upper line spans qoph and nun; qoph also carries a §7 point below, written inside the span after its carrier. The page establishes a vowelless `qn` cluster, so the span must not be collapsed to a one-letter line on qoph.
+| Page-state | Normalized Syriac | Notation |
+|---|---|---|
+| one line above spanning two letters | U+035E COMBINING DOUBLE MACRON after the first base | `x⁀y` |
+| one line below spanning two letters | U+035F COMBINING DOUBLE MACRON BELOW after the first base | `x‿y` |
 
-The notation remains graphically reversible. For an upper two-letter cluster span, the function is also established by the page and may be named marheṭānā. A hypothetical or future span whose function is not securely established is still recorded graphically rather than assigned a function by inference.
+The Latin tie is deliberately not parenthetical. Both consonants remain visibly part of the word, and the tie records that the page joins them with one physical line.
 
-### 6.3 Spanning and adjacent-line distinction
+**Attested marheṭānā:**
 
-`(xy)` asserts **one page-confirmed physical line** covering two letters. Two page-confirmed separate one-letter lines on adjacent letters are written `(x)(y)`. The same graphical distinction applies below: `(_xy)` versus `(_x)(_y)`.
+- `ܫܒܲܩ̣͞ܢ` → `šbaq_⁀n` — one upper line spans qoph and nun; qoph also carries the §7 point below. On the confirmed page this is marheṭānā marking the pronounced vowelless `qn` cluster. Neither qoph nor nun is omitted in pronunciation.
 
-**No automatic adjacency inference is permitted.** The normalized Syriac storage convention represents an above line with U+0747 and a below line with U+0748. Because Unicode has no character for one physical line spanning two Syriac letters, a two-letter span is stored by placing the appropriate line codepoint on both covered letters. The same pair of repeated codepoints can therefore also represent two separate adjacent one-letter lines. Normalized Unicode alone cannot decide between those page-states. The page-state audit must surface the grouping question, and canonical forward transliteration must receive the page decision before choosing one wrapper or two.
+The span must **not** be collapsed to a one-letter line on qoph. That would change the page-state and would falsely erase the joining relation shown by the source.
 
-A two-letter span may not be inferred across an editorial square-bracket boundary. If a witness ever establishes such a state, the notation must be extended explicitly rather than guessed.
+The project may call an upper span *marheṭānā* where its function is established from the source and linguistic context, as in `šbaq_⁀n`. A future span whose function is not securely established is still encoded graphically with U+035E/U+035F and transliterated with `⁀`/`‿`; the notation itself does not invent a function.
+
+### 6.3 Raw witness ambiguity versus canonical storage
+
+**Canonical normalized Syriac is not ambiguous about span versus separate.**
+
+- U+035E/U+035F after the first base = **one physical two-letter span**.
+- U+0747/U+0748 on two adjacent bases = **two separate one-letter lines** in canonical confirmed storage.
+
+A raw digital witness may nevertheless approximate one printed spanning line by repeating U+0747 or U+0748 on both letters. Such a raw sequence is therefore a **page-check condition at ingestion**, not a second canonical encoding of a span. Compare against the page:
+
+- if the page has one physical span, canonicalize the page-state to U+035E/U+035F on the first base;
+- if the page has two separate one-letter lines, retain the two U+0747/U+0748 marks.
+
+The transliteration engine receives only the resolved normalized Syriac. It takes **no external span/separate metadata** and never asks the stored Latin to decide the Syriac page-state.
+
+A two-letter span may not cross an editorial square-bracket boundary. If a page ever establishes a span across editorial material, the notation must be extended explicitly rather than guessed.
 
 ---
 
@@ -363,7 +390,7 @@ Conventions must be re-verified against attested text whenever new material is w
 2. **Word-final `ē` implies a bare immediately-following mater ʾālap̄ in the same editorial sequence.** Exception form: `ĕ`. An explicitly written yodh gives `ēy` and is not an exception. Exact boundary: §4.2.
 3. **Prosthetic ʾālap̄ is written `ʾ`** and requires no special mark. *(No exception form needed: this is a letter mapping, not a prediction.)*
 4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
-5. **Retired as a predictive convention.** Adjacent encoded line marks do not imply a span. One physical span versus two separate one-letter lines is established from the page and represented under §6.3.
+5. **Retired as a predictive convention.** Adjacent one-letter line marks never imply a span. Canonical normalized Syriac encodes a two-letter span directly with U+035E/U+035F (§6.2); repeated U+0747/U+0748 therefore remains separate in confirmed storage (§6.3).
 
 ### 9.3 Reserved
 
@@ -374,7 +401,7 @@ Reserved.
 ## 10. Scope
 
 ### In scope
-Consonants, vowel points, bgdkpt pointing, syāmē, one-letter line marks and page-confirmed spanning lines (§6), the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).
+Consonants, vowel points, bgdkpt pointing, syāmē, one-letter line marks and page-confirmed two-letter spanning lines (§6), the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).
 
 ### Out of scope at word level
 **Out-of-scope characters are removed at ingestion (§16.1), not carried in the stored line.** The confirmed text contains in-scope orthography only.
@@ -402,7 +429,7 @@ The **canonical headword string itself** is the exact reversible **orthographic*
 
 ### 11.2 Fold key
 
-Each glossary headword carries **one additional, non-authoritative fold key**. It is lowercase; all diacritics are stripped; `ʾ` and `ʿ` are dropped; notation characters are dropped. It is written in the entry as `(search: alaha)`.
+Each glossary headword carries **one additional, non-authoritative fold key**. It is lowercase; all diacritics are stripped; `ʾ` and `ʿ` are dropped; notation characters `^ _ ( ) [ ] ⁀ ‿` are dropped. It is written in the entry as `(search: alaha)`.
 
 The fold key is deliberately ambiguous. Collisions are expected and acceptable — `brā` "Son" and `brā` "he created" both fold to `bra`, and the root field separates their entries. This key exists only so that a human can find a form by typing an approximate Latin spelling. It is never used for identity, decisions, citation, or display.
 
@@ -417,7 +444,12 @@ A canonical string is **valid** if and only if:
 
 Condition 2 is the Glossary-identity check. A collision means either an entry has been duplicated or the morphology/root analysis has not yet separated two genuinely distinct forms.
 
-**Round-trip asymmetry.** A page-confirmed two-letter spanning line — including the attested upper marheṭānā span — and two page-confirmed separate adjacent one-letter lines reverse to the same repeated Unicode line marks. Round-trip therefore proves the encoded Syriac exactly, but cannot by itself prove that the span/separate grouping matched the physical page. The page-state audit remains authoritative for that distinction.
+**No span/separate asymmetry remains.** One physical two-letter span and two separate adjacent one-letter lines are different normalized Syriac strings and different canonical Latin strings:
+
+- `ܡ͞ܢ` ↔ `m⁀n`
+- `ܡ݇ܢ݇` ↔ `(m)(n)`
+
+Round-trip validation therefore proves the encoded grouping as well as the letters and marks. The source-page audit is still required at ingestion to establish which normalized page-state the witness actually shows; it is not supplementary metadata to transliteration.
 
 ---
 
@@ -464,6 +496,8 @@ Also normalized at ingestion:
 
 - **U+0724 FINAL SEMKATH → U+0723.** A positional shape, not a distinct letter.
 - **U+1DF8 and U+1DFA remain the normalized between-letter page-states.** They transliterate later as `^^` and `__` respectively (§7); ingestion does not replace Syriac-layer codepoints with ASCII notation.
+- **U+035E remains the normalized upper two-letter spanning-line page-state** and is stored after the first of the two bases (§6.2).
+- **U+035F remains the normalized lower two-letter spanning-line page-state** and is stored after the first of the two bases (§6.2).
 - **U+0324, U+0740, U+0744 → the two-dots-below page-state** (§17).
 - **U+032E → the breve-below page-state** (§18).
 
@@ -475,7 +509,7 @@ Also normalized at ingestion:
 
 ### 16.3 Combining-mark order
 
-Normalize every combining sequence to §5.1 before comparison or round-trip validation (§12). NFC orders marks of **different** canonical combining classes, but it does not repair the order of two marks that share a class. Ingestion must therefore enforce the §5.1 project order for both class **220** and class **230** sequences after page-state normalization.
+Normalize every combining sequence to §5.1 before comparison or round-trip validation (§12). NFC orders marks of **different** canonical combining classes, including the span classes 233/234, but it does not repair the order of two marks that share a class. Ingestion must therefore enforce the §5.1 project tie-break for class **220** and class **230** sequences after page-state normalization; U+035F/U+035E then occupy their canonical class-233/class-234 positions automatically.
 
 ### 16.4 Per-block ingestion
 
@@ -496,11 +530,22 @@ The East Syriac vowels are the **dotted** forms: U+0732, U+0735, U+0738, U+0739,
 - **In a source of record:** raises a flag. Either the source is not what it was taken to be, or the block has a seam (§16.4).
 - **In a corpus search:** a West-vocalized token **carries no evidence about East Syriac pointing**. Distribution and lexical range may be cited from it; a vowel or a bgdkpt point may not.
 
-### 16.7 Unrepresentable or source-lossy page-states
+### 16.7 Page-state corrections and blocking span states
 
-A page-confirmed two-letter spanning line is encoded in normalized Syriac by placing U+0747 (above) or U+0748 (below) on both covered letters because Unicode has no character for one physical line spanning two Syriac letters. The stored Syriac is therefore lossy with respect to **one span versus two separate adjacent one-letter lines**; resolve that grouping against the page under §6.3. In the confirmed `šba(q_n)` example the page shows one upper marheṭānā line spanning qoph–nun, so the repeated U+0747 storage represents that one physical cluster line.
+A canonical two-letter span is **not source-lossy**: U+035E/U+035F distinguishes it directly from two U+0747/U+0748 one-letter marks (§6.3).
 
-A carrier bearing **both** U+0747 and U+0748 simultaneously has no canonical notation in the present system. It is a blocking page-state requiring source/rule review, not a license to invent nested notation.
+Raw witnesses can still be lossy. If a digital witness repeats U+0747/U+0748 on adjacent letters while the printed page might show one continuous line, the page-state audit must compare against the source page before confirmation. The page decides whether canonical normalized Syriac receives one U+035E/U+035F after the first base or retains two separate U+0747/U+0748 marks. This human page-state correction occurs **before transliteration**.
+
+The confirmed Our Father example is therefore stored directly as `ܫܒܲܩ̣͞ܢ`, not as repeated U+0747, and transliterates `šbaq_⁀n` with no external resolution argument.
+
+Blocking span states:
+
+- U+035E/U+035F on the final orthographic letter of a word with no following base;
+- a span crossing an editorial square-bracket boundary;
+- consecutive same-direction span starts that would overlap on the middle letter;
+- both U+035E and U+035F beginning on the same base under the present notation.
+
+A carrier bearing both one-letter U+0747 and U+0748 simultaneously likewise has no canonical notation in the present system and is blocking.
 
 Likewise, U+1DF8/U+1DFA on the final orthographic letter of a word with no following letter is not a coherent "between-letter" page-state and is blocking. (Where final `ā`/`ē` suppresses a written mater under §4.2, that ʾālap̄ is present in the normalized Syriac and therefore satisfies the following-letter requirement.)
 
