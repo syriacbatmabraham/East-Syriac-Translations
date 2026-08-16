@@ -57,8 +57,8 @@ A **phrase** is tabled in its own section below and governs the rendering of its
 components. Each component entry still records the occurrence, but points to the phrase
 with `→` in place of a rendering of its own (§10.6).
 
-**Search keys** are lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`
-Collisions are expected. Human discretion is expected
+**Search keys** are lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`,
+and notation characters (`^` `_` `(` `)` `[` `]`) dropped. Collisions are expected. Human discretion is expected.
 
 ---
 
@@ -67,7 +67,7 @@ Collisions are expected. Human discretion is expected
 ܥܵܠܲܡ ܥܵܠܡܝܼܢ   [ʿ-l-m + ʿ-l-m]   {noun phrase}   (search: alam almin)
 ʿālam ʿālmīn (2) — the Age of ages (2)
 * dalʿālam ʿālmīn · "...and life unto the Age of ages. Amen" (Creed Line 21)
-* lʿālam ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* lʿālam ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ---
 
@@ -89,13 +89,13 @@ mhaymnīnan (1) — we are faithful (1)
 * dʾalāhā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 * ʾalāhā · "True God from True God" (Creed Line 6)
 * ʾalāhā · "True God from True God" (Creed Line 6)
-* lʾalāhā · "Glory to God in the heights" (Tešbōḥtā Line 1)
+* lʾalāhā · "Glory to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܐܲܒ݂ܵܐ   [ʾ-b]   {noun m.sg.emph.}   (search: aba)
 ʾaḇā (4) — Father (4)
 * ʾaḇā · "...the Father, the Holder of all" (Creed Line 1)
 * ʾaḇā · "He who from the Father [and the Son] comes forth" (Creed Line 17)
-* lʾaḇā · "Glory to the Father, to the Son..." (Abun Line 15)
+* lʾaḇā · "Glory to the Father, to the Son..." (Our Father Line 15)
 * ʾaḇā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
 ܐܲܚܝܼܕ   [ʾ-ḥ-d]   {adj. m.sg.cst.}   (search: ahid)
@@ -105,7 +105,7 @@ mhaymnīnan (1) — we are faithful (1)
 ܟܠ   [k-l]   {quant.}   (search: kl)
 kl (3) — all (2), every (1)
 * kl · "...the Father, the Holder of all" (Creed Line 1)
-* bḵl · "In every moment, forever" (Tešbōḥtā Line 3)
+* bḵl · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * dḵl · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
 ܥܵܒ݂ܘܿܕ݂ܵܐ   [ʿ-b-d]   {noun m.sg.emph.}   (search: aboda)
@@ -171,8 +171,8 @@ m_n (11) — from (10), at (1)
 * m_n · "And was conceived and begotten from Mariam the Virgin" (Creed Line 11)
 * m_n · "...and sat at the Right Hand of His Father" (Creed Line 14)
 * dm_n · "He who from the Father [and the Son] comes forth" (Creed Line 17)
-* m_n · "But deliver us from the Evil One" (Abun Line 13)
-* m_n · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
+* m_n · "But deliver us from the Evil One" (Our Father Line 13)
+* m_n · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * m_n · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 * m_n · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 
@@ -240,12 +240,12 @@ meṭlātan (1) — for the sake of us (1)
 ܒܢܲܝ̈ܢܵܫܵܐ   [b-r + ʾ-n-š]   {noun c.pl.emph.}   (search: bnaynasha)
 bnaÿnāšā (2) — sons of men (2)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
-* laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
 meṭl (2) — for (2)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
-* meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -259,9 +259,9 @@ nḥeṯ (1) — came down (1)
 šmayā (5) — Heaven (5)
 * šmayā · "...came down from Heaven" (Creed Line 8)
 * lašmayā · "He ascended to Heaven..." (Creed Line 14)
-* dbašmayā · "Our Father, who art in Heaven..." (Abun Line 1)
-* dbašmayā · "Our Father who art in Heaven" (Abun Line 4)
-* dbašmayā · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
+* dbašmayā · "Our Father, who art in Heaven..." (Our Father Line 1)
+* dbašmayā · "Our Father who art in Heaven" (Our Father Line 4)
+* dbašmayā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 
 ܐܸܬ݂ܓܲܫܲܡ   [g-š-m]   {Ethpaal perf. 3m.sg.}   (search: etgasham)
 ʾeṯgašam (1) — was embodied (1)
@@ -273,14 +273,14 @@ rūḥā (6) — Ruha (6)
 * rūḥā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
 * rūḥā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
 * rūḥā · "The Life-Giving Ruha" (Creed Line 18)
-* walrūḥā · "...and to the Ruha d'Qudsha" (Abun Line 15)
+* walrūḥā · "...and to the Ruha d'Qudsha" (Our Father Line 15)
 * wrūḥā · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
 ܩܘܼܕ݂ܫܵܐ   [q-d-š]   {noun m.sg.emph.}   (search: qudsha)
 qūḏšā (4) — Qudsha (4)
 * dqūḏšā · "And was embodied from the Ruha d'Qudsha" (Creed Line 9)
 * dqūḏšā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
-* dqūḏšā · "...and to the Ruha d'Qudsha" (Abun Line 15)
+* dqūḏšā · "...and to the Ruha d'Qudsha" (Our Father Line 15)
 * dqūḏšā · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
 ܗܘܵܐ   [h-w-ʾ]   {Peal perf. 3m.sg.}   (search: hwa)
@@ -406,7 +406,7 @@ nāpēq (1) — comes forth (1)
 ܒܪܵܐ   [b-r]   {noun m.sg.emph.}   (search: bra)
 brā (3) — the Son (3)
 * [waḇrā] · "He who from the Father [and the Son] comes forth" (Catholic Creed Line 17)
-* wlaḇrā · "Glory to the Father, to the Son..." (Abun Line 15)
+* wlaḇrā · "Glory to the Father, to the Son..." (Our Father Line 15)
 * waḇrā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
 ܡܲܚܝܵܢܵܐ   [ḥ-y-ʾ]   {adj. m.sg.emph.}   (search: mahyana)
@@ -461,229 +461,229 @@ paḡr̈ē (1) — bodies (1)
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.cst.}   (search: alam)
 ʿālam (2) — → ʿālam ʿālmīn (2)
 * dalʿālam · "...and life unto the Age of ages. Amen" (Creed Line 21) → ʿālam ʿālmīn
-* lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14) → ʿālam ʿālmīn
+* lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
 
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
 ʿālam (2) — Eternity (2)
-* ʿālam · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
-* lʿālam · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
+* ʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
+* lʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 
 ܥܵܠܡܝܼܢ   [ʿ-l-m]   {noun m.pl.abs.}   (search: almin)
 ʿālmīn (4) — → ʿālam ʿālmīn (2), forever (2)
 * ʿālmīn · "...and life unto the Age of ages. Amen" (Creed Line 21) → ʿālam ʿālmīn
-* ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14) → ʿālam ʿālmīn
-* lʿālmīn · "In every moment, forever" (Tešbōḥtā Line 3)
+* ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
+* lʿālmīn · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * lʿālmīn · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
 ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph. + 1cp suff.}   (search: abun)
 ʾaḇūn (2) — our Father (2)
-* ʾaḇūn · "Our Father, who art in Heaven..." (Abun Line 1)
-* ʾaḇūn · "Our Father who art in Heaven" (Abun Line 4)
+* ʾaḇūn · "Our Father, who art in Heaven..." (Our Father Line 1)
+* ʾaḇūn · "Our Father who art in Heaven" (Our Father Line 4)
 
 ܢܸܬ݂ܩܲܕܲܫ   [q-d-š]   {Ethpaal impf. 3m.sg.}   (search: netqadash)
 neṯqadaš (1) — hallowed be (1)
-* neṯqadaš · "...hallowed be Thy Name" (Abun Line 1)
+* neṯqadaš · "...hallowed be Thy Name" (Our Father Line 1)
 
 ܫܡܵܟ݂   [š-m]   {noun m.sg.emph. + 2ms suff.}   (search: shmak)
 šmāḵ (1) — Thy Name (1)
-* šmāḵ · "...hallowed be Thy Name" (Abun Line 1)
+* šmāḵ · "...hallowed be Thy Name" (Our Father Line 1)
 
 ܬܹܐܬܸܐ   [ʾ-t-ʾ]   {Peal impf. 3f.sg.}   (search: tete)
 tēʾteʾ (1) — May...come (1)
-* tēʾteʾ · "May Thy Kingdom come" (Abun Line 2)
+* tēʾteʾ · "May Thy Kingdom come" (Our Father Line 2)
 
 ܡܲܠܟ݁ܘܼܬ݂ܵܟ݂   [m-l-k]   {noun f.sg.emph. + 2ms suff.}   (search: malkutak)
 malk̇ūṯāḵ (1) — Thy Kingdom (1)
-* malk̇ūṯāḵ · "May Thy Kingdom come" (Abun Line 2)
+* malk̇ūṯāḵ · "May Thy Kingdom come" (Our Father Line 2)
 
 ܩܲܕܝܼܫ   [q-d-š]   {adj. m.sg.abs.}   (search: qadish)
 qadīš (2) — Holy (2)
-* qadīš · "Holy, Holy, Thou art Holy" (Abun Line 3)
-* qadīš · "...Holy, Holy, Thou art Holy" (Abun Line 6)
+* qadīš · "Holy, Holy, Thou art Holy" (Our Father Line 3)
+* qadīš · "...Holy, Holy, Thou art Holy" (Our Father Line 6)
 
 ܩܲܕܝܼܫܲܬ݁   [q-d-š]   {adj. m.sg.abs. + 2ms encl.}   (search: qadishat)
 qadīšaṫ (2) — Thou art Holy (2)
-* qadīšaṫ · "Holy, Holy, Thou art Holy" (Abun Line 3)
-* qadīšaṫ · "...Holy, Holy, Thou art Holy" (Abun Line 6)
+* qadīšaṫ · "Holy, Holy, Thou art Holy" (Our Father Line 3)
+* qadīšaṫ · "...Holy, Holy, Thou art Holy" (Our Father Line 6)
 
 ܡܠܹܝܢ   [m-l-ʾ]   {Peal passive ptcp. m.pl.abs.}   (search: mleyn)
 mlēyn (1) — are full (1)
-* damlēyn · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
+* damlēyn · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܫܡܲܝܵ̈ܐ   [š-m-y]   {noun c.pl.emph.}   (search: shmaya)
 šmaÿā (1) — the heavens (1)
-* šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
+* šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܐܲܪܥܵܐ   [ʾ-r-ʿ]   {noun f.sg.emph.}   (search: ara)
 ʾarʿā (3) — earth (3)
-* wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
-* bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
-* ʾarʿā · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
+* bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
+* ʾarʿā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 
 ܪܲܒ݁ܘܼܬ݂   [r-b-b]   {noun f.sg.cst.}   (search: rabut)
 raḃūṯ (1) — the greatness of (1)
-* raḃūṯ · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
+* raḃūṯ · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܫܘܼܒ݂ܚܵܟ݂   [š-b-ḥ]   {noun m.sg.emph. + 2ms suff.}   (search: shubhak)
 šūḇḥāḵ (1) — Thy glory (1)
-* šūḇḥāḵ · "The heavens and the earth are full of the greatness of Thy glory" (Abun Line 5)
+* šūḇḥāḵ · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܥܝܼܪܹ̈ܐ   [ʿ-y-r]   {referent noun m.pl.emph.}   (search: ire)
 ʿīr̈ē (1) — Watchers (1)
-* ʿīr̈ē · "Watchers and men cry out to You..." (Abun Line 6)
+* ʿīr̈ē · "Watchers and men cry out to You..." (Our Father Line 6)
 
 ܐ݇ܢܵܫܵ̈ܐ   [ʾ-n-š]   {noun c.pl.emph.}   (search: nasha)
 (ʾ)nāš̈ā (1) — men (1)
-* w(ʾ)nāš̈ā · "Watchers and men cry out to You..." (Abun Line 6)
+* w(ʾ)nāš̈ā · "Watchers and men cry out to You..." (Our Father Line 6)
 
 ܩ᷸ܵܥܹܝܢ   [q-ʿ-ʾ]   {Peal active ptcp. m.pl.abs.}   (search: qaeyn)
 qā^^ʿēyn (1) — cry out (1)
-* qā^^ʿēyn · "Watchers and men cry out to You..." (Abun Line 6)
+* qā^^ʿēyn · "Watchers and men cry out to You..." (Our Father Line 6)
 
 ܠܵܟ݂   [l]   {prep. + 2ms suff.}   (search: lak)
 lāḵ (2) — to You (2)
-* lāḵ · "Watchers and men cry out to You..." (Abun Line 6)
+* lāḵ · "Watchers and men cry out to You..." (Our Father Line 6)
 * lāḵ · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 
 ܢܸܗܘܸܐ   [h-w-ʾ]   {Peal impf. 3m.sg.}   (search: nehwe)
 nehweʾ (1) — let...be (1)
-* nehweʾ · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
+* nehweʾ · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 
 ܨܸܒ݂ܝܵܢܵܟ݂   [ṣ-b-ʾ]   {noun m.sg.emph. + 2ms suff.}   (search: sebyanak)
 ṣeḇyānāḵ (2) — Thy desire (1), Your desire (1)
-* ṣeḇyānāḵ · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
+* ṣeḇyānāḵ · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * waḇṣeḇyānāḵ · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
 ܐܲܝܟܲܢܵܐ   [ʾ-y-k]   {adv.}   (search: aykana)
 ʾaykanā (2) — as (2)
-* ʾaykanā · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
-* ʾaykanā · "...as we have released our debtors" (Abun Line 11)
+* ʾaykanā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
+* ʾaykanā · "...as we have released our debtors" (Our Father Line 11)
 
 ܐܵܦ   [ʾ-p]   {particle}   (search: ap)
 ʾāp (2) — ⌀ (2)
-* ʾāp · "let Thy desire be: on earth as it is in Heaven" (Abun Line 9)
-* dʾāp · "...as we have released our debtors" (Abun Line 11)
+* ʾāp · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
+* dʾāp · "...as we have released our debtors" (Our Father Line 11)
 
 ܗܲܒ݂   [y-h-b]   {Peal impv. 2m.sg.}   (search: hab)
 haḇ (1) — give (1)
-* haḇ · "Give us this day the bread we need" (Abun Line 10)
+* haḇ · "Give us this day the bread we need" (Our Father Line 10)
 
 ܠܲܢ   [l]   {prep. + 1cp suff.}   (search: lan)
 lan (2) — us (2)
-* lan · "Give us this day the bread we need" (Abun Line 10)
-* lan · "And release us our debts and sins..." (Abun Line 11)
+* lan · "Give us this day the bread we need" (Our Father Line 10)
+* lan · "And release us our debts and sins..." (Our Father Line 11)
 
 ܠܲܚܡܵܐ   [l-ḥ-m]   {noun m.sg.emph.}   (search: lahma)
 laḥmā (1) — the bread (1)
-* laḥmā · "Give us this day the bread we need" (Abun Line 10)
+* laḥmā · "Give us this day the bread we need" (Our Father Line 10)
 
 ܣܘܼܢܩܵܢܲܢ   [s-n-q]   {noun m.sg.emph. + 1cp suff.}   (search: sunqanan)
 sūnqānan (1) — we need (1)
-* dsūnqānan · "Give us this day the bread we need" (Abun Line 10)
+* dsūnqānan · "Give us this day the bread we need" (Our Father Line 10)
 
 ܝܵܘܡܵܢܵܐ   [y-w-m]   {noun m.sg.emph.}   (search: yawmana)
 yāwmānā (1) — this day (1)
-* yāwmānā · "Give us this day the bread we need" (Abun Line 10)
+* yāwmānā · "Give us this day the bread we need" (Our Father Line 10)
 
 ܫܒ݂ܘܿܩ   [š-b-q]   {Peal impv. 2m.sg.}   (search: shboq)
 šḇōq (1) — release (1)
-* wašḇōq · "And release us our debts and sins..." (Abun Line 11)
+* wašḇōq · "And release us our debts and sins..." (Our Father Line 11)
 
 ܚܵܘܒܲܝ̈ܢ   [ḥ-w-b]   {noun m.pl.emph. + 1cp suff.}   (search: hawbayn)
 ḥāwbaÿn (1) — our debts (1)
-* ḥāwbaÿn · "And release us our debts and sins..." (Abun Line 11)
+* ḥāwbaÿn · "And release us our debts and sins..." (Our Father Line 11)
 
 ܚܛܵܗܲܝ̈ܢ   [ḥ-ṭ-ʾ]   {noun m.pl.emph. + 1cp suff.}   (search: htahayn)
 ḥṭāhaÿn (1) — sins (1)
-* waḥṭāhaÿn · "And release us our debts and sins..." (Abun Line 11)
+* waḥṭāhaÿn · "And release us our debts and sins..." (Our Father Line 11)
 
 ܚܢܲܢ   [ʾ-n-ʾ]   {pron. 1c.pl.}   (search: hnan)
 ḥnan (1) — we (1)
-* ḥnan · "...as we have released our debtors" (Abun Line 11)
+* ḥnan · "...as we have released our debtors" (Our Father Line 11)
 
 ܫܒܲܩ̣݇ܢ݇   [š-b-q]   {Peal perf. 1c.pl.}   (search: shbaqn)
 šba(q_n) (1) — have released (1)
-* šba(q_n) · "...as we have released our debtors" (Abun Line 11)
+* šba(q_n) · "...as we have released our debtors" (Our Father Line 11)
 
 ܚܲܝܵܒܲܝ̈ܢ   [ḥ-w-b]   {adj. m.pl.emph. + 1cp suff.}   (search: hayabayn)
 ḥayābaÿn (1) — our debtors (1)
-* lḥayābaÿn · "...as we have released our debtors" (Abun Line 11)
+* lḥayābaÿn · "...as we have released our debtors" (Our Father Line 11)
 
 ܬܲܥܠܲܢ   [ʿ-l-l]   {Aphel impf. 2m.sg. + 1cp suff.}   (search: talan)
 taʿlan (1) — enter us (1)
-* lā taʿlan · "Do not enter us into testing" (Abun Line 12)
+* lā taʿlan · "Do not enter us into testing" (Our Father Line 12)
 
 ܢܸܣܝܘܿܢܵܐ   [n-s-ʾ]   {noun m.sg.emph.}   (search: nesyona)
 nesyōnā (1) — testing (1)
-* lnesyōnā · "Do not enter us into testing" (Abun Line 12)
+* lnesyōnā · "Do not enter us into testing" (Our Father Line 12)
 
 ܐܸܠܵܐ   [ʾ-l-ʾ]   {conj.}   (search: ela)
 ʾelā (1) — but (1)
-* ʾelā · "But deliver us from the Evil One" (Abun Line 13)
+* ʾelā · "But deliver us from the Evil One" (Our Father Line 13)
 
 ܦܲܨܵܢ   [p-ṣ-ʾ]   {Pael impv. 2m.sg. + 1cp suff.}   (search: pasan)
 paṣān (1) — deliver us (1)
-* paṣān · "But deliver us from the Evil One" (Abun Line 13)
+* paṣān · "But deliver us from the Evil One" (Our Father Line 13)
 
 ܒܝܼܫܵܐ   [b-ʾ-š]   {referent adj. m.sg.emph.}   (search: bisha)
 bīšā (1) — the Evil One (1)
-* bīšā · "But deliver us from the Evil One" (Abun Line 13)
+* bīšā · "But deliver us from the Evil One" (Our Father Line 13)
 
 ܕܝܼܠܵܟ݂   [d-y-l]   {poss. + 2ms suff.}   (search: dilak)
 dīlāḵ (1) — Thine (1)
-* ddīlāḵ · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* ddīlāḵ · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܗ݇ܝܼ   [h-w]   {pron. 3f.sg.}   (search: hi)
 (h)ī (1) — is (1)
-* (h)ī · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* (h)ī · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܡܲܠܟ݁ܘܼܬ݂ܵܐ   [m-l-k]   {noun f.sg.emph.}   (search: malkuta)
 malk̇ūṯā (1) — the Kingdom (1)
-* malk̇ūṯā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* malk̇ūṯā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܚܲܝܠܵܐ   [ḥ-y-l]   {noun m.sg.emph.}   (search: hayla)
 ḥaylā (1) — the power (1)
-* wḥaylā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
+* wḥaylā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܬܸܫܒ݁ܘܿܚܬܵܐ   [š-b-ḥ]   {noun f.sg.emph.}   (search: teshbohta)
 tešḃōḥtā (2) — glory (2)
-* wtešḃōḥtā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Abun Line 14)
-* tešḃōḥtā · "Glory to God in the heights" (Tešbōḥtā Line 1)
+* wtešḃōḥtā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
+* tešḃōḥtā · "Glory to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܫܘܼܒ݂ܚܵܐ   [š-b-ḥ]   {noun m.sg.emph.}   (search: shubha)
 šūḇḥā (2) — glory (2)
-* šūḇḥā · "Glory to the Father, to the Son..." (Abun Line 15)
+* šūḇḥā · "Glory to the Father, to the Son..." (Our Father Line 15)
 * wšūḇḥā · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 4)
 
 ܥܕܲܡܵܐ   [ʿ-d-m]   {prep.}   (search: dama)
 ʿdamā (1) — unto (1)
-* waʿdamā · "From Eternity and unto Eternity, amen amen" (Abun Line 16)
+* waʿdamā · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 
 ܡܪܵ̈ܘܡܹܐ   [r-w-m]   {noun m.pl.emph.}   (search: mrawme)
 mr̈āwmē (1) — the heights (1)
-* bamr̈āwmē · "Glory to God in the heights" (Tešbōḥtā Line 1)
+* bamr̈āwmē · "Glory to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܥܲܠ   [ʿ-l]   {prep.}   (search: al)
 ʿal (1) — on (1)
-* wʿal · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* wʿal · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 
 ܫܠܵܡܵܐ   [š-l-m]   {noun m.sg.emph.}   (search: shlama)
 šlāmā (2) — peace (2)
-* šlāmā · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* šlāmā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * šlāmā · "Let us pray. Peace be with us" (Ferial Slotha d'Ramsha, Line 1)
 
 ܣܲܒ݂ܪܵܐ   [s-b-r]   {noun m.sg.emph.}   (search: sabra)
 saḇrā (1) — hope (1)
-* wsaḇrā · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* wsaḇrā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 
 ܛܵܒ݂ܵܐ   [ṭ-w-b]   {adj. m.sg.emph.}   (search: taba)
 ṭāḇā (2) — good (1), Good One (1)
-* ṭāḇā · "And on earth, peace and good hope to the sons of men" (Tešbōḥtā Line 2)
+* ṭāḇā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ṭāḇā · "O Good One, who does not withhold His mercies..." (Ferial Slotha d'Sapra I, Line 8)
 
 ܥܸܕܵܢ   [ʿ-d-n]   {noun m.sg.abs.}   (search: edan)
 ʿedān (1) — moment (1)
-* ʿedān · "In every moment, forever" (Tešbōḥtā Line 3)
+* ʿedān · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 
 ܚܲܢܵܢܵܐ   [ḥ-n-n]   {adj. m.sg.emph.}   (search: hanana)
 ḥanānā (1) — Gracious One (1)

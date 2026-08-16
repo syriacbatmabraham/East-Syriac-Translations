@@ -16,20 +16,25 @@ source_records:
     governs: Scripture other than Psalms
 
 confirmed_texts:
-  Creed_in_Syriac.txt:
+  Creed.txt:
+    citation_label: Creed
     source_of_record: syro_malabar_editio_typica
     editorial_apparatus:
       - line: 17
         witness_label: Catholic
         reading: "[waḇrā]"
         source: syro_malabar_editio_typica
-  Our_Father_in_Syriac.txt:
+  Our_Father.txt:
+    citation_label: Our Father
     source_of_record: breviarium_chaldaicum
   Teshbhotha_l-Alaha.txt:
+    citation_label: Teshbhotha l'Alaha
     source_of_record: breviarium_chaldaicum
   Ferial_Slotha_d_Sapra_I.txt:
+    citation_label: Ferial Slotha d'Sapra I
     source_of_record: breviarium_chaldaicum
   Ferial_Slotha_d_Sapra_II.txt:
+    citation_label: Ferial Slotha d'Sapra II
     source_of_record: breviarium_chaldaicum
     editorial_apparatus:
       - line: 4
@@ -39,4 +44,5 @@ confirmed_texts:
         witness_label: Assyrian Ferial Slotha d'Sapra II
         reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
   Ferial_Slotha_d_Ramsha.txt:
+    citation_label: Ferial Slotha d'Ramsha
     source_of_record: breviarium_chaldaicum

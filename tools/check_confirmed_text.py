@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate confirmed East Syriac three-block text files."""
+"""Validate confirmed East Syriac three-block text files and corpus provenance."""
 
 from __future__ import annotations
 
@@ -8,9 +8,13 @@ from pathlib import Path
 import sys
 
 from east_syriac.confirmed_text import check_confirmed_text_path
+from east_syriac.provenance import check_source_registry_path
 
 
 ALLOWED_SUFFIXES = {".txt", ".md"}
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+CONFIRMED_DIR = PROJECT_ROOT / "confirmed-texts"
+SOURCE_REGISTRY = PROJECT_ROOT / "sources" / "sources.yaml"
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -18,7 +22,8 @@ def _parser() -> argparse.ArgumentParser:
         description=(
             "Check fixed three-block confirmed texts: UTF-8/LF/NFC hygiene, "
             "equal aligned blocks and stanza breaks, exact inverse round-trip, "
-            "and mechanically derived transliteration from the Syriac block."
+            "mechanically derived transliteration from the Syriac block, and "
+            "source-of-record/citation identity in sources/sources.yaml."
         )
     )
     parser.add_argument(
@@ -67,6 +72,15 @@ def _format_issue(path: Path, issue) -> str:
     return f"{location}: {issue.code}: {issue.message}"
 
 
+def _format_provenance_issue(issue) -> str:
+    location = str(SOURCE_REGISTRY)
+    if issue.filename is not None:
+        location += f":{issue.filename}"
+    if issue.line is not None:
+        location += f":{issue.line}"
+    return f"{location}: {issue.code}: {issue.message}"
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     paths = _expand(args.paths)
@@ -75,6 +89,17 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     failed = False
+
+    try:
+        provenance_issues = check_source_registry_path(SOURCE_REGISTRY, CONFIRMED_DIR)
+    except OSError as exc:
+        print(f"{SOURCE_REGISTRY}: provenance-file-error: {exc}", file=sys.stderr)
+        return 2
+
+    for issue in provenance_issues:
+        print(_format_provenance_issue(issue), file=sys.stderr)
+        failed = True
+
     for path in paths:
         try:
             result = check_confirmed_text_path(path)
