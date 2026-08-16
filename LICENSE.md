@@ -20,16 +20,14 @@ A project's transcription, normalization, selection, arrangement, annotation, or
 
 ## Software — MIT
 
-Software added under `tools/` is intended to be licensed under the **MIT License** unless a file expressly states otherwise.
+Software under `tools/` is licensed under the **MIT License** unless a file expressly states otherwise. The complete license text and copyright notice are in `tools/LICENSE`.
 
 SPDX identifier: `MIT`
 
-Canonical license information: https://opensource.org/license/mit
-
-When software is first added, the repository should include the standard MIT license notice applicable to that code.
+The MIT License permits broad reuse, modification, distribution, sublicensing, and commercial use while preserving the project's copyright notice and license notice in copies or substantial portions of the software. It does not transfer ownership of the project's original code to downstream users.
 
 ## Third-party material
 
 Third-party editions, scans, fonts, corpora, transcriptions, datasets, and other resources retain their own copyright and license status. Their presence in project documentation, citations, or local working directories does not place them under this repository's licenses.
 
-Do not assume that material under `sources/` is redistributable unless its provenance record explicitly says so.
+Do not assume that third-party source material is redistributable unless its provenance or upstream license explicitly permits redistribution.
