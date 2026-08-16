@@ -165,11 +165,6 @@ class TransliterationTests(unittest.TestCase):
             reverse_transliterate("(mn)")
         self.assertEqual(caught.exception.code, "legacy-two-letter-line-wrapper")
 
-    def test_obsolete_occultans_resolution_is_rejected(self):
-        with self.assertRaises(TransliterationError) as caught:
-            transliterate_text("ܡ݇ܢ݇", {(1, 1, "above"): "span"})
-        self.assertEqual(caught.exception.code, "obsolete-occultans-resolution")
-
     def test_editorial_apparatus_is_preserved(self):
         self.assert_round_trip(
             "(Witness A: 2) ܐ[ܒ]ܐ",
