@@ -58,7 +58,7 @@ Editorial apparatus is preserved literally alongside the letter-for-letter mappi
 
 | Notation | Meaning | On reversal |
 |---|---|---|
-| `(x)` | occultans line above (§6) | restore the line over the wrapped letter or letters |
+| `(x)` / `(xy)` | one-letter line / one physical two-letter span (§6) | restore the line mark(s) on the wrapped letter or letters |
 | `[…]` | editorial addition or alternate | preserve the brackets |
 | `(English label:)` | source or witness label | preserve the label |
 
@@ -70,10 +70,10 @@ Example: `ʾaḇā [waḇrā] nāpēq`
 
 Parentheses have two in-scope uses, so the inverse grammar must distinguish them mechanically.
 
-- A parenthetical payload that parses **completely as one or two canonical Syriac letter-units**, optionally preceded by `_` for a line below, is occultans notation (§6).
+- A parenthetical payload that parses **completely as one or two canonical Syriac letter-units**, optionally preceded by `_` for a line below, is line-mark notation (§6). One unit records a line on one letter; two units record one physical line spanning the pair.
 - Any other balanced parenthetical payload is editorial apparatus and is preserved literally.
 
-Therefore an editorial label whose entire contents would itself be legal occultans syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with occultans `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
+Therefore an editorial label whose entire contents would itself be legal line-mark syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with the one-letter line notation `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
 
 ---
 
@@ -195,7 +195,7 @@ The implied-final-ʾālap̄ convention suppresses **only a bare final ʾālap̄ 
 
 The inverse inserts the implied bare ʾālap̄ immediately after the final vowel carrier, so editorial placement is reconstructed exactly.
 
-**Word-final `e` (and `a`) followed by a written ʾālap̄.** `a` and `e` take no matres, but a written ʾālap̄ is still a letter on the page and is recorded as `ʾ` per §3.1 — it is not analyzed as a mater. Nothing else in the system produces word-final `eʾ`, so the sequence is unambiguous and reverses cleanly. Worked: `tēʾteʾ`, `nehweʾ` (Abun).
+**Word-final `e` (and `a`) followed by a written ʾālap̄.** `a` and `e` take no matres, but a written ʾālap̄ is still a letter on the page and is recorded as `ʾ` per §3.1 — it is not analyzed as a mater. Nothing else in the system produces word-final `eʾ`, so the sequence is unambiguous and reverses cleanly. Worked: `tēʾteʾ`, `nehweʾ` (Our Father).
 
 **Two dots below is not always a vowel.** The same page position carries the mark of §17. Distinguish by shape: zlāmā is two dots level or angular; §17's mark is the two-dot mark that is neither.
 
@@ -234,8 +234,8 @@ Where a Syriac letter carries more than one combining mark, storage order is det
 The in-scope combining classes are:
 
 - **36** — superscript ʾālap̄ (U+0711). It therefore sorts before the below and above marks without a project tie-break.
-- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), occultans line below (§6)]`.
-- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, occultans line above (§6)]`.
+- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), line mark below (§6)]`.
+- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, line mark above (§6)]`.
 
 The order is a **storage convention, not a claim about phonological or visual priority**. It exists because several distinct in-scope marks share class 220 or 230. After §16 has normalized source codepoints to page-states, two canonically equivalent witnesses must therefore produce the same combining sequence before comparison or round-trip validation.
 
@@ -253,36 +253,48 @@ For inversion to have one grammar, all marks belonging to one Syriac carrier ser
 3. §7 point **on** the carrier — below `_` before above `^` if both occur;
 4. the Class-B vowel, if present;
 5. §7 point **between** this carrier and the next — below `__` before above `^^` if both occur;
-6. any occultans wrapper (§6) surrounds the complete one- or two-letter unit(s).
+6. any line wrapper (§6) surrounds the complete one- or two-letter unit(s).
 
 Examples already in force follow this order: `m_n`, `qā^^ʿēyn`, `šba(q_n)`.
 
 ---
 
-## 6. The Occultans Line (mhaggyānā / mṭalqānā)
+## 6. One-Letter Lines and Marheṭānā Spans
 
-A line above or below a letter, or spanning two letters.
+The project distinguishes **where the physical line is drawn** before asking what traditional function it serves.
 
-**The notation records the mark, not a phonological claim.** The two traditional names denote opposite functions — *mṭalqānā* marks a letter silent, *mhaggyānā* marks one pronounced — and they are graphically the same stroke. A transliterator cannot tell them apart by looking, so the system does not ask it to.
+### 6.1 One-letter line
+
+A line clearly belonging to one letter is recorded as a one-letter line. The same graphic stroke is traditionally described with names such as *mṭalqānā* and *mhaggyānā* in different functions. **The canonical string records the visible one-letter mark and does not infer its phonological function merely from the stroke.**
 
 | Page-state | Notation |
 |---|---|
 | line above one letter | `(x)` |
-| line above spanning two letters | `(xy)` |
 | line below one letter | `(_x)` |
-| line below spanning two letters | `(_xy)` |
 
-- `md(n)ītā` — the nun is on the page, carrying the line
-- `w(ʾ)nāš̈ā`, `(h)ī` — prosthetic ʾālap̄ and enclitic hē, each carrying the line above one letter
-- `šba(q_n)` — one line spanning qoph and nun; the qoph also carries a §7 point below, written inside the span after its carrier
+- `md(n)ītā` — the nun is on the page carrying a one-letter line
+- `w(ʾ)nāš̈ā`, `(h)ī` — prosthetic ʾālap̄ and enclitic hē, each carrying a one-letter line above
 
 The `_` at the head of the wrap marks a line below and cannot be confused with §7's `_`, which always follows its carrier.
 
-### 6.1 Spanning and adjacent-line distinction
+### 6.2 Two-letter spanning line; marheṭānā
 
-`(xy)` asserts **one page-confirmed line** covering two letters. Two page-confirmed separate lines on adjacent letters are written `(x)(y)`. The same distinction applies below: `(_xy)` versus `(_x)(_y)`.
+A line clearly placed **above and between two consonants, spanning the pair**, is a different page-state from a line carried by the first consonant alone. In the attested cluster use represented by `šba(q_n)`, the project identifies this as **marheṭānā**: the line marks the qoph–nun sequence as a vowelless consonant cluster. It does **not** mark qoph or nun as silent.
 
-**No automatic adjacency inference is permitted.** Encoded source represents an above line with U+0747 on each carrying letter and a below line with U+0748 on each carrying letter. Repetition therefore encodes both one spanning line and two separate adjacent lines. Normalized Unicode cannot decide between them. The page-state audit must surface the ambiguity, and canonical forward transliteration must receive the page decision before choosing one wrapper or two.
+| Page-state | Notation |
+|---|---|
+| one line above spanning two letters | `(xy)` |
+| one line below spanning two letters, if page-confirmed | `(_xy)` |
+
+- `šba(q_n)` — one upper line spans qoph and nun; qoph also carries a §7 point below, written inside the span after its carrier. The page establishes a vowelless `qn` cluster, so the span must not be collapsed to a one-letter line on qoph.
+
+The notation remains graphically reversible. For an upper two-letter cluster span, the function is also established by the page and may be named marheṭānā. A hypothetical or future span whose function is not securely established is still recorded graphically rather than assigned a function by inference.
+
+### 6.3 Spanning and adjacent-line distinction
+
+`(xy)` asserts **one page-confirmed physical line** covering two letters. Two page-confirmed separate one-letter lines on adjacent letters are written `(x)(y)`. The same graphical distinction applies below: `(_xy)` versus `(_x)(_y)`.
+
+**No automatic adjacency inference is permitted.** The normalized Syriac storage convention represents an above line with U+0747 and a below line with U+0748. Because Unicode has no character for one physical line spanning two Syriac letters, a two-letter span is stored by placing the appropriate line codepoint on both covered letters. The same pair of repeated codepoints can therefore also represent two separate adjacent one-letter lines. Normalized Unicode alone cannot decide between those page-states. The page-state audit must surface the grouping question, and canonical forward transliteration must receive the page decision before choosing one wrapper or two.
 
 A two-letter span may not be inferred across an editorial square-bracket boundary. If a witness ever establishes such a state, the notation must be extended explicitly rather than guessed.
 
@@ -314,7 +326,7 @@ A point standing **between** two letters is never a vowel or a bgdkpt point, wha
 
 **Placement against a vowel.** A marker for a point *on* a letter follows the decorated carrier and precedes the Class-B vowel. A marker for a point *between* letters follows the whole carrier-plus-vowel unit. Where both above and below occur in the same position, below precedes above as fixed by §5.3: on-letter `_^`, between-letter `__^^`.
 
-Worked: ܡ̣ܢ → `m_n`, distinct from ܡܲܢ → `man`. · ܩ᷸ܵܥܹܝܢ → `qā^^ʿēyn` (Abun), the point standing between qoph and ʿē.
+Worked: ܡ̣ܢ → `m_n`, distinct from ܡܲܢ → `man`. · ܩ᷸ܵܥܹܝܢ → `qā^^ʿēyn` (Our Father), the point standing between qoph and ʿē.
 
 Above and below are kept separate because the opposition is itself the distinction being drawn (hāw / hū).
 
@@ -351,7 +363,7 @@ Conventions must be re-verified against attested text whenever new material is w
 2. **Word-final `ē` implies a bare immediately-following mater ʾālap̄ in the same editorial sequence.** Exception form: `ĕ`. An explicitly written yodh gives `ēy` and is not an exception. Exact boundary: §4.2.
 3. **Prosthetic ʾālap̄ is written `ʾ`** and requires no special mark. *(No exception form needed: this is a letter mapping, not a prediction.)*
 4. **Word division follows the source.** Prefixed particles are written solid unless the source separates them. Editorial brackets do not divide words. The canonical string never strips proclitics; the glossary may index a headword with them stripped, but that is a glossary convention and does not touch the string.
-5. **Retired as a predictive convention.** Adjacent encoded occultans marks do not imply a span. Span versus separate lines is established from the page and represented under §6.1.
+5. **Retired as a predictive convention.** Adjacent encoded line marks do not imply a span. One physical span versus two separate one-letter lines is established from the page and represented under §6.3.
 
 ### 9.3 Reserved
 
@@ -362,7 +374,7 @@ Reserved.
 ## 10. Scope
 
 ### In scope
-Consonants, vowel points, bgdkpt pointing, syāmē, the occultans line, the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).
+Consonants, vowel points, bgdkpt pointing, syāmē, one-letter line marks and page-confirmed spanning lines (§6), the distinguishing point, two dots below (§17), the breve below (§18), matres, and project editorial apparatus (§2).
 
 ### Out of scope at word level
 **Out-of-scope characters are removed at ingestion (§16.1), not carried in the stored line.** The confirmed text contains in-scope orthography only.
@@ -405,7 +417,7 @@ A canonical string is **valid** if and only if:
 
 Condition 2 is the Glossary-identity check. A collision means either an entry has been duplicated or the morphology/root analysis has not yet separated two genuinely distinct forms.
 
-**Round-trip asymmetry.** A page-confirmed spanning occultans line and two page-confirmed separate adjacent lines reverse to the same repeated Unicode marks. Round-trip therefore proves the encoded Syriac exactly, but cannot by itself prove that the span/separate decision matched the physical page. The page-state audit remains authoritative for that distinction.
+**Round-trip asymmetry.** A page-confirmed two-letter spanning line — including the attested upper marheṭānā span — and two page-confirmed separate adjacent one-letter lines reverse to the same repeated Unicode line marks. Round-trip therefore proves the encoded Syriac exactly, but cannot by itself prove that the span/separate grouping matched the physical page. The page-state audit remains authoritative for that distinction.
 
 ---
 
@@ -486,7 +498,7 @@ The East Syriac vowels are the **dotted** forms: U+0732, U+0735, U+0738, U+0739,
 
 ### 16.7 Unrepresentable or source-lossy page-states
 
-A page-confirmed spanning occultans line is encoded by placing U+0747 (above) or U+0748 (below) on both covered letters because Unicode has no character for one line spanning two Syriac letters. The stored source is therefore lossy with respect to span versus separate adjacent lines; resolve that distinction against the page under §6.1.
+A page-confirmed two-letter spanning line is encoded in normalized Syriac by placing U+0747 (above) or U+0748 (below) on both covered letters because Unicode has no character for one physical line spanning two Syriac letters. The stored Syriac is therefore lossy with respect to **one span versus two separate adjacent one-letter lines**; resolve that grouping against the page under §6.3. In the confirmed `šba(q_n)` example the page shows one upper marheṭānā line spanning qoph–nun, so the repeated U+0747 storage represents that one physical cluster line.
 
 A carrier bearing **both** U+0747 and U+0748 simultaneously has no canonical notation in the present system. It is a blocking page-state requiring source/rule review, not a license to invent nested notation.
 
