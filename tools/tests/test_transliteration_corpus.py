@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 import sys
 from pathlib import Path
 import unittest
@@ -10,57 +9,32 @@ ROOT = TOOLS.parent
 if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
-from east_syriac.transliteration import transliterate_text
-from east_syriac.transliteration_inverse import reverse_transliterate
-
-
-def _three_blocks(path: Path) -> tuple[str, str, str]:
-    text = path.read_text(encoding="utf-8")
-    blocks = re.split(r"\n{2,}", text.strip("\n"))
-    if len(blocks) != 3:
-        raise AssertionError(
-            f"{path}: expected exactly three blocks separated by blank lines; got {len(blocks)}"
-        )
-    return blocks[0], blocks[1], blocks[2]
+from east_syriac.confirmed_text import check_confirmed_text_path
 
 
 class ConfirmedCorpusTransliterationTests(unittest.TestCase):
-    def test_every_confirmed_text_is_exactly_reversible(self):
-        files = sorted((ROOT / "confirmed-texts").glob("*.txt"))
+    def test_every_confirmed_text_passes_complete_checker(self):
+        files = sorted(
+            path
+            for path in (ROOT / "confirmed-texts").iterdir()
+            if path.is_file() and path.suffix.lower() in {".txt", ".md"}
+        )
         self.assertTrue(files, "confirmed-texts corpus is empty")
 
         for path in files:
             with self.subTest(file=path.name):
-                syriac, canonical, english = _three_blocks(path)
-                self.assertEqual(
-                    len(syriac.splitlines()),
-                    len(canonical.splitlines()),
-                    f"{path.name}: Syriac/transliteration line count differs",
+                result = check_confirmed_text_path(path)
+                self.assertTrue(
+                    result.ok,
+                    "\n".join(
+                        f"{issue.code}"
+                        f"{' line ' + str(issue.line) if issue.line is not None else ''}: "
+                        f"{issue.message}"
+                        for issue in result.issues
+                    ),
                 )
-                self.assertEqual(
-                    len(canonical.splitlines()),
-                    len(english.splitlines()),
-                    f"{path.name}: transliteration/English line count differs",
-                )
-
-                # Reverse the already-confirmed canonical block first. This both
-                # proves its grammar and recovers the page-only span/separate
-                # occultans decisions that encoded Syriac cannot contain.
-                reverse = reverse_transliterate(canonical)
-                self.assertEqual(
-                    reverse.text,
-                    syriac,
-                    f"{path.name}: canonical block does not reconstruct Syriac exactly",
-                )
-
-                # Then regenerate the canonical block mechanically from Syriac,
-                # supplying only those page-only occultans decisions.
-                forward = transliterate_text(syriac, reverse.occultans_resolutions)
-                self.assertEqual(
-                    forward.text,
-                    canonical,
-                    f"{path.name}: mechanical forward transliteration differs from confirmed block",
-                )
+                self.assertIsNotNone(result.document)
+                self.assertIsNotNone(result.expected_transliteration_block)
 
 
 if __name__ == "__main__":
