@@ -95,6 +95,7 @@ SYRIAC_ABBREVIATION_MARK = "\u070f"
 PRESENTATIONAL = frozenset({"\u0640", "\u200c", "\u200d"})
 ACCENT_CANTILLATION = frozenset({"\u0749", "\u074a"})
 LATIN_PUNCTUATION_SUBSTITUTES = frozenset(".,:;")
+ALLOWED_SOURCE_WHITESPACE = frozenset({" ", "\n"})
 
 KNOWN_MARKS = frozenset(
     {
@@ -240,8 +241,8 @@ def normalize_text(text: str) -> NormalizationResult:
 
     Parenthesized editorial labels are opaque. Square-bracketed Syriac remains
     active input. Anything outside those structures that is neither Syriac,
-    recognized combining input, nor whitespace is preserved and flagged rather
-    than silently admitted.
+    recognized combining input, nor project whitespace (U+0020 SPACE or LF) is
+    preserved and flagged rather than silently admitted.
     """
 
     flags: list[NormalizationFlag] = []
@@ -278,8 +279,19 @@ def normalize_text(text: str) -> NormalizationResult:
             continue
 
         # Everything inside an editorial label is preserved literally. The
-        # label is not Syriac orthography and is not page-state interpreted.
+        # label is not Syriac orthography and is not page-state interpreted,
+        # but the repository-wide whitespace contract still applies.
         if paren_stack:
+            if char.isspace() and char not in ALLOWED_SOURCE_WHITESPACE:
+                flags.append(
+                    _flag(
+                        text,
+                        index,
+                        char,
+                        "unsupported-whitespace",
+                        f"Unsupported whitespace U+{ord(char):04X}; use only U+0020 SPACE and LF.",
+                    )
+                )
             kept.append((char, index, True))
             continue
 
@@ -297,7 +309,7 @@ def normalize_text(text: str) -> NormalizationResult:
                         index,
                         char,
                         "unmatched-closing-bracket",
-                        "Closing editorial bracket has no matching opener.",
+                        "Editorial square bracket has no matching opener.",
                     )
                 )
             kept.append((char, index, False))
@@ -327,7 +339,20 @@ def normalize_text(text: str) -> NormalizationResult:
             kept.append((char, index, False))
             continue
 
-        allowed = char.isspace() or _is_syriac_letter(char) or _is_combining(char)
+        if char.isspace() and char not in ALLOWED_SOURCE_WHITESPACE:
+            flags.append(
+                _flag(
+                    text,
+                    index,
+                    char,
+                    "unsupported-whitespace",
+                    f"Unsupported whitespace U+{ord(char):04X}; use only U+0020 SPACE and LF.",
+                )
+            )
+            kept.append((char, index, False))
+            continue
+
+        allowed = char in ALLOWED_SOURCE_WHITESPACE or _is_syriac_letter(char) or _is_combining(char)
         if not allowed:
             name = unicodedata.name(char, "")
             is_latin_or_digit = (
