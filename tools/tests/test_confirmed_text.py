@@ -130,6 +130,16 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         result = check_confirmed_text(text, "sample.txt")
         self.assertIn("trailing-whitespace", [issue.code for issue in result.issues])
 
+    def test_non_ascii_whitespace_is_reported(self):
+        text = make_file("ܐܒ", "ʾb", "one\u00a0two")
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertIn("unsupported-whitespace", [issue.code for issue in result.issues])
+
+    def test_tab_is_reported(self):
+        text = make_file("ܐܒ", "ʾb", "one\ttwo")
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertIn("unsupported-whitespace", [issue.code for issue in result.issues])
+
     def test_non_nfc_is_reported(self):
         text = make_file("ܐܒ", "ʾb", "Cafe\u0301")
         result = check_confirmed_text(text, "sample.txt")
