@@ -40,6 +40,7 @@ class ConfirmedTextParserTests(unittest.TestCase):
         self.assertEqual(doc.line_count, 3)
         self.assertEqual(doc.stanza_breaks, (2,))
         self.assertEqual(doc.transliteration_lines[1], "")
+        self.assertEqual(doc.english_lines[1], "")
 
     def test_misaligned_stanza_breaks_are_rejected(self):
         text = "ܐܒ\n\nܓܕ\n\nʾb\ngd\nx\n\none\n\ntwo\n"
