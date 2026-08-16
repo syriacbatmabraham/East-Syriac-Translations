@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping, Literal
+from typing import Literal
 import unicodedata
 
 from .normalization import (
@@ -25,13 +25,6 @@ MARHETANA_TIE_BELOW = "\u203f"  # UNDERTIE
 
 Direction = Literal["above", "below"]
 
-# Kept as compatibility aliases for callers written against the earlier
-# page-resolution API. Canonical normalized Syriac now encodes spans directly
-# with U+035E/U+035F, so nonempty resolution mappings are rejected.
-Resolution = Literal["span", "separate"]
-OccultansResolutionKey = tuple[int, int, Direction]
-OccultansResolutions = Mapping[OccultansResolutionKey, Resolution]
-
 
 class TransliterationError(ValueError):
     def __init__(self, code: str, message: str):
@@ -49,9 +42,6 @@ class TransliterationResult:
 @dataclass(frozen=True)
 class ReverseTransliterationResult:
     text: str
-    # Deprecated compatibility field. Span/separate grouping is no longer
-    # stored outside the Syriac text, so canonical inversions return {}.
-    occultans_resolutions: dict[OccultansResolutionKey, Resolution]
 
 
 @dataclass
@@ -274,17 +264,10 @@ def _validate_marhetana_adjacency(tokens: list[_SourceToken], letters_by_word: d
                 )
 
 
-def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | None = None) -> TransliterationResult:
+def transliterate_text(text: str) -> TransliterationResult:
     """Transliterate clean normalized Syriac to the canonical reversible string."""
     _validate_forward_input(text)
     _validate_source_parentheses(text)
-
-    resolutions=dict(occultans_resolutions or {})
-    if resolutions:
-        raise TransliterationError(
-            "obsolete-occultans-resolution",
-            "Span/separate metadata is obsolete. Encode a two-letter span directly in normalized Syriac with U+035E (above) or U+035F (below); repeated U+0747/U+0748 denotes separate one-letter lines.",
-        )
 
     tokens=_parse_source(text)
     letters_by_word: dict[int,list[int]]={}
@@ -379,7 +362,7 @@ def transliterate_text(text: str, occultans_resolutions: OccultansResolutions | 
     return TransliterationResult(unicodedata.normalize("NFC","".join(out)), labels)
 
 
-def round_trip(text: str, occultans_resolutions: OccultansResolutions | None = None) -> bool:
+def round_trip(text: str) -> bool:
     from .transliteration_inverse import reverse_transliterate
-    forward = transliterate_text(text, occultans_resolutions)
+    forward = transliterate_text(text)
     return reverse_transliterate(forward.text).text == text
