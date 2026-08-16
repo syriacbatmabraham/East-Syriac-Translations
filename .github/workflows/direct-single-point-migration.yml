@@ -1,0 +1,553 @@
+name: Direct single-point migration
+
+on:
+  push:
+    branches:
+      - agent/direct-single-point-states
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/direct-single-point-states
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Apply direct single-point model
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_once(path: str, old: str, new: str) -> None:
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{path}: expected exactly one match, found {count}')
+              p.write_text(text.replace(old, new), encoding='utf-8', newline='\n')
+
+          # normalization.py: direct point identity; no carrier-based remapping.
+          replace_once(
+              'tools/east_syriac/normalization.py',
+              r'''# §16.1 single-dot aliases. Meaning is resolved by carrier, never codepoint name.
+          SINGLE_ABOVE_INPUTS = frozenset({"\u0741", "\u073f", "\u0307"})
+          SINGLE_BELOW_INPUTS = frozenset({"\u0742", "\u073c", "\u0323"})
+          QUSSHAYA = "\u0741"
+          RUKKAKHA = "\u0742"
+          RWAHA = "\u073f"
+          HBASA_ESASA_DOTTED = "\u073c"
+          GENERIC_DOT_ABOVE = "\u0307"
+          GENERIC_DOT_BELOW = "\u0323"
+          ''',
+              r'''# §16.1 single-point states are direct canonical identities. The page audit
+          # establishes which mark is present; normalization never reinterprets a point
+          # from the letter carrying it.
+          QUSSHAYA = "\u0741"
+          RUKKAKHA = "\u0742"
+          RWAHA = "\u073f"
+          HBASA_ESASA_DOTTED = "\u073c"
+          GENERIC_DOT_ABOVE = "\u0307"
+          GENERIC_DOT_BELOW = "\u0323"
+          ''',
+          )
+          replace_once(
+              'tools/east_syriac/normalization.py',
+              r'''def _canonical_single_point(base: str, mark: str) -> str:
+              if mark in SINGLE_ABOVE_INPUTS:
+                  if base in BGDKPT:
+                      return QUSSHAYA
+                  if base == WAW:
+                      return RWAHA
+                  return GENERIC_DOT_ABOVE
+
+              if base in BGDKPT:
+                  return RUKKAKHA
+              if base in {WAW, YODH}:
+                  return HBASA_ESASA_DOTTED
+              return GENERIC_DOT_BELOW
+
+
+          ''',
+              '',
+          )
+          replace_once(
+              'tools/east_syriac/normalization.py',
+              r'''        normalized_marks: list[str] = []
+                  above_count = 0
+                  below_count = 0
+                  for mark, mark_index, _ in marks:
+                      new_mark = mark
+                      if mark in SINGLE_ABOVE_INPUTS:
+                          new_mark = _canonical_single_point(normalized_base, mark)
+                          above_count += 1
+                      elif mark in SINGLE_BELOW_INPUTS:
+                          new_mark = _canonical_single_point(normalized_base, mark)
+                          below_count += 1
+                      elif mark in TWO_DOTS_BELOW_INPUTS:
+          ''',
+              r'''        normalized_marks: list[str] = []
+                  for mark, mark_index, _ in marks:
+                      new_mark = mark
+                      if mark in TWO_DOTS_BELOW_INPUTS:
+          ''',
+          )
+          replace_once(
+              'tools/east_syriac/normalization.py',
+              r'''        if above_count > 1:
+                      first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_ABOVE_INPUTS)
+                      flags.append(
+                          _flag(
+                              text,
+                              first_index,
+                              first_mark,
+                              "duplicate-single-point-above",
+                              "More than one single-point-above source encoding occurs on one carrier.",
+                          )
+                      )
+                  if below_count > 1:
+                      first_mark, first_index, _ = next(item for item in marks if item[0] in SINGLE_BELOW_INPUTS)
+                      flags.append(
+                          _flag(
+                              text,
+                              first_index,
+                              first_mark,
+                              "duplicate-single-point-below",
+                              "More than one single-point-below source encoding occurs on one carrier.",
+                          )
+                      )
+
+          ''',
+              '',
+          )
+
+          # inspection.py: generic points are legitimate on every Syriac carrier.
+          replace_once(
+              'tools/east_syriac/inspection.py',
+              r'''        elif mark in {GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW} and base in BGDKPT:
+                      issues.append(PageStateIssue("generic-point-on-bgdkpt", "Generic single point occurs on bgdkpt; normalized carrier discipline is broken.", word, letter, mark))
+          ''',
+              '',
+          )
+
+          # inverse grammar: generic on-letter points can occur on any carrier,
+          # including explicit carrier-vowel and bgdkpt states.
+          replace_once(
+              'tools/east_syriac/transliteration_inverse.py',
+              r'''def _allowed_on_marks(base: str, intrinsic: tuple[str,...]) -> list[tuple[str,tuple[str,...]]]:
+              carrier_vowel = RWAHA in intrinsic or HBASA_ESASA_DOTTED in intrinsic
+              if carrier_vowel or base==WAW or base in BGDKPT:
+                  return [("",())]
+              if base==YODH:
+                  return [("",()),("^",(GENERIC_DOT_ABOVE,))]
+              return [
+                  ("",()),("_",(GENERIC_DOT_BELOW,)),("^",(GENERIC_DOT_ABOVE,)),
+                  ("_^",(GENERIC_DOT_BELOW,GENERIC_DOT_ABOVE)),
+              ]
+          ''',
+              r'''def _allowed_on_marks(base: str, intrinsic: tuple[str,...]) -> list[tuple[str,tuple[str,...]]]:
+              # §7 point identity is direct. U+0307/U+0323 remain generic points on
+              # every carrier; they are not converted into bgdkpt or Class-A states.
+              return [
+                  ("",()),("_",(GENERIC_DOT_BELOW,)),("^",(GENERIC_DOT_ABOVE,)),
+                  ("_^",(GENERIC_DOT_BELOW,GENERIC_DOT_ABOVE)),
+              ]
+          ''',
+          )
+
+          # Focused normalization tests.
+          replace_once(
+              'tools/tests/test_normalization.py',
+              r'''    def test_single_dot_above_reencodes_by_carrier(self):
+                  self.assertEqual(normalize_text("ܒ\u0307").text, "ܒ\u0741")
+                  self.assertEqual(normalize_text("ܘ\u0741").text, "ܘ\u073f")
+                  self.assertEqual(normalize_text("ܝ\u073f").text, "ܝ\u0307")
+
+              def test_single_dot_below_reencodes_by_carrier(self):
+                  self.assertEqual(normalize_text("ܕ\u073c").text, "ܕ\u0742")
+                  self.assertEqual(normalize_text("ܘ\u0323").text, "ܘ\u073c")
+                  self.assertEqual(normalize_text("ܝ\u0323").text, "ܝ\u073c")
+                  self.assertEqual(normalize_text("ܡ\u0742").text, "ܡ\u0323")
+          ''',
+              r'''    def test_single_point_states_preserve_explicit_identity(self):
+                  cases = (
+                      "ܒ\u0741", "ܕ\u0742", "ܘ\u073f", "ܘ\u073c", "ܝ\u073c",
+                      "ܒ\u0307", "ܒ\u0323", "ܘ\u0307", "ܘ\u0323",
+                      "ܝ\u0307", "ܝ\u0323", "ܡ\u0307", "ܡ\u0323",
+                  )
+                  for source in cases:
+                      with self.subTest(source=source):
+                          result = normalize_text(source)
+                          self.assertEqual(result.text, source)
+                          self.assertFalse(result.flags)
+          ''',
+          )
+          replace_once(
+              'tools/tests/test_normalization.py',
+              r'''    def test_duplicate_single_dot_is_flagged(self):
+                  result = normalize_text("ܒ\u0307\u0741")
+                  self.assertIn("duplicate-single-point-above", [flag.code for flag in result.flags])
+          ''',
+              r'''    def test_distinct_single_point_identities_are_not_collapsed(self):
+                  result = normalize_text("ܒ\u0307\u0741")
+                  self.assertEqual(result.text, "ܒ\u0741\u0307")
+                  self.assertFalse(result.flags)
+          ''',
+          )
+
+          # Inspection tests.
+          replace_once(
+              'tools/tests/test_inspection.py',
+              r'''            "ܡ\u073c": "carrier-vowel-invalid-carrier",
+                      "ܒ\u0307": "generic-point-on-bgdkpt",
+          ''',
+              r'''            "ܡ\u073c": "carrier-vowel-invalid-carrier",
+          ''',
+          )
+          replace_once(
+              'tools/tests/test_inspection.py',
+              r'''    def test_one_letter_lines_above_and_below_same_carrier_are_unrepresentable(self):
+          ''',
+              r'''    def test_generic_points_are_legal_on_any_carrier(self):
+                  for base in ("ܒ", "ܘ", "ܝ", "ܡ"):
+                      for mark in ("\u0307", "\u0323"):
+                          with self.subTest(base=base, mark=mark):
+                              state = inspect_normalized_text(base + mark)
+                              self.assertFalse(state.issues)
+
+              def test_one_letter_lines_above_and_below_same_carrier_are_unrepresentable(self):
+          ''',
+          )
+
+          # Exhaustive coverage: replace alias/carrier inference with direct identity.
+          replace_once(
+              'tools/tests/test_normalization_coverage.py',
+              r'''    SINGLE_ABOVE_INPUTS,
+              SINGLE_BELOW_INPUTS,
+          ''',
+              '',
+          )
+          replace_once(
+              'tools/tests/test_normalization_coverage.py',
+              r'''    def test_all_bgdkpt_letters_take_hard_soft_and_unmarked_states(self):
+                  for base in BGDKPT:
+                      with self.subTest(base=base, state="unmarked"):
+                          self.assertEqual(normalize_text(base).text, base)
+                      with self.subTest(base=base, state="hard"):
+                          result = normalize_text(base + "\u0307")
+                          self.assertEqual(result.text, base + QUSSHAYA)
+                          self.assertFalse(result.flags)
+                      with self.subTest(base=base, state="soft"):
+                          result = normalize_text(base + "\u0323")
+                          self.assertEqual(result.text, base + RUKKAKHA)
+                          self.assertFalse(result.flags)
+
+              def test_every_single_point_alias_on_every_carrier_class(self):
+                  above_expected = {BETH: QUSSHAYA, WAW: RWAHA, YODH: GENERIC_DOT_ABOVE, MIM: GENERIC_DOT_ABOVE}
+                  below_expected = {BETH: RUKKAKHA, WAW: HBASA_ESASA_DOTTED, YODH: HBASA_ESASA_DOTTED, MIM: GENERIC_DOT_BELOW}
+                  for alias in SINGLE_ABOVE_INPUTS:
+                      for carrier, expected in above_expected.items():
+                          with self.subTest(direction="above", alias=ord(alias), carrier=carrier):
+                              result = normalize_text(carrier + alias)
+                              self.assertEqual(result.text, carrier + expected)
+                              self.assertFalse(result.flags)
+                  for alias in SINGLE_BELOW_INPUTS:
+                      for carrier, expected in below_expected.items():
+                          with self.subTest(direction="below", alias=ord(alias), carrier=carrier):
+                              result = normalize_text(carrier + alias)
+                              self.assertEqual(result.text, carrier + expected)
+                              self.assertFalse(result.flags)
+          ''',
+              r'''    def test_all_bgdkpt_letters_take_hard_soft_unmarked_and_generic_states(self):
+                  for base in BGDKPT:
+                      for mark in ("", QUSSHAYA, RUKKAKHA, GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW):
+                          with self.subTest(base=base, mark=mark):
+                              source = base + mark
+                              result = normalize_text(source)
+                              self.assertEqual(result.text, source)
+                              self.assertFalse(result.flags)
+                              self.assertFalse(inspect_normalized_text(result.text).issues)
+
+              def test_single_point_identities_are_direct_on_all_carrier_classes(self):
+                  explicit = (
+                      BETH + QUSSHAYA,
+                      BETH + RUKKAKHA,
+                      WAW + RWAHA,
+                      WAW + HBASA_ESASA_DOTTED,
+                      YODH + HBASA_ESASA_DOTTED,
+                  )
+                  for source in explicit:
+                      with self.subTest(source=source):
+                          result = normalize_text(source)
+                          self.assertEqual(result.text, source)
+                          self.assertFalse(result.flags)
+                          self.assertFalse(inspect_normalized_text(result.text).issues)
+
+                  for carrier in (BETH, WAW, YODH, MIM):
+                      for mark in (GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW):
+                          with self.subTest(carrier=carrier, mark=mark):
+                              source = carrier + mark
+                              result = normalize_text(source)
+                              self.assertEqual(result.text, source)
+                              self.assertFalse(result.flags)
+                              self.assertFalse(inspect_normalized_text(result.text).issues)
+          ''',
+          )
+
+          # Stress tests, including the Psalm 11 waw states that exposed the bug.
+          replace_once(
+              'tools/tests/test_normalization_stress.py',
+              r'''    def test_bgdkpt_single_point_aliases(self):
+                  self.assert_clean(
+                      "ܒ\u0307ܕ\u073cܓ\u0741ܬ\u0323",
+                      "ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742",
+                  )
+
+              def test_non_bgdkpt_single_point_aliases(self):
+                  self.assert_clean("ܡ\u0741ܢ\u0742", "ܡ\u0307ܢ\u0323")
+
+              def test_waw_and_yodh_carrier_resolution(self):
+                  self.assert_clean(
+                      "ܘ\u0307ܘ\u0323ܝ\u0742ܝ\u073f",
+                      "ܘ\u073fܘ\u073cܝ\u073cܝ\u0307",
+                  )
+          ''',
+              r'''    def test_explicit_bgdkpt_points_stay_explicit(self):
+                  self.assert_clean("ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742", "ܒ\u0741ܕ\u0742ܓ\u0741ܬ\u0742")
+
+              def test_generic_points_stay_generic(self):
+                  self.assert_clean("ܡ\u0307ܢ\u0323", "ܡ\u0307ܢ\u0323")
+
+              def test_waw_yodh_and_bgdkpt_do_not_reinterpret_generic_points(self):
+                  self.assert_clean(
+                      "ܘ\u0307ܘ\u0323ܝ\u0307ܝ\u0323ܒ\u0307ܕ\u0323",
+                      "ܘ\u0307ܘ\u0323ܝ\u0307ܝ\u0323ܒ\u0307ܕ\u0323",
+                  )
+
+              def test_psalm_11_waw_generic_point_states(self):
+                  self.assert_clean("ܘ\u0307\u0308\u0735ܠ", "ܘ\u0735\u0307\u0308ܠ")
+                  self.assert_clean("ܘ\u0323ܠ", "ܘ\u0323ܠ")
+          ''',
+          )
+          replace_once(
+              'tools/tests/test_normalization_stress.py',
+              r'''    def test_duplicate_single_point_above_aliases_require_review(self):
+                  result = normalize_text("ܒ\u0307\u0741ܐ")
+                  self.assertIn("duplicate-single-point-above", [flag.code for flag in result.flags])
+                  audit = inspect_normalized_text(result.text)
+                  self.assertIn("duplicate-normalized-mark", [issue.code for issue in audit.issues])
+
+              def test_duplicate_single_point_below_aliases_require_review(self):
+                  result = normalize_text("ܕ\u0323\u0742ܐ")
+                  self.assertIn("duplicate-single-point-below", [flag.code for flag in result.flags])
+                  audit = inspect_normalized_text(result.text)
+                  self.assertIn("duplicate-normalized-mark", [issue.code for issue in audit.issues])
+          ''',
+              r'''    def test_distinct_point_identities_can_coexist(self):
+                  above = normalize_text("ܒ\u0307\u0741ܐ")
+                  self.assertEqual(above.text, "ܒ\u0741\u0307ܐ")
+                  self.assertFalse(above.flags)
+                  self.assertFalse(inspect_normalized_text(above.text).issues)
+
+                  below = normalize_text("ܕ\u0323\u0742ܐ")
+                  self.assertEqual(below.text, "ܕ\u0742\u0323ܐ")
+                  self.assertFalse(below.flags)
+                  self.assertFalse(inspect_normalized_text(below.text).issues)
+          ''',
+          )
+
+          # Transliteration regression: generic points now round-trip on formerly
+          # carrier-sensitive letters; use a true normalization alias for the
+          # forward-input cleanliness test.
+          replace_once(
+              'tools/tests/test_transliteration.py',
+              r'''    def test_forward_requires_clean_normalized_input(self):
+                  with self.assertRaises(TransliterationError) as caught:
+                      transliterate_text("ܒ\u0307")
+                  self.assertEqual(caught.exception.code, "input-not-normalized")
+          ''',
+              r'''    def test_generic_points_round_trip_on_all_carrier_classes(self):
+                  cases = {
+                      "ܘ\u0307ܠ": "w^l",
+                      "ܘ\u0323ܠ": "w_l",
+                      "ܝ\u0323ܠ": "y_l",
+                      "ܒ\u0307ܠ": "b^l",
+                      "ܕ\u0323ܠ": "d_l",
+                      "ܘ\u0735\u0307\u0308ܠ": "ẅ^āl",
+                  }
+                  for source, expected in cases.items():
+                      with self.subTest(source=source):
+                          self.assert_round_trip(source, expected=expected)
+
+              def test_forward_requires_clean_normalized_input(self):
+                  with self.assertRaises(TransliterationError) as caught:
+                      transliterate_text("ܬ\u0740")
+                  self.assertEqual(caught.exception.code, "input-not-normalized")
+          ''',
+          )
+
+          # Governing transliteration rules.
+          replace_once(
+              'rules/Transliteration-Rules.md',
+              '''| yodh + ī-sign | ḥḇāṣā | `ī` |
+          | waw + one dot above | rwāḥā | `ō` |
+          | waw + one dot below | rḇāṣā / ʾeṣāṣā | `ū` |
+
+          **There is no carrierless Class-A notation.** `ĭ`, `ŏ`, and `ŭ` are not valid canonical symbols. A sign that appears to represent `ī`, `ō`, or `ū` without the expected yodh or waw is **flagged at ingestion, not transliterated by inference**. Establish the page-state from the witness before adding or normalizing any such form (§16).
+          ''',
+              '''| yodh + U+073C ḥḇāṣā sign | ḥḇāṣā | `ī` |
+          | waw + U+073F rwāḥā sign | rwāḥā | `ō` |
+          | waw + U+073C rḇāṣā / ʾeṣāṣā sign | rḇāṣā / ʾeṣāṣā | `ū` |
+
+          These identities are established by the **normalized mark itself**, not from the fact that a dot happens to sit on yodh or waw. A generic U+0307/U+0323 point on either carrier remains the §7 single point and transliterates as `^`/`_`.
+
+          **There is no carrierless Class-A notation.** `ĭ`, `ŏ`, and `ŭ` are not valid canonical symbols. An explicit U+073C/U+073F on an impossible carrier is **flagged at ingestion, not repaired by inference**. Establish the page-state from the witness before confirming any such form (§16).
+          ''',
+          )
+          replace_once(
+              'rules/Transliteration-Rules.md',
+              '''**Disambiguation by carrier.** A single point on a letter is read from the letter it sits on:
+
+          | Carrier | Point above | Point below |
+          |---|---|---|
+          | bgdkpt | qūššāyā (§3.2) | rūkkākā (§3.2) |
+          | waw | rwāḥā `ō` (§4.1) | rḇāṣā `ū` (§4.1) |
+          | yodh | §7 | ḥḇāṣā `ī` (§4.1) |
+          | any other letter | §7 | §7 |
+
+          A point standing **between** two letters is never a vowel or a bgdkpt point, whatever the letters are, and is always §7.
+          ''',
+              '''**Identity is direct, not carrier-inferred.** The canonical Syriac codepoint records which point the page audit has established. A carrier never changes that identity automatically:
+
+          | Normalized mark | Identity |
+          |---|---|
+          | U+0307 COMBINING DOT ABOVE | §7 generic point above |
+          | U+0323 COMBINING DOT BELOW | §7 generic point below |
+          | U+0741 SYRIAC QUSHSHAYA | qūššāyā (§3.2) |
+          | U+0742 SYRIAC RUKKAKHA | rūkkākā (§3.2) |
+          | U+073F SYRIAC RWAHA | rwāḥā `ō` on waw (§4.1) |
+          | U+073C SYRIAC HBASA-ESASA DOTTED | `ī` on yodh or `ū` on waw (§4.1) |
+
+          U+0307/U+0323 remain §7 even on bgdkpt, waw, or yodh. Conversely, U+0741/U+0742/U+073F/U+073C are not converted to generic points merely because they occur on an unexpected carrier; that is a page-state problem to review. If a digital witness has used the wrong point codepoint as a visual approximation, the **human page audit corrects the canonical Syriac codepoint before confirmation** (§16). The normalizer does not guess the intended identity from the carrier.
+
+          A point standing **between** two letters is never a vowel or a bgdkpt point, whatever the letters are, and is always §7.
+          ''',
+          )
+          replace_once(
+              'rules/Transliteration-Rules.md',
+              '''Digital witnesses may use different codepoints for the same visible page-state, and the same codepoint may serve different page-states in different carrier environments. Canonical transliteration therefore normalizes **page-state first**, then applies §§3–7. Reading source codepoints as universal semantic labels is prohibited.
+
+          ### 16.1 Normalize to page-state
+
+          Collapse the single-dot marks to two classes, then read by carrier per §7:
+
+          - **single point above** — U+0741, U+073F, U+0307
+          - **single point below** — U+0742, U+073C, U+0323
+
+          Multi-dot signs (U+0732 pṯāḥā, U+0735 zqāpā, U+0738 zlāmā pšīqā, U+0739 zlāmā qašyā) are unambiguous single codepoints and pass through unchanged.
+          ''',
+              '''Digital witnesses may use an inappropriate Unicode point codepoint as a visual approximation. Canonical normalization therefore establishes **page-state first**, but it does **not** reinterpret a single point from the letter carrying it. Reading the carrier as a semantic disambiguator is prohibited. Where the digital encoding and the printed page disagree, the human page audit corrects the canonical Syriac codepoint before confirmation.
+
+          ### 16.1 Normalize to page-state
+
+          The six in-scope single-point codepoints retain direct identities:
+
+          - **U+0307** — generic single point above (§7), on any carrier;
+          - **U+0323** — generic single point below (§7), on any carrier;
+          - **U+0741** — qūššāyā (§3.2);
+          - **U+0742** — rūkkākā (§3.2);
+          - **U+073F** — rwāḥā (§4.1);
+          - **U+073C** — ḥḇāṣā / rḇāṣā-ʾeṣāṣā carrier-vowel mark (§4.1).
+
+          There is **no automatic conversion among these six marks**. An explicit semantic mark on an impossible carrier is retained and flagged by the page-state checker; a generic U+0307/U+0323 remains generic on bgdkpt, waw, and yodh. If a raw witness encoded a visually similar but semantically wrong point, page review supplies the correction before transliteration.
+
+          Multi-dot signs (U+0732 pṯāḥā, U+0735 zqāpā, U+0738 zlāmā pšīqā, U+0739 zlāmā qašyā) are unambiguous single codepoints and pass through unchanged.
+          ''',
+          )
+
+          # Human stress corpus documentation.
+          replace_once(
+              'tools/normalization-stress-corpus.md',
+              '3. Every carrier-sensitive single-point alias is tested on every carrier class that changes its meaning.\n',
+              '3. Every direct single-point identity is tested, and generic U+0307/U+0323 are exercised on bgdkpt, waw, yodh, and ordinary carriers without carrier-based reinterpretation.\n',
+          )
+          replace_once(
+              'tools/normalization-stress-corpus.md',
+              '''## T2 — complete single-point matrix
+
+          Each source encoding for a point above (U+0741, U+073F, U+0307) and below (U+0742, U+073C, U+0323) is placed on every carrier class whose interpretation differs:
+
+          - bgdkpt;
+          - waw;
+          - yodh;
+          - ordinary non-bgdkpt consonant.
+
+          All six bgdkpt letters are also checked explicitly so carrier-set mistakes cannot hide behind one beth example.
+          ''',
+              '''## T2 — complete single-point matrix
+
+          Single-point identity is tested directly rather than inferred from the carrier:
+
+          - U+0741 qūššāyā and U+0742 rūkkākā on all six bgdkpt letters;
+          - U+073F rwāḥā on waw;
+          - U+073C on waw and yodh for the Class-A carrier-vowel states;
+          - generic U+0307 above and U+0323 below on bgdkpt, waw, yodh, and ordinary non-bgdkpt consonants.
+
+          Generic points on waw/yodh/bgdkpt must remain generic. Conversely, explicit semantic point codepoints are never silently converted to another identity from their carrier. A witness/page mismatch is corrected by the human page audit before confirmation.
+          ''',
+          )
+          replace_once(
+              'tools/normalization-stress-corpus.md',
+              '- generic point above/below;\n',
+              '- generic point above/below on every carrier class, including the Psalm 11 states waw + generic point below and waw + zqāpā + generic point above + syāmē;\n',
+          )
+          replace_once(
+              'tools/normalization-stress-corpus.md',
+              'Source-level negative cases include orphan marks, duplicate point aliases, and BOM.\n',
+              'Source-level negative cases include orphan marks, duplicate identical normalized marks, contradictory explicit semantic states, and BOM. Distinct point identities at the same vertical side are not collapsed merely because their glyphs are dot-like.\n',
+          )
+          replace_once(
+              'tools/normalization-stress-corpus.md',
+              'The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states, carrier-sensitive aliases, special marks, source aliases, combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.\n',
+              'The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.\n',
+          )
+
+          # Tooling README: make the page-audit boundary explicit.
+          replace_once(
+              'tools/README.md',
+              '''The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain. Project text whitespace is deliberately narrow: only U+0020 SPACE and U+000A LF are accepted; tabs, non-breaking spaces and other Unicode whitespace are retained and flagged for review.
+          ''',
+              '''The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain. Project text whitespace is deliberately narrow: only U+0020 SPACE and U+000A LF are accepted; tabs, non-breaking spaces and other Unicode whitespace are retained and flagged for review.
+
+          **Single-point identity is direct.** U+0741 qūššāyā, U+0742 rūkkākā, U+073F rwāḥā, U+073C the Class-A carrier-vowel mark, and generic U+0307/U+0323 are not aliases for one another. In particular, a generic point on waw, yodh, or a bgdkpt letter remains generic; the normalizer never turns it into a vowel or hard/soft point merely from its carrier. If a raw witness used the wrong codepoint for the shape actually visible on the page, the mandatory human page audit corrects the canonical Syriac codepoint before confirmation.
+          ''',
+          )
+          replace_once(
+              'tools/README.md',
+              '1. **Normalize source codepoints to preliminary page-state**.\n',
+              '1. **Normalize source codepoints to preliminary page-state without carrier-based point inference**.\n',
+          )
+
+          print('Direct single-point migration applied successfully.')
+          PY
+      - name: Compile
+        run: python -m compileall -q tools
+      - name: Unit tests
+        run: python -m unittest discover -s tools/tests -v
+      - name: Confirmed corpus
+        run: python tools/check_confirmed_text.py
+      - name: Commit migration and remove one-shot workflow
+        shell: bash
+        run: |
+          rm .github/workflows/direct-single-point-migration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rules/Transliteration-Rules.md tools/README.md tools/normalization-stress-corpus.md tools/east_syriac/normalization.py tools/east_syriac/inspection.py tools/east_syriac/transliteration_inverse.py tools/tests/test_normalization.py tools/tests/test_inspection.py tools/tests/test_normalization_coverage.py tools/tests/test_normalization_stress.py tools/tests/test_transliteration.py .github/workflows/direct-single-point-migration.yml
+          git commit -m "Preserve direct single-point page states"
+          git push origin HEAD:agent/direct-single-point-states
