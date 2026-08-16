@@ -203,8 +203,6 @@ def _letter_issues(base: str, marks: tuple[str, ...], word: int, letter: int) ->
             issues.append(PageStateIssue("rwāḥā-invalid-carrier", "rwāḥā occurs on a carrier other than waw.", word, letter, mark))
         elif mark == HBASA_ESASA_DOTTED and base not in {WAW, YODH}:
             issues.append(PageStateIssue("carrier-vowel-invalid-carrier", "U+073C occurs on a carrier other than waw or yodh.", word, letter, mark))
-        elif mark in {GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW} and base in BGDKPT:
-            issues.append(PageStateIssue("generic-point-on-bgdkpt", "Generic single point occurs on bgdkpt; normalized carrier discipline is broken.", word, letter, mark))
 
     if QUSSHAYA in marks and RUKKAKHA in marks:
         issues.append(PageStateIssue("conflicting-bgdkpt-state", "The same bgdkpt letter carries both qūššāyā and rūkkākā.", word, letter, base))

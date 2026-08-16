@@ -39,11 +39,8 @@ def _base_variants():
 
 
 def _allowed_on_marks(base: str, intrinsic: tuple[str,...]) -> list[tuple[str,tuple[str,...]]]:
-    carrier_vowel = RWAHA in intrinsic or HBASA_ESASA_DOTTED in intrinsic
-    if carrier_vowel or base==WAW or base in BGDKPT:
-        return [("",())]
-    if base==YODH:
-        return [("",()),("^",(GENERIC_DOT_ABOVE,))]
+    # §7 point identity is direct. U+0307/U+0323 remain generic points on
+    # every carrier; they are not converted into bgdkpt or Class-A states.
     return [
         ("",()),("_",(GENERIC_DOT_BELOW,)),("^",(GENERIC_DOT_ABOVE,)),
         ("_^",(GENERIC_DOT_BELOW,GENERIC_DOT_ABOVE)),

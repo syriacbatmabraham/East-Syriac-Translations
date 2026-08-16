@@ -8,6 +8,8 @@ The code in this directory implements mechanical parts of the East Syriac Transl
 
 The normalizer is intentionally conservative: licensed transformations are automatic; refused/unrecognized states are preserved and flagged; West Syriac vowels are never mapped into East Syriac vowels; bare U+0716 normalizes to resh with a review flag; arbitrary unknown non-combining codepoints outside editorial apparatus are retained and flagged; malformed editorial delimiters are flagged; and persistent writes are refused while blocking source/page-state problems remain. Project text whitespace is deliberately narrow: only U+0020 SPACE and U+000A LF are accepted; tabs, non-breaking spaces and other Unicode whitespace are retained and flagged for review.
 
+**Single-point identity is direct.** U+0741 qūššāyā, U+0742 rūkkākā, U+073F rwāḥā, U+073C the Class-A carrier-vowel mark, and generic U+0307/U+0323 are not aliases for one another. In particular, a generic point on waw, yodh, or a bgdkpt letter remains generic; the normalizer never turns it into a vowel or hard/soft point merely from its carrier. If a raw witness used the wrong codepoint for the shape actually visible on the page, the mandatory human page audit corrects the canonical Syriac codepoint before confirmation.
+
 Canonical two-letter spanning lines are represented directly in the Syriac layer:
 
 - **U+035E COMBINING DOUBLE MACRON** after the first base = one upper span over that base and the next;
@@ -214,7 +216,7 @@ GitHub Actions runs compilation and the full deterministic suite on tooling push
 
 ## Intended pipeline
 
-1. **Normalize source codepoints to preliminary page-state**.
+1. **Normalize source codepoints to preliminary page-state without carrier-based point inference**.
 2. **Human page-state audit** — mandatory for comparison with the source page; where a raw witness approximates a span with repeated one-letter codepoints, correct the normalized Syriac to U+035E/U+035F here.
 3. **Canonical transliteration** — resolved normalized Syriac → reversible Latin string. No page metadata is supplied separately.
 4. **Inverse transliteration** — canonical string → resolved normalized Syriac.

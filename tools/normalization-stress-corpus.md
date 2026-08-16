@@ -8,7 +8,7 @@ The normalization torture test is complete when all of the following are true:
 
 1. Every assigned codepoint in the core Syriac block **U+0700–U+074F** has an explicit expected disposition: pass, normalize, remove, refuse/flag, or unsupported-letter/mark flag.
 2. Every extra generic codepoint named by the rules is exercised: U+0307, U+0323, U+0308, U+0324, U+032E, **U+035E, U+035F**, U+1DF8, U+1DFA, U+0640, U+200C, U+200D, and U+FEFF.
-3. Every carrier-sensitive single-point alias is tested on every carrier class that changes its meaning.
+3. Every direct single-point identity is tested, and generic U+0307/U+0323 are exercised on bgdkpt, waw, yodh, and ordinary carriers without carrier-based reinterpretation.
 4. Every canonical page-state has at least one legal example.
 5. Every known impossible, contradictory, or presently unrepresentable normalized state has an explicit negative example.
 6. Editorial apparatus and word-boundary behavior are exercised.
@@ -33,14 +33,14 @@ All six bgdkpt letters are cycled through unmarked, qūššāyā, and rūkkākā
 
 ## T2 — complete single-point matrix
 
-Each source encoding for a point above (U+0741, U+073F, U+0307) and below (U+0742, U+073C, U+0323) is placed on every carrier class whose interpretation differs:
+Single-point identity is tested directly rather than inferred from the carrier:
 
-- bgdkpt;
-- waw;
-- yodh;
-- ordinary non-bgdkpt consonant.
+- U+0741 qūššāyā and U+0742 rūkkākā on all six bgdkpt letters;
+- U+073F rwāḥā on waw;
+- U+073C on waw and yodh for the Class-A carrier-vowel states;
+- generic U+0307 above and U+0323 below on bgdkpt, waw, yodh, and ordinary non-bgdkpt consonants.
 
-All six bgdkpt letters are also checked explicitly so carrier-set mistakes cannot hide behind one beth example.
+Generic points on waw/yodh/bgdkpt must remain generic. Conversely, explicit semantic point codepoints are never silently converted to another identity from their carrier. A witness/page mismatch is corrected by the human page audit before confirmation.
 
 ## T3 — dense legal page-state combinations
 
@@ -50,7 +50,7 @@ Synthetic carriers combine the legal marks rather than isolating each one in a f
 - waw `ō`, waw `ū`, yodh `ī`;
 - syāmē;
 - superscript ʾālap̄;
-- generic point above/below;
+- generic point above/below on every carrier class, including the Psalm 11 states waw + generic point below and waw + zqāpā + generic point above + syāmē;
 - between-letter point above/below;
 - all three two-dots-below encodings;
 - breve below;
@@ -99,7 +99,7 @@ The catch-all is tested with unassigned U+074B/U+074C, Greek and Cyrillic homogl
 
 ## T7 — malformed clusters and impossible normalized states
 
-Source-level negative cases include orphan marks, duplicate point aliases, and BOM.
+Source-level negative cases include orphan marks, duplicate identical normalized marks, contradictory explicit semantic states, and BOM. Distinct point identities at the same vertical side are not collapsed merely because their glyphs are dot-like.
 
 The post-normalization invariant checker is also attacked directly so later code cannot manufacture an invalid state behind the normalizer. It must reject or flag:
 
@@ -142,6 +142,6 @@ The former span/separate problem no longer belongs in this category. Unicode U+0
 
 ## Why this counts as exhaustive
 
-The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states, carrier-sensitive aliases, special marks, source aliases, combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
+The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
 
 If a future witness reveals a new page-state or encoding, add the smallest case that represents it and retain it permanently as a regression test.

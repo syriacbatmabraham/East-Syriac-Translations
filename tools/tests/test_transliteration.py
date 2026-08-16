@@ -180,9 +180,22 @@ class TransliterationTests(unittest.TestCase):
             transliterate_text("(h) ܐ")
         self.assertEqual(caught.exception.code, "ambiguous-editorial-parenthesis")
 
+    def test_generic_points_round_trip_on_all_carrier_classes(self):
+        cases = {
+            "ܘ\u0307ܠ": "w^l",
+            "ܘ\u0323ܠ": "w_l",
+            "ܝ\u0323ܠ": "y_l",
+            "ܒ\u0307ܠ": "b^l",
+            "ܕ\u0323ܠ": "d_l",
+            "ܘ\u0735\u0307\u0308ܠ": "ẅ^āl",
+        }
+        for source, expected in cases.items():
+            with self.subTest(source=source):
+                self.assert_round_trip(source, expected=expected)
+
     def test_forward_requires_clean_normalized_input(self):
         with self.assertRaises(TransliterationError) as caught:
-            transliterate_text("ܒ\u0307")
+            transliterate_text("ܬ\u0740")
         self.assertEqual(caught.exception.code, "input-not-normalized")
 
     def test_reverse_requires_nfc(self):

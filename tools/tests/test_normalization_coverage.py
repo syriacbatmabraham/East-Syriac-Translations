@@ -33,8 +33,6 @@ from east_syriac.normalization import (
     RUKKAKHA,
     RWAHA,
     SEMKATH,
-    SINGLE_ABOVE_INPUTS,
-    SINGLE_BELOW_INPUTS,
     SUPERSCRIPT_ALAPH,
     SYAME,
     SYRIAC_ABBREVIATION_MARK,
@@ -83,34 +81,39 @@ class ExhaustiveNormalizationCoverageTests(unittest.TestCase):
         self.assertEqual(result.text, canonical)
         self.assertFalse(result.flags)
 
-    def test_all_bgdkpt_letters_take_hard_soft_and_unmarked_states(self):
+    def test_all_bgdkpt_letters_take_hard_soft_unmarked_and_generic_states(self):
         for base in BGDKPT:
-            with self.subTest(base=base, state="unmarked"):
-                self.assertEqual(normalize_text(base).text, base)
-            with self.subTest(base=base, state="hard"):
-                result = normalize_text(base + "\u0307")
-                self.assertEqual(result.text, base + QUSSHAYA)
-                self.assertFalse(result.flags)
-            with self.subTest(base=base, state="soft"):
-                result = normalize_text(base + "\u0323")
-                self.assertEqual(result.text, base + RUKKAKHA)
-                self.assertFalse(result.flags)
+            for mark in ("", QUSSHAYA, RUKKAKHA, GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW):
+                with self.subTest(base=base, mark=mark):
+                    source = base + mark
+                    result = normalize_text(source)
+                    self.assertEqual(result.text, source)
+                    self.assertFalse(result.flags)
+                    self.assertFalse(inspect_normalized_text(result.text).issues)
 
-    def test_every_single_point_alias_on_every_carrier_class(self):
-        above_expected = {BETH: QUSSHAYA, WAW: RWAHA, YODH: GENERIC_DOT_ABOVE, MIM: GENERIC_DOT_ABOVE}
-        below_expected = {BETH: RUKKAKHA, WAW: HBASA_ESASA_DOTTED, YODH: HBASA_ESASA_DOTTED, MIM: GENERIC_DOT_BELOW}
-        for alias in SINGLE_ABOVE_INPUTS:
-            for carrier, expected in above_expected.items():
-                with self.subTest(direction="above", alias=ord(alias), carrier=carrier):
-                    result = normalize_text(carrier + alias)
-                    self.assertEqual(result.text, carrier + expected)
+    def test_single_point_identities_are_direct_on_all_carrier_classes(self):
+        explicit = (
+            BETH + QUSSHAYA,
+            BETH + RUKKAKHA,
+            WAW + RWAHA,
+            WAW + HBASA_ESASA_DOTTED,
+            YODH + HBASA_ESASA_DOTTED,
+        )
+        for source in explicit:
+            with self.subTest(source=source):
+                result = normalize_text(source)
+                self.assertEqual(result.text, source)
+                self.assertFalse(result.flags)
+                self.assertFalse(inspect_normalized_text(result.text).issues)
+
+        for carrier in (BETH, WAW, YODH, MIM):
+            for mark in (GENERIC_DOT_ABOVE, GENERIC_DOT_BELOW):
+                with self.subTest(carrier=carrier, mark=mark):
+                    source = carrier + mark
+                    result = normalize_text(source)
+                    self.assertEqual(result.text, source)
                     self.assertFalse(result.flags)
-        for alias in SINGLE_BELOW_INPUTS:
-            for carrier, expected in below_expected.items():
-                with self.subTest(direction="below", alias=ord(alias), carrier=carrier):
-                    result = normalize_text(carrier + alias)
-                    self.assertEqual(result.text, carrier + expected)
-                    self.assertFalse(result.flags)
+                    self.assertFalse(inspect_normalized_text(result.text).issues)
 
     def test_every_east_vowel_and_special_mark_has_a_legal_case(self):
         cases = [

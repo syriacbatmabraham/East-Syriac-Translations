@@ -29,16 +29,17 @@ class NormalizationTests(unittest.TestCase):
         self.assertEqual(result.text, "\u0723")
         self.assertFalse(result.flags)
 
-    def test_single_dot_above_reencodes_by_carrier(self):
-        self.assertEqual(normalize_text("ܒ\u0307").text, "ܒ\u0741")
-        self.assertEqual(normalize_text("ܘ\u0741").text, "ܘ\u073f")
-        self.assertEqual(normalize_text("ܝ\u073f").text, "ܝ\u0307")
-
-    def test_single_dot_below_reencodes_by_carrier(self):
-        self.assertEqual(normalize_text("ܕ\u073c").text, "ܕ\u0742")
-        self.assertEqual(normalize_text("ܘ\u0323").text, "ܘ\u073c")
-        self.assertEqual(normalize_text("ܝ\u0323").text, "ܝ\u073c")
-        self.assertEqual(normalize_text("ܡ\u0742").text, "ܡ\u0323")
+    def test_single_point_states_preserve_explicit_identity(self):
+        cases = (
+            "ܒ\u0741", "ܕ\u0742", "ܘ\u073f", "ܘ\u073c", "ܝ\u073c",
+            "ܒ\u0307", "ܒ\u0323", "ܘ\u0307", "ܘ\u0323",
+            "ܝ\u0307", "ܝ\u0323", "ܡ\u0307", "ܡ\u0323",
+        )
+        for source in cases:
+            with self.subTest(source=source):
+                result = normalize_text(source)
+                self.assertEqual(result.text, source)
+                self.assertFalse(result.flags)
 
     def test_two_dots_below_aliases_normalize(self):
         for mark in ("\u0324", "\u0740", "\u0744"):
@@ -96,9 +97,10 @@ class NormalizationTests(unittest.TestCase):
         result = normalize_text("\u0308ܡ")
         self.assertIn("orphan-combining-mark", [flag.code for flag in result.flags])
 
-    def test_duplicate_single_dot_is_flagged(self):
+    def test_distinct_single_point_identities_are_not_collapsed(self):
         result = normalize_text("ܒ\u0307\u0741")
-        self.assertIn("duplicate-single-point-above", [flag.code for flag in result.flags])
+        self.assertEqual(result.text, "ܒ\u0741\u0307")
+        self.assertFalse(result.flags)
 
     def test_latin_text_outside_editorial_label_is_flagged(self):
         result = normalize_text("ܐܒܐ\naba")

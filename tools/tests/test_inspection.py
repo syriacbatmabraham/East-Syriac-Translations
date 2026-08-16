@@ -70,12 +70,18 @@ class PageStateInspectionTests(unittest.TestCase):
             "ܡ\u0742": "rūkkākā-invalid-carrier",
             "ܡ\u073f": "rwāḥā-invalid-carrier",
             "ܡ\u073c": "carrier-vowel-invalid-carrier",
-            "ܒ\u0307": "generic-point-on-bgdkpt",
         }
         for source, expected in cases.items():
             with self.subTest(source=source):
                 state = inspect_normalized_text(source)
                 self.assertIn(expected, [issue.code for issue in state.issues])
+
+    def test_generic_points_are_legal_on_any_carrier(self):
+        for base in ("ܒ", "ܘ", "ܝ", "ܡ"):
+            for mark in ("\u0307", "\u0323"):
+                with self.subTest(base=base, mark=mark):
+                    state = inspect_normalized_text(base + mark)
+                    self.assertFalse(state.issues)
 
     def test_one_letter_lines_above_and_below_same_carrier_are_unrepresentable(self):
         state = inspect_normalized_text("ܡ\u0748\u0747")
