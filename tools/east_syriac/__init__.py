@@ -35,8 +35,6 @@ from .provenance import (
     parse_source_registry,
 )
 from .transliteration import (
-    OccultansResolutionKey,
-    OccultansResolutions,
     ReverseTransliterationResult,
     TransliterationError,
     TransliterationResult,
@@ -55,8 +53,6 @@ __all__ = [
     "NormalizationChange",
     "NormalizationFlag",
     "NormalizationResult",
-    "OccultansResolutionKey",
-    "OccultansResolutions",
     "PageStateIssue",
     "PageStateNotice",
     "PageStateReport",
