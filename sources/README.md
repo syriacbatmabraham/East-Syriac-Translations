@@ -14,4 +14,4 @@ The source hierarchy and rules for witness collation are defined in `rules/Gener
 
 Machine-readable source-of-record designations are stored in `sources.yaml`. Only explicit designations belong there; the absence of a text from the mapping must never be interpreted as an inferred source choice.
 
-Do not add scans, PDFs, fonts, downloaded corpora, or other third-party source files to this public repository until their redistribution rights have been checked. Local/private source material should remain outside version control or in an ignored private-source directory.
+Do not add scans, PDFs, fonts, downloaded corpora, or other third-party source files to this public repository unless their redistribution rights permit it. A local copy used for page checking or consultation but not licensed for redistribution is simply a **local non-redistributable source copy**; keep it outside version control. This is a licensing distinction, not a claim that the source itself is private or confidential.
