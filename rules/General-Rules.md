@@ -63,10 +63,10 @@ Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or pra
 2. Establish the Syriac; confirm the source of record from §1.1
 3. **Codepoint audit of the source, before transliterating** (Translit §16). Non-negotiable. Run silently; report only what it surfaces.
 4. Give canonical transliteration
-5. Review every token, in order, repeats included — a repeat is often pointed differently
-6. Check each word against glossary entries
-7. Find references for words without entries
-8. Study words without entries and present findings
+5. Review every token, in order, repeats included, under the **Word-by-Word Standard** — a repeat is often pointed differently
+6. Check each word against Glossary entries, including relevant related forms and compounds
+7. Gather references and evidence under §12 and Word-by-Word §§3–5
+8. Present every token's evidence and status under Word-by-Word §§3–8
 9. Present suggested render
 10. Lay out anything of note
 11. Flag anything erroneous, ambiguous, or concerning
@@ -76,16 +76,15 @@ Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or pra
 ## 8. Standard Clause Response
 1. Syriac line
 2. Transliteration
-3. Word-by-word, all words in order
-4. Word study for each word without an entry — references/uses, then findings
-5. Suggested render
-6. Notes/flags
+3. Word-by-word — every token in order, following the **Word-by-Word Standard**
+4. Suggested render
+5. Notes/flags
 
 ## 9. Project Files
 
-**Glossary** (the concordance), **General Rules** (this file), **Transliteration Rules**.
+**Glossary** (the concordance), **General Rules** (this file), **Transliteration Rules**, **Word-by-Word Standard**.
 
-**Citing a section always names its file** — "Translit §10", "General Rules §10". Both carry a §10 and a §7. Section numbers are stable; reserved sections are not renumbered.
+**Citing a section always names its file** — "Translit §10", "General Rules §10", "Word-by-Word §4". Section numbers are stable; reserved sections are not renumbered.
 
 ### 9.1 Confirmed texts
 
@@ -195,9 +194,9 @@ Run after every glossary write, and after any edit to a confirmed text. **Diagno
 
 Corruption here is silent rather than noisy — a wrong codepoint renders correctly, a dropped mark reverses without complaint, a stale citation points at a section that still exists.
 
-## 12. Word Study Method
+## 12. Research Method for Word-by-Word
 
-A word study leads with **external evidence**, not this project's files. The Glossary records what has been decided; it cannot confirm a meaning, and reasoning from it in a circle is the failure this section prevents.
+Research and presentation deliberately have different orders. **Research leads with external evidence**, not this project's files. The Glossary records what has been decided; it cannot confirm a meaning, and reasoning from it in a circle is the failure this section prevents. **Presentation is governed by Word-by-Word §10**, which shows project precedent first for review without treating that precedent as lexical proof.
 
 Order of resort:
 1. **Peshitta distribution** — where the form occurs, in what construction, and what it renders
