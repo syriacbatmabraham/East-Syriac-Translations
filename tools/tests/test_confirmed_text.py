@@ -72,6 +72,43 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         self.assertTrue(result.ok, result.issues)
         self.assertEqual(result.expected_transliteration_block, "ʾb\ngd")
 
+    def test_rubrical_label_is_preserved_but_ignored_in_text_comparison(self):
+        text = make_file(
+            "(Qanona) ܐܒ",
+            "(Qanona) ʾb",
+            "(Qanona) one",
+        )
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertTrue(result.ok, result.issues)
+        self.assertEqual(result.expected_transliteration_block, "(Qanona) ʾb")
+
+    def test_rubrical_label_may_move_within_english_apparatus(self):
+        text = make_file(
+            "ܐܒ (Witness:) [ܓ]",
+            "ʾb (Witness:) [g]",
+            "(Witness:) [variant]",
+        )
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertTrue(result.ok, result.issues)
+
+    def test_missing_rubrical_label_in_transliteration_is_reported(self):
+        text = make_file(
+            "(Qanona) ܐܒ",
+            "ʾb",
+            "(Qanona) one",
+        )
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertIn("editorial-label-mismatch", [issue.code for issue in result.issues])
+
+    def test_missing_rubrical_label_in_english_is_reported(self):
+        text = make_file(
+            "(Qanona) ܐܒ",
+            "(Qanona) ʾb",
+            "one",
+        )
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertIn("editorial-label-mismatch", [issue.code for issue in result.issues])
+
     def test_stale_transliteration_is_detected_from_syriac(self):
         text = make_file("ܐܒ", "ʾg", "one")
         result = check_confirmed_text(text, "sample.txt")
@@ -115,6 +152,13 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         result = check_confirmed_text(text, "sample.txt")
         self.assertTrue(result.ok, result.issues)
         self.assertEqual(result.expected_transliteration_block, "(m)(n)")
+
+    def test_single_one_letter_line_parentheses_are_not_rubrical(self):
+        source = "ܗ\u0747ܘ\u0323"
+        text = make_file(source, "(h)w_", "one")
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertTrue(result.ok, result.issues)
+        self.assertEqual(result.expected_transliteration_block, "(h)w_")
 
     def test_bom_is_reported_but_file_is_still_analyzed(self):
         data = ("\ufeff" + make_file("ܐܒ", "ʾb", "one")).encode("utf-8")

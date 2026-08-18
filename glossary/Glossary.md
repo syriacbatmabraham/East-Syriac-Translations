@@ -128,8 +128,14 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (1) — Mar Yah (1)
+māryā (7) — Mar Yah (7)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
+* bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
+* māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
+* māryā · "Mar Yah, in the Haykla of His holiness" (Psalm 11 Line 11)
+* māryā · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
+* māryā · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+* māryā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -238,14 +244,18 @@ meṭlātan (1) — for the sake of us (1)
 * dmeṭlātan · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 
 ܒܢܲܝ̈ܢܵܫܵܐ   [b-r + ʾ-n-š]   {noun c.pl.emph.}   (search: bnaynasha)
-bnaÿnāšā (2) — sons of men (2)
+bnaÿnāšā (3) — sons of men (3)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
+* laḇnaÿnāšā · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
-meṭl (2) — for (2)
+meṭl (5) — for (5)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
+* meṭl · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
+* meṭl · "For what You have prepared, they have thrown down" (Psalm 11 Line 9)
+* meṭl · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -256,25 +266,27 @@ nḥeṯ (1) — came down (1)
 * nḥeṯ · "...came down from Heaven" (Creed Line 8)
 
 ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}   (search: shmaya)
-šmayā (5) — Heaven (5)
+šmayā (6) — Heaven (6)
 * šmayā · "...came down from Heaven" (Creed Line 8)
 * lašmayā · "He ascended to Heaven..." (Creed Line 14)
 * dbašmayā · "Our Father, who art in Heaven..." (Our Father Line 1)
 * dbašmayā · "Our Father who art in Heaven" (Our Father Line 4)
 * dbašmayā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
+* bašmayā · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
 
 ܐܸܬ݂ܓܲܫܲܡ   [g-š-m]   {Ethpaal perf. 3m.sg.}   (search: etgasham)
 ʾeṯgašam (1) — was embodied (1)
 * wʾeṯgašam · "And was embodied from the Ruha d'Qudsha" (Creed Line 9)
 
 ܪܘܼܚܵܐ   [r-w-ḥ]   {noun c.sg.emph.}   (search: ruha)
-rūḥā (6) — Ruha (6)
+rūḥā (7) — Ruha (6), ruha (1)
 * rūḥā · "And was embodied from the Ruha d'Qudsha" (Creed Line 9)
 * rūḥā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
 * rūḥā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
 * rūḥā · "The Life-Giving Ruha" (Creed Line 18)
 * walrūḥā · "...and to the Ruha d'Qudsha" (Our Father Line 15)
 * wrūḥā · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
+* wrūḥā · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
 
 ܩܘܼܕ݂ܫܵܐ   [q-d-š]   {noun m.sg.emph.}   (search: qudsha)
 qūḏšā (4) — Qudsha (4)
@@ -344,8 +356,10 @@ yāẅmīn (1) — day (1)
 * yāẅmīn · "...and He arose on the third day, as it is written" (Creed Line 13)
 
 ܐܲܝܟ݂   [ʾ-y-k]   {particle}   (search: ayk)
-ʾayḵ (1) — as (1)
+ʾayḵ (3) — as (1), like (2)
 * ʾayḵ · "...and He arose on the third day, as it is written" (Creed Line 13)
+* ʾayḵ · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+* ʾayḵ · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 
 ܟܬ݂ܝܼܒ݂   [k-t-b]   {Peal passive ptcp. m.sg.abs.}   (search: ktib)
 kṯīḇ (1) — written (1)
@@ -664,8 +678,11 @@ mr̈āwmē (1) — the heights (1)
 * bamr̈āwmē · "Glory to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܥܲܠ   [ʿ-l]   {prep.}   (search: al)
-ʿal (1) — on (1)
+ʿal (4) — on (1), upon (3)
 * wʿal · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
+* ʿal · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+* ʿal · "And have set their arrows upon the string" (Psalm 11 Line 7)
+* ʿal · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 
 ܫܠܵܡܵܐ   [š-l-m]   {noun m.sg.emph.}   (search: shlama)
 šlāmā (2) — peace (2)
@@ -718,8 +735,10 @@ q^ārē (1) — calls (1)
 * q^ārē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
 ܚܲܛܵܝܹ̈ܐ   [ḥ-ṭ-ʾ]   {adj. m.pl.emph.}   (search: hataye)
-ḥaṭāÿē (1) — sinners (1)
+ḥaṭāÿē (3) — sinners (3)
 * lḥaṭāÿē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
+* ḥaṭāÿē · "Sinners have schemed against me..." (Psalm 11 Line 3)
+* ḥaṭāÿē · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
 
 ܨܹܐܕ݂ܵܘܗܝ   [ṣ-y-d]   {prep. + 3ms suff.}   (search: sedawhy)
 ṣēʾḏāwhy (1) — unto Him (1)
@@ -997,3 +1016,234 @@ mšabaḥtā (1) — glorious (1)
 ܟܠܥܸܕܵܢ   [k-l + ʿ-d-n]   {quant. + noun m.sg.abs.}   (search: kledan)
 klʿedān (1) — every moment (1)
 * bḵlʿedān · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
+
+ܣܲܒ݁ܪܹܬ݂   [s-b-r]   {Peal perf. 1c.sg.}   (search: sabret)
+saḃrēṯ (2) — I have hoped (2)
+* saḃrēṯ · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
+* saḃrēṯ · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
+
+ܐܲܝܟܲܢ   [ʾ-y-k]   {interrog. adv.}   (search: aykan)
+ʾaykan (1) — how (1)
+* ʾaykan · "...how are you saying to my soul:" (Psalm 11 Line 1)
+
+ܐܵܡ̇ܪܝܼܬ݁ܘܿܢ   [ʾ-m-r]   {Peal active ptcp. m.pl.abs. + 2mp encl.}   (search: amriton)
+ʾām^rīṫōn (1) — are you saying (1)
+* ʾām^rīṫōn · "...how are you saying to my soul:" (Psalm 11 Line 1)
+
+ܢܲܦ̮ܫܝ   [n-p-š]   {noun f.sg.emph. + 1cs suff.}   (search: napshy)
+nap̮šy (1) — my soul (1)
+* lnap̮šy · "...how are you saying to my soul:" (Psalm 11 Line 1)
+
+ܢܘܼܕ݂ܝ   [n-w-d]   {Peal impv. 2f.sg.}   (search: nudy)
+nūḏy (1) — wander (1)
+* nūḏy · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+
+ܫܟܲܢܝ   [š-k-n]   {Peal impv. 2f.sg.}   (search: shkany)
+škany (1) — dwell (1)
+* waškany · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+
+ܛܘܼܪܹ̈ܐ   [ṭ-w-r]   {noun m.pl.emph.}   (search: ture)
+ṭūr̈ē (1) — mountains (1)
+* ṭūr̈ē · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+
+ܨܸܦܪܵܐ   [ṣ-p-r]   {noun m.sg.emph.}   (search: sepra)
+ṣeprā (1) — bird (1)
+* ṣeprā · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
+
+ܐܸܬ݁ܛܲܟܲܢܘ   [ṭ-k-n]   {Ethpaal perf. 3m.pl.}   (search: ettakanw)
+ʾeṫṭakanw (1) — schemed (1)
+* ʾeṫṭakanw · "Sinners have schemed against me..." (Psalm 11 Line 3)
+
+ܠܝܼ   [l]   {prep. + 1cs suff.}   (search: li)
+lī (1) — against me (1)
+* lī · "Sinners have schemed against me..." (Psalm 11 Line 3)
+
+ܒܵܟ݂   [b]   {prep. + 2ms suff.}   (search: bak)
+bāḵ (1) — in You (1)
+* bāḵ · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
+
+ܗܵܐ   [h-ʾ]   {particle}   (search: ha)
+hā (1) — behold (1)
+* dhā · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
+
+ܡ̇ܠܵܘ   [m-l-ʾ]   {Peal perf. 3m.pl.}   (search: mlaw)
+m^lāw (1) — have drawn (1)
+* m^lāw · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
+
+ܩܸܫܬܵܐ   [q-š-t]   {noun f.sg.emph.}   (search: qeshta)
+qeštā (1) — the bow (1)
+* qeštā · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
+
+ܐܲܬ݂ܩܸܢ̣ܘ   [t-q-n]   {Aphel perf. 3m.pl.}   (search: atqenw)
+ʾaṯqen_w (1) — have set (1)
+* wʾaṯqen_w · "And have set their arrows upon the string" (Psalm 11 Line 7)
+
+ܓܹܐܪܲ̈ܝܗܘܿܢ   [—]   {noun m.pl.emph. + 3mp suff.}   (search: gerayhon)
+gēʾr̈ayhōn (1) — their arrows (1)
+* gēʾr̈ayhōn · "And have set their arrows upon the string" (Psalm 11 Line 7)
+
+ܝܲܬ݂ܪܵܐ   [w-t-r]   {noun m.sg.emph.}   (search: yatra)
+yaṯrā (1) — the string (1)
+* yaṯrā · "And have set their arrows upon the string" (Psalm 11 Line 7)
+
+ܡܸܫܕܵܐ   [š-d-ʾ]   {Peal inf.}   (search: meshda)
+mešdā (1) — shoot (1)
+* lmešdā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
+
+ܥܲܡܛܵܢܵܐ   [ʿ-m-ṭ]   {noun m.sg.emph.}   (search: amtana)
+ʿamṭānā (1) — obscurity (1)
+* bʿamṭānā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
+
+ܬܪ̈ܝܼܨܲܝ   [t-r-ṣ]   {adj. m.pl.cst.}   (search: trisay)
+tr̈īṣay (1) — the upright of (1)
+* baṯr̈īṣay · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
+
+ܠܸܒܵܐ   [l-b-b]   {noun m.sg.emph.}   (search: leba)
+lebā (1) — heart (1)
+* lebā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
+
+ܡܸܕܸܡ   [m-d-m]   {indef. pron.}   (search: medem)
+medem (1) — what (1)
+* dmedem · "For what You have prepared, they have thrown down" (Psalm 11 Line 9)
+
+ܥܲܬܸ݁ܕܬ݁   [ʿ-t-d]   {Pael perf. 2m.sg.}   (search: atedt)
+ʿaṫedṫ (1) — You have prepared (1)
+* dʿaṫedṫ · "For what You have prepared, they have thrown down" (Psalm 11 Line 9)
+
+ܣ̣ܚܲܦܘ   [s-ḥ-p]   {Peal perf. 3m.pl.}   (search: shapw)
+s_ḥapw (1) — they have thrown down (1)
+* s_ḥapw · "For what You have prepared, they have thrown down" (Psalm 11 Line 9)
+
+ܙܲܕܝܼܩܵܐ   [z-d-q]   {referent adj. m.sg.emph.}   (search: zadiqa)
+zadīqā (1) — the Righteous One (1)
+* zadīqā · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
+
+ܕܹܝܢ   [d-y-n]   {conj.}   (search: deyn)
+dēyn (1) — but (1)
+* dēyn · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
+
+ܡܵܢܵܐ   [m-n]   {interrog. pron.}   (search: mana)
+mānā (1) — what (1)
+* mānā · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
+
+ܥܵ̇ܒܹܕ݂   [ʿ-b-d]   {Peal active ptcp. m.sg.abs.}   (search: abed)
+ʿ^ābēḏ (1) — is He doing (1)
+* ʿ^ābēḏ · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
+
+ܗܲܝܟ݁ܠܵܐ   [—]   {noun m.sg.emph.}   (search: haykla)
+hayk̇lā (1) — Haykla (1)
+* bhayk̇lā · "Mar Yah, in the Haykla of His holiness" (Psalm 11 Line 11)
+
+ܩܘܼܕ݂ܫܹܗ   [q-d-š]   {noun m.sg.emph. + 3ms suff.}   (search: qudsheh)
+qūḏšēh (1) — His holiness (1)
+* dqūḏšēh · "Mar Yah, in the Haykla of His holiness" (Psalm 11 Line 11)
+
+ܟܘܼܪܣܝܹܗ   [—]   {noun m.sg.emph. + 3ms suff.}   (search: kursyeh)
+kūrsyēh (1) — His Seat (1)
+* kūrsyēh · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
+
+ܥܲܝܢܵܘ̈ܗܝ   [ʿ-y-n]   {noun f.pl.emph. + 3ms suff.}   (search: aynawhy)
+ʿaynāẅhy (1) — His eyes (1)
+* ʿaynāẅhy · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+
+ܚܵܙ̈ܝܵܢ   [ḥ-z-ʾ]   {Peal active ptcp. f.pl.abs.}   (search: hazyan)
+ḥāz̈yān (2) — are seeing (1), is seeing (1)
+* ḥāz̈yān · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+* ḥāz̈yān · "And His Face is seeing uprightness" (Psalm 11 Line 20)
+
+ܬܸܡܪܵ̈ܘܗܝ   [t-m-r]   {noun m.pl.emph. + 3ms suff.}   (search: temrawhy)
+temr̈āwhy (1) — His eyelids (1)
+* wtemr̈āwhy · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+
+ܒܵܚ̇ܪܝܼܢ   [b-ḥ-r]   {Peal active ptcp. m.pl.abs.}   (search: bahrin)
+bāḥ^rīn (1) — are examining (1)
+* bāḥ^rīn · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+
+ܒܵܚܲܪ   [b-ḥ-r]   {Peal active ptcp. m.sg.abs.}   (search: bahar)
+bāḥar (1) — examines (1)
+* bāḥar · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+
+ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadike)
+zadī̈qē (1) — the righteous (1)
+* lzadī̈qē · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+
+ܥܵܘܵ̇̈ܠܹܐ   [ʿ-w-l]   {adj. m.pl.emph.}   (search: awale)
+ʿāẅ^ālē (1) — the unrighteous (1)
+* walʿāẅ^ālē · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+
+ܪܵ̈ܚ̇ܡܲܝ   [r-ḥ-m]   {noun m.pl.cst.}   (search: rahmay)
+r̈āḥ^may (1) — the lovers of (1)
+* walr̈āḥ^may · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
+
+ܥܵܘ̣ܠܵܐ   [ʿ-w-l]   {noun m.sg.emph.}   (search: awla)
+ʿāw_lā (1) — unrighteousness (1)
+* ʿāw_lā · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
+
+ܣܢܵܬ̤   [s-n-ʾ]   {Peal perf. 3f.sg.}   (search: snat)
+snāt̤ (1) — has hated (1)
+* snāt̤ · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
+
+ܢܲܦ̮ܫܹܗ   [n-p-š]   {noun f.sg.emph. + 3ms suff.}   (search: napsheh)
+nap̮šēh (1) — His soul (1)
+* nap̮šēh · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
+
+ܢܚܸܬ݂ܘ   [n-ḥ-t]   {Peal perf. 3m.pl.}   (search: nhetw)
+nḥeṯw (1) — have come down (1)
+* nḥeṯw · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+
+ܪܲ̈ܫܝܼܥܹܐ   [r-š-ʿ]   {adj. m.pl.emph.}   (search: rashie)
+r̈ašīʿē (1) — the wicked (1)
+* r̈ašīʿē · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+
+ܦܲܚܹ̈ܐ   [p-ḥ-ḥ]   {noun m.pl.emph.}   (search: pahe)
+paḥ̈ē (1) — snares (1)
+* paḥ̈ē · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+
+ܡܸܛܪܵܐ   [m-ṭ-r]   {noun m.sg.emph.}   (search: metra)
+meṭrā (1) — rain (1)
+* meṭrā · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+
+ܢܘܼܪܵܐ   [n-w-r]   {noun f.sg.emph.}   (search: nura)
+nūrā (1) — fire (1)
+* nūrā · "Fire and brimstone" (Psalm 11 Line 17)
+
+ܟܸܒ݂ܪܝܼܬ݂ܵܐ   [—]   {noun f.sg.emph.}   (search: kebrita)
+keḇrīṯā (1) — brimstone (1)
+* wkeḇrīṯā · "Fire and brimstone" (Psalm 11 Line 17)
+
+ܡܚܘܿܬ݂ܵܐ   [m-ḥ-ʾ]   {noun f.sg.emph.}   (search: mhota)
+mḥōṯā (1) — affliction (1)
+* damḥōṯā · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
+
+ܡܢܵܬ݂ܵܐ   [m-n-ʾ]   {noun f.sg.emph.}   (search: mnata)
+mnāṯā (1) — the portion (1)
+* mnāṯā · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
+
+ܟܵܣܗܘܿܢ   [—]   {noun m.sg.emph. + 3mp suff.}   (search: kashon)
+kāshōn (1) — their cup (1)
+* dḵāshōn · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
+
+ܙܲܕܝܼܩ   [z-d-q]   {adj. m.sg.abs.}   (search: zadiq)
+zadīq (1) — righteous (1)
+* dzadīq · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+
+ܗ݇ܘ̣   [h-w]   {pron. 3m.sg.}   (search: hw)
+(h)w_ (1) — is (1)
+* (h)w_ · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+
+ܙܲܕܝܼܩܘܼܬ݂ܵܐ   [z-d-q]   {noun f.sg.emph.}   (search: zadiquta)
+zadīqūṯā (1) — righteousness (1)
+* wzadīqūṯā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+
+ܪܵܚܹ̇ܡ   [r-ḥ-m]   {Peal active ptcp. m.sg.abs.}   (search: rahem)
+rāḥ^ēm (1) — He loves (1)
+* rāḥ^ēm · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+
+ܬܪܝܼܨܘܼܬ݂ܵܐ   [t-r-ṣ]   {noun f.sg.emph.}   (search: trisuta)
+trīṣūṯā (1) — uprightness (1)
+* waṯrīṣūṯā · "And His Face is seeing uprightness" (Psalm 11 Line 20)
+
+ܐܲܦܵܘ̈ܗܝ   [—]   {noun f.pl.emph. + 3ms suff.}   (search: apawhy)
+ʾapāẅhy (1) — His Face (1)
+* ʾapāẅhy · "And His Face is seeing uprightness" (Psalm 11 Line 20)
+

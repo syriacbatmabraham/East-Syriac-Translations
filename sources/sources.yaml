@@ -46,3 +46,6 @@ confirmed_texts:
   Ferial_Slotha_d_Ramsha.txt:
     citation_label: Ferial Slotha d'Ramsha
     source_of_record: breviarium_chaldaicum
+  Psalm_11.txt:
+    citation_label: Psalm 11
+    source_of_record: ksawa_d_mazmore

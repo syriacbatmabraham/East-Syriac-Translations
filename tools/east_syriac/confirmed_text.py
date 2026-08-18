@@ -6,6 +6,12 @@ checks the structural and file-hygiene requirements from General Rules §9.1,
 §9.1.1, and §11.15–16, then independently re-derives transliteration from the
 Syriac layer.
 
+Parenthesized rubrical/editorial labels are storage apparatus, not text. They
+remain literally present in all three blocks but are removed from the
+Syriac/canonical comparison layer. Canonical parentheses that encode one-letter
+line states are not labels: labels are identified from the Syriac layer first,
+then only those exact strings are removed from the canonical layer.
+
 The stored transliteration never supplies page-state information to the Syriac
 layer. Canonical Syriac now carries two-letter spanning lines directly with
 U+035E/U+035F, so forward validation is independent of the stored Latin.
@@ -15,6 +21,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path, PurePath
+import re
 import unicodedata
 
 from .transliteration import TransliterationError, transliterate_text
@@ -25,6 +32,8 @@ BLOCK_NAMES = ("syriac", "transliteration", "english")
 CURLY_APOSTROPHES = frozenset({"\u2018", "\u2019", "\u201b"})
 ALLOWED_SUFFIXES = frozenset({".txt", ".md"})
 ALLOWED_CONFIRMED_WHITESPACE = frozenset({" ", "\n"})
+SYRIAC_RANGE_RE = re.compile(r"[\u0700-\u074f]")
+PAREN_RE = re.compile(r"\([^()]*\)")
 
 
 class ConfirmedTextFormatError(ValueError):
@@ -293,6 +302,62 @@ def _preview(text: str, limit: int = 90) -> str:
     return repr(text[: limit - 1] + "…")
 
 
+def _editorial_labels_from_syriac(line: str) -> tuple[str, ...]:
+    """Return parenthesized non-Syriac labels carried literally by a Syriac line.
+
+    Labels are discovered only from the Syriac layer. This is what prevents a
+    canonical one-letter line notation such as ``(h)`` from being mistaken for
+    editorial apparatus.
+    """
+
+    labels: list[str] = []
+    for match in PAREN_RE.finditer(line):
+        label = match.group(0)
+        if SYRIAC_RANGE_RE.search(label):
+            continue
+        if not any(ch.isalpha() for ch in label):
+            continue
+        labels.append(label)
+    return tuple(labels)
+
+
+def _strip_known_labels(line: str, labels: tuple[str, ...]) -> str:
+    """Remove exactly the labels identified from the Syriac layer."""
+
+    stripped = line
+    for label in labels:
+        stripped = stripped.replace(label, "", 1)
+    stripped = re.sub(r" {2,}", " ", stripped)
+    return stripped.strip()
+
+
+def _label_issues(
+    labels: tuple[str, ...], canonical: str, english: str, line: int
+) -> list[ConfirmedTextIssue]:
+    issues: list[ConfirmedTextIssue] = []
+    for label in dict.fromkeys(labels):
+        expected_count = labels.count(label)
+        if canonical.count(label) != expected_count:
+            issues.append(
+                ConfirmedTextIssue(
+                    "editorial-label-mismatch",
+                    f"Rubrical/editorial label {label!r} is not preserved identically in the transliteration block.",
+                    line=line,
+                    block="transliteration",
+                )
+            )
+        if english.count(label) != expected_count:
+            issues.append(
+                ConfirmedTextIssue(
+                    "editorial-label-mismatch",
+                    f"Rubrical/editorial label {label!r} is not preserved identically in the English block.",
+                    line=line,
+                    block="english",
+                )
+            )
+    return issues
+
+
 def _check_aligned_document(
     document: ConfirmedTextDocument,
 ) -> tuple[list[ConfirmedTextIssue], tuple[str | None, ...]]:
@@ -312,8 +377,14 @@ def _check_aligned_document(
             expected_lines.append("")
             continue
 
+        labels = _editorial_labels_from_syriac(syriac)
+        issues.extend(_label_issues(labels, canonical, english, index))
+
+        comparison_syriac = _strip_known_labels(syriac, labels)
+        comparison_canonical = _strip_known_labels(canonical, labels)
+
         try:
-            reverse = reverse_transliterate(canonical)
+            reverse = reverse_transliterate(comparison_canonical)
         except TransliterationError as exc:
             issues.append(
                 ConfirmedTextIssue(
@@ -324,22 +395,21 @@ def _check_aligned_document(
                 )
             )
         else:
-            if reverse.text != syriac:
+            if reverse.text != comparison_syriac:
                 issues.append(
                     ConfirmedTextIssue(
                         "reverse-round-trip-mismatch",
-                        "Stored canonical transliteration does not reconstruct the Syriac line exactly: "
-                        f"reconstructed {_preview(reverse.text)}; Syriac is {_preview(syriac)}.",
+                        "Stored canonical transliteration does not reconstruct the Syriac text exactly after editorial labels are excluded: "
+                        f"reconstructed {_preview(reverse.text)}; Syriac is {_preview(comparison_syriac)}.",
                         line=index,
                         block="transliteration",
                     )
                 )
 
-        # Independent forward derivation. No information is recovered from the
-        # stored Latin: all page-state distinctions, including two-letter spans,
-        # are already present in canonical normalized Syriac.
+        # Independent forward derivation. Rubrical/editorial labels are excluded
+        # from the text comparison, but retained in the stored/derived display.
         try:
-            forward = transliterate_text(syriac)
+            forward = transliterate_text(comparison_syriac)
         except TransliterationError as exc:
             issues.append(
                 ConfirmedTextIssue(
@@ -352,18 +422,26 @@ def _check_aligned_document(
             expected_lines.append(None)
             continue
 
-        expected = forward.text
-        expected_lines.append(expected)
-        if expected != canonical:
+        expected_core = forward.text
+        if expected_core != comparison_canonical:
             issues.append(
                 ConfirmedTextIssue(
                     "stale-transliteration",
-                    "Stored transliteration differs from the transliteration mechanically derived from Syriac: "
-                    f"stored {_preview(canonical)}; expected {_preview(expected)}.",
+                    "Stored transliteration differs from the transliteration mechanically derived from Syriac after editorial labels are excluded: "
+                    f"stored {_preview(comparison_canonical)}; expected {_preview(expected_core)}.",
                     line=index,
                     block="transliteration",
                 )
             )
+
+        # --show-derived remains a storage-level view, so preserve labels exactly
+        # as the Syriac source carries them. The transliterator copies safe
+        # editorial literals while deriving every Syriac letter and mark.
+        try:
+            expected_display = transliterate_text(syriac).text
+        except TransliterationError:
+            expected_display = None
+        expected_lines.append(expected_display)
 
     return issues, tuple(expected_lines)
 
