@@ -439,7 +439,21 @@ def _check_aligned_document(
         # editorial literals while deriving every Syriac letter and mark.
         try:
             expected_display = transliterate_text(syriac).text
-        except TransliterationError:
+        except TransliterationError as exc:
+            # Core comparison excludes literal editorial labels.  The storage
+            # line must nevertheless be representable as a complete canonical
+            # display.  A label such as literal `(h)` collides with reserved
+            # one-letter-line syntax and therefore blocks confirmation rather
+            # than yielding ok=True with no derived transliteration.
+            issues.append(
+                ConfirmedTextIssue(
+                    "unrepresentable-editorial-apparatus",
+                    "Full Syriac storage line cannot be mechanically represented "
+                    f"in canonical transliteration ({exc.code}): {exc.message}",
+                    line=index,
+                    block="syriac",
+                )
+            )
             expected_display = None
         expected_lines.append(expected_display)
 

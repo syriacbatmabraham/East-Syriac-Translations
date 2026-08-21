@@ -202,6 +202,20 @@ class ConfirmedTextValidationTests(unittest.TestCase):
         result = check_confirmed_text(text, "sample.rtf")
         self.assertIn("unsupported-extension", [issue.code for issue in result.issues])
 
+    def test_ambiguous_editorial_label_blocks_confirmation(self):
+        text = make_file(
+            "(h) ܐܒ",
+            "(h) ʾb",
+            "(h) one",
+        )
+        result = check_confirmed_text(text, "sample.txt")
+        self.assertFalse(result.ok)
+        self.assertIn(
+            "unrepresentable-editorial-apparatus",
+            [issue.code for issue in result.issues],
+        )
+        self.assertIsNone(result.expected_transliteration_block)
+
     def test_invalid_utf8_is_reported(self):
         result = check_confirmed_text_bytes(b"\xff\xfe", "sample.txt")
         self.assertIsNone(result.document)
