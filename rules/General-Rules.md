@@ -184,7 +184,7 @@ Run after every glossary write, and after any edit to a confirmed text. **Diagno
 
 **Syriac — in the Glossary and in every confirmed text**
 11. Round-trip: the pointing reconstructs from the canonical string, and the canonical string from the pointing
-12. Carrier discipline — each mark carries the codepoint that names what the carrier makes it (Translit §7): U+0741 and U+0742 only on bgdkpt, U+073C only on waw and yodh, U+073F only on waw, U+0323 and U+0307 never on bgdkpt; U+035E/U+035F only begin a two-letter span with an immediately following base in the same orthographic word
+12. Carrier discipline — carrier-bound semantic marks remain on valid carriers: U+0741 and U+0742 only on bgdkpt, U+073C only on waw and yodh, and U+073F only on waw. U+0307 and U+0323 are generic §7 points and remain valid on any carrier, including bgdkpt, waw, and yodh; the carrier never changes their identity. U+035E/U+035F only begin a two-letter span with an immediately following base in the same orthographic word
 13. Combining-mark order follows Translit §5.1 for every in-scope sequence. Check class 220 and class 230 project tie-breaks explicitly; canonical Unicode ordering places the U+035F/U+035E span states in classes 233/234 after those marks
 14. One Syriac spelling transliterates one way across the corpus, and one transliteration maps back to one spelling. In particular, a direct two-letter span and two adjacent one-letter lines must remain distinct in **both** layers (`ܡ͞ܢ` ↔ `m⁀n`; `ܡ݇ܢ݇` ↔ `(m)(n)`)
 

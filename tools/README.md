@@ -222,6 +222,6 @@ GitHub Actions runs compilation and the full deterministic suite on tooling push
 4. **Inverse transliteration** — canonical string → resolved normalized Syriac.
 5. **Round-trip checks** — Transliteration Rules §12 and General Rules §11.11–14.
 6. **Confirmed-text parser/checker** — equal layers, file hygiene, stanza alignment, independently fresh transliteration, and source-registry provenance.
-7. **Glossary/corpus checks** — remainder of General Rules §11.
+7. **Glossary/corpus checks** — `check_glossary.py` implements General Rules §11.1–10 and the Glossary-facing round-trip/injectivity checks of §11.11–14; the live corpus test and CI run it on every tooling change.
 
 Each stage remains deterministic and independently testable.
