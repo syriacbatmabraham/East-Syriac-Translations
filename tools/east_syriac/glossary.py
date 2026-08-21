@@ -43,7 +43,8 @@ NUMBERS = frozenset({"sg", "pl"})
 STATES = frozenset({"abs", "cst", "emph"})
 FINITE_TENSES = frozenset({"perf", "impf", "impv"})
 ROOT_MARKERS = frozenset({"—", "prop. noun", "Gk. loan"})
-ROOT_COMPONENT_RE = re.compile(r"^[A-Za-zʾʿ]+(?:-[A-Za-zʾʿ]+)*\??$")
+ROOT_COMPONENT_RE = re.compile(r"^[A-Za-zʾʿḥṭṣš]+(?:-[A-Za-zʾʿḥṭṣš]+)*\??$")
+PERSON_FEATURE_RE = re.compile(r"^[123](?:m|f|c)?(?:sg|pl)$|^[123]c?p(?:l)?$|^[123](?:m|f|c)p$")
 SUFFIX_RE = re.compile(r"^[123](?:m|f|c)?(?:s|p|sg|pl)?\s+(?:suff\.|encl\.)$")
 
 
@@ -487,9 +488,11 @@ def _valid_verbal_morph(base: str) -> bool:
 
 
 def _valid_simple_class(base: str) -> bool:
-    return base in {
-        "particle", "adv.", "prep.", "conj.", "quant.", "poss.", "prop. n.", "interrog. adv."
-    }
+    if base in {"particle", "adv.", "prep.", "conj.", "quant.", "poss.", "prop. n."}:
+        return True
+    if base in {"interrog. adv."}:
+        return True
+    return False
 
 
 def _valid_suffix_component(component: str) -> bool:
@@ -513,7 +516,10 @@ def _valid_morphology(morphology: str, section: str) -> bool:
         or _valid_verbal_morph(base)
         or _valid_simple_class(base)
     ):
-        return False
+        if len(components) > 1 and (_valid_simple_class(base) or _valid_nominal_morph(base)):
+            pass
+        else:
+            return False
     for component in components[1:]:
         if _valid_suffix_component(component):
             continue
@@ -547,9 +553,10 @@ def _rendering_traceable(rendering: str, contexts: Iterable[str]) -> bool:
 
 def _context_intervals(context: str, line: str) -> list[tuple[int, int]]:
     pieces = context.split("...")
-    nonempty = [piece for piece in pieces if piece]
+    nonempty = [(i, piece) for i, piece in enumerate(pieces) if piece]
     if not nonempty:
         return []
+    candidates: list[tuple[int, int, int]] = [(0, 0, 0)]
     starts_with_ellipsis = context.startswith("...")
     ends_with_ellipsis = context.endswith("...")
     placements: list[tuple[int, int]] = []
@@ -563,7 +570,7 @@ def _context_intervals(context: str, line: str) -> list[tuple[int, int]]:
                 return
             placements.append((first_start, last_end))
             return
-        piece = nonempty[piece_index]
+        _, piece = nonempty[piece_index]
         start = line.find(piece, search_from)
         while start >= 0:
             end = start + len(piece)
