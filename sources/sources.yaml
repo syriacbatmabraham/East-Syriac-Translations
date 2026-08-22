@@ -1,5 +1,7 @@
-# Machine-readable source-of-record metadata.
+# Machine-readable source-of-record / baseline metadata.
 # Only explicit designations are recorded; omission is not a source inference.
+# For non-Psalm Scripture, see General Rules §§1.1 and 4.2: Mosul is the baseline witness,
+# and an explicitly documented textual harmonization may supply the canonical reading.
 
 source_records:
   ksawa_d_mazmore:
@@ -13,7 +15,7 @@ source_records:
     governs: Qurbana and Anaphoras
   east_syriac_mosul_peshitta:
     title: East Syriac Mosul Peshitta
-    governs: Scripture other than Psalms
+    governs: Scripture other than Psalms as baseline witness
 
 confirmed_texts:
   Creed.txt:
