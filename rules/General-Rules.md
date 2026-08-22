@@ -24,22 +24,27 @@ Where the working environment holds a resource bearing on a question (§12.1), u
 
 ## 1. Source Hierarchy
 
-### 1.1 Designated sources of record
+### 1.1 Designated sources of record and scriptural baseline
 
-| Material | Source of record |
+| Material | Governing source |
 |---|---|
-| Psalms | **Ksawa d-Mazmore** |
-| The Hours (Ramsha, Lelya, Sapra, and the rest) | **Breviarium Chaldaicum** |
-| Qurbana, including the Anaphoras | **Editio Typica of the Syro-Malabar Church** |
-| All other Scripture | **East Syriac Mosul Peshitta** |
+| Psalms | **Ksawa d-Mazmore** — source of record |
+| The Hours (Ramsha, Lelya, Sapra, and the rest) | **Breviarium Chaldaicum** — source of record |
+| Qurbana, including the Anaphoras | **Editio Typica of the Syro-Malabar Church** — source of record |
+| All other Scripture | **East Syriac Mosul Peshitta** — baseline textual witness, subject to §§1.2 and 4.2 |
 
-Settled here, not repeated in the Glossary. A text falling outside all four has its source of record designated explicitly **before entries are built** and recorded in `sources/sources.yaml`.
+The `source_of_record` field remains the stable provenance field in `sources/sources.yaml`, but its force differs by material. For the Psalms and liturgics it designates the controlling source text, subject only to explicitly adopted apparatus or additions. For Scripture other than Psalms, the East Syriac Mosul Peshitta is the **presumptive starting text and pointing witness**, not an absolute textual ceiling: the canonical Syriac may depart from Mosul by an explicit, evidenced decision under §4.2 in order to preserve the coherence of Scripture and the received Tradition.
+
+A text falling outside the four classes above has its source of record designated explicitly **before entries are built** and recorded in `sources/sources.yaml`.
 
 ### 1.2 Other provisions
 
-- **Reference use** — any Syriac text, to illustrate usage, so long as it exists. Never fabricate citations.
-- **Witnesses** — one text may exist in several digital witnesses differing in pointing and codepoint convention. Follow the designated source and record the variant; never resolve by majority vote (Translit §16.5). Normalize per Translit §16 before comparing, or encoding differences masquerade as textual ones.
-- **The audit runs against the source of record.** Where a witness carries or lacks a mark the source of record does not, the disagreement is textual, not notational: the canonical string follows the source of record, and a variant never enters it.
+- **Reference use** — any Syriac text may illustrate usage so long as it exists. Never fabricate citations.
+- **Psalms** — the *Ksawa d-Mazmore* governs the canonical Syriac. A differing witness is recorded as a variant rather than silently substituted.
+- **Liturgics** — the designated liturgical source remains controlling. Material deliberately supplied from an Assyrian Hudra or another established liturgical witness may enter as explicit editorial apparatus under §9.1; the supplying witness is named and the addition never masquerades as wording of the source of record.
+- **Scripture other than Psalms** — begin with Mosul, but collate where a textual, inter-Testamental, patristic, liturgical, or harmonization question is material. A reading may be adopted from another ancient Syriac witness or revision under §4.2. Mosul's displaced reading and the evidence for the adopted reading must remain visible in the apparatus/provenance record.
+- **Witnesses and majority** — one text may exist in several digital or manuscript witnesses differing in pointing, codepoint convention, or wording. Never resolve a substantive reading by raw majority vote. Normalize per Translit §16 before comparing, or encoding differences masquerade as textual ones.
+- **Audit target** — for Psalms and liturgics, the audit runs against the source of record plus any explicitly adopted apparatus. For non-Psalm Scripture, audit Mosul as the baseline and every witness that supplies an adopted departure. Pointing or wording absent from the supplying witness may not be silently invented.
 
 ## 2. Transliteration Policy
 Governed in full by the Transliteration Rules. Apply silently.
@@ -50,7 +55,28 @@ Governed in full by the Transliteration Rules. Apply silently.
 - Keep repeated Syriac terms stable in English unless context clearly requires otherwise; keep recurring English idioms consistent where the Syriac recurs.
 
 ## 4. Harmonization
-In scope where it improves coherence without violating the Syriac sense. Note harmonizations rather than folding them silently into the confirmed text.
+
+### 4.1 Translation harmonization
+In scope where it improves coherence without violating the Syriac sense. Note material harmonizations rather than folding them silently into the confirmed text.
+
+### 4.2 Scriptural textual harmonization
+For **Scripture other than Psalms**, harmonization may operate at the Syriac textual level as well as in English. The purpose is not to make Mosul uniform mechanically, but to preserve the coherent witness of Scripture and the Tradition where the Syriac textual history gives responsible grounds to do so.
+
+A textual harmonization may include a departure from Mosul in a quotation, parallel passage, divine or personal name, formula, theological expression, or other locus where broader evidence materially favors coherence. It is a **textual decision**, not normalization, and is made locus by locus.
+
+Before adopting such a reading:
+
+1. establish the Mosul reading exactly;
+2. examine relevant Peshitta manuscripts and critical editions where available;
+3. examine other ancient Syriac evidence that bears directly on the locus — including Old Syriac material, the Syro-Hexapla, revisions such as Jacob of Edessa's, and patristic or liturgical biblical citations as applicable;
+4. compare the Hebrew and Greek textual traditions where they bear on the Syriac divergence;
+5. prefer an actually attested Syriac reading over an invented retroversion whenever the evidence permits;
+6. state what is being harmonized, what witness supplies or supports the adopted Syriac, and why the coherence gained is textually and traditionally defensible; and
+7. preserve Mosul's displaced reading in the editorial apparatus/provenance record.
+
+Ancient attestation does not compel adoption, and a later witness is not rejected merely for being later if it demonstrably preserves an older reading. No one version — Peshitta, Septuagint/Syro-Hexapla, or a revisional text — automatically overrides the others outside the designated roles of §1.1. The decision weighs provenance, antiquity, textual relationship, Syriac reception, canonical coherence, and the Tradition rather than counting witnesses.
+
+This provision does **not** make Psalms or liturgical texts eclectic. Their governing sources remain as specified in §1.1; liturgical additions continue to use the explicit apparatus mechanism of §1.2.
 
 ## 5. English Style
 Elevated, formal, readable, prayer-capable, not artificially archaic. Do not flatten strong theological language.
@@ -60,8 +86,8 @@ Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or pra
 
 ## 7. Working Sequence
 1. Read the text given
-2. Establish the Syriac; confirm the source of record from §1.1
-3. **Codepoint audit of the source, before transliterating** (Translit §16). Non-negotiable. Run silently; report only what it surfaces.
+2. Establish the Syriac: confirm the governing source from §1.1; for non-Psalm Scripture begin from Mosul and determine whether §4.2 requires broader textual collation before fixing the canonical line
+3. **Codepoint audit of the source text(s) supplying the canonical Syriac, before transliterating** (Translit §16). Non-negotiable. Run silently; report only what it surfaces
 4. Give canonical transliteration
 5. Review every token, in order, repeats included, under the **Word-by-Word Standard** — a repeat is often pointed differently
 6. Check each word against Glossary entries, including relevant related forms and compounds
@@ -112,9 +138,9 @@ Rich-text formats are never the authoritative copy — they can split a letter f
 
 ### 9.2 Draft and confirmed
 
-A text under work is a **draft** and is not citable: no entry may name one. It becomes confirmed when its source of record is designated (§1.1), its codepoint audit is run (§7), its blocks round-trip (§11.11), its English is settled, and the check suite passes. Entries are built only then, and a confirmed text is not edited without rerunning §11.
+A text under work is a **draft** and is not citable: no entry may name one. It becomes confirmed when its governing source or baseline is designated (§1.1), every adopted textual departure is documented under §4.2, its codepoint audit is run (§7), its blocks round-trip (§11.11), its English is settled, and the check suite passes. Entries are built only then, and a confirmed text is not edited without rerunning §11.
 
-The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; every confirmed filename has one registry entry containing its stable `citation_label` and `source_of_record`. The source of record is designated per §1.1 and checked against the page. The deterministic confirmed-corpus checker verifies the filename/registry correspondence and source designation.
+The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; every confirmed filename has one registry entry containing its stable `citation_label` and `source_of_record`. The source-of-record field is designated per §1.1 and interpreted according to the material-specific rules there; accepted departures or additions are recorded as editorial apparatus rather than silently redefining the source. The deterministic confirmed-corpus checker verifies the filename/registry correspondence and source designation.
 
 ## 10. Glossary Principle
 
