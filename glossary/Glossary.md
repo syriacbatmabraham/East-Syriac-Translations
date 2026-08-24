@@ -69,6 +69,14 @@ and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped. Collision
 * dalʿālam ʿālmīn · "...and life unto the Age of ages. Amen" (Creed Line 21)
 * lʿālam ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
+ܒܠܸܒܵܐ ܘܲܒ݂ܠܸܒܵܐ   [l-b-b + l-b-b]   {prep. phrase}   (search: bleba wableba)
+blebā waḇlebā (1) — in doubled hearts (1)
+* blebā waḇlebā · "In doubled hearts they speak" (Psalm 12 Line 8)
+
+ܚܲܕ݂ ܒܫܲܒ݂ܥܵܐ   [ḥ-d + š-b-ʿ]   {numeral phrase}   (search: had bshaba)
+ḥaḏ bšaḇʿā (1) — seven times (1)
+* ḥaḏ bšaḇʿā · "And purified seven times" (Psalm 12 Line 18)
+
 ---
 
 ## Forms
@@ -78,10 +86,11 @@ mhaymnīnan (1) — we are faithful (1)
 * mhaymnīnan · "We are faithful to One God..." (Creed Line 1)
 
 ܚܲܕ   [ḥ-d]   {num. m.sg.abs.}   (search: had)
-ḥad (3) — one (3)
+ḥad (4) — one (3), → ḥaḏ bšaḇʿā (1)
 * bḥad · "We are faithful to One God..." (Creed Line 1)
 * wabḥad · "And to One Mar Yah..." (Creed Line 3)
 * waḇḥad · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
+* ḥaḏ · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
 
 ܐܲܠܵܗܵܐ   [ʾ-l-h]   {noun m.sg.emph.}   (search: alaha)
 ʾalāhā (5) — God (5)
@@ -113,10 +122,11 @@ kl (3) — all (2), every (1)
 * ʿāḇōḏā · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܟܠܗܹܝܢ   [k-l]   {quant. + 3fp suff.}   (search: klheyn)
-klhēyn (3) — all (2), all of them (1)
+klhēyn (4) — all (3), all of them (1)
 * dḵlhēyn · "Maker of all things, seen and unseen" (Creed Line 2)
 * dḵlhēyn · "Firstborn of all creatures" (Creed Line 4)
 * klhēyn · "All of them, the creatures You have created" (Ferial Slotha d'Sapra II, Line 8)
+* klhēyn · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
 
 ܐܲܝܠܹܝܢ   [ʾ-y-n-ʾ]   {rel. pron. c.pl.}   (search: ayleyn)
 ʾaylēyn (1) — things (1)
@@ -128,7 +138,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (7) — Mar Yah (7)
+māryā (12) — Mar Yah (12)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -136,14 +146,20 @@ māryā (7) — Mar Yah (7)
 * māryā · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
 * māryā · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
 * māryā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+* māryā · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
+* māryā · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
+* māryā · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+* dmāryā · "The utterance of Mar Yah is a pure utterance" (Psalm 12 Line 16)
+* māryā · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
 * ʾīšōʿ · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 
 ܡܫܝܼܚܵܐ   [m-š-ḥ]   {adj. m.sg.emph.}   (search: mshiha)
-mšīḥā (1) — M'shiha (1)
+mšīḥā (2) — M'shiha (2)
 * mšīḥā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
+* mšīḥā · "...M'shiha, do not delay" (Psalm 12 Line 3)
 
 ܒܪܹܗ   [b-r]   {noun m.sg.emph. + 3ms suff.}   (search: breh)
 brēh (1) — the Son (1)
@@ -169,7 +185,7 @@ hāw (3) — He who (3)
 * hāw · "He who from the Father [and the Son] comes forth" (Creed Line 17)
 
 ܡ̣ܢ   [m-n]   {prep.}   (search: mn)
-m_n (11) — from (10), at (1)
+m_n (13) — from (12), at (1)
 * dm_n · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * dm_n · "True God from True God" (Creed Line 6)
 * m_n · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
@@ -181,6 +197,8 @@ m_n (11) — from (10), at (1)
 * m_n · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * m_n · "From the house of Your treasure, rich and overflowing" (Ferial Slotha d'Sapra I, Line 7)
 * m_n · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
+* m_n · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
+* m_n · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
 
 ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abuhy)
 ʾaḇūhy (2) — His Father (2)
@@ -244,18 +262,21 @@ meṭlātan (1) — for the sake of us (1)
 * dmeṭlātan · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 
 ܒܢܲܝ̈ܢܵܫܵܐ   [b-r + ʾ-n-š]   {noun c.pl.emph.}   (search: bnaynasha)
-bnaÿnāšā (3) — sons of men (3)
+bnaÿnāšā (4) — sons of men (4)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * laḇnaÿnāšā · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+* bnaÿnāšā · "The sons of men speak emptiness" (Psalm 12 Line 6)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
-meṭl (5) — for (5)
+meṭl (7) — for (6), because of (1)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 * meṭl · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
 * meṭl · "For what You have prepared, they have thrown down" (Psalm 11 Line 9)
 * meṭl · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+* meṭl · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
+* meṭl · "Because of the plundering of the poor..." (Psalm 12 Line 13)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -356,10 +377,11 @@ yāẅmīn (1) — day (1)
 * yāẅmīn · "...and He arose on the third day, as it is written" (Creed Line 13)
 
 ܐܲܝܟ݂   [ʾ-y-k]   {particle}   (search: ayk)
-ʾayḵ (3) — as (1), like (2)
+ʾayḵ (4) — as (2), like (2)
 * ʾayḵ · "...and He arose on the third day, as it is written" (Creed Line 13)
 * ʾayḵ · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
 * ʾayḵ · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+* ʾayḵ · "as the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
 
 ܟܬ݂ܝܼܒ݂   [k-t-b]   {Peal passive ptcp. m.sg.abs.}   (search: ktib)
 kṯīḇ (1) — written (1)
@@ -478,9 +500,10 @@ paḡr̈ē (1) — bodies (1)
 * lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
 
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
-ʿālam (2) — Eternity (2)
+ʿālam (3) — Eternity (3)
 * ʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * lʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
+* lʿālam · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
 
 ܥܵܠܡܝܼܢ   [ʿ-l-m]   {noun m.pl.abs.}   (search: almin)
 ʿālmīn (4) — → ʿālam ʿālmīn (2), forever (2)
@@ -489,7 +512,7 @@ paḡr̈ē (1) — bodies (1)
 * lʿālmīn · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * lʿālmīn · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
-ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph. + 1cp suff.}   (search: abun)
+ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph.}   (search: abun)
 ʾaḇūn (2) — our Father (2)
 * ʾaḇūn · "Our Father, who art in Heaven..." (Our Father Line 1)
 * ʾaḇūn · "Our Father who art in Heaven" (Our Father Line 4)
@@ -529,10 +552,12 @@ mlēyn (1) — are full (1)
 * šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܐܲܪܥܵܐ   [ʾ-r-ʿ]   {noun f.sg.emph.}   (search: ara)
-ʾarʿā (3) — earth (3)
+ʾarʿā (5) — earth (5)
 * wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 * bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * ʾarʿā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
+* ʾarʿā · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
+* bʾarʿā · "Choice silver tried in the earth" (Psalm 12 Line 17)
 
 ܪܲܒ݁ܘܼܬ݂   [r-b-b]   {noun f.sg.cst.}   (search: rabut)
 raḃūṯ (1) — the greatness of (1)
@@ -694,9 +719,10 @@ saḇrā (1) — hope (1)
 * wsaḇrā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 
 ܛܵܒ݂ܵܐ   [ṭ-w-b]   {adj. m.sg.emph.}   (search: taba)
-ṭāḇā (2) — good (1), Good One (1)
+ṭāḇā (3) — good (2), Good One (1)
 * ṭāḇā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ṭāḇā · "O Good One, who does not withhold His mercies..." (Ferial Slotha d'Sapra I, Line 8)
+* ṭāḇā · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
 
 ܥܸܕܵܢ   [ʿ-d-n]   {noun m.sg.abs.}   (search: edan)
 ʿedān (1) — moment (1)
@@ -757,8 +783,9 @@ ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
 ܡܵܪܲܢ   [m-r-ʾ]   {noun m.sg.emph. + 1cp suff.}   (search: maran)
-māran (1) — our Lord (1)
+māran (2) — our Lord (2)
 * māran · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
+* māran · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
 
 ܐܲܠܵܗܲܢ   [ʾ-l-h]   {noun m.sg.emph. + 1cp suff.}   (search: alahan)
 ʾalāhan (1) — our God (1)
@@ -845,8 +872,9 @@ meṯkašpīn (1) — beseech (1)
 * wmeṯkašpīn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
 ܠܹܗ   [l]   {prep. + 3ms suff.}   (search: leh)
-lēh (1) — Him (1)
+lēh (2) — Him (1), itself (1)
 * lēh · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
+* lēh · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
 
 ܙܲܒ݂ܢܹ̈ܐ   [z-b-n]   {noun m.pl.emph.}   (search: zabne)
 zaḇn̈ē (1) — times (1)
@@ -1099,8 +1127,10 @@ tr̈īṣay (1) — the upright of (1)
 * baṯr̈īṣay · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
 
 ܠܸܒܵܐ   [l-b-b]   {noun m.sg.emph.}   (search: leba)
-lebā (1) — heart (1)
+lebā (3) — heart (1), → blebā waḇlebā (2)
 * lebā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
+* blebā · "In doubled hearts they speak" (Psalm 12 Line 8) → blebā waḇlebā
+* waḇlebā · "In doubled hearts they speak" (Psalm 12 Line 8) → blebā waḇlebā
 
 ܡܸܕܸܡ   [m-d-m]   {indef. pron.}   (search: medem)
 medem (1) — what (1)
@@ -1192,8 +1222,9 @@ nḥeṯw (1) — have come down (1)
 * nḥeṯw · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 
 ܪܲ̈ܫܝܼܥܹܐ   [r-š-ʿ]   {adj. m.pl.emph.}   (search: rashie)
-r̈ašīʿē (1) — the wicked (1)
+r̈ašīʿē (2) — the wicked (2)
 * r̈ašīʿē · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
+* r̈ašīʿē · "wherein the wicked circle about and walk" (Psalm 12 Line 21)
 
 ܦܲܚܹ̈ܐ   [p-ḥ-ḥ]   {noun m.pl.emph.}   (search: pahe)
 paḥ̈ē (1) — snares (1)
@@ -1247,3 +1278,231 @@ trīṣūṯā (1) — uprightness (1)
 ʾapāẅhy (1) — His Face (1)
 * ʾapāẅhy · "And His Face is seeing uprightness" (Psalm 11 Line 20)
 
+ܦܪܘܿܩ   [p-r-q]   {Peal impv. 2m.sg.}   (search: proq)
+prōq (1) — save (1)
+* prōq · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
+
+ܓܡܲܪ   [g-m-r]   {Peal perf. 3m.sg.}   (search: gmar)
+gmar (1) — has come to an end (1)
+* daḡmar · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
+
+ܒܸܛܠܲܬ̤   [b-ṭ-l]   {Peal perf. 3f.sg.}   (search: betlat)
+beṭlat̤ (1) — has ceased (1)
+* wbeṭlat̤ · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
+
+ܗܲܝܡܵܢܘܼܬ݂ܵܐ   [h-y-m-n]   {noun f.sg.emph.}   (search: haymanuta)
+haymānūṯā (1) — faithfulness (1)
+* haymānūṯā · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
+
+ܣܓ݂ܝܼ   [s-g-ʾ]   {Peal perf. 3m.sg.}   (search: sgi)
+sḡī (1) — has increased (1)
+* sḡī · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
+
+ܢܸܟ݂ܠܵܐ   [n-k-l]   {noun m.sg.emph.}   (search: nekla)
+neḵlā (1) — deceit (1)
+* neḵlā · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
+
+ܦܵܓ݂   [p-w-g]   {Peal perf. 3m.sg.}   (search: pag)
+pāḡ (1) — has abated (1)
+* wpāḡ · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
+
+ܚܘܼܒܵܐ   [ḥ-b-b]   {noun m.sg.emph.}   (search: huba)
+ḥūbā (1) — love (1)
+* ḥūbā · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
+
+ܬܲܗܡܸܐ   [h-m-ʾ]   {Peal impf. 2m.sg.}   (search: tahme)
+tahmeʾ (1) — delay (1)
+* lā tahmeʾ · "...M'shiha, do not delay" (Psalm 12 Line 3)
+
+ܣܪܝܼܩܘܼܬ݂ܵܐ   [s-r-q]   {noun f.sg.emph.}   (search: sriquta)
+srīqūṯā (1) — emptiness (1)
+* srīqūṯā · "The sons of men speak emptiness" (Psalm 12 Line 6)
+
+ܡܡܲܠܠܝܼܢ   [m-l-l]   {Pael active ptcp. m.pl.abs.}   (search: mmallin)
+mmallīn (3) — speak (3)
+* mmallīn · "The sons of men speak emptiness" (Psalm 12 Line 6)
+* mmallīn · "In doubled hearts they speak" (Psalm 12 Line 8)
+* dammallīn · "And tongues that speak great things" (Psalm 12 Line 10)
+
+ܓܲܒ݂ܪܵܐ   [g-b-r]   {noun m.sg.emph.}   (search: gabra)
+gaḇrā (1) — a man (1)
+* wgaḇrā · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+
+ܥܲܡ   [ʿ-m-m]   {prep.}   (search: am)
+ʿam (1) — with (1)
+* ʿam · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+
+ܚܲܒ݂ܪܹܗ   [ḥ-b-r]   {noun m.sg.emph. + 3ms suff.}   (search: habreh)
+ḥaḇrēh (1) — his fellow (1)
+* ḥaḇrēh · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+
+ܣܸܦ̈ܘܵܬ݂ܵܐ   [s-p-t]   {noun f.pl.emph.}   (search: sepwata)
+sep̈wāṯā (3) — lips (3)
+* bsep̈wāṯā · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+* sep̈wāṯā · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
+* wsep̈wāṯā · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+
+ܡܦܲ̈ܠܓ݂ܵܬ݂ܵܐ   [p-l-g]   {Pael passive ptcp. f.pl.emph.}   (search: mpalgata)
+mp̈alḡāṯā (2) — divided (2)
+* mp̈alḡāṯā · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+* mp̈alḡāṯā · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
+
+ܢܵܘܒܸ݁ܕ݂   [ʾ-b-d]   {Aphel impf. 3m.sg.}   (search: nawbed)
+nāwḃeḏ (1) — destroys (1)
+* nāwḃeḏ · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
+
+ܠܸܫܵܢܹ̈ܐ   [l-š-n]   {noun m.pl.emph.}   (search: leshane)
+lešān̈ē (1) — tongues (1)
+* wlešān̈ē · "And tongues that speak great things" (Psalm 12 Line 10)
+
+ܪܵܘ݈ܪ̈ܒ݂ܵܬ݂ܵܐ   [r-b-b]   {adj. f.pl.emph.}   (search: rawrbata)
+rā(_w)r̈ḇāṯā (1) — great things (1)
+* rā(_w)r̈ḇāṯā · "And tongues that speak great things" (Psalm 12 Line 10)
+
+ܐܸܡ᷺ܲܪܘ   [ʾ-m-r]   {Peal perf. 3m.pl.}   (search: emarw)
+ʾema__rw (1) — have said (1)
+* dʾema__rw · "Who have said: We will magnify our tongue" (Psalm 12 Line 11)
+
+ܠܸܫܵܢܲܢ   [l-š-n]   {noun m.sg.emph. + 1cp suff.}   (search: leshanan)
+lešānan (1) — our tongue (1)
+* lešānan · "Who have said: We will magnify our tongue" (Psalm 12 Line 11)
+
+ܢܵܘܪܸܒ݂   [r-b-b]   {Aphel impf. 1c.pl.}   (search: nawreb)
+nāwreḇ (1) — we will magnify (1)
+* nāwreḇ · "Who have said: We will magnify our tongue" (Psalm 12 Line 11)
+
+ܕܝܼܠܲܢ   [d-y-l]   {poss. + 1cp suff.}   (search: dilan)
+dīlan (1) — our...our own (1)
+* dīlan · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+
+ܐܲܢܹܝܢ   [h-w]   {pron. 3f.pl.}   (search: aneyn)
+ʾanēyn (1) — are (1)
+* ʾanēyn · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+
+ܡܲܢ̣ܘܼ   [m-n]   {interrog. pron. + 3ms encl.}   (search: manu)
+man_ū (1) — who is (1)
+* man_ū · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+
+ܒܸܙܬ݂ܵܐ   [b-z-z]   {noun f.sg.emph.}   (search: bezta)
+bezṯā (1) — the plundering (1)
+* bezṯā · "Because of the plundering of the poor..." (Psalm 12 Line 13)
+
+ܡܸܣܟܹ̈ܢܹܐ   [s-k-n]   {adj. m.pl.emph.}   (search: meskene)
+mesk̈ēnē (1) — the poor (1)
+* dmesk̈ēnē · "Because of the plundering of the poor..." (Psalm 12 Line 13)
+
+ܐܸܢܲܩܬ݂ܵܐ   [ʾ-n-q]   {noun f.sg.emph.}   (search: enaqta)
+ʾenaqṯā (1) — the groaning (1)
+* wʾenaqṯā · "...and the groaning of the miserable" (Psalm 12 Line 13)
+
+ܒܵܝ̇̈ܫܹܐ   [b-ʾ-š]   {adj. m.pl.emph.}   (search: bayshe)
+bāÿ^šē (1) — the miserable (1)
+* dḇāÿ^šē · "...and the groaning of the miserable" (Psalm 12 Line 13)
+
+ܡܸܟܹ݁ܝܠ   [m-k-y-l]   {adv.}   (search: mekeyl)
+mek̇ēyl (1) — now (1)
+* mek̇ēyl · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+
+ܐܹܩܘܼܡ   [q-w-m]   {Peal impf. 1c.sg.}   (search: equm)
+ʾēqūm (1) — I will...arise (1)
+* ʾēqūm · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+
+ܐ᷸ܵܡܲܪ   [ʾ-m-r]   {Peal perf. 3m.sg.}   (search: amar)
+ʾā^^mar (1) — has said (1)
+* ʾā^^mar · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+
+ܐܸܥܒܸ݁ܕ݂   [ʿ-b-d]   {Peal impf. 1c.sg.}   (search: ebed)
+ʾeʿḃeḏ (1) — I...bring about (1)
+* wʾeʿḃeḏ · "And I openly bring about salvation" (Psalm 12 Line 15)
+
+ܦܘܼܪܩܵܢܵܐ   [p-r-q]   {noun m.sg.emph.}   (search: purqana)
+pūrqānā (1) — salvation (1)
+* pūrqānā · "And I openly bring about salvation" (Psalm 12 Line 15)
+
+ܓܲܠܝܵܐܝܼܬ   [g-l-ʾ]   {adv.}   (search: galyait)
+galyāʾīt (1) — openly (1)
+* galyāʾīt · "And I openly bring about salvation" (Psalm 12 Line 15)
+
+ܡܹܐܡܪܹܗ   [ʾ-m-r]   {noun m.sg.emph. + 3ms suff.}   (search: memreh)
+mēʾmrēh (1) — the utterance of (1)
+* mēʾmrēh · "The utterance of Mar Yah is a pure utterance" (Psalm 12 Line 16)
+
+ܡܹܐܡܪܵܐ   [ʾ-m-r]   {noun m.sg.emph.}   (search: memra)
+mēʾmrā (1) — utterance (1)
+* mēʾmrā · "The utterance of Mar Yah is a pure utterance" (Psalm 12 Line 16)
+
+ܕܲܟ݂ܝܵܐ   [d-k-ʾ]   {adj. m.sg.emph.}   (search: dakya)
+daḵyā (1) — pure (1)
+* daḵyā · "The utterance of Mar Yah is a pure utterance" (Psalm 12 Line 16)
+
+ܣܹܐܡܵܐ   [s-ʾ-m]   {noun m.sg.emph.}   (search: sema)
+sēʾmā (1) — silver (1)
+* sēʾmā · "Choice silver tried in the earth" (Psalm 12 Line 17)
+
+ܓܲܒ݂ܝܵܐ   [g-b-ʾ]   {adj. m.sg.emph.}   (search: gabya)
+gaḇyā (1) — choice (1)
+* gaḇyā · "Choice silver tried in the earth" (Psalm 12 Line 17)
+
+ܒܚܝܼܪ   [b-ḥ-r]   {adj. m.sg.abs.}   (search: bhir)
+bḥīr (1) — tried (1)
+* daḇḥīr · "Choice silver tried in the earth" (Psalm 12 Line 17)
+
+ܡܕܲܟܲܝ   [d-k-ʾ]   {Pael passive ptcp. m.sg.abs.}   (search: mdakay)
+mdakay (1) — purified (1)
+* wamdakay · "And purified seven times" (Psalm 12 Line 18)
+
+ܫܲܒ݂ܥܵܐ   [š-b-ʿ]   {num. m.}   (search: shaba)
+šaḇʿā (1) — → ḥaḏ bšaḇʿā (1)
+* bšaḇʿā · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
+
+ܐܲܢ݇ܬ   [ʾ-n-t]   {pron. 2m.sg.}   (search: ant)
+ʾa(n)t (1) — You (1)
+* wʾa(n)t · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
+
+ܬܸܛܲܪ   [n-ṭ-r]   {Peal impf. 2m.sg.}   (search: tetar)
+teṭar (1) — keep (1)
+* teṭar · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
+
+ܐܸܢܘܿܢ   [h-w]   {pron. 3m.pl.}   (search: enon)
+ʾenōn (1) — them (1)
+* ʾenōn · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
+
+ܫܵܘܙܸܒܲܝܢܝ   [š-w-z-b]   {Shaphel impv. 2m.sg. + 1cs suff.}   (search: shawzebayny)
+šāwzebayny (1) — rescue me (1)
+* šāwzebayny · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
+
+ܦܲܨܵܢܝ   [p-ṣ-ʾ]   {Pael impv. 2m.sg. + 1cs suff.}   (search: pasany)
+paṣāny (1) — deliver me (1)
+* wpaṣāny · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
+
+ܕܵܪܵܐ   [d-w-r]   {noun m.sg.emph.}   (search: dara)
+dārā (1) — generation (1)
+* dārā · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
+
+ܗܵܢܵܐ   [h-n]   {dem. pron. m.sg.}   (search: hana)
+hānā (1) — this (1)
+* hānā · "Rescue me and deliver me unto Eternity from this generation" (Psalm 12 Line 20)
+
+ܟܪܝܼܟ݂ܝܼܢ   [k-r-k]   {Peal passive ptcp. m.pl.abs.}   (search: krikin)
+krīḵīn (1) — circle about (1)
+* daḵrīḵīn · "wherein the wicked circle about and walk" (Psalm 12 Line 21)
+
+ܡܗܲܠܟ݂ܝܼܢ   [h-l-k]   {Pael active ptcp. m.pl.abs.}   (search: mhalkin)
+mhalḵīn (1) — walk (1)
+* wamhalḵīn · "wherein the wicked circle about and walk" (Psalm 12 Line 21)
+
+ܪܵܘܡܵܐ   [r-w-m]   {noun m.sg.emph.}   (search: rawma)
+rāwmā (1) — high place (1)
+* rāwmā · "as the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
+
+ܙܲܠܝܼܠܵܐ   [z-l-l]   {adj. m.sg.emph.}   (search: zalila)
+zalīlā (1) — contemptible (1)
+* zalīlā · "as the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
+
+ܒܢܲܝ̈   [b-r]   {noun m.pl.cst.}   (search: bnay)
+bnaÿ (1) — sons of (1)
+* daḇnaÿ · "as the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
+
+ܐܲܕ݂ܘܿܡ   [prop. noun]   {prop. n.}   (search: adom)
+ʾaḏōm (1) — Edom (1)
+* ʾaḏōm · "as the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
