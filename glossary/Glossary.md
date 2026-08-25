@@ -1560,5 +1560,5 @@ nēʾṯōn (1) — let them come (1)
 * lʾīālā · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
 
 ܣܵ̇ܓ݂ܘܿܕܲܝ̈ܟ   [s-g-d]   {noun m.pl.emph. + 2ms suff.}   (search: sagodayk)
-s^āḡōḏaÿk (1) — Your reverencers (1)
-* ds^āḡōḏaÿk · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
+s^āḡōdaÿk (1) — Your reverencers (1)
+* ds^āḡōdaÿk · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
