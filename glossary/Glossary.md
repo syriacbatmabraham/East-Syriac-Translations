@@ -580,9 +580,10 @@ qā^^ʿēyn (1) — cry out (1)
 * qā^^ʿēyn · "Watchers and men cry out to You..." (Our Father Line 6)
 
 ܠܵܟ݂   [l]   {prep. + 2ms suff.}   (search: lak)
-lāḵ (2) — to You (2)
+lāḵ (3) — to You (2), You (1)
 * lāḵ · "Watchers and men cry out to You..." (Our Father Line 6)
 * lāḵ · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
+* lāḵ · "Who call and beseech You" (Slotha d'Marmitha 4, Line 6)
 
 ܢܸܗܘܸܐ   [h-w-ʾ]   {Peal impf. 3m.sg.}   (search: nehwe)
 nehweʾ (1) — let...be (1)
@@ -633,8 +634,9 @@ yāwmānā (1) — this day (1)
 * ḥāwbaÿn · "And release us our debts and sins..." (Our Father Line 11)
 
 ܚܛܵܗܲܝ̈ܢ   [ḥ-ṭ-ʾ]   {noun m.pl.emph. + 1cp suff.}   (search: htahayn)
-ḥṭāhaÿn (1) — sins (1)
+ḥṭāhaÿn (2) — sins (1), our sins (1)
 * waḥṭāhaÿn · "And release us our debts and sins..." (Our Father Line 11)
+* ḥṭāhaÿn · "Let Your grace absolve our sins" (Slotha d'Marmitha 4, Line 3)
 
 ܚܢܲܢ   [ʾ-n-ʾ]   {pron. 1c.pl.}   (search: hnan)
 ḥnan (1) — we (1)
@@ -796,8 +798,9 @@ tarʿā (1) — the door (1)
 * tarʿā · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
 
 ܪܲ̈ܚܡܹܐ   [r-ḥ-m]   {noun m.pl.emph.}   (search: rahme)
-r̈aḥmē (1) — mercies (1)
+r̈aḥmē (2) — mercies (2)
 * dr̈aḥmē · "...the door of mercies to our prayer" (Ferial Slotha d'Sapra I, Line 4)
+* wr̈aḥmē · "And the eternal mercies of Your glorious Trinity" (Slotha d'Marmitha 4, Line 4)
 
 ܨܠܘܿܬܲܢ   [ṣ-l-ʾ]   {noun f.sg.emph. + 1cp suff.}   (search: slotan)
 ṣlōtan (1) — our prayer (1)
@@ -864,12 +867,14 @@ snī̈qē (1) — the needy (1)
 * ʿaḇdāẅhy · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 
 ܩܵ̇ܪܹܝܢ   [q-r-ʾ]   {Peal active ptcp. m.pl.abs.}   (search: qareyn)
-q^ārēyn (1) — call (1)
+q^ārēyn (2) — call (2)
 * dq^ārēyn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
+* dq^ārēyn · "Who call and beseech You" (Slotha d'Marmitha 4, Line 6)
 
 ܡܸܬ݂ܟܲܫܦܝܼܢ   [k-š-p]   {Ethpaal ptcp. m.pl.abs.}   (search: metkashpin)
-meṯkašpīn (1) — beseech (1)
+meṯkašpīn (2) — beseech (2)
 * wmeṯkašpīn · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
+* wmeṯkašpīn · "Who call and beseech You" (Slotha d'Marmitha 4, Line 6)
 
 ܠܹܗ   [l]   {prep. + 3ms suff.}   (search: leh)
 lēh (2) — Him (1), itself (1)
@@ -889,9 +894,10 @@ mārā (1) — the Lord (1)
 * mārā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
 
 ܡܵܪܝ   [m-r-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: mary)
-māry (2) — my Lord (2)
+māry (3) — my Lord (3)
 * māry · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 * māry · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
+* māry · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
 
 ܡܩܲܕܡܵܢ̈   [q-d-m]   {Pael active ptcp. f.pl.abs.}   (search: mqadman)
 mqadmān̈ (1) — early they come (1)
@@ -1034,12 +1040,14 @@ naseq (1) — we lift up (1)
 * naseq · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 4)
 
 ܬܠܝܼܬ݂ܵܝܘܼܬ݂ܵܟ݂   [t-l-t]   {noun f.sg.emph. + 2ms suff.}   (search: tlitayutak)
-tlīṯāyūṯāḵ (1) — Your...Trinity (1)
+tlīṯāyūṯāḵ (2) — Your...Trinity (2)
 * laṯlīṯāyūṯāḵ · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
+* daṯlīṯāyūṯāḵ · "And the eternal mercies of Your glorious Trinity" (Slotha d'Marmitha 4, Line 4)
 
 ܡܫܲܒܲܚܬܵܐ   [š-b-ḥ]   {adj. f.sg.emph.}   (search: mshabahta)
-mšabaḥtā (1) — glorious (1)
+mšabaḥtā (2) — glorious (2)
 * mšabaḥtā · "...to Your glorious Trinity in every moment" (Ferial Slotha d'Ramsha, Line 4)
+* mšabaḥtā · "And the eternal mercies of Your glorious Trinity" (Slotha d'Marmitha 4, Line 4)
 
 ܟܠܥܸܕܵܢ   [k-l + ʿ-d-n]   {quant. + noun m.sg.abs.}   (search: kledan)
 klʿedān (1) — every moment (1)
@@ -1506,3 +1514,51 @@ bnaÿ (1) — sons of (1)
 ܐܲܕ݂ܘܿܡ   [prop. noun]   {prop. n.}   (search: adom)
 ʾaḏōm (1) — Edom (1)
 * ʾaḏōm · "As the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
+
+ܣܲܒ݂ܪܵܟ݂   [s-b-r]   {noun m.sg.emph. + 2ms suff.}   (search: sabrak)
+saḇrāḵ (1) — Your hope (1)
+* saḇrāḵ · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
+
+ܫܲܪܲܪ   [š-r-r]   {Pael impv. 2m.sg.}   (search: sharar)
+šarar (1) — establish (1)
+* šarar · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
+
+ܒܲܢ   [b]   {prep. + 1cp suff.}   (search: ban)
+ban (1) — in us (1)
+* ban · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
+
+ܥܘܼܕ݂ܪܵܢܵܟ݂   [ʿ-d-r]   {noun m.sg.emph. + 2ms suff.}   (search: udranak)
+ʿūḏrānāḵ (1) — Your help (1)
+* wʿūḏrānāḵ · "Fill our soul with Your help" (Slotha d'Marmitha 4, Line 2)
+
+ܡܠܝܼ   [m-l-ʾ]   {Pael impv. 2m.sg.}   (search: mli)
+mlī (1) — fill (1)
+* mlī · "Fill our soul with Your help" (Slotha d'Marmitha 4, Line 2)
+
+ܢܲܦ̮ܫܲܢ   [n-p-š]   {noun f.sg.emph. + 1cp suff.}   (search: napshan)
+nap̮šan (1) — our soul (1)
+* nap̮šan · "Fill our soul with Your help" (Slotha d'Marmitha 4, Line 2)
+
+ܛܲܝܒ݁ܘܼܬ݂ܵܟ݂   [ṭ-w-b]   {noun f.sg.emph. + 2ms suff.}   (search: taybutak)
+ṭayḃūṯāḵ (1) — Your grace (1)
+* wṭayḃūṯāḵ · "Let Your grace absolve our sins" (Slotha d'Marmitha 4, Line 3)
+
+ܬܚܲܣܸܐ   [ḥ-s-ʾ]   {Pael impf. 3f.sg.}   (search: thase)
+tḥaseʾ (1) — let...absolve (1)
+* tḥaseʾ · "Let Your grace absolve our sins" (Slotha d'Marmitha 4, Line 3)
+
+ܡܬ݂ܘܿܡܵܝܹ̈ܐ   [m-t-m]   {adj. m.pl.emph.}   (search: mtomaye)
+mṯōmāÿē (1) — eternal (1)
+* mṯōmāÿē · "And the eternal mercies of Your glorious Trinity" (Slotha d'Marmitha 4, Line 4)
+
+ܢܹܐܬ݂ܘܿܢ   [ʾ-t-ʾ]   {Peal impf. 3m.pl.}   (search: neton)
+nēʾṯōn (1) — let them come (1)
+* nēʾṯōn · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
+
+ܐܝܼܵܠܵܐ   [—]   {noun m.sg.emph.}   (search: iala)
+ʾīālā (1) — aid (1)
+* lʾīālā · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
+
+ܣܵ̇ܓ݂ܘܿܕܲܝ̈ܟ   [s-g-d]   {noun m.pl.emph. + 2ms suff.}   (search: sagodayk)
+s^āḡōḏaÿk (1) — Your reverencers (1)
+* ds^āḡōḏaÿk · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
