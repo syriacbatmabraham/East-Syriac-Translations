@@ -23,9 +23,15 @@ class DoubleVowelTests(unittest.TestCase):
         self.assertEqual(reverse_transliterate(expected).text, normalized.text)
         self.assertEqual(transliterate_text(reverse_transliterate(expected).text).text, expected)
 
-    def assert_permutations_converge(self, left: str, right: str, expected_source: str, expected: str) -> None:
-        first = normalize_text(left + right)
-        second = normalize_text(right + left)
+    def assert_permutations_converge(
+        self,
+        source_a: str,
+        source_b: str,
+        expected_source: str,
+        expected: str,
+    ) -> None:
+        first = normalize_text(source_a)
+        second = normalize_text(source_b)
         self.assertFalse(first.flags)
         self.assertFalse(second.flags)
         self.assertEqual(first.text, expected_source)
@@ -49,28 +55,33 @@ class DoubleVowelTests(unittest.TestCase):
 
     def test_same_class_220_vowel_order_is_canonicalized(self):
         self.assert_permutations_converge(
-            "ܡ\u0738", "\u0739ܢ", "ܡ\u0738\u0739ܢ", "meēn"
+            "ܡ\u0738\u0739ܢ",
+            "ܡ\u0739\u0738ܢ",
+            "ܡ\u0738\u0739ܢ",
+            "meēn",
         )
 
     def test_same_class_230_vowel_order_is_canonicalized(self):
         self.assert_permutations_converge(
-            "ܡ\u0732", "\u0735ܢ", "ܡ\u0732\u0735ܢ", "maān"
+            "ܡ\u0732\u0735ܢ",
+            "ܡ\u0735\u0732ܢ",
+            "ܡ\u0732\u0735ܢ",
+            "maān",
         )
 
     def test_same_class_carrier_vowel_order_is_canonicalized(self):
-        yodh_a = normalize_text("ܝ\u073c\u0738ܢ").text
-        yodh_b = normalize_text("ܝ\u0738\u073cܢ").text
-        self.assertEqual(yodh_a, yodh_b)
-        self.assertEqual(yodh_a, "ܝ\u073c\u0738ܢ")
-        self.assertEqual(transliterate_text(yodh_a).text, "īen")
-        self.assertEqual(reverse_transliterate("īen").text, yodh_a)
-
-        waw_a = normalize_text("ܘ\u073f\u0732ܢ").text
-        waw_b = normalize_text("ܘ\u0732\u073fܢ").text
-        self.assertEqual(waw_a, waw_b)
-        self.assertEqual(waw_a, "ܘ\u073f\u0732ܢ")
-        self.assertEqual(transliterate_text(waw_a).text, "ōan")
-        self.assertEqual(reverse_transliterate("ōan").text, waw_a)
+        self.assert_permutations_converge(
+            "ܝ\u073c\u0738ܢ",
+            "ܝ\u0738\u073cܢ",
+            "ܝ\u073c\u0738ܢ",
+            "īen",
+        )
+        self.assert_permutations_converge(
+            "ܘ\u073f\u0732ܢ",
+            "ܘ\u0732\u073fܢ",
+            "ܘ\u073f\u0732ܢ",
+            "ōan",
+        )
 
     def test_final_mater_shorthand_with_double_vowel_state(self):
         self.assert_round_trip("ܡ\u0738\u0735", "meă")
