@@ -126,7 +126,11 @@ for _key in UNIT_REVERSE:
     UNIT_KEYS_BY_FIRST.setdefault(_key[0], [])
     UNIT_KEYS_BY_FIRST[_key[0]].append(_key)
 UNIT_KEYS_BY_FIRST = {
-    first: tuple(sorted(keys, key=len, reverse=True))
+    first: tuple(keys)
+    for first, keys in UNIT_KEYS_BY_FIRST.items()
+}
+UNIT_MAX_KEY_LENGTH_BY_FIRST = {
+    first: max(len(key) for key in keys)
     for first, keys in UNIT_KEYS_BY_FIRST.items()
 }
 
@@ -134,9 +138,15 @@ UNIT_KEYS_BY_FIRST = {
 def _parse_unit(s: str, pos: int) -> tuple[_UnitSpec, int]:
     if pos >= len(s):
         raise TransliterationError("invalid-canonical-unit", "Expected a canonical transliteration unit at end of input.")
-    for key in UNIT_KEYS_BY_FIRST.get(s[pos], ()):
-        if s.startswith(key, pos):
-            return UNIT_REVERSE[key], pos + len(key)
+    first=s[pos]
+    max_length=UNIT_MAX_KEY_LENGTH_BY_FIRST.get(first)
+    if max_length is None:
+        raise TransliterationError("invalid-canonical-unit", f"No canonical transliteration unit begins at position {pos}.")
+    end_max=min(len(s), pos + max_length)
+    for end in range(end_max, pos, -1):
+        spec=UNIT_REVERSE.get(s[pos:end])
+        if spec is not None:
+            return spec, end
     raise TransliterationError("invalid-canonical-unit", f"No canonical transliteration unit begins at position {pos}.")
 
 

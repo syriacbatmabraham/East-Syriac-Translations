@@ -229,12 +229,14 @@ class TransliterationTests(unittest.TestCase):
                 self.assert_round_trip(source, expected=expected)
 
     def test_every_generated_canonical_unit_round_trips(self):
+        # This remains exhaustive over UNIT_REVERSE. Avoid constructing nearly
+        # two hundred thousand unittest subTest contexts now that verified
+        # double-vowel units expand the grammar substantially.
         for canonical, spec in UNIT_REVERSE.items():
-            with self.subTest(canonical=canonical):
-                has_between = BETWEEN_ABOVE in spec.marks or BETWEEN_BELOW in spec.marks
-                text = canonical + ("n" if has_between else "")
-                reverse = reverse_transliterate(text)
-                self.assertEqual(transliterate_text(reverse.text).text, text)
+            has_between = BETWEEN_ABOVE in spec.marks or BETWEEN_BELOW in spec.marks
+            text = canonical + ("n" if has_between else "")
+            reverse = reverse_transliterate(text)
+            self.assertEqual(transliterate_text(reverse.text).text, text, canonical)
 
     def test_unit_grammar_has_no_prefix_segmentation_collision(self):
         starts = {key[0] for key in UNIT_REVERSE}
