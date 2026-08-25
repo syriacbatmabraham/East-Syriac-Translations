@@ -48,19 +48,19 @@ def _allowed_on_marks(base: str, intrinsic: tuple[str,...]) -> list[tuple[str,tu
 
 
 def _ordered_class_b_sequences(max_length: int) -> tuple[tuple[str,...], ...]:
+    # §5.1 gives every same-CCC vowel an explicit rank. Generate only that
+    # canonical order; raw source permutations converge during normalization.
     below = (
         (),
         (ZLAMA_PSHIQA,),
         (ZLAMA_QASHYA,),
         (ZLAMA_PSHIQA, ZLAMA_QASHYA),
-        (ZLAMA_QASHYA, ZLAMA_PSHIQA),
     )
     above = (
         (),
         (PTHAHA,),
         (ZQAPHA,),
         (PTHAHA, ZQAPHA),
-        (ZQAPHA, PTHAHA),
     )
     return tuple(
         lower + upper
