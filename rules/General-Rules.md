@@ -44,7 +44,8 @@ A text falling outside the four classes above has its source of record designate
 - **Liturgics** — the designated liturgical source remains controlling. Material deliberately supplied from an Assyrian Hudra or another established liturgical witness may enter as explicit editorial apparatus under §9.1; the supplying witness is named and the addition never masquerades as wording of the source of record.
 - **Scripture other than Psalms** — begin with Mosul, but collate where a textual, inter-Testamental, patristic, liturgical, or harmonization question is material. A reading may be adopted from another ancient Syriac witness or revision under §4.2. Mosul's displaced reading and the evidence for the adopted reading must remain visible in the apparatus/provenance record.
 - **Witnesses and majority** — one text may exist in several digital or manuscript witnesses differing in pointing, codepoint convention, or wording. Never resolve a substantive reading by raw majority vote. Normalize per Translit §16 before comparing, or encoding differences masquerade as textual ones.
-- **Audit target** — for Psalms and liturgics, the audit runs against the source of record plus any explicitly adopted apparatus. For non-Psalm Scripture, audit Mosul as the baseline and every witness that supplies an adopted departure. Pointing or wording absent from the supplying witness may not be silently invented.
+- **Page audit and canonical Syriac** — the user performs the page-against-source audit. The assistant normalizes the supplied Syriac and reports the letter-by-letter page-state required by §7 and Translit §16; the user then corrects or confirms it against the page. Once the user confirms the normalized Syriac and its mechanically derived canonical transliteration, that pair is authoritative for subsequent translation, Glossary, and repository work. Do not reopen the source page unless the user explicitly directs a new page audit or a later internal contradiction requires the canonical Syriac itself to be questioned.
+- **Audit target** — before Syriac confirmation, the user audits the normalized text against the governing source or adopted apparatus. After Syriac confirmation, project translation and Glossary audits run against the confirmed canonical Syriac and canonical transliteration. For non-Psalm Scripture, every adopted departure from Mosul remains documented under §4.2.
 
 ## 2. Transliteration Policy
 Governed in full by the Transliteration Rules. Apply silently.
@@ -81,23 +82,20 @@ This provision does **not** make Psalms or liturgical texts eclectic. Their gove
 ## 5. English Style
 Elevated, formal, readable, prayer-capable, not artificially archaic. Do not flatten strong theological language.
 
-## 6. Tense
-Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or prayer must be cautious and justified.
+## 6. Sense
+Preserve the Syriac sense. Do not force Syriac morphological tense, aspect, or verbal category into a one-to-one English tense. The morphology remains recorded exactly in the Glossary; the English renders its contextual force. Any interpretive shift in Psalms or prayer must be cautious and justified.
 
 ## 7. Working Sequence
-1. Read the text given
-2. Establish the Syriac: confirm the governing source from §1.1; for non-Psalm Scripture begin from Mosul and determine whether §4.2 requires broader textual collation before fixing the canonical line
-3. **Codepoint audit of the source text(s) supplying the canonical Syriac, before transliterating** (Translit §16). Non-negotiable. Run silently; report only what it surfaces
-4. Give canonical transliteration
-5. Review every token, in order, repeats included, under the **Word-by-Word Standard** — a repeat is often pointed differently
-6. Check each word against Glossary entries, including relevant related forms and compounds
-7. Gather references and evidence under §12 and Word-by-Word §§3–5
-8. Present every token's evidence and status under Word-by-Word §§3–8
-9. Present suggested render
-10. Lay out anything of note
-11. Flag anything erroneous, ambiguous, or concerning
-12. Enter glossary entries only after the English is confirmed
-13. Run the check suite (§11)
+1. **Receive the Syriac.** The user supplies the source text to be prepared.
+2. **Normalize and expose the page-state.** Normalize mechanically under Translit §16 and return the normalized Syriac together with the required letter-by-letter list of every letter and the marks currently carried by it. Do not treat this output as page-confirmed.
+3. **User page audit.** The user compares that normalized/page-state output against the governing page and supplies every correction needed.
+4. **Confirm the Syriac layer.** Apply the user's corrections, return the updated normalized Syriac and its mechanically derived canonical transliteration, and obtain the user's confirmation. This is the **Syriac confirmation**: the confirmed script and transliteration become the authoritative textual basis for all later translation work (§1.2; §9.2).
+5. **Begin word-by-word only when prompted.** The user selects the first line or lines. Review every token in order under the **Word-by-Word Standard**, including repeats where relevant.
+6. **Translate slowly through the text.** For each working unit, check existing Glossary precedent, gather external evidence under §12 and Word-by-Word §§3–5, present the evidence/status, suggest a render, and flag material ambiguity or concern. Continue clause by clause until the text is complete.
+7. **Confirm the English text.** Once every line is settled, present the whole translation for the user's confirmation. This is the **English confirmation**; do not build the new Glossary entries before it.
+8. **Draft Glossary entries.** After English confirmation, draft every required new or updated Glossary entry, phrase entry, count, rendering, morphology, root, and citation context. Present the draft to the user without committing it.
+9. **Confirm the Glossary entries.** Incorporate the user's corrections and obtain approval of the Glossary draft. This completes the second confirmation layer: settled English plus approved Glossary entries.
+10. **Commit and validate atomically.** Add or update the complete three-block text, source registry entry where needed, approved Glossary entries, and any required major-decision record together; then run the full check suite (§11). Only the passing repository state is citable as a repository-confirmed text.
 
 ## 8. Standard Clause Response
 1. Syriac line
@@ -108,7 +106,7 @@ Preserve the Syriac tense. Past narrative stays past. Any shift in Psalms or pra
 
 ## 9. Project Files
 
-**Glossary** (the concordance), **General Rules** (this file), **Transliteration Rules**, **Word-by-Word Standard**.
+**Glossary** (the concordance), **General Rules** (this file), **Transliteration Rules**, **Word-by-Word Standard**, and **Major Interpretive Decisions** (`decisions/Major-Interpretive-Decisions.md`).
 
 **Citing a section always names its file** — "Translit §10", "General Rules §10", "Word-by-Word §4". Section numbers are stable; reserved sections are not renumbered.
 
@@ -136,11 +134,26 @@ Three blocks in fixed order: pointed Syriac, canonical transliteration, English.
 
 Rich-text formats are never the authoritative copy — they can split a letter from its combining marks. Display is separate from storage: the file is correct regardless of whether a font can draw every mark.
 
-### 9.2 Draft and confirmed
+### 9.2 Confirmation states
 
-A text under work is a **draft** and is not citable: no entry may name one. It becomes confirmed when its governing source or baseline is designated (§1.1), every adopted textual departure is documented under §4.2, its codepoint audit is run (§7), its blocks round-trip (§11.11), its English is settled, and the check suite passes. Entries are built only then, and a confirmed text is not edited without rerunning §11.
+There are two substantive confirmation layers before final repository confirmation.
 
-The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; every confirmed filename has one registry entry containing its stable `citation_label` and `source_of_record`. The source-of-record field is designated per §1.1 and interpreted according to the material-specific rules there; accepted departures or additions are recorded as editorial apparatus rather than silently redefining the source. The deterministic confirmed-corpus checker verifies the filename/registry correspondence and source designation.
+1. **Syriac confirmation.** After normalization, the assistant returns the letter-by-letter page-state and the user audits it against the page. The user then confirms the corrected normalized Syriac together with its mechanically derived canonical transliteration. That confirmed pair is thereafter the authoritative textual basis for translation and Glossary work; it is not to be re-collated against a page unless the user explicitly reopens the Syriac layer.
+2. **English and Glossary confirmation.** Translation proceeds from the confirmed Syriac. When all English lines are settled, the user confirms the complete English translation. Only then are new Glossary entries drafted. The user reviews and confirms those entries before any repository commit.
+
+Before the final commit, the completed text remains a working text and is not a citable Glossary source. The complete three-block text, source registry entry where required, approved Glossary entries, and any material decision record are committed together. The full check suite then validates the combined repository state. A passing state is **repository-confirmed** and citable; mechanical validation is not a third substantive human confirmation.
+
+A repository-confirmed text is not edited without reopening the affected confirmation layer and rerunning §11. A Syriac change reopens the Syriac layer and everything downstream from it. An English-only change reopens the English/Glossary layer and every affected Glossary decision.
+
+The text files carry no header of their own, which would break the three-block parse. Provenance is stored separately in `sources/sources.yaml`; every repository-confirmed filename has one registry entry containing its stable `citation_label` and `source_of_record`. The source-of-record field is designated per §1.1 and interpreted according to the material-specific rules there; accepted departures or additions are recorded as editorial apparatus rather than silently redefining the source. The deterministic confirmed-corpus checker verifies the filename/registry correspondence and source designation.
+
+### 9.3 Major interpretive decisions
+
+`decisions/Major-Interpretive-Decisions.md` preserves only **material settled interpretive decisions that a later translator or adversarial audit is reasonably likely to reopen**. It is not a research notebook, does not duplicate ordinary Glossary decisions, and never replaces the evidence required by §12 when genuinely new evidence appears.
+
+Each entry is a short bullet naming the text and line or lines, the date, the settled choice, and a one- or two-sentence reason. If the original date of a legacy decision is not securely known, record the date on which it was **affirmed** rather than inventing an earlier date. When substantive new evidence warrants reopening a recorded decision, investigate it and obtain the user's judgment before altering the text; record the new dated decision so that the reason for the change remains visible.
+
+A decision recorded here is a working premise in later translation and audit work. Do not reopen it merely because another translation tradition, lexicon gloss, or smoother English alternative exists; reopen it only when materially new Syriac, textual, grammatical, patristic, or project evidence bears against it.
 
 ## 10. Glossary Principle
 
