@@ -138,7 +138,8 @@ def _validate_forward_input(text: str) -> None:
     if norm.text != text or norm.flags:
         raise TransliterationError("input-not-normalized", "Forward transliteration requires clean normalized Syriac input.")
     audit = inspect_normalized_text(text)
-    if audit.issues:
+    blocking = [issue for issue in audit.issues if issue.code != "multiple-vowels-on-carrier"]
+    if blocking:
         raise TransliterationError("invalid-page-state", "Forward transliteration refuses contradictory normalized page-states.")
 
 
@@ -171,6 +172,11 @@ def _render_core(tok: _SourceToken, final_letter: bool, has_suppressed_mater: bo
         raise TransliterationError("dual-one-letter-lines", "A carrier with one-letter lines both above and below has no canonical notation.")
     if MARHETANA_ABOVE in marks and MARHETANA_BELOW in marks:
         raise TransliterationError("dual-marhetana", "A carrier beginning spans both above and below has no canonical notation.")
+    if tok.base == WAW and RWAHA in marks and HBASA_ESASA_DOTTED in marks:
+        raise TransliterationError(
+            "conflicting-carrier-vowels",
+            "Waw cannot carry both Class-A carrier-vowel states in the current canonical notation.",
+        )
     prefix = "ᵃ" if SUPERSCRIPT_ALAPH in marks else ""
     marks.discard(SUPERSCRIPT_ALAPH)
     marks.discard(OCCULTANS_ABOVE); marks.discard(OCCULTANS_BELOW)
@@ -189,18 +195,22 @@ def _render_core(tok: _SourceToken, final_letter: bool, has_suppressed_mater: bo
     if GENERIC_DOT_ABOVE in remaining:
         on += "^"; remaining.remove(GENERIC_DOT_ABOVE)
 
-    vowel=""
-    found=[m for m in CLASS_B if m in remaining]
-    if len(found)>1:
-        raise TransliterationError("multiple-vowels", "More than one Class-B vowel survived validation.")
-    if found:
-        m=found[0]; remaining.remove(m)
-        if carrier_vowel:
-            raise TransliterationError("carrier-plus-class-b-vowel", "Carrier-borne vowel also carries a Class-B vowel.")
-        if final_letter and not has_suppressed_mater and m in EXCEPTION_VOWEL:
-            vowel=EXCEPTION_VOWEL[m]
-        else:
-            vowel=CLASS_B[m]
+    found=[m for m in tok.marks if m in CLASS_B and m in remaining]
+    total_vowels = len(found) + (1 if carrier_vowel else 0)
+    if total_vowels > 2:
+        raise TransliterationError(
+            "too-many-vowels-on-carrier",
+            "More than two distinct vowel page-states occur on one carrier; no attested canonical rule covers that state.",
+        )
+    for m in found:
+        remaining.remove(m)
+    vowel_parts=[CLASS_B[m] for m in found]
+    if final_letter and not has_suppressed_mater:
+        eligible=[i for i,m in enumerate(found) if m in EXCEPTION_VOWEL]
+        if eligible:
+            i=eligible[-1]
+            vowel_parts[i]=EXCEPTION_VOWEL[found[i]]
+    vowel="".join(vowel_parts)
 
     between=""
     if BETWEEN_BELOW in remaining:

@@ -16,7 +16,7 @@ from .transliteration import (
     MARHETANA_TIE_ABOVE, MARHETANA_TIE_BELOW,
     ReverseTransliterationResult,
     TransliterationError, CONSONANT, BGDKPT_BARE, BGDKPT_HARD,
-    BGDKPT_SOFT, transliterate_text, _ParsedToken,
+    BGDKPT_SOFT, CLASS_B, EXCEPTION_VOWEL, transliterate_text, _ParsedToken,
 )
 
 
@@ -47,6 +47,48 @@ def _allowed_on_marks(base: str, intrinsic: tuple[str,...]) -> list[tuple[str,tu
     ]
 
 
+def _ordered_class_b_sequences(max_length: int) -> tuple[tuple[str,...], ...]:
+    below = (
+        (),
+        (ZLAMA_PSHIQA,),
+        (ZLAMA_QASHYA,),
+        (ZLAMA_PSHIQA, ZLAMA_QASHYA),
+        (ZLAMA_QASHYA, ZLAMA_PSHIQA),
+    )
+    above = (
+        (),
+        (PTHAHA,),
+        (ZQAPHA,),
+        (PTHAHA, ZQAPHA),
+        (ZQAPHA, PTHAHA),
+    )
+    return tuple(
+        lower + upper
+        for lower in below
+        for upper in above
+        if len(lower) + len(upper) <= max_length
+    )
+
+
+def _vowel_options(max_length: int) -> tuple[tuple[str,tuple[str,...],str | None], ...]:
+    options: list[tuple[str,tuple[str,...],str | None]] = []
+    for marks in _ordered_class_b_sequences(max_length):
+        if not marks:
+            options.append(("", (), None))
+            continue
+        parts=[CLASS_B[mark] for mark in marks]
+        normal="".join(parts)
+        options.append((normal, marks, normal))
+        eligible=[index for index,mark in enumerate(marks) if mark in EXCEPTION_VOWEL]
+        if eligible:
+            index=eligible[-1]
+            exception_parts=parts.copy()
+            exception_parts[index]=EXCEPTION_VOWEL[marks[index]]
+            exception="".join(exception_parts)
+            options.append((exception, marks, exception))
+    return tuple(options)
+
+
 def _build_unit_reverse() -> dict[str,_UnitSpec]:
     reverse: dict[str,_UnitSpec]={}
     visual_options=[
@@ -57,21 +99,19 @@ def _build_unit_reverse() -> dict[str,_UnitSpec]:
         ("\u0324\u032e\u0308",(TWO_DOTS_BELOW,BREVE_BELOW,SYAME)),
     ]
     between_options=[("",()),("__",(BETWEEN_BELOW,)),("^^",(BETWEEN_ABOVE,)),("__^^",(BETWEEN_BELOW,BETWEEN_ABOVE))]
-    vowels=[("",None,None),("a",PTHAHA,"a"),("ā",ZQAPHA,"ā"),("e",ZLAMA_PSHIQA,"e"),("ē",ZLAMA_QASHYA,"ē"),("ă",ZQAPHA,"ă"),("ĕ",ZLAMA_QASHYA,"ĕ")]
     for base_lat,base,intrinsic in _base_variants():
         carrier_vowel=RWAHA in intrinsic or HBASA_ESASA_DOTTED in intrinsic
+        vowels=_vowel_options(1 if carrier_vowel else 2)
         for vis_lat,vis_marks in visual_options:
             decorated=unicodedata.normalize("NFC",base_lat+vis_lat)
             for on_lat,on_marks in _allowed_on_marks(base,intrinsic):
-                for vowel_lat,vowel_mark,vowel_token in vowels:
-                    if carrier_vowel and vowel_mark is not None:
-                        continue
+                for vowel_lat,vowel_marks,vowel_token in vowels:
                     for between_lat,between_marks in between_options:
-                        if vowel_token in {"ă", "ĕ"} and between_marks:
+                        if vowel_token is not None and any(ch in vowel_token for ch in "ăĕ") and between_marks:
                             continue
                         for prefix,prefix_marks in (("",()),("ᵃ",(SUPERSCRIPT_ALAPH,))):
                             latin=unicodedata.normalize("NFC",prefix+decorated+on_lat+vowel_lat+between_lat)
-                            marks=prefix_marks+intrinsic+vis_marks+on_marks+(() if vowel_mark is None else (vowel_mark,))+between_marks
+                            marks=prefix_marks+intrinsic+vis_marks+on_marks+vowel_marks+between_marks
                             spec=_UnitSpec(latin,base,marks,vowel_token)
                             old=reverse.get(latin)
                             if old is not None and old!=spec:
@@ -267,10 +307,11 @@ def reverse_transliterate(text: str) -> ReverseTransliterationResult:
     for word,inds in letters_by_word.items():
         last=inds[-1]
         for idx in inds:
-            vt=toks[idx].vowel_token
-            if vt in {"ă","ĕ"} and idx!=last:
-                raise TransliterationError("final-vowel-exception-not-final",f"{vt} is legal only on the final orthographic letter of a word.")
-        if toks[last].vowel_token in {"ā","ē"}:
+            vt=toks[idx].vowel_token or ""
+            if any(ch in vt for ch in "ăĕ") and idx!=last:
+                raise TransliterationError("final-vowel-exception-not-final",f"{vt} contains a final-vowel exception but is not on the final orthographic letter of a word.")
+        last_vowels=toks[last].vowel_token or ""
+        if not any(ch in last_vowels for ch in "ăĕ") and any(ch in last_vowels for ch in "āē"):
             insert_after.add(last)
 
     # Reconstruct source tokens. Span/separate grouping is now in the Syriac

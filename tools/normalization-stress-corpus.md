@@ -14,6 +14,7 @@ The normalization torture test is complete when all of the following are true:
 6. Editorial apparatus and word-boundary behavior are exercised.
 7. Any arbitrary non-combining codepoint outside the licensed source grammar is retained **and flagged**, never silently admitted.
 8. Adjacent U+0747/U+0748 one-letter marks are surfaced as a page check at ingestion because a raw digital witness may have used repetition to approximate a printed span; canonical confirmed storage itself distinguishes the two states directly.
+9. A page-confirmed two-vowel carrier remains fully represented and reversible: the audit still surfaces the unusual stack, while transliteration preserves rather than repairs it.
 
 `tools/tests/test_normalization_coverage.py` freezes the Unicode/source boundary programmatically. Focused normalization tests and the transliteration boundary tests remain as permanent regressions.
 
@@ -48,6 +49,7 @@ Synthetic carriers combine the legal marks rather than isolating each one in a f
 
 - pṯāḥā, zqāpā, zlāmā pšīqā, zlāmā qašyā;
 - waw `ō`, waw `ū`, yodh `ī`;
+- **verified two-vowel stacks**, including Class-A + Class-B `ܝܼܵ` → `īā` and two distinct Class-B signs on one carrier;
 - syāmē;
 - superscript ʾālap̄;
 - generic point above/below on every carrier class, including the Psalm 11 states waw + generic point below and waw + zqāpā + generic point above + syāmē;
@@ -58,7 +60,7 @@ Synthetic carriers combine the legal marks rather than isolating each one in a f
 - direct two-letter spans above/below (U+035E/U+035F);
 - hostile mark order across CCC 36/220/230/233/234.
 
-Expected output always satisfies Transliteration Rules §5.1 and NFC.
+Expected output always satisfies Transliteration Rules §5.1 and NFC. A two-vowel carrier may still produce the nonblocking `multiple-vowels-on-carrier` audit diagnostic; page verification, not deletion of one mark, resolves whether the state is confirmed.
 
 ## T4 — positional/mater pass-through
 
@@ -69,7 +71,8 @@ Normalization deliberately does **not** infer final matres. Small boundary token
 - final zlāmā qašyā without written ʾālap̄;
 - final zlāmā qašyā + written ʾālap̄;
 - zlāmā qašyā + yodh;
-- a final written ʾālap̄ serving as the second base of a U+035E/U+035F span, which must remain explicit in later transliteration.
+- a final written ʾālap̄ serving as the second base of a U+035E/U+035F span, which must remain explicit in later transliteration;
+- a final two-vowel carrier with and without its written bare ʾālap̄, proving that the existing `ă`/`ĕ` exception mechanism remains reversible for the whole cluster.
 
 The page-state report shows only what is literally encoded. The later transliteration layer applies `ā/ă` and `ē/ĕ` only where the span rule does not require the second base to remain visible.
 
@@ -97,15 +100,16 @@ Every assigned Syriac-block letter outside the project inventory is retained and
 
 The catch-all is tested with unassigned U+074B/U+074C, Greek and Cyrillic homoglyphs, and emoji. Latin letters/digits outside parenthesized apparatus retain the more specific whole-file safety flag.
 
-## T7 — malformed clusters and impossible normalized states
+## T7 — malformed clusters, audit flags, and blocking normalized states
 
 Source-level negative cases include orphan marks, duplicate identical normalized marks, contradictory explicit semantic states, and BOM. Distinct point identities at the same vertical side are not collapsed merely because their glyphs are dot-like.
 
 The post-normalization invariant checker is also attacked directly so later code cannot manufacture an invalid state behind the normalizer. It must reject or flag:
 
 - qūššāyā + rūkkākā on one bgdkpt carrier;
-- multiple East Syriac vowels on one carrier;
-- waw carrying both `ō` and `ū`;
+- **more than one East Syriac vowel on one carrier**, as the `multiple-vowels-on-carrier` page-audit diagnostic;
+- waw carrying both Class-A `ō` and `ū`, which remains specifically contradictory and blocking;
+- three or more vowel page-states on one carrier, which remain unsupported and blocking until an attested need is specified;
 - duplicate normalized marks;
 - qūššāyā/rūkkākā on invalid carriers;
 - U+073C on an invalid carrier;
@@ -115,7 +119,7 @@ The post-normalization invariant checker is also attacked directly so later code
 - U+035E and U+035F beginning on the same base (`dual-marhetana-spans-unrepresentable`);
 - consecutive same-direction U+035E/U+035F starts that would overlap on the middle base (`overlapping-marhetana-spans`).
 
-These are blocking page states rather than occasions to invent nested or overlapping syntax.
+The generic `multiple-vowels-on-carrier` diagnostic is **not itself a transliteration ban**. The attested regression `ܐܝܼܵܠܵܐ` must normalize unchanged and round-trip as `ʾīālā`; a synthetic two-Class-B state likewise proves that equal-class mark order remains reversible. The other specifically contradictory or presently unrepresented cases above remain blocking page states rather than occasions to invent nested syntax or silently repair the source.
 
 ## T8 — one-letter adjacency versus direct spans
 
@@ -142,6 +146,6 @@ The former span/separate problem no longer belongs in this category. Unicode U+0
 
 ## Why this counts as exhaustive
 
-The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
+The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states including verified double-vowel stacks, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
 
 If a future witness reveals a new page-state or encoding, add the smallest case that represents it and retain it permanently as a regression test.

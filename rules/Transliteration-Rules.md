@@ -207,6 +207,22 @@ The inverse inserts the implied bare ʾālap̄ immediately after the final vowel
 
 **Two dots below is not always a vowel.** The same page position carries the mark of §17. Distinguish by shape: zlāmā is two dots level or angular; §17's mark is the two-dot mark that is neither.
 
+#### Verified double-vowel page-states
+
+A carrier may bear **two distinct East Syriac vowel page-states** when the audited page actually shows both. This is unusual and therefore remains a page-check condition, but it is not intrinsically contradictory and is not a reason to delete either mark after confirmation.
+
+Canonical serialization is mechanical:
+
+- a Class-A carrier-vowel symbol (`ī`, `ō`, `ū`) is written once, followed by the Class-B vowel sign on that same carrier;
+- two distinct Class-B signs on one carrier are written consecutively in their normalized Syriac mark order (§5.1);
+- the attested spelling `ܐܝܼܵܠܵܐ` therefore gives `ʾīālā`, with `ܝܼܵ` → `īā`.
+
+The final-mater convention applies to the vowel cluster as a whole. Where a final double-vowel carrier contains zqāpā or zlāmā qašyā and has no following bare ʾālap̄, the last such eligible vowel receives the existing `ă`/`ĕ` exception form. With the bare final ʾālap̄ present, the ordinary `ā`/`ē` form remains and the ʾālap̄ is suppressed under the usual convention.
+
+The page-state checker continues to flag more than one vowel on one carrier so the source is deliberately verified before confirmation. That audit flag is **nonblocking for canonical transliteration once the page-state has been confirmed**. Duplicate identical marks remain invalid. Three or more vowel page-states on one carrier remain unsupported until attested and explicitly specified.
+
+One state is still specifically contradictory under the present grammar: the same waw carrying both Class-A U+073C (`ū`) and U+073F (`ō`). A single Latin carrier unit cannot encode that state injectively without colliding with two separate waw carriers, so it remains blocking pending an attested need and an explicit notation extension.
+
 ### 4.3 Diphthongs
 
 True diphthongs preserve the consonantal carrier: `aw`, `ay`.
@@ -263,7 +279,7 @@ For inversion to have one grammar, all marks belonging to one Syriac carrier ser
 1. superscript ʾālap̄ `ᵃ`, if present;
 2. the consonant/bgdkpt/carrier-vowel symbol with graphical combining marks (§§5, 17, 18), stored in NFC;
 3. §7 point **on** the carrier — below `_` before above `^` if both occur;
-4. the Class-B vowel, if present;
+4. the Class-B vowel sign or signs, if present, in normalized Syriac mark order (§§4.2, 5.1);
 5. §7 point **between** this carrier and the next — below `__` before above `^^` if both occur;
 6. a one-letter line wrapper (§6.1), if present, surrounds that complete one-letter unit;
 7. a two-letter span tie (§6.2), if present, follows the complete first unit and precedes the complete second unit: upper `⁀`, lower `‿`.
@@ -496,6 +512,8 @@ There is **no automatic conversion among these six marks**. An explicit semantic
 
 Multi-dot signs (U+0732 pṯāḥā, U+0735 zqāpā, U+0738 zlāmā pšīqā, U+0739 zlāmā qašyā) are unambiguous single codepoints and pass through unchanged.
 
+A normalized carrier with two distinct vowel signs is likewise retained exactly. The page-state audit flags it for human verification, but after confirmation the transliterator handles it under §4.2; ingestion never deletes one vowel merely because another is present. Duplicate identical marks, three-or-more vowel states, and the conflicting dual-Class-A waw state remain blocking as specified in §4.2 and §16.7.
+
 **Removed at ingestion, before any other step.** Out-of-scope characters (§10) never enter the stored line:
 
 - Syriac punctuation **U+0700–U+070D**, the abbreviation mark **U+070F**, and any Latin character standing in for them — a full stop, comma, colon, or semicolon inside a Syriac line is a typist's substitute, not the page's mark, and is removed on the same footing.
@@ -560,6 +578,8 @@ Blocking span states:
 A carrier bearing both one-letter U+0747 and U+0748 simultaneously likewise has no canonical notation in the present system and is blocking.
 
 Likewise, U+1DF8/U+1DFA on the final orthographic letter of a word with no following letter is not a coherent "between-letter" page-state and is blocking. (Where final `ā`/`ē` suppresses a written mater under §4.2, that ʾālap̄ is present in the normalized Syriac and therefore satisfies the following-letter requirement.)
+
+For vowel stacks, the generic `multiple-vowels-on-carrier` diagnostic is a page-audit flag rather than a blanket transliteration ban. After page confirmation, a two-vowel state is canonical under §4.2. **Three or more** vowel page-states on one carrier remain unsupported, and a waw carrying both Class-A U+073C (`ū`) and U+073F (`ō`) remains specifically contradictory and blocking under the current notation.
 
 ---
 
