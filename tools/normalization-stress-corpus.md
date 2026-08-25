@@ -15,8 +15,9 @@ The normalization torture test is complete when all of the following are true:
 7. Any arbitrary non-combining codepoint outside the licensed source grammar is retained **and flagged**, never silently admitted.
 8. Adjacent U+0747/U+0748 one-letter marks are surfaced as a page check at ingestion because a raw digital witness may have used repetition to approximate a printed span; canonical confirmed storage itself distinguishes the two states directly.
 9. A page-confirmed two-vowel carrier remains fully represented and reversible: the audit still surfaces the unusual stack, while transliteration preserves rather than repairs it.
+10. Every in-scope normalized combining mark has one explicit canonical rank, and hostile permutations converge to that single stored order before transliteration.
 
-`tools/tests/test_normalization_coverage.py` freezes the Unicode/source boundary programmatically. Focused normalization tests and the transliteration boundary tests remain as permanent regressions.
+`tools/tests/test_normalization_coverage.py` freezes the Unicode/source boundary programmatically. `tools/tests/test_mark_order.py` freezes the complete canonical mark rank and same-class permutation behavior. Focused normalization tests and the transliteration boundary tests remain as permanent regressions.
 
 ---
 
@@ -49,7 +50,7 @@ Synthetic carriers combine the legal marks rather than isolating each one in a f
 
 - pṯāḥā, zqāpā, zlāmā pšīqā, zlāmā qašyā;
 - waw `ō`, waw `ū`, yodh `ī`;
-- **verified two-vowel stacks**, including Class-A + Class-B `ܝܼܵ` → `īā` and two distinct Class-B signs on one carrier;
+- **verified two-vowel stacks**, including Class-A + Class-B `ܝܼܵ` → `īā`, two distinct Class-B signs from different combining classes, two same-CCC Class-B signs (`e+ē`, `a+ā`), and same-CCC carrier-vowel + Class-B pairs (`ī+e`, `ō+a`);
 - syāmē;
 - superscript ʾālap̄;
 - generic point above/below on every carrier class, including the Psalm 11 states waw + generic point below and waw + zqāpā + generic point above + syāmē;
@@ -58,9 +59,9 @@ Synthetic carriers combine the legal marks rather than isolating each one in a f
 - breve below;
 - one-letter lines above/below (U+0747/U+0748);
 - direct two-letter spans above/below (U+035E/U+035F);
-- hostile mark order across CCC 36/220/230/233/234.
+- hostile mark order across every relevant canonical combining class **36/218/220/228/230/233/234**, with every supported mark individually ranked inside that global sequence.
 
-Expected output always satisfies Transliteration Rules §5.1 and NFC. A two-vowel carrier may still produce the nonblocking `multiple-vowels-on-carrier` audit diagnostic; page verification, not deletion of one mark, resolves whether the state is confirmed.
+Expected output always satisfies Transliteration Rules §5.1 and NFC. A two-vowel carrier may still produce the nonblocking `multiple-vowels-on-carrier` audit diagnostic; page verification, not deletion of one mark, resolves whether the state is confirmed. Raw codepoint order never supplies meaning: two witnesses containing the same supported marks in different orders normalize to the same canonical Syriac first.
 
 ## T4 — positional/mater pass-through
 
@@ -119,7 +120,7 @@ The post-normalization invariant checker is also attacked directly so later code
 - U+035E and U+035F beginning on the same base (`dual-marhetana-spans-unrepresentable`);
 - consecutive same-direction U+035E/U+035F starts that would overlap on the middle base (`overlapping-marhetana-spans`).
 
-The generic `multiple-vowels-on-carrier` diagnostic is **not itself a transliteration ban**. The attested regression `ܐܝܼܵܠܵܐ` must normalize unchanged and round-trip as `ʾīālā`; a synthetic two-Class-B state likewise proves that equal-class mark order remains reversible. The other specifically contradictory or presently unrepresented cases above remain blocking page states rather than occasions to invent nested syntax or silently repair the source.
+The generic `multiple-vowels-on-carrier` diagnostic is **not itself a transliteration or normalization-write ban**. The attested regression `ܐܝܼܵܠܵܐ` must normalize unchanged and round-trip as `ʾīālā`. Synthetic regressions explicitly reverse same-CCC `e/ē`, `a/ā`, `ī/e`, and `ō/a` pairs and prove that both raw orders collapse to one normalized Syriac sequence and one canonical Latin string. The other specifically contradictory or presently unrepresented cases above remain blocking page states rather than occasions to invent nested syntax or silently repair the source.
 
 ## T8 — one-letter adjacency versus direct spans
 
@@ -146,6 +147,6 @@ The former span/separate problem no longer belongs in this category. Unicode U+0
 
 ## Why this counts as exhaustive
 
-The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states including verified double-vowel stacks, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), combining order, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
+The suite does not attempt every mathematical permutation of marks. It closes every finite interface where behavior can differ—canonical carriers, bgdkpt states, vowel states including verified double-vowel stacks and same-CCC permutations, direct single-point identities on every carrier class, special marks, source aliases that are actually licensed (such as the two-dots-below encodings), the complete explicit mark rank over CCC 36/218/220/228/230/233/234, every assigned U+0700–U+074F character, rule-named extra codepoints including U+035E/U+035F, editorial structure, known contradictory states, and a catch-all for genuinely new input.
 
-If a future witness reveals a new page-state or encoding, add the smallest case that represents it and retain it permanently as a regression test.
+If a future witness reveals a new page-state or encoding, add the smallest case that represents it, assign every newly supported mark an explicit place in §5.1, and retain it permanently as a regression test.

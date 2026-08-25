@@ -211,15 +211,17 @@ The inverse inserts the implied bare ʾālap̄ immediately after the final vowel
 
 A carrier may bear **two distinct East Syriac vowel page-states** when the audited page actually shows both. This is unusual and therefore remains a page-check condition, but it is not intrinsically contradictory and is not a reason to delete either mark after confirmation.
 
-Canonical serialization is mechanical:
+Canonical serialization is mechanical and begins with the normalized Syriac mark order of §5.1:
 
-- a Class-A carrier-vowel symbol (`ī`, `ō`, `ū`) is written once, followed by the Class-B vowel sign on that same carrier;
-- two distinct Class-B signs on one carrier are written consecutively in their normalized Syriac mark order (§5.1);
+- raw witnesses carrying the same two supported marks in different codepoint orders normalize to **one canonical Syriac sequence first**;
+- a Class-A carrier-vowel symbol (`ī`, `ō`, `ū`) is written once, followed in Latin by the Class-B vowel sign on that same carrier;
+- two distinct Class-B signs on one carrier are written consecutively in their normalized Syriac order;
+- this includes equal-CCC pairs such as `e+ē` and `a+ā`, and equal-CCC Class-A/Class-B pairs such as `ī+e` and `ō+a`;
 - the attested spelling `ܐܝܼܵܠܵܐ` therefore gives `ʾīālā`, with `ܝܼܵ` → `īā`.
 
 The final-mater convention applies to the vowel cluster as a whole. Where a final double-vowel carrier contains zqāpā or zlāmā qašyā and has no following bare ʾālap̄, the last such eligible vowel receives the existing `ă`/`ĕ` exception form. With the bare final ʾālap̄ present, the ordinary `ā`/`ē` form remains and the ʾālap̄ is suppressed under the usual convention.
 
-The page-state checker continues to flag more than one vowel on one carrier so the source is deliberately verified before confirmation. That audit flag is **nonblocking for canonical transliteration once the page-state has been confirmed**. Duplicate identical marks remain invalid. Three or more vowel page-states on one carrier remain unsupported until attested and explicitly specified.
+The page-state checker continues to flag more than one vowel on one carrier so the source is deliberately verified before confirmation. That diagnostic is **nonblocking for normalization persistence and canonical transliteration** because the complete two-vowel page-state is representable; human page verification is still required before the text is confirmed. Duplicate identical marks remain invalid. Three or more vowel page-states on one carrier remain unsupported until attested and explicitly specified.
 
 One state is still specifically contradictory under the present grammar: the same waw carrying both Class-A U+073C (`ū`) and U+073F (`ō`). A single Latin carrier unit cannot encode that state injectively without colliding with two separate waw carriers, so it remains blocking pending an attested need and an explicit notation extension.
 
@@ -249,23 +251,40 @@ Placement follows the page strictly and is not normalized to a conventional posi
 
 ### 5.1 Syriac mark order — the general rule
 
-Where a Syriac letter carries more than one combining mark, storage order is deterministic:
+Where a Syriac letter carries more than one combining mark, storage order is deterministic. **Every supported normalized mark has one explicit project rank.** Raw codepoint order in a digital witness never creates a second canonical spelling.
 
-1. **Different canonical combining classes sort in ascending class order.** NFC performs this reordering.
-2. **Marks within the same class follow the project order below.** NFC does **not** reorder equal-class marks, so ingestion must do it explicitly.
-3. Store the result in **NFC**.
+The rank is globally compatible with Unicode canonical combining classes: lower CCC values necessarily precede higher ones under NFC, and the project rank fixes the order of every supported mark that shares a CCC. After the project ordering is applied, store the result in **NFC**.
 
-The in-scope combining classes are:
+The complete in-scope rank is:
 
-- **36** — superscript ʾālap̄ (U+0711). It therefore sorts before the below and above marks without a project tie-break.
-- **220 (below)** — use `[vowel, bgdkpt point, single point (§7), two dots below (§17), breve below (§18), one-letter line below (§6.1)]`.
-- **230 (above)** — use `[vowel, bgdkpt point, single point (§7), syāmē, one-letter line above (§6.1)]`.
-- **233** — U+035F COMBINING DOUBLE MACRON BELOW, the canonical lower two-letter span state (§6.2).
-- **234** — U+035E COMBINING DOUBLE MACRON, the canonical upper two-letter span state (§6.2).
+| Rank | CCC | Normalized mark | Project identity |
+|---:|---:|---|---|
+| 1 | 36 | U+0711 | superscript ʾālap̄ |
+| 2 | 218 | U+1DFA | §7 point below between this carrier and the next |
+| 3 | 220 | U+073C | Class-A `ī`/`ū` carrier-vowel mark |
+| 4 | 220 | U+0738 | zlāmā pšīqā `e` |
+| 5 | 220 | U+0739 | zlāmā qašyā `ē` |
+| 6 | 220 | U+0742 | rūkkākā |
+| 7 | 220 | U+0323 | §7 generic point below on the carrier |
+| 8 | 220 | U+0324 | two dots below (§17) |
+| 9 | 220 | U+032E | breve below (§18) |
+| 10 | 220 | U+0748 | one-letter line below (§6.1) |
+| 11 | 228 | U+1DF8 | §7 point above between this carrier and the next |
+| 12 | 230 | U+073F | Class-A `ō` carrier-vowel mark |
+| 13 | 230 | U+0732 | pṯāḥā `a` |
+| 14 | 230 | U+0735 | zqāpā `ā` |
+| 15 | 230 | U+0741 | qūššāyā |
+| 16 | 230 | U+0307 | §7 generic point above on the carrier |
+| 17 | 230 | U+0308 | syāmē |
+| 18 | 230 | U+0747 | one-letter line above (§6.1) |
+| 19 | 233 | U+035F | lower two-letter span (§6.2) |
+| 20 | 234 | U+035E | upper two-letter span (§6.2) |
 
-Classes 233 and 234 contain one in-scope project mark each and need no same-class tie-break. Their ordinary canonical combining classes place them after the class-220/class-230 marks on the first base.
+The sequence is a **storage convention, not a claim about phonological or visual priority**. In particular, U+1DFA/U+1DF8 are between-letter page-states semantically but occupy CCC 218/228 in Syriac storage; their later Latin placement is governed separately by §5.3.
 
-The order is a **storage convention, not a claim about phonological or visual priority**. It exists because several distinct in-scope marks share class 220 or 230. After §16 has normalized source codepoints to page-states, two canonically equivalent witnesses must therefore produce the same combining sequence before comparison or round-trip validation.
+A newly supported combining mark may not simply be added to the accepted inventory. It must be assigned one explicit place in this table, and the permutation regressions must prove that all raw orders converge to the same normalized Syriac sequence. This is what makes equal-CCC double-vowel states canonical rather than merely reversible in whichever source order happened to arrive.
+
+After §16 has normalized source codepoints to page-states, two canonically equivalent witnesses containing the same supported marks must therefore produce the same combining sequence before comparison or round-trip validation.
 
 ### 5.2 Syāmē against a vowel on the same letter
 
@@ -512,7 +531,7 @@ There is **no automatic conversion among these six marks**. An explicit semantic
 
 Multi-dot signs (U+0732 pṯāḥā, U+0735 zqāpā, U+0738 zlāmā pšīqā, U+0739 zlāmā qašyā) are unambiguous single codepoints and pass through unchanged.
 
-A normalized carrier with two distinct vowel signs is likewise retained exactly. The page-state audit flags it for human verification, but after confirmation the transliterator handles it under §4.2; ingestion never deletes one vowel merely because another is present. Duplicate identical marks, three-or-more vowel states, and the conflicting dual-Class-A waw state remain blocking as specified in §4.2 and §16.7.
+A normalized carrier with two distinct vowel signs is likewise retained exactly after §5.1 has canonicalized their ordering. The page-state audit flags the stack for human verification, but the diagnostic is nonblocking for normalization persistence and canonical transliteration because the complete state is represented; ingestion never deletes one vowel merely because another is present. Duplicate identical marks, three-or-more vowel states, and the conflicting dual-Class-A waw state remain blocking as specified in §4.2 and §16.7.
 
 **Removed at ingestion, before any other step.** Out-of-scope characters (§10) never enter the stored line:
 
@@ -539,7 +558,9 @@ Also normalized at ingestion:
 
 ### 16.3 Combining-mark order
 
-Normalize every combining sequence to §5.1 before comparison or round-trip validation (§12). NFC orders marks of **different** canonical combining classes, including the span classes 233/234, but it does not repair the order of two marks that share a class. Ingestion must therefore enforce the §5.1 project tie-break for class **220** and class **230** sequences after page-state normalization; U+035F/U+035E then occupy their canonical class-233/class-234 positions automatically.
+Normalize every combining sequence to the complete §5.1 rank **before** comparison or round-trip validation (§12). Unicode NFC orders different canonical combining classes but does not repair equal-class order. Ingestion therefore assigns every supported mark its explicit project rank, covering CCC **36, 218, 220, 228, 230, 233, and 234**, and sorts by that canonical sequence before NFC.
+
+No supported mark is exempt from the rank merely because its CCC currently contains only one project mark. If a future mark enters the inventory, §5.1 and the permutation regressions must be extended at the same time. Raw witnesses that differ only in the serialization order of the same supported marks must normalize to one identical Syriac sequence.
 
 ### 16.4 Per-block ingestion
 
@@ -579,7 +600,7 @@ A carrier bearing both one-letter U+0747 and U+0748 simultaneously likewise has 
 
 Likewise, U+1DF8/U+1DFA on the final orthographic letter of a word with no following letter is not a coherent "between-letter" page-state and is blocking. (Where final `ā`/`ē` suppresses a written mater under §4.2, that ʾālap̄ is present in the normalized Syriac and therefore satisfies the following-letter requirement.)
 
-For vowel stacks, the generic `multiple-vowels-on-carrier` diagnostic is a page-audit flag rather than a blanket transliteration ban. After page confirmation, a two-vowel state is canonical under §4.2. **Three or more** vowel page-states on one carrier remain unsupported, and a waw carrying both Class-A U+073C (`ū`) and U+073F (`ō`) remains specifically contradictory and blocking under the current notation.
+For vowel stacks, the generic `multiple-vowels-on-carrier` diagnostic is a **nonblocking page-audit flag**, not a normalization-write or transliteration ban. Two supported vowel page-states are first put into the canonical §5.1 mark order and can then be stored and transliterated reversibly while the user verifies the page. **Three or more** vowel page-states on one carrier remain unsupported, and a waw carrying both Class-A U+073C (`ū`) and U+073F (`ō`) remains specifically contradictory and blocking under the current notation.
 
 ---
 

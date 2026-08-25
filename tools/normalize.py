@@ -12,6 +12,9 @@ from east_syriac.normalization import normalize_text
 from east_syriac.transliteration import TransliterationError, transliterate_text
 
 
+NONBLOCKING_PAGE_STATE_ISSUES = frozenset({"multiple-vowels-on-carrier"})
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
@@ -78,8 +81,15 @@ def _print_page_state_notices(audit) -> None:
         )
 
 
+def _blocking_page_state_issues(audit):
+    return tuple(
+        issue for issue in audit.issues
+        if issue.code not in NONBLOCKING_PAGE_STATE_ISSUES
+    )
+
+
 def _word_labels(normalized: str, result, audit) -> tuple[str, ...] | None:
-    if result.flags or audit.issues or audit.notices:
+    if result.flags or _blocking_page_state_issues(audit) or audit.notices:
         return None
     try:
         return transliterate_text(normalized).word_labels
@@ -124,6 +134,7 @@ def main(argv: list[str] | None = None) -> int:
 
     result = normalize_text(original)
     audit = inspect_normalized_text(result.text)
+    blocking_issues = _blocking_page_state_issues(audit)
 
     _print_flags(result)
     _print_page_state_issues(audit)
@@ -134,14 +145,14 @@ def main(argv: list[str] | None = None) -> int:
         _print_changes(result)
 
     if args.check:
-        if result.flags or audit.issues:
+        if result.flags or blocking_issues:
             return 2
         return 1 if result.text != original else 0
 
-    # Page-only notices do not make encoded Syriac invalid and therefore do not
-    # block normalization writes. They do defer canonical transliteration until
-    # the page supplies the missing span/separate decision.
-    if (result.flags or audit.issues) and (args.in_place or args.output):
+    # Page-only notices and the verified two-vowel audit diagnostic do not make
+    # the encoded Syriac structurally invalid. Other page-state issues remain
+    # blocking until corrected or explicitly represented by the canonical grammar.
+    if (result.flags or blocking_issues) and (args.in_place or args.output):
         print("error: refusing to write input with unresolved flags/page-state issues; review the source first", file=sys.stderr)
         return 2
 
@@ -163,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     sys.stdout.write(result.text)
-    return 2 if result.flags or audit.issues else 0
+    return 2 if result.flags or blocking_issues else 0
 
 
 if __name__ == "__main__":

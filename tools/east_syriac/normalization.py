@@ -126,26 +126,41 @@ KNOWN_MARKS = frozenset(
     }
 )
 
-# §5.1 project tie-break order for equal canonical combining classes.
-ORDER_220 = {
-    "\u0738": 0,
-    "\u0739": 0,
-    HBASA_ESASA_DOTTED: 0,
-    RUKKAKHA: 1,
-    GENERIC_DOT_BELOW: 2,
-    TWO_DOTS_BELOW: 3,
-    BREVE_BELOW: 4,
-    OCCULTANS_BELOW: 5,
-}
-ORDER_230 = {
-    "\u0732": 0,
-    "\u0735": 0,
-    RWAHA: 0,
-    QUSSHAYA: 1,
-    GENERIC_DOT_ABOVE: 2,
-    SYAME: 3,
-    OCCULTANS_ABOVE: 4,
-}
+# §5.1 complete canonical rank for every in-scope combining mark. The sequence
+# is globally compatible with Unicode canonical combining classes, while every
+# mark that shares a class receives its own project rank. This makes raw witness
+# serialization irrelevant: any permutation of the same supported page marks
+# normalizes to one stored sequence before NFC and transliteration.
+CANONICAL_MARK_ORDER = (
+    SUPERSCRIPT_ALAPH,      # CCC 36
+    BETWEEN_BELOW,          # CCC 218
+    HBASA_ESASA_DOTTED,     # CCC 220: carrier vowel before Class-B vowels
+    "\u0738",              # CCC 220: zlāmā pšīqā
+    "\u0739",              # CCC 220: zlāmā qašyā
+    RUKKAKHA,               # CCC 220
+    GENERIC_DOT_BELOW,      # CCC 220
+    TWO_DOTS_BELOW,         # CCC 220
+    BREVE_BELOW,            # CCC 220
+    OCCULTANS_BELOW,        # CCC 220
+    BETWEEN_ABOVE,          # CCC 228
+    RWAHA,                  # CCC 230: carrier vowel before Class-B vowels
+    "\u0732",              # CCC 230: pṯāḥā
+    "\u0735",              # CCC 230: zqāpā
+    QUSSHAYA,               # CCC 230
+    GENERIC_DOT_ABOVE,      # CCC 230
+    SYAME,                  # CCC 230
+    OCCULTANS_ABOVE,        # CCC 230
+    MARHETANA_BELOW,        # CCC 233
+    MARHETANA_ABOVE,        # CCC 234
+)
+CANONICAL_MARK_RANK = {mark: rank for rank, mark in enumerate(CANONICAL_MARK_ORDER)}
+
+if frozenset(CANONICAL_MARK_ORDER) != KNOWN_MARKS:
+    raise RuntimeError("CANONICAL_MARK_ORDER must rank every in-scope normalized mark exactly once.")
+if tuple(unicodedata.combining(mark) for mark in CANONICAL_MARK_ORDER) != tuple(
+    sorted(unicodedata.combining(mark) for mark in CANONICAL_MARK_ORDER)
+):
+    raise RuntimeError("CANONICAL_MARK_ORDER must remain compatible with Unicode canonical combining classes.")
 
 
 @dataclass(frozen=True)
@@ -214,20 +229,17 @@ def _is_syriac_letter(char: str) -> bool:
 
 
 def _sort_marks(marks: list[str]) -> list[str]:
-    """Apply §5.1 without inventing an order for unresolved marks."""
+    """Apply the complete §5.1 rank while retaining unresolved marks for review."""
 
-    buckets: dict[int, list[tuple[int, str]]] = {}
-    for pos, mark in enumerate(marks):
-        buckets.setdefault(unicodedata.combining(mark), []).append((pos, mark))
-
-    out: list[str] = []
-    for ccc in sorted(buckets):
-        bucket = buckets[ccc]
-        order = ORDER_220 if ccc == 220 else ORDER_230 if ccc == 230 else None
-        if order is not None and all(mark in order for _, mark in bucket):
-            bucket = sorted(bucket, key=lambda item: (order[item[1]], item[0]))
-        out.extend(mark for _, mark in bucket)
-    return out
+    indexed = list(enumerate(marks))
+    indexed.sort(
+        key=lambda item: (
+            unicodedata.combining(item[1]),
+            CANONICAL_MARK_RANK.get(item[1], len(CANONICAL_MARK_ORDER)),
+            item[0],
+        )
+    )
+    return [mark for _, mark in indexed]
 
 
 def normalize_text(text: str) -> NormalizationResult:

@@ -23,6 +23,22 @@ class DoubleVowelTests(unittest.TestCase):
         self.assertEqual(reverse_transliterate(expected).text, normalized.text)
         self.assertEqual(transliterate_text(reverse_transliterate(expected).text).text, expected)
 
+    def assert_permutations_converge(
+        self,
+        source_a: str,
+        source_b: str,
+        expected_source: str,
+        expected: str,
+    ) -> None:
+        first = normalize_text(source_a)
+        second = normalize_text(source_b)
+        self.assertFalse(first.flags)
+        self.assertFalse(second.flags)
+        self.assertEqual(first.text, expected_source)
+        self.assertEqual(second.text, expected_source)
+        self.assertEqual(transliterate_text(expected_source).text, expected)
+        self.assertEqual(reverse_transliterate(expected).text, expected_source)
+
     def test_attested_iala_mixed_carrier_and_class_b_vowel(self):
         source = "ܐܝ\u073c\u0735ܠ\u0735ܐ"
         normalized = normalize_text(source)
@@ -36,6 +52,36 @@ class DoubleVowelTests(unittest.TestCase):
         audit = inspect_normalized_text(normalized.text)
         self.assertIn("multiple-vowels-on-carrier", [issue.code for issue in audit.issues])
         self.assert_round_trip(source, "meān")
+
+    def test_same_class_220_vowel_order_is_canonicalized(self):
+        self.assert_permutations_converge(
+            "ܡ\u0738\u0739ܢ",
+            "ܡ\u0739\u0738ܢ",
+            "ܡ\u0738\u0739ܢ",
+            "meēn",
+        )
+
+    def test_same_class_230_vowel_order_is_canonicalized(self):
+        self.assert_permutations_converge(
+            "ܡ\u0732\u0735ܢ",
+            "ܡ\u0735\u0732ܢ",
+            "ܡ\u0732\u0735ܢ",
+            "maān",
+        )
+
+    def test_same_class_carrier_vowel_order_is_canonicalized(self):
+        self.assert_permutations_converge(
+            "ܝ\u073c\u0738ܢ",
+            "ܝ\u0738\u073cܢ",
+            "ܝ\u073c\u0738ܢ",
+            "īen",
+        )
+        self.assert_permutations_converge(
+            "ܘ\u073f\u0732ܢ",
+            "ܘ\u0732\u073fܢ",
+            "ܘ\u073f\u0732ܢ",
+            "ōan",
+        )
 
     def test_final_mater_shorthand_with_double_vowel_state(self):
         self.assert_round_trip("ܡ\u0738\u0735", "meă")
