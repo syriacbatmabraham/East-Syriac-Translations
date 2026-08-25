@@ -71,7 +71,7 @@ and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped. Collision
 
 ܒܠܸܒܵܐ ܘܲܒ݂ܠܸܒܵܐ   [l-b-b + l-b-b]   {prep. phrase}   (search: bleba wableba)
 blebā waḇlebā (1) — in doubled hearts (1)
-* blebā waḇlebā · "In doubled hearts they speak" (Psalm 12 Line 8)
+* blebā waḇlebā · "In doubled hearts they are speaking" (Psalm 12 Line 8)
 
 ܚܲܕ݂ ܒܫܲܒ݂ܥܵܐ   [ḥ-d + š-b-ʿ]   {numeral phrase}   (search: had bshaba)
 ḥaḏ bšaḇʿā (1) — seven times (1)
@@ -144,7 +144,7 @@ māryā (12) — Mar Yah (12)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
 * māryā · "Mar Yah, in the Haykla of His holiness" (Psalm 11 Line 11)
 * māryā · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
-* māryā · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+* māryā · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 * māryā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 * māryā · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
 * māryā · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
@@ -266,7 +266,7 @@ bnaÿnāšā (4) — sons of men (4)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * laḇnaÿnāšā · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
-* bnaÿnāšā · "The sons of men speak emptiness" (Psalm 12 Line 6)
+* bnaÿnāšā · "The sons of men are speaking emptiness" (Psalm 12 Line 6)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
 meṭl (7) — for (6), because of (1)
@@ -1129,8 +1129,8 @@ tr̈īṣay (1) — the upright of (1)
 ܠܸܒܵܐ   [l-b-b]   {noun m.sg.emph.}   (search: leba)
 lebā (3) — heart (1), → blebā waḇlebā (2)
 * lebā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
-* blebā · "In doubled hearts they speak" (Psalm 12 Line 8) → blebā waḇlebā
-* waḇlebā · "In doubled hearts they speak" (Psalm 12 Line 8) → blebā waḇlebā
+* blebā · "In doubled hearts they are speaking" (Psalm 12 Line 8) → blebā waḇlebā
+* waḇlebā · "In doubled hearts they are speaking" (Psalm 12 Line 8) → blebā waḇlebā
 
 ܡܸܕܸܡ   [m-d-m]   {indef. pron.}   (search: medem)
 medem (1) — what (1)
@@ -1190,16 +1190,16 @@ bāḥ^rīn (1) — are examining (1)
 * bāḥ^rīn · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
 
 ܒܵܚܲܪ   [b-ḥ-r]   {Peal active ptcp. m.sg.abs.}   (search: bahar)
-bāḥar (1) — examines (1)
-* bāḥar · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+bāḥar (1) — is examining (1)
+* bāḥar · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
 ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadike)
 zadī̈qē (1) — the righteous (1)
-* lzadī̈qē · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+* lzadī̈qē · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
 ܥܵܘܵ̇̈ܠܹܐ   [ʿ-w-l]   {adj. m.pl.emph.}   (search: awale)
 ʿāẅ^ālē (1) — the unrighteous (1)
-* walʿāẅ^ālē · "Mar Yah examines the righteous and the unrighteous" (Psalm 11 Line 14)
+* walʿāẅ^ālē · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
 ܪܵ̈ܚ̇ܡܲܝ   [r-ḥ-m]   {noun m.pl.cst.}   (search: rahmay)
 r̈āḥ^may (1) — the lovers of (1)
@@ -1316,13 +1316,13 @@ tahmeʾ (1) — delay (1)
 
 ܣܪܝܼܩܘܼܬ݂ܵܐ   [s-r-q]   {noun f.sg.emph.}   (search: sriquta)
 srīqūṯā (1) — emptiness (1)
-* srīqūṯā · "The sons of men speak emptiness" (Psalm 12 Line 6)
+* srīqūṯā · "The sons of men are speaking emptiness" (Psalm 12 Line 6)
 
 ܡܡܲܠܠܝܼܢ   [m-l-l]   {Pael active ptcp. m.pl.abs.}   (search: mmallin)
-mmallīn (3) — speak (3)
-* mmallīn · "The sons of men speak emptiness" (Psalm 12 Line 6)
-* mmallīn · "In doubled hearts they speak" (Psalm 12 Line 8)
-* dammallīn · "And tongues that speak great things" (Psalm 12 Line 10)
+mmallīn (3) — are speaking (3)
+* mmallīn · "The sons of men are speaking emptiness" (Psalm 12 Line 6)
+* mmallīn · "In doubled hearts they are speaking" (Psalm 12 Line 8)
+* dammallīn · "And tongues that are speaking great things" (Psalm 12 Line 10)
 
 ܓܲܒ݂ܪܵܐ   [g-b-r]   {noun m.sg.emph.}   (search: gabra)
 gaḇrā (1) — a man (1)
@@ -1353,11 +1353,11 @@ nāwḃeḏ (1) — destroys (1)
 
 ܠܸܫܵܢܹ̈ܐ   [l-š-n]   {noun m.pl.emph.}   (search: leshane)
 lešān̈ē (1) — tongues (1)
-* wlešān̈ē · "And tongues that speak great things" (Psalm 12 Line 10)
+* wlešān̈ē · "And tongues that are speaking great things" (Psalm 12 Line 10)
 
 ܪܵܘ݈ܪ̈ܒ݂ܵܬ݂ܵܐ   [r-b-b]   {adj. f.pl.emph.}   (search: rawrbata)
 rā(_w)r̈ḇāṯā (1) — great things (1)
-* rā(_w)r̈ḇāṯā · "And tongues that speak great things" (Psalm 12 Line 10)
+* rā(_w)r̈ḇāṯā · "And tongues that are speaking great things" (Psalm 12 Line 10)
 
 ܐܸܡ᷺ܲܪܘ   [ʾ-m-r]   {Peal perf. 3m.pl.}   (search: emarw)
 ʾema__rw (1) — have said (1)
