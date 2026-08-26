@@ -512,7 +512,7 @@ paḡr̈ē (1) — bodies (1)
 * lʿālmīn · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * lʿālmīn · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
-ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph.}   (search: abun)
+ܐܲܒ݂ܘܼܢ   [ʾ-b]   {noun m.sg.emph. + 1cp suff.}   (search: abun)
 ʾaḇūn (2) — our Father (2)
 * ʾaḇūn · "Our Father, who art in Heaven..." (Our Father Line 1)
 * ʾaḇūn · "Our Father who art in Heaven" (Our Father Line 4)
