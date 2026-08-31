@@ -1,0 +1,106 @@
+name: Apply Psalm 13 final decisions
+
+on:
+  push:
+    branches:
+      - "agent/psalm13-final-decisions"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          ref: agent/psalm13-final-decisions
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Apply approved Psalm 13 changes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def replace_exact(text, old, new, expected=1):
+              count = text.count(old)
+              if count != expected:
+                  raise SystemExit(f"Expected {expected} occurrence(s) of {old!r}, found {count}")
+              return text.replace(old, new)
+
+          # Confirmed Psalm 13: English only. Syriac and transliteration stay unchanged.
+          p = Path("confirmed-texts/Psalm_13.txt")
+          text = p.read_text(encoding="utf-8")
+          text = replace_exact(text,
+              "My heart exults in Your salvation",
+              "My heart rejoices in Your salvation")
+          text = replace_exact(text,
+              "And I glorify Mar Yah, who has saved me",
+              "And I glorify Mar Yah, for He has saved me")
+          p.write_text(text, encoding="utf-8", newline="\n")
+
+          # Glossary: only the affected Psalm 13 rendering/context strings.
+          p = Path("glossary/Glossary.md")
+          text = p.read_text(encoding="utf-8")
+          replacements = [
+              ("* lmāryā · \"And I glorify Mar Yah, who has saved me\" (Psalm 13 Line 15)",
+               "* lmāryā · \"And I glorify Mar Yah, for He has saved me\" (Psalm 13 Line 15)"),
+              ("* lēḃy · \"My heart exults in Your salvation\" (Psalm 13 Line 14)",
+               "* lēḃy · \"My heart rejoices in Your salvation\" (Psalm 13 Line 14)"),
+              ("nerwaz (1) — exults (1)",
+               "nerwaz (1) — rejoices (1)"),
+              ("* nerwaz · \"My heart exults in Your salvation\" (Psalm 13 Line 14)",
+               "* nerwaz · \"My heart rejoices in Your salvation\" (Psalm 13 Line 14)"),
+              ("* bpūrqānāḵ · \"My heart exults in Your salvation\" (Psalm 13 Line 14)",
+               "* bpūrqānāḵ · \"My heart rejoices in Your salvation\" (Psalm 13 Line 14)"),
+              ("* wʾēšabaḥ · \"And I glorify Mar Yah, who has saved me\" (Psalm 13 Line 15)",
+               "* wʾēšabaḥ · \"And I glorify Mar Yah, for He has saved me\" (Psalm 13 Line 15)"),
+              ("parqany (1) — has saved me (1)",
+               "parqany (1) — He has saved me (1)"),
+              ("* dparqany · \"And I glorify Mar Yah, who has saved me\" (Psalm 13 Line 15)",
+               "* dparqany · \"And I glorify Mar Yah, for He has saved me\" (Psalm 13 Line 15)"),
+          ]
+          for old, new in replacements:
+              text = replace_exact(text, old, new)
+          p.write_text(text, encoding="utf-8", newline="\n")
+
+          # Decision log: Psalm 13 keeps only the unusual Line 1 rhetorical division.
+          p = Path("decisions/Major-Interpretive-Decisions.md")
+          lines = p.read_text(encoding="utf-8").splitlines()
+          removed = 0
+          kept = []
+          for line in lines:
+              if line.startswith("- **Psalm 13 Line 3 —") or line.startswith("- **Psalm 13 Line 11 —"):
+                  removed += 1
+                  continue
+              kept.append(line)
+          if removed != 2:
+              raise SystemExit(f"Expected to remove 2 prior Psalm 13 decision bullets, removed {removed}")
+          if any(line.startswith("- **Psalm 13 Line 1 —") for line in kept):
+              raise SystemExit("Psalm 13 Line 1 decision already exists unexpectedly")
+          kept.append('- **Psalm 13 Line 1 — decided 2026-08-31:** `ʿdamā lʾemaṯy teṭʿēyny māryā lʿālam` is rendered **“How long, Mar Yah? Will You forget me for Eternity?”** The division into two English questions is rhetorical, not a reanalysis of the Syriac syntax: it preserves the force of the opening plea while allowing `lʿālam` to remain “for Eternity” without cumbersome repetition.')
+          p.write_text("\n".join(kept) + "\n", encoding="utf-8", newline="\n")
+          PY
+      - name: Compile tools
+        run: python -m compileall -q tools
+      - name: Run deterministic tool tests
+        run: python -m unittest discover -s tools/tests -v
+      - name: Check confirmed corpus
+        run: python tools/check_confirmed_text.py confirmed-texts
+      - name: Check glossary and corpus
+        run: python tools/check_glossary.py
+      - name: Commit approved changes and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/apply-psalm13-final.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add confirmed-texts/Psalm_13.txt glossary/Glossary.md decisions/Major-Interpretive-Decisions.md .github/workflows/apply-psalm13-final.yml
+          git diff --cached --check
+          git commit -m "Refine Psalm 13 final translation decisions"
+          git push origin HEAD:agent/psalm13-final-decisions
