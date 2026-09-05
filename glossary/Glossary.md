@@ -35,7 +35,7 @@ it does.
 `poss.` marks a possessive form such as `dīlāḵ`; an attached pronominal suffix is named after `+`.
 `indecl.` marks an indeclinable loan whose form does not express the ordinary Syriac inflectional distinctions.
 `verbal noun` marks a deverbal nominal lexeme, not an infinitive or finite verb form; it
-takes ordinary nominal gender, number and state, and pronominal-suffix morphology.
+takes ordinary nominal gender, number, state, and pronominal-suffix morphology.
 A SEDRA `Participle Adjective` is recorded here as `adj.` when the attested form belongs
 to that lexical category; a homographic form parsed as a verb with active/passive
 participle tense remains `ptcp.`.
@@ -47,7 +47,7 @@ participle tense remains `ptcp.`.
 | Peal | the simple, base action | `nesġōḏ` we reverence |
 | Ethpeel | passive or reflexive of Peal | `ʾeṯīleḏ` he was begotten |
 | Pael | intensive, or makes a noun into a verb | `nṣaleʾ` we pray |
-| Ethpaal | passive or reflexive of Paal | `ʾeṫtaqanw` they were established |
+| Ethpaal | passive or reflexive of Pael | `ʾeṫtaqanw` they were established |
 | Aphel | causative — brings the Peal action about | `naseq` we lift up, i.e. cause to go up |
 | Ettaphal | passive of Aphel | — |
 | Shaphel | older causative, usually lexicalized | — |
@@ -1461,7 +1461,7 @@ mek̇ēyl (1) — now (1)
 
 ܐܹܩܘܼܡ   [q-w-m]   {Peal impf. 1c.sg.}   (search: equm)
 ʾēqūm (1) — I will...arise (1)
-* wʾēqūm · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+* ʾēqūm · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
 
 ܐ᷸ܵܡܲܪ   [ʾ-m-r]   {Peal perf. 3m.sg.}   (search: amar)
 ʾā^^mar (1) — has said (1)
@@ -1650,8 +1650,8 @@ prōqayny (1) — save me (1)
 * dʾāwdeʾ · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
 
 ܬܣܝܼܡ   [s-w-m]   {Peal impf. 2m.sg.}   (search: tsim)
-tsim (1) — will You place (1)
-* tsim · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
+tsīm (1) — will You place (1)
+* tsīm · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
 
 ܬܲܟ݂ܪܝܼܬ݂ܵܐ   [k-r-ʾ]   {noun f.sg.emph.}   (search: takrita)
 taḵrīṯā (1) — sorrow (1)
@@ -1661,7 +1661,7 @@ taḵrīṯā (1) — sorrow (1)
 dāwōnā (1) — misery (1)
 * wḏāwōnā · "And misery in my heart every day?" (Psalm 13 Line 7)
 
-ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: lebi)
+ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: leby)
 lēḃy (2) — my heart (2)
 * blēḃy · "And misery in my heart every day?" (Psalm 13 Line 7)
 * lēḃy · "My heart rejoices in Your salvation" (Psalm 13 Line 14)
@@ -1772,9 +1772,10 @@ leḃēh (1) — his heart (1)
 * bleḃēh · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
 
 ܠܲܝܬ݁   [ʾ-y-t]   {particle}   (search: layt)
-layṫ (2) — is not there (1), there is no one (1)
+layṫ (3) — is not there (1), there is no one (2)
 * dlayṫ · "...God is not there" (Psalm 14 Line 1)
 * wlayṫ · "And there is no one doing good" (Psalm 14 Line 6)
+* wlayṫ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܸܬ݂ܚܲܒܲܠܘ   [ḥ-b-l]   {Ethpaal perf. 3m.pl.}   (search: ethabalw)
 ʾeṯḥabalw (1) — were corrupted (1)
@@ -1801,12 +1802,14 @@ bī̈šē (1) — evil ones (1)
 * bī̈šē · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܥ᷸ܵܒܹܕ݂   [ʿ-b-d]   {Peal active ptcp. m.sg.abs.}   (search: abed)
-ʿā^^bēḏ (1) — doing (1)
+ʿā^^bēḏ (2) — doing (2)
 * dʿā^^bēḏ · "And there is no one doing good" (Psalm 14 Line 6)
+* dʿā^^bēḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܛܵܒ݂ܬ݂ܵܐ   [ṭ-w-b]   {adj. f.sg.emph.}   (search: tabta)
-ṭāḇṯā (1) — good (1)
+ṭāḇṯā (2) — good (2)
 * ṭāḇṯā · "And there is no one doing good" (Psalm 14 Line 6)
+* ṭāḇṯā · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܲܕ݂ܝܼܩ   [d-w-q]   {Aphel perf. 3m.sg.}   (search: adiq)
 ʾaḏīq (1) — has looked (1)
@@ -1845,7 +1848,7 @@ s_ṭāw (1) — have turned aside (1)
 * wʾesṫlīw · "...and have been rejected" (Psalm 14 Line 9)
 
 ܝܼܕܲܥ̣ܘ   [y-d-ʿ]   {Peal perf. 3m.pl.}   (search: idaw)
-īdaʿ_w (1) — have known (1)
+īdaʿ_w (1) — have not known (1)
 * wlā īdaʿ_w · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
 
 ܥ᷸ܵܒ݂ܕܲܝ̈   [ʿ-b-d]   {Peal active ptcp. m.pl.cst.}   (search: abday)
@@ -1865,7 +1868,7 @@ mēʾkal (1) — eat (1)
 * mēʾkal · "Those eating My people eat bread" (Psalm 14 Line 12)
 
 ܩ̣ܪܵܘ   [q-r-ʾ]   {Peal perf. 3m.pl.}   (search: qraw)
-q_rāw (1) — have called (1)
+q_rāw (1) — have not called (1)
 * lā q_rāw · "And they have not called to Mar Yah" (Psalm 14 Line 13)
 
 ܬܲܡܵܢ   [t-m]   {adv.}   (search: taman)
