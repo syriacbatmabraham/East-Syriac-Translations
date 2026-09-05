@@ -35,7 +35,7 @@ it does.
 `poss.` marks a possessive form such as `dīlāḵ`; an attached pronominal suffix is named after `+`.
 `indecl.` marks an indeclinable loan whose form does not express the ordinary Syriac inflectional distinctions.
 `verbal noun` marks a deverbal nominal lexeme, not an infinitive or finite verb form; it
-takes ordinary nominal gender, number, state, and pronominal-suffix morphology.
+takes ordinary nominal gender, number and state, and pronominal-suffix morphology.
 A SEDRA `Participle Adjective` is recorded here as `adj.` when the attested form belongs
 to that lexical category; a homographic form parsed as a verb with active/passive
 participle tense remains `ptcp.`.
@@ -47,7 +47,7 @@ participle tense remains `ptcp.`.
 | Peal | the simple, base action | `nesġōḏ` we reverence |
 | Ethpeel | passive or reflexive of Peal | `ʾeṯīleḏ` he was begotten |
 | Pael | intensive, or makes a noun into a verb | `nṣaleʾ` we pray |
-| Ethpaal | passive or reflexive of Pael | `ʾeṫtaqanw` they were established |
+| Ethpaal | passive or reflexive of Paal | `ʾeṫtaqanw` they were established |
 | Aphel | causative — brings the Peal action about | `naseq` we lift up, i.e. cause to go up |
 | Ettaphal | passive of Aphel | — |
 | Shaphel | older causative, usually lexicalized | — |
@@ -93,19 +93,23 @@ mhaymnīnan (1) — we are faithful (1)
 * mhaymnīnan · "We are faithful to One God..." (Creed Line 1)
 
 ܚܲܕ   [ḥ-d]   {num. m.sg.abs.}   (search: had)
-ḥad (4) — one (3), → ḥaḏ bšaḇʿā (1)
+ḥad (5) — one (4), → ḥaḏ bšaḇʿā (1)
 * bḥad · "We are faithful to One God..." (Creed Line 1)
 * wabḥad · "And to One Mar Yah..." (Creed Line 3)
 * waḇḥad · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
 * ḥaḏ · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
+* ḥaḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܲܠܵܗܵܐ   [ʾ-l-h]   {noun m.sg.emph.}   (search: alaha)
-ʾalāhā (5) — God (5)
+ʾalāhā (8) — God (8)
 * ʾalāhā · "We are faithful to One God..." (Creed Line 1)
 * dʾalāhā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 * ʾalāhā · "True God from True God" (Creed Line 6)
 * ʾalāhā · "True God from True God" (Creed Line 6)
 * lʾalāhā · "Glorification to God in the heights" (Teshbhotha l'Alaha Line 1)
+* ʾalāhā · "...God is not there" (Psalm 14 Line 1)
+* lʾalāhā · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+* dʾalāhā · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 
 ܐܲܒ݂ܵܐ   [ʾ-b]   {noun m.sg.emph.}   (search: aba)
 ʾaḇā (4) — Father (4)
@@ -119,10 +123,11 @@ mhaymnīnan (1) — we are faithful (1)
 * ʾaḥīd · "...the Father, the Holder of all" (Creed Line 1)
 
 ܟܠ   [k-l]   {quant.}   (search: kl)
-kl (3) — all (2), every (1)
+kl (4) — all (3), every (1)
 * kl · "...the Father, the Holder of all" (Creed Line 1)
 * bḵl · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * dḵl · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
+* kl · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
 
 ܥܵܒ݂ܘܿܕ݂ܵܐ   [ʿ-b-d]   {noun m.sg.emph.}   (search: aboda)
 ʿāḇōḏā (1) — Maker (1)
@@ -145,7 +150,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (16) — Mar Yah (16)
+māryā (20) — Mar Yah (20)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -162,6 +167,10 @@ māryā (16) — Mar Yah (16)
 * māryā · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
 * māryā · "Look and answer me, Mar Yah my God" (Psalm 13 Line 9)
 * lmāryā · "And I glorify Mar Yah, for He has saved me" (Psalm 13 Line 15)
+* māryā · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
+* walmāryā · "And they have not called to Mar Yah" (Psalm 14 Line 13)
+* dmāryā · "For Mar Yah is his trust" (Psalm 14 Line 17)
+* māryā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -185,9 +194,10 @@ būḵrā (1) — Firstborn (1)
 * būḵrā · "Firstborn of all creatures" (Creed Line 4)
 
 ܒܸܪ̈ܝܵܬ݂ܵܐ   [b-r-ʾ]   {noun f.pl.emph.}   (search: beryata)
-ber̈yāṯā (2) — creatures (2)
+ber̈yāṯā (3) — creatures (3)
 * ber̈yāṯā · "Firstborn of all creatures" (Creed Line 4)
 * ber̈yāṯā · "All of them, the creatures You have created" (Ferial Slotha d'Sapra II, Line 8)
+* dber̈yāṯā · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܗܵܘ   [h-w]   {dem. pron. m.sg.}   (search: haw)
 hāw (3) — He who (3)
@@ -196,7 +206,7 @@ hāw (3) — He who (3)
 * hāw · "He who from the Father [and the Son] comes forth" (Creed Line 17)
 
 ܡ̣ܢ   [m-n]   {prep.}   (search: mn)
-m_n (13) — from (12), at (1)
+m_n (16) — from (15), at (1)
 * dm_n · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * dm_n · "True God from True God" (Creed Line 6)
 * m_n · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
@@ -210,6 +220,9 @@ m_n (13) — from (12), at (1)
 * m_n · "...and His gifts from the needy and afflicted..." (Ferial Slotha d'Sapra I, Line 8)
 * m_n · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
 * m_n · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
+* m_n · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
+* m_n · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
+* m_n · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
 
 ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abuhy)
 ʾaḇūhy (2) — His Father (2)
@@ -226,9 +239,10 @@ qdām (1) — before (1)
 * qdām · "He who was begotten from His Father before all ages..." (Creed Line 5)
 
 ܟܠܗܘܿܢ   [k-l]   {quant. + 3mp suff.}   (search: klhon)
-klhōn (2) — all (2)
+klhōn (3) — all (2), all of them (1)
 * klhōn · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * bḵlhōn · "In all times and seasons" (Ferial Slotha d'Sapra I, Line 9)
+* klhōn · "All of them have turned aside as one..." (Psalm 14 Line 9)
 
 ܥܵܠܡܹ̈ܐ   [ʿ-l-m]   {noun m.pl.emph.}   (search: alme)
 ʿālm̈ē (2) — ages (2)
@@ -273,14 +287,15 @@ meṭlātan (1) — for the sake of us (1)
 * dmeṭlātan · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 
 ܒܢܲܝ̈ܢܵܫܵܐ   [b-r + ʾ-n-š]   {noun c.pl.emph.}   (search: bnaynasha)
-bnaÿnāšā (4) — sons of men (4)
+bnaÿnāšā (5) — sons of men (5)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * laḇnaÿnāšā · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
 * bnaÿnāšā · "The sons of men are speaking emptiness" (Psalm 12 Line 6)
+* bnaÿnāšā · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
-meṭl (7) — for (6), because of (1)
+meṭl (9) — for (8), because of (1)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 * meṭl · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
@@ -288,6 +303,8 @@ meṭl (7) — for (6), because of (1)
 * meṭl · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 * meṭl · "Save, Mar Yah, for good has come to an end" (Psalm 12 Line 1)
 * meṭl · "Because of the plundering of the poor..." (Psalm 12 Line 13)
+* meṭl · "For God is in the generation of the righteous" (Psalm 14 Line 15)
+* meṭl · "For Mar Yah is his trust" (Psalm 14 Line 17)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -298,13 +315,14 @@ nḥeṯ (1) — came down (1)
 * nḥeṯ · "...came down from Heaven" (Creed Line 8)
 
 ܫܡܲܝܵܐ   [š-m-y]   {noun c.sg.emph.}   (search: shmaya)
-šmayā (6) — Heaven (6)
+šmayā (7) — Heaven (7)
 * šmayā · "...came down from Heaven" (Creed Line 8)
 * lašmayā · "He ascended to Heaven..." (Creed Line 14)
 * dbašmayā · "Our Father, who art in Heaven..." (Our Father Line 1)
 * dbašmayā · "Our Father who art in Heaven" (Our Father Line 4)
 * dbašmayā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * bašmayā · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
+* šmayā · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 
 ܐܸܬ݂ܓܲܫܲܡ   [g-š-m]   {Ethpaal perf. 3m.sg.}   (search: etgasham)
 ʾeṯgašam (1) — was embodied (1)
@@ -613,9 +631,10 @@ nehweʾ (1) — let...be (1)
 * ʾaykanā · "...as we have released our debtors" (Our Father Line 11)
 
 ܐܵܦ   [ʾ-p]   {particle}   (search: ap)
-ʾāp (2) — ⌀ (2)
+ʾāp (3) — ⌀ (2), even (1)
 * ʾāp · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * dʾāp · "...as we have released our debtors" (Our Father Line 11)
+* wʾāplā · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܗܲܒ݂   [y-h-b]   {Peal impv. 2m.sg.}   (search: hab)
 haḇ (1) — give (1)
@@ -627,8 +646,9 @@ lan (2) — us (2)
 * lan · "And release us our debts and sins..." (Our Father Line 11)
 
 ܠܲܚܡܵܐ   [l-ḥ-m]   {noun m.sg.emph.}   (search: lahma)
-laḥmā (1) — the bread (1)
+laḥmā (2) — bread (2)
 * laḥmā · "Give us this day the bread we need" (Our Father Line 10)
+* laḥmā · "Those eating My people eat bread" (Psalm 14 Line 12)
 
 ܣܘܼܢܩܵܢܲܢ   [s-n-q]   {noun m.sg.emph. + 1cp suff.}   (search: sunqanan)
 sūnqānan (1) — we need (1)
@@ -722,12 +742,13 @@ mr̈āwmē (1) — the heights (1)
 * bamr̈āwmē · "Glorification to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܥܲܠ   [ʿ-l]   {prep.}   (search: al)
-ʿal (5) — on (1), upon (3), in (1)
+ʿal (6) — on (1), upon (4), in (1)
 * wʿal · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ʿal · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
 * ʿal · "And have set their arrows upon the string" (Psalm 11 Line 7)
 * ʿal · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 * ʿal · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
+* ʿal · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 
 ܫܠܵܡܵܐ   [š-l-m]   {noun m.sg.emph.}   (search: shlama)
 šlāmā (2) — peace (2)
@@ -908,8 +929,9 @@ zaḇn̈ē (1) — times (1)
 * wʿedān̈ē · "In all times and seasons" (Ferial Slotha d'Sapra I, Line 9)
 
 ܡܵܪܵܐ   [m-r-ʾ]   {noun m.sg.abs.}   (search: mara)
-mārā (1) — the Lord (1)
+mārā (2) — Lord (2)
 * mārā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
+* mārā · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܡܵܪܝ   [m-r-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: mary)
 māry (3) — my Lord (3)
@@ -1224,8 +1246,9 @@ bāḥar (1) — is examining (1)
 * bāḥar · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
 ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadike)
-zadī̈qē (1) — the righteous (1)
+zadī̈qē (2) — the righteous (2)
 * lzadī̈qē · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
+* dzadī̈qē · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 
 ܥܵܘܵ̇̈ܠܹܐ   [ʿ-w-l]   {adj. m.pl.emph.}   (search: awale)
 ʿāẅ^ālē (1) — the unrighteous (1)
@@ -1236,8 +1259,9 @@ r̈āḥ^may (1) — the lovers of (1)
 * walr̈āḥ^may · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
 
 ܥܵܘ̣ܠܵܐ   [ʿ-w-l]   {noun m.sg.emph.}   (search: awla)
-ʿāw_lā (1) — unrighteousness (1)
+ʿāw_lā (2) — unrighteousness (2)
 * ʿāw_lā · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
+* ʿāw_lā · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
 
 ܣܢܵܬ̤   [s-n-ʾ]   {Peal perf. 3f.sg.}   (search: snat)
 snāt̤ (1) — has hated (1)
@@ -1289,8 +1313,10 @@ zadīq (1) — righteous (1)
 * dzadīq · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 
 ܗ݇ܘ̣   [h-w]   {pron. 3m.sg.}   (search: hw)
-(h)w_ (1) — is (1)
+(h)w_ (3) — is (3)
 * (h)w_ · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+* (h)w_ · "For God is in the generation of the righteous" (Psalm 14 Line 15)
+* (h)w_ · "For Mar Yah is his trust" (Psalm 14 Line 17)
 
 ܙܲܕܝܼܩܘܼܬ݂ܵܐ   [z-d-q]   {noun f.sg.emph.}   (search: zadiquta)
 zadīqūṯā (1) — righteousness (1)
@@ -1435,7 +1461,7 @@ mek̇ēyl (1) — now (1)
 
 ܐܹܩܘܼܡ   [q-w-m]   {Peal impf. 1c.sg.}   (search: equm)
 ʾēqūm (1) — I will...arise (1)
-* ʾēqūm · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
+* wʾēqūm · "Mar Yah has said: I will now arise" (Psalm 12 Line 14)
 
 ܐ᷸ܵܡܲܪ   [ʾ-m-r]   {Peal perf. 3m.sg.}   (search: amar)
 ʾā^^mar (1) — has said (1)
@@ -1446,8 +1472,9 @@ mek̇ēyl (1) — now (1)
 * wʾeʿḃeḏ · "And I openly bring about salvation" (Psalm 12 Line 15)
 
 ܦܘܼܪܩܵܢܵܐ   [p-r-q]   {noun m.sg.emph.}   (search: purqana)
-pūrqānā (1) — salvation (1)
+pūrqānā (2) — salvation (2)
 * pūrqānā · "And I openly bring about salvation" (Psalm 12 Line 15)
+* pūrqānā · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
 
 ܓܲܠܝܵܐܝܼܬ   [g-l-ʾ]   {adv.}   (search: galyait)
 galyāʾīt (1) — openly (1)
@@ -1506,8 +1533,9 @@ paṣāny (1) — deliver me (1)
 * wpaṣāny · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
 
 ܕܵܪܵܐ   [d-w-r]   {noun m.sg.emph.}   (search: dara)
-dārā (1) — generation (1)
+dārā (2) — generation (2)
 * dārā · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
+* bḏārā · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 
 ܗܵܢܵܐ   [h-n]   {dem. pron. m.sg.}   (search: hana)
 hānā (1) — this (1)
@@ -1622,8 +1650,8 @@ prōqayny (1) — save me (1)
 * dʾāwdeʾ · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
 
 ܬܣܝܼܡ   [s-w-m]   {Peal impf. 2m.sg.}   (search: tsim)
-tsīm (1) — will You place (1)
-* tsīm · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
+tsim (1) — will You place (1)
+* tsim · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
 
 ܬܲܟ݂ܪܝܼܬ݂ܵܐ   [k-r-ʾ]   {noun f.sg.emph.}   (search: takrita)
 taḵrīṯā (1) — sorrow (1)
@@ -1633,7 +1661,7 @@ taḵrīṯā (1) — sorrow (1)
 dāwōnā (1) — misery (1)
 * wḏāwōnā · "And misery in my heart every day?" (Psalm 13 Line 7)
 
-ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: leby)
+ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: lebi)
 lēḃy (2) — my heart (2)
 * blēḃy · "And misery in my heart every day?" (Psalm 13 Line 7)
 * lēḃy · "My heart rejoices in Your salvation" (Psalm 13 Line 14)
@@ -1730,3 +1758,185 @@ pūrqānāḵ (1) — Your salvation (1)
 ܦܲܪܩܲܢܝ   [p-r-q]   {Peal perf. 3m.sg. + 1cs suff.}   (search: parqany)
 parqany (1) — He has saved me (1)
 * dparqany · "And I glorify Mar Yah, for He has saved me" (Psalm 13 Line 15)
+
+ܐܵ̇ܡܲܪ   [ʾ-m-r]   {Peal perf. 3m.sg.}   (search: amar)
+ʾ^āmar (1) — has said (1)
+* ʾ^āmar · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
+
+ܥܵܘܵ̇ܠܵܐ   [ʿ-w-l]   {adj. m.sg.emph.}   (search: awala)
+ʿāw^ālā (1) — the unrighteous (1)
+* ʿāw^ālā · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
+
+ܠܸܒܹ݁ܗ   [l-b-b]   {noun m.sg.emph. + 3ms suff.}   (search: lebeh)
+leḃēh (1) — his heart (1)
+* bleḃēh · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
+
+ܠܲܝܬ݁   [ʾ-y-t]   {particle}   (search: layt)
+layṫ (2) — is not there (1), there is no one (1)
+* dlayṫ · "...God is not there" (Psalm 14 Line 1)
+* wlayṫ · "And there is no one doing good" (Psalm 14 Line 6)
+
+ܐܸܬ݂ܚܲܒܲܠܘ   [ḥ-b-l]   {Ethpaal perf. 3m.pl.}   (search: ethabalw)
+ʾeṯḥabalw (1) — were corrupted (1)
+* ʾeṯḥabalw · "They were corrupted and defiled in their practices" (Psalm 14 Line 2)
+
+ܐܸܬ݁ܛܲܢܲܦܘ   [ṭ-n-p]   {Ethpaal perf. 3m.pl.}   (search: ettanapw)
+ʾeṫṭanapw (1) — defiled (1)
+* wʾeṫṭanapw · "They were corrupted and defiled in their practices" (Psalm 14 Line 2)
+
+ܨܸܢܥܵܬ݂̈ܗܘܿܢ   [ṣ-n-ʿ]   {noun f.pl.emph. + 3mp suff.}   (search: senathon)
+ṣenʿāṯ̈hōn (1) — their practices (1)
+* bṣenʿāṯ̈hōn · "They were corrupted and defiled in their practices" (Psalm 14 Line 2)
+
+ܫܵܘܙܸܒ݂   [š-w-z-b]   {Shaphel impv. 2m.sg.}   (search: shawzeb)
+šāwzeḇ (1) — rescue (1)
+* šāwzeḇ · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
+
+ܥܹܕܬܵܟ݂   [ʿ-d-t]   {noun f.sg.emph. + 2ms suff.}   (search: edtak)
+ʿēdtāḵ (1) — Your Church (1)
+* ʿēdtāḵ · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
+
+ܒܝܼ̈ܫܹܐ   [b-ʾ-š]   {adj. m.pl.emph.}   (search: bishe)
+bī̈šē (1) — evil ones (1)
+* bī̈šē · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
+
+ܥ᷸ܵܒܹܕ݂   [ʿ-b-d]   {Peal active ptcp. m.sg.abs.}   (search: abed)
+ʿā^^bēḏ (1) — doing (1)
+* dʿā^^bēḏ · "And there is no one doing good" (Psalm 14 Line 6)
+
+ܛܵܒ݂ܬ݂ܵܐ   [ṭ-w-b]   {adj. f.sg.emph.}   (search: tabta)
+ṭāḇṯā (1) — good (1)
+* ṭāḇṯā · "And there is no one doing good" (Psalm 14 Line 6)
+
+ܐܲܕ݂ܝܼܩ   [d-w-q]   {Aphel perf. 3m.sg.}   (search: adiq)
+ʾaḏīq (1) — has looked (1)
+* ʾaḏīq · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
+
+ܢܸܚܙܸܐ   [ḥ-z-ʾ]   {Peal impf. 3m.sg.}   (search: nehze)
+neḥzeʾ (1) — to see (1)
+* dneḥzeʾ · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+
+ܐܸܢ   [ʾ-n]   {conj.}   (search: en)
+ʾen (1) — if (1)
+* ʾen · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+
+ܐܝܼܬ݂   [ʾ-y-t]   {particle}   (search: it)
+ʾīṯ (1) — there is (1)
+* ʾīṯ · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+
+ܣܲܟ݁ܘܼܠܬ݂ܵܢ   [s-k-l]   {adj. m.sg.abs.}   (search: sakultan)
+sak̇ūlṯān (1) — discerning (1)
+* dsak̇ūlṯān · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+
+ܒܵܥܹ̇ܐ   [b-ʿ-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: bae)
+bāʿ^ē (1) — is seeking (1)
+* wḇāʿ^ē · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+
+ܣ̣ܛܵܘ   [s-ṭ-ʾ]   {Peal perf. 3m.pl.}   (search: staw)
+s_ṭāw (1) — have turned aside (1)
+* s_ṭāw · "All of them have turned aside as one..." (Psalm 14 Line 9)
+
+ܐܲܟ݂ܚ݇ܕ݂ܵܐ   [ʾ-y-k + ḥ-d]   {adv.}   (search: akhda)
+ʾaḵ(ḥ)ḏā (1) — as one (1)
+* ʾaḵ(ḥ)ḏā · "All of them have turned aside as one..." (Psalm 14 Line 9)
+
+ܐܸܣܬ݁ܠܝܼܘ   [s-l-ʾ]   {Ethpeel perf. 3m.pl.}   (search: estliw)
+ʾesṫlīw (1) — have been rejected (1)
+* wʾesṫlīw · "...and have been rejected" (Psalm 14 Line 9)
+
+ܝܼܕܲܥ̣ܘ   [y-d-ʿ]   {Peal perf. 3m.pl.}   (search: idaw)
+īdaʿ_w (1) — have known (1)
+* wlā īdaʿ_w · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
+
+ܥ᷸ܵܒ݂ܕܲܝ̈   [ʿ-b-d]   {Peal active ptcp. m.pl.cst.}   (search: abday)
+ʿā^^ḇdaÿ (1) — doers of (1)
+* ʿā^^ḇdaÿ · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
+
+ܐܵ̇ܟ݂ܠܲܝ̈   [ʾ-k-l]   {Peal active ptcp. m.pl.cst.}   (search: aklay)
+ʾ^āḵlaÿ (1) — those eating (1)
+* ʾ^āḵlaÿ · "Those eating My people eat bread" (Psalm 14 Line 12)
+
+ܥܲܡܝ   [ʿ-m-m]   {noun m.sg.emph. + 1cs suff.}   (search: amy)
+ʿamy (1) — My people (1)
+* lʿamy · "Those eating My people eat bread" (Psalm 14 Line 12)
+
+ܡܹܐܟܲܠ   [ʾ-k-l]   {Peal inf.}   (search: mekal)
+mēʾkal (1) — eat (1)
+* mēʾkal · "Those eating My people eat bread" (Psalm 14 Line 12)
+
+ܩ̣ܪܵܘ   [q-r-ʾ]   {Peal perf. 3m.pl.}   (search: qraw)
+q_rāw (1) — have called (1)
+* lā q_rāw · "And they have not called to Mar Yah" (Psalm 14 Line 13)
+
+ܬܲܡܵܢ   [t-m]   {adv.}   (search: taman)
+tamān (1) — there (1)
+* tamān · "There they have feared a fear" (Psalm 14 Line 14)
+
+ܕܚܸܠ̣ܘ   [d-ḥ-l]   {Peal perf. 3m.pl.}   (search: dhelw)
+dḥel_w (1) — have feared (1)
+* dḥel_w · "There they have feared a fear" (Psalm 14 Line 14)
+
+ܕܸܚ͟ܠܬ݂ܵܐ   [d-ḥ-l]   {noun f.sg.emph.}   (search: dehlta)
+deḥ‿lṯā (1) — fear (1)
+* deḥ‿lṯā · "There they have feared a fear" (Psalm 14 Line 14)
+
+ܬܲܪܥܝܼܬܹܗ   [r-ʿ-ʾ]   {noun f.sg.emph. + 3ms suff.}   (search: tariteh)
+tarʿītēh (1) — plan (1)
+* tarʿītēh · "They have shamed the plan of the poor man" (Psalm 14 Line 16)
+
+ܡܸܣܟܹ݁ܢܵܐ   [s-k-n]   {adj. m.sg.emph.}   (search: meskena)
+mesk̇ēnā (1) — the poor man (1)
+* dmesk̇ēnā · "They have shamed the plan of the poor man" (Psalm 14 Line 16)
+
+ܐܲܒ݂ܗܸܬ݂ܘ   [b-h-t]   {Aphel perf. 3m.pl.}   (search: abhetw)
+ʾaḇheṯw (1) — have shamed (1)
+* ʾaḇheṯw · "They have shamed the plan of the poor man" (Psalm 14 Line 16)
+
+ܬܘܼܟ݂ܠܵܢܹܗ   [t-k-l]   {noun m.sg.emph. + 3ms suff.}   (search: tuklaneh)
+tūḵlānēh (1) — his trust (1)
+* tūḵlānēh · "For Mar Yah is his trust" (Psalm 14 Line 17)
+
+ܡ̇ܢ   [m-n]   {interrog. pron.}   (search: mn)
+m^n (1) — who (1)
+* m^n · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+
+ܢܸܬܸ݁ܠ   [y-h-b]   {Peal impf. 3m.sg.}   (search: netel)
+neṫel (1) — will give (1)
+* neṫel · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+
+ܨܸܗܝܘܿܢ   [prop. noun]   {prop. n.}   (search: sehyon)
+ṣehyōn (1) — Zion (1)
+* ṣehyōn · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+
+ܝܼܣܪܵܝܹܠ   [prop. noun]   {prop. n.}   (search: israyel)
+īsrāyēl (2) — Israyel (2)
+* līsrāyēl · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+* īsrāyēl · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
+
+ܡܵܐ   [m-n]   {interrog. pron.}   (search: ma)
+mā (1) — when (1)
+* mā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+
+ܡܲܗܦܸܟ݂   [h-p-k]   {Aphel active ptcp. m.sg.abs.}   (search: mahpek)
+mahpeḵ (1) — returns (1)
+* dmahpeḵ · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+
+ܫܒ݂ܝܼܬ݂ܵܐ   [š-b-ʾ]   {noun f.sg.emph.}   (search: shbita)
+šḇīṯā (1) — captivity (1)
+* šḇīṯā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+
+ܥܲܡܹܗ   [ʿ-m-m]   {noun m.sg.emph. + 3ms suff.}   (search: ameh)
+ʿamēh (1) — His people (1)
+* dʿamēh · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+
+ܢܕ݂ܘܼܨ   [d-w-ṣ]   {Peal impf. 3m.sg.}   (search: ndus)
+nḏūṣ (1) — will exult (1)
+* nḏūṣ · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
+
+ܝܲܥܩܘܿܒ݂   [prop. noun]   {prop. n.}   (search: yaqob)
+yaʿqōḇ (1) — Yaqob (1)
+* yaʿqōḇ · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
+
+ܢܸܚܕܸܐ   [ḥ-d-y]   {Peal impf. 3m.sg.}   (search: nehde)
+neḥdeʾ (1) — will rejoice (1)
+* wneḥdeʾ · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
