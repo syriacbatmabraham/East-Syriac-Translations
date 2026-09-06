@@ -119,6 +119,7 @@ Kept separate from the project files. Format is fixed:
 - **One file per text.** Lines numbered by position; the line is the citation unit
 - **Punctuation and all other out-of-scope characters removed at ingestion** (Translit §10, Translit §16.1), except editorial apparatus. Clause division is carried by line breaks
 - **Editorial apparatus is preserved across all three blocks.** Syriac and transliteration carry the full variant; English may collapse shared wording and mark only what differs. A full English insertion from another source is used only for a whole line or clause.
+- **Assyrian inline witness labels are intentionally short.** Use `(Assyrian:)` for an alternate reading and `(Assyrian adds:)` for an addition. Full witness specificity belongs in `sources/sources.yaml` and in citations; where the witness is an Ordinary-Day/Ferial prayer, those provenance and citation labels retain `Ferial` (for example, `Assyrian Ferial Slotha d'Sapra II`).
 - **Rubrical labels are preserved across all three blocks as parenthesized editorial apparatus.** They are not prayed text and are excluded from ingestion, tokenization, lexical comparison, and context strings. A rubric directing repetition is retained as a label and also executed: the repeated clause is written out in full, one line per repetition.
 - **Straight apostrophes** (`'`), never curly
 
