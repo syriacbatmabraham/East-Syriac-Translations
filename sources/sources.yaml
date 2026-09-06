@@ -51,6 +51,13 @@ confirmed_texts:
   Slotha_d_Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
+  Slotha_d_Marmitha_5.txt:
+    citation_label: Slotha d'Marmitha 5
+    source_of_record: breviarium_chaldaicum
+    editorial_apparatus:
+      - line: 1
+        witness_label: Assyrian Slotha d'Marmitha 5
+        reading: "[bašrārāḵ]"
   Psalm_11.txt:
     citation_label: Psalm 11
     source_of_record: ksawa_d_mazmore

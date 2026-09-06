@@ -239,10 +239,11 @@ qdām (1) — before (1)
 * qdām · "He who was begotten from His Father before all ages..." (Creed Line 5)
 
 ܟܠܗܘܿܢ   [k-l]   {quant. + 3mp suff.}   (search: klhon)
-klhōn (3) — all (2), all of them (1)
+klhōn (4) — all (3), all of them (1)
 * klhōn · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * bḵlhōn · "In all times and seasons" (Ferial Slotha d'Sapra I, Line 9)
 * klhōn · "All of them have turned aside as one..." (Psalm 14 Line 9)
+* klhōn · "All the days of our lives" (Slotha d'Marmitha 5, Line 4)
 
 ܥܵܠܡܹ̈ܐ   [ʿ-l-m]   {noun m.pl.emph.}   (search: alme)
 ʿālm̈ē (2) — ages (2)
@@ -461,8 +462,9 @@ mīẗē (1) — the dead (1)
 * waḇḥaÿē · "...and life unto the Age of ages. Amen" (Creed Line 21)
 
 ܫܪܵܪܵܐ   [š-r-r]   {noun m.sg.emph.}   (search: shrara)
-šrārā (1) — Truth (1)
+šrārā (2) — Truth (2)
 * dašrārā · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
+* bašrārā · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
 ܢܵܦܹܩ   [n-p-q]   {Peal active ptcp. m.sg.abs.}   (search: napeq)
 nāpēq (1) — comes forth (1)
@@ -641,9 +643,10 @@ haḇ (1) — give (1)
 * haḇ · "Give us this day the bread we need" (Our Father Line 10)
 
 ܠܲܢ   [l]   {prep. + 1cp suff.}   (search: lan)
-lan (2) — us (2)
+lan (3) — us (3)
 * lan · "Give us this day the bread we need" (Our Father Line 10)
 * lan · "And release us our debts and sins..." (Our Father Line 11)
+* lan · "Make us worthy..." (Slotha d'Marmitha 5, Line 1)
 
 ܠܲܚܡܵܐ   [l-ḥ-m]   {noun m.sg.emph.}   (search: lahma)
 laḥmā (2) — bread (2)
@@ -824,13 +827,15 @@ ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
 ܡܵܪܲܢ   [m-r-ʾ]   {noun m.sg.emph. + 1cp suff.}   (search: maran)
-māran (2) — our Lord (2)
+māran (3) — our Lord (3)
 * māran · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 * māran · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+* māran · "...our Lord and our God..." (Slotha d'Marmitha 5, Line 1)
 
 ܐܲܠܵܗܲܢ   [ʾ-l-h]   {noun m.sg.emph. + 1cp suff.}   (search: alahan)
-ʾalāhan (1) — our God (1)
+ʾalāhan (2) — our God (2)
 * wʾalāhan · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
+* wʾalāhan · "...our Lord and our God..." (Slotha d'Marmitha 5, Line 1)
 
 ܬܲܪܥܵܐ   [t-r-ʿ]   {noun m.sg.emph.}   (search: tara)
 tarʿā (1) — the door (1)
@@ -1040,8 +1045,9 @@ nšamṯā (1) — Breath (1)
 * wanšamṯā · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
 
 ܚܲܝܲܝ̈ܢ   [ḥ-y-ʾ]   {noun m.pl.emph. + 1cp suff.}   (search: hayayn)
-ḥayaÿn (1) — our life (1)
+ḥayaÿn (2) — our life (1), our lives (1)
 * dḥayaÿn · "And the Breathing and Breath of our life" (Ferial Slotha d'Sapra II, Line 12)
+* dḥayaÿn · "All the days of our lives" (Slotha d'Marmitha 5, Line 4)
 
 ܢܨܲܠܸܐ   [ṣ-l-ʾ]   {Pael impf. 1c.pl.}   (search: nsale)
 nṣaleʾ (1) — let us pray (1)
@@ -1728,8 +1734,9 @@ neḥdōn (1) — rejoice (1)
 * neḥdōn · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
 
 ܟܲܕ݂   [k-d]   {conj.}   (search: kad)
-kaḏ (1) — when (1)
+kaḏ (2) — when (2)
 * kaḏ · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
+* dkaḏ · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
 ܐܹܙܘܼܥ   [z-w-ʿ]   {Peal impf. 1c.sg.}   (search: ezu)
 ʾēzūʿ (1) — I tremble (1)
@@ -1943,3 +1950,51 @@ yaʿqōḇ (1) — Yaqob (1)
 ܢܸܚܕܸܐ   [ḥ-d-y]   {Peal impf. 3m.sg.}   (search: nehde)
 neḥdeʾ (1) — will rejoice (1)
 * wneḥdeʾ · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
+
+ܐܲܫܘܵܐ   [š-w-ʾ]   {Aphel impv. 2m.sg.}   (search: ashwa)
+ʾašwā (1) — make...worthy (1)
+* ʾašwā · "Make us worthy..." (Slotha d'Marmitha 5, Line 1)
+
+ܕܲܟ݂̈ܝܵܢ   [d-k-ʾ]   {adj. f.pl.abs.}   (search: dakyan)
+daḵ̈yān (1) — pure (1)
+* daḵ̈yān · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
+
+ܬܹܐܪܵ̈ܬܲܢ   [t-ʾ-r-t]   {noun f.pl.emph. + 1cp suff.}   (search: teratan)
+tēʾr̈ātan (1) — our consciences (1)
+* tēʾr̈ātan · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
+
+ܡܩܲܕ̈ܫܵܢ   [q-d-š]   {adj. f.pl.abs.}   (search: mqadshan)
+mqad̈šān (1) — hallowed (1)
+* wamqad̈šān · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
+
+ܫܪܵܪܵܟ݂   [š-r-r]   {noun m.sg.emph. + 2ms suff.}   (search: shrarak)
+šrārāḵ (1) — [Your] Truth (1)
+* bašrārāḵ · "...that when our consciences are pure and hallowed in [Your] Truth" (Assyrian Slotha d'Marmitha 5, Line 1)
+
+ܢܸܥܡܲܪ   [ʿ-m-r]   {Peal impf. 1c.pl.}   (search: nemar)
+neʿmar (1) — we may dwell (1)
+* neʿmar · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
+
+ܡܲܫܟ݁ܢܵܟ݂   [š-k-n]   {noun m.sg.emph. + 2ms suff.}   (search: mashknak)
+mašk̇nāḵ (1) — Your...Tabernacle (1)
+* bmašk̇nāḵ · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
+
+ܩܲܕܝܼܫܵܐ   [q-d-š]   {adj. m.sg.emph.}   (search: qadisha)
+qadīšā (1) — holy (1)
+* qadīšā · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
+
+ܢܗܲܠܸܟ݂   [h-l-k]   {Pael impf. 1c.pl.}   (search: nhalek)
+nhaleḵ (1) — walk (1)
+* wanhaleḵ · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+
+ܐܘܼܪܚܵܟ݂   [ʾ-r-ḥ]   {noun f.sg.emph. + 2ms suff.}   (search: urhak)
+ʾūrḥāḵ (1) — Your way (1)
+* bʾūrḥāḵ · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+
+ܡܘܼܡ   [m-w-m]   {noun m.sg.abs.}   (search: mum)
+mūm (1) — blemish (1)
+* dlā mūm · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+
+ܝܵܘ̈ܡܵܬ݂ܵܐ   [y-w-m]   {noun m.pl.emph.}   (search: yawmata)
+yāẅmāṯā (1) — the days (1)
+* yāẅmāṯā · "All the days of our lives" (Slotha d'Marmitha 5, Line 4)
