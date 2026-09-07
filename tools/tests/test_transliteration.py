@@ -171,8 +171,8 @@ class TransliterationTests(unittest.TestCase):
             expected="(Witness A: 2) ʾ[b]ʾ",
         )
         self.assert_round_trip(
-            "(Assyrian Ferial adds:) [ܘܚܵܕ݂ܝܵ̈ܢ]",
-            expected="(Assyrian Ferial adds:) [wḥāḏÿān]",
+            "(Assyrian adds:) [ܘܚܵܕ݂ܝܵ̈ܢ]",
+            expected="(Assyrian adds:) [wḥāḏÿān]",
         )
 
     def test_editorial_parenthesis_that_collides_with_occultans_is_rejected(self):
