@@ -10,7 +10,7 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 from east_syriac.confirmed_text import ConfirmedTextDocument
-from east_syriac.glossary import check_glossary, check_glossary_path
+from east_syriac.glossary import _rendering_traceable, check_glossary, check_glossary_path
 from east_syriac.provenance import ConfirmedTextProvenance, SourceRegistry
 
 
@@ -97,6 +97,11 @@ class GlossaryAdversarialChecks(unittest.TestCase):
     def test_check_08_rendering_traceability(self):
         corrupted = BASE.replace("— Father (1)", "— Creator (1)")
         self.assertIn("rendering-not-traceable", self.codes(corrupted))
+
+    def test_check_08_rendering_traceability_ignores_apparatus_brackets(self):
+        self.assertTrue(_rendering_traceable("Your Truth", ["...in [Your] Truth"]))
+        self.assertTrue(_rendering_traceable("[Your] Truth", ["...in Your Truth"]))
+        self.assertFalse(_rendering_traceable("Your Truth", ["...in Your grace"]))
 
     def test_check_09_morphology_structure(self):
         corrupted = BASE.replace("{noun m.sg.emph.}", "{noun m.sg.}", 1)
