@@ -442,7 +442,7 @@ def _split_gender_number_state(token: str) -> tuple[str, str, str] | None:
 
 
 def _valid_person_gender_number(token: str) -> bool:
-    return re.fullmatch(r"([123])([mfc])\.(sg|pl)\.", token) is not None
+    return re.fullmatch(r"([123])([mfc])\.(?:sg|pl)\.", token) is not None
 
 
 def _valid_nominal_morph(base: str) -> bool:
@@ -533,11 +533,14 @@ def _rendering_traceable(rendering: str, contexts: Iterable[str]) -> bool:
     if rendering == "⌀" or rendering.startswith("→"):
         return True
     expanded = re.sub(r"\(([^()]*)\)", r"\1", rendering)
+    # Source-apparatus brackets belong to the context layer, not the lexical
+    # rendering. Ignore only the bracket characters for this traceability test.
+    expanded = expanded.replace("[", "").replace("]", "")
     pieces = [piece.strip().casefold() for piece in expanded.split("...") if piece.strip()]
     if not pieces:
         return False
     for context in contexts:
-        haystack = context.casefold()
+        haystack = context.replace("[", "").replace("]", "").casefold()
         pos = 0
         ok = True
         for piece in pieces:
