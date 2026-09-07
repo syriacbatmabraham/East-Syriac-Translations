@@ -48,7 +48,7 @@ The same applies wherever a grapheme serves two functions: ʾālap̄ as consonan
 
 ### Case
 
-Case is not a feature of the Syriac page. The **Syriac-derived transliteration is lowercase**; all capitalization of Syriac words belongs to the English layer. Māryā is written `māryā` in the canonical string and capitalized only on the English side. Literal editorial apparatus (§2) is not Syriac-derived transliteration and preserves its supplied case exactly, e.g. `(Assyrian Ferial adds:)`.
+Case is not a feature of the Syriac page. The **Syriac-derived transliteration is lowercase**; all capitalization of Syriac words belongs to the English layer. Māryā is written `māryā` in the canonical string and capitalized only on the English side. Literal editorial apparatus (§2) is not Syriac-derived transliteration and preserves its supplied case exactly, e.g. `(Assyrian adds:)`.
 
 ---
 
@@ -78,7 +78,7 @@ Parentheses have two in-scope uses, so the inverse grammar must distinguish them
 - A parenthetical payload that parses **completely as exactly one canonical Syriac letter-unit**, optionally preceded by `_` for a line below, is one-letter line notation (§6.1).
 - Any other balanced parenthetical payload is editorial apparatus and is preserved literally, **except** a retired two-unit line wrapper such as `(mn)` or `(_mn)`, which is invalid canonical transliteration and must be migrated to direct span encoding plus `⁀`/`‿` notation.
 
-Therefore an editorial label whose entire contents would itself be legal one-letter line syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with the one-letter line notation `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian Ferial adds:)` are unambiguous and remain literal.
+Therefore an editorial label whose entire contents would itself be legal one-letter line syntax is ambiguous and is prohibited until disambiguated. For example, literal editorial `(h)` cannot coexist with the one-letter line notation `(h)` as two meanings of the same canonical string. Ordinary source labels such as `(Witness A: 2)` and `(Assyrian adds:)` are unambiguous and remain literal.
 
 ---
 
