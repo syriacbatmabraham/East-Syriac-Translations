@@ -152,7 +152,7 @@ The text files carry no header of their own, which would break the three-block p
 
 `decisions/Major-Interpretive-Decisions.md` preserves only **material settled interpretive decisions that a later translator or adversarial audit is reasonably likely to reopen**. It is not a research notebook, does not duplicate ordinary Glossary decisions, and never replaces the evidence required by §12 when genuinely new evidence appears.
 
-Each entry is a short bullet naming the text and line or lines, the date, the settled choice, and a one- or two-sentence reason. If the original date of a legacy decision is not securely known, record the date on which it was **affirmed** rather than inventing an earlier date. When substantive new evidence warrants reopening a recorded decision, investigate it and obtain the user's judgment before altering the text; record the new dated decision so that the reason for the change remains visible.
+Each entry is a short bullet naming the text and line or lines, the date of the decision when known, and a one- or two-sentence reason. If the original date of a legacy decision is not securely known, record the date on which it was **affirmed** rather than inventing an earlier date. When substantive new evidence warrants reopening a recorded decision, investigate it and obtain the user's judgment before altering the text; record the new dated decision so that the reason for the change remains visible.
 
 A decision recorded here is a working premise in later translation and audit work. Do not reopen it merely because another translation tradition, lexicon gloss, or smoother English alternative exists; reopen it only when materially new Syriac, textual, grammatical, patristic, or project evidence bears against it.
 
@@ -195,7 +195,7 @@ A decision recorded here is a working premise in later translation and audit wor
     **All other points remain as attested.** A headword is the spelling of the indexed form, not a stripped skeleton.
 
     **Where a bgdkpt point carries a form distinction, preserve it.** If the point is the only written signal of a different morphological analysis, the spellings are different forms and take separate entries with distinct `{...}` analyses under §10.1. Merging is the default; splitting is a morphological claim. Once that claim is made in the headwords, the checker does not strip the point again.
-18. **A common liturgical unit takes one set of entries.** A unit recurring across the office unchanged — the standard closing ܡܵܪܵܐ ܕܟܼܠ ܐܲܒ̣ܵܐ ܘܲܒ̣ܪܵܐ ܘܪܘܼܚܵܐ ܕܩܘܼܕ̣ܫܵܐ ܠܥܵܠܡܝܼܢ is the standing case — records its occurrences once, at the text where first confirmed. Check 4 is satisfied without it. Where a later witness differs in content, it is not the same unit and takes its own entries.
+18. **A common liturgical unit takes one set of entries.** A unit recurring across the office unchanged — the standard closing ܡܵܪܵܐ ܕܟ݂ܠ ܐܲܒ݂ܵܐ ܘܲܒ݂ܪܵܐ ܘܪܘܼܚܵܐ ܕܩܘܼܕ݂ܫܵܐ ܠܥܵܠܡܝܼܢ is the standing case — records its occurrences once, at the text where first confirmed. Check 4 is satisfied without it. Where a later witness differs in content, it is not the same unit and takes its own entries.
 19. **A rendering interrupted by other words takes `...` at the break** — `May...come`, `Your...Trinity`. Three ASCII periods, as §10.13. The rendering names only the English belonging to this form; the intervening words belong to their own entries.
 20. **The root field follows SEDRA** (§12.1), transliterated into this project's hyphenated form. Consult it; do not reconstruct from memory or cognate reasoning.
 
@@ -218,7 +218,7 @@ Run after every glossary write, and after any edit to a confirmed text. **Diagno
 5. The converse of 4 — every non-exempt occurrence in the corpus carries a bullet, and no bullet claims an occurrence its line does not contain
 6. No two entries share the same canonical headword string, root, **and `{...}` morphology** (Translit §12). Compare the headwords exactly as stored; §10.17 has already removed only the bgdkpt distinctions that the Glossary has deliberately merged
 7. Every attested form is a token sequence of its cited transliteration line
-8. Every recorded rendering is traceable in that entry's own context strings, with `...` (§10.19) and the §10.15 bracket resolved first. A `→` phrase pointer is not a rendering and is exempt
+8. Every recorded rendering is traceable in that entry's own context strings, with `...` (§10.19) and the §10.15 binding resolved first; source-apparatus square-bracket characters are ignored for this traceability check only. A `→` phrase pointer is not a rendering and is exempt
 9. Every form entry has exactly one nonempty `{...}` field satisfying §10.1; the root field holds a root or a marker declared in §10.20, never a part of speech doing a root's work; the `{...}` field never holds a root
 10. Context strings: **10a** — every context is a literal span of its cited line, taken from the English block with editorial labels and interpretive supplements removed and `...` stripped; **10b** — two contexts citing one line are identical or disjoint
 
