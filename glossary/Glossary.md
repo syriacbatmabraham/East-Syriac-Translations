@@ -150,7 +150,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (20) — Mar Yah (20)
+māryā (22) — Mar Yah (22)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -171,6 +171,8 @@ māryā (20) — Mar Yah (20)
 * walmāryā · "And they have not called to Mar Yah" (Psalm 14 Line 13)
 * dmāryā · "For Mar Yah is his trust" (Psalm 14 Line 17)
 * māryā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+* māryā · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
+* dmāryā · "And he honors those who fear Mar Yah" (Psalm 15 Line 11)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -235,8 +237,9 @@ m_n (16) — from (15), at (1)
 * wʾeṯīleḏ · "And was conceived and begotten from Mariam the Virgin" (Creed Line 11)
 
 ܩܕܵܡ   [q-d-m]   {prep.}   (search: qdam)
-qdām (1) — before (1)
+qdām (2) — before (2)
 * qdām · "He who was begotten from His Father before all ages..." (Creed Line 5)
+* qḏām · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
 
 ܟܠܗܘܿܢ   [k-l]   {quant. + 3mp suff.}   (search: klhon)
 klhōn (4) — all (3), all of them (1)
@@ -531,11 +534,12 @@ paḡr̈ē (1) — bodies (1)
 * lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
 
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
-ʿālam (4) — Eternity (4)
+ʿālam (5) — Eternity (5)
 * ʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * lʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * lʿālam · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
 * lʿālam · "How long, Mar Yah? Will You forget me for Eternity?" (Psalm 13 Line 1)
+* lʿālam · "And unshaken for Eternity" (Psalm 15 Line 16)
 
 ܥܵܠܡܝܼܢ   [ʿ-l-m]   {noun m.pl.abs.}   (search: almin)
 ʿālmīn (4) — → ʿālam ʿālmīn (2), forever (2)
@@ -745,13 +749,15 @@ mr̈āwmē (1) — the heights (1)
 * bamr̈āwmē · "Glorification to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܥܲܠ   [ʿ-l]   {prep.}   (search: al)
-ʿal (6) — on (1), upon (4), in (1)
+ʿal (8) — on (1), upon (4), in (1), against (2)
 * wʿal · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ʿal · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
 * ʿal · "And have set their arrows upon the string" (Psalm 11 Line 7)
 * ʿal · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 * ʿal · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
 * ʿal · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
+* ʿal · "And not accepting a bribe against his neighbor" (Psalm 15 Line 9)
+* ʿal · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
 
 ܫܠܵܡܵܐ   [š-l-m]   {noun m.sg.emph.}   (search: shlama)
 šlāmā (2) — peace (2)
@@ -827,10 +833,11 @@ ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
 ܡܵܪܲܢ   [m-r-ʾ]   {noun m.sg.emph. + 1cp suff.}   (search: maran)
-māran (3) — our Lord (3)
+māran (4) — our Lord (4)
 * māran · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 * māran · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
 * māran · "...our Lord and our God..." (Slotha d'Marmitha 5, Line 1)
+* māran · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
 
 ܐܲܠܵܗܲܢ   [ʾ-l-h]   {noun m.sg.emph. + 1cp suff.}   (search: alahan)
 ʾalāhan (2) — our God (2)
@@ -1231,8 +1238,9 @@ kūrsyēh (1) — His Seat (1)
 * kūrsyēh · "Mar Yah, in Heaven, His Seat" (Psalm 11 Line 12)
 
 ܥܲܝܢܵܘ̈ܗܝ   [ʿ-y-n]   {noun f.pl.emph. + 3ms suff.}   (search: aynawhy)
-ʿaynāẅhy (1) — His eyes (1)
+ʿaynāẅhy (2) — His eyes (2)
 * ʿaynāẅhy · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
+* bʿaynāẅhy · "Despised in his eyes is the provoker" (Psalm 15 Line 10)
 
 ܚܵܙ̈ܝܵܢ   [ḥ-z-ʾ]   {Peal active ptcp. f.pl.abs.}   (search: hazyan)
 ḥāz̈yān (2) — are seeing (1), is seeing (1)
@@ -1325,8 +1333,9 @@ zadīq (1) — righteous (1)
 * (h)w_ · "For Mar Yah is his trust" (Psalm 14 Line 17)
 
 ܙܲܕܝܼܩܘܼܬ݂ܵܐ   [z-d-q]   {noun f.sg.emph.}   (search: zadiquta)
-zadīqūṯā (1) — righteousness (1)
+zadīqūṯā (2) — righteousness (2)
 * wzadīqūṯā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
+* zadīqūṯā · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
 
 ܪܵܚܹ̇ܡ   [r-ḥ-m]   {Peal active ptcp. m.sg.abs.}   (search: rahem)
 rāḥ^ēm (1) — He loves (1)
@@ -1395,8 +1404,10 @@ gaḇrā (1) — a man (1)
 * ʿam · "A man with his fellow in divided lips" (Psalm 12 Line 7)
 
 ܚܲܒ݂ܪܹܗ   [ḥ-b-r]   {noun m.sg.emph. + 3ms suff.}   (search: habreh)
-ḥaḇrēh (1) — his fellow (1)
+ḥaḇrēh (3) — his fellow (3)
 * ḥaḇrēh · "A man with his fellow in divided lips" (Psalm 12 Line 7)
+* lḥaḇrēh · "And not doing evil to his fellow" (Psalm 15 Line 8)
+* lḥaḇrēh · "Swearing to his fellow and not lying" (Psalm 15 Line 12)
 
 ܣܸܦ̈ܘܵܬ݂ܵܐ   [s-p-t]   {noun f.pl.emph.}   (search: sepwata)
 sep̈wāṯā (3) — lips (3)
@@ -1442,8 +1453,10 @@ dīlan (1) — our...our own (1)
 * ʾanēyn · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
 
 ܡܲܢ̣ܘܼ   [m-n]   {interrog. pron. + 3ms encl.}   (search: manu)
-man_ū (1) — who is (1)
+man_ū (3) — who is (1), who (2)
 * man_ū · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+* man_ū · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
+* wman_ū · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
 
 ܒܸܙܬ݂ܵܐ   [b-z-z]   {noun f.sg.emph.}   (search: bezta)
 bezṯā (1) — the plundering (1)
@@ -1775,8 +1788,9 @@ parqany (1) — He has saved me (1)
 * ʿāw^ālā · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
 
 ܠܸܒܹ݁ܗ   [l-b-b]   {noun m.sg.emph. + 3ms suff.}   (search: lebeh)
-leḃēh (1) — his heart (1)
+leḃēh (2) — his heart (2)
 * bleḃēh · "The unrighteous has said in his heart..." (Psalm 14 Line 1)
+* bleḃēh · "Speaking truth in his heart, and not deceitful with his tongue" (Psalm 15 Line 7)
 
 ܠܲܝܬ݁   [ʾ-y-t]   {particle}   (search: layt)
 layṫ (3) — is not there (1), there is no one (2)
@@ -1809,9 +1823,12 @@ bī̈šē (1) — evil ones (1)
 * bī̈šē · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܥ᷸ܵܒܹܕ݂   [ʿ-b-d]   {Peal active ptcp. m.sg.abs.}   (search: abed)
-ʿā^^bēḏ (2) — doing (2)
+ʿā^^bēḏ (5) — doing (4), is doing (1)
 * dʿā^^bēḏ · "And there is no one doing good" (Psalm 14 Line 6)
 * dʿā^^bēḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
+* wʿā^^bēḏ · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
+* wlā ʿā^^bēḏ · "And not doing evil to his fellow" (Psalm 15 Line 8)
+* dʿā^^bēḏ · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
 
 ܛܵܒ݂ܬ݂ܵܐ   [ṭ-w-b]   {adj. f.sg.emph.}   (search: tabta)
 ṭāḇṯā (2) — good (2)
@@ -1907,8 +1924,9 @@ tūḵlānēh (1) — his trust (1)
 * tūḵlānēh · "For Mar Yah is his trust" (Psalm 14 Line 17)
 
 ܡ̇ܢ   [m-n]   {interrog. pron.}   (search: mn)
-m^n (1) — who (1)
+m^n (2) — who (1), whoever (1)
 * m^n · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+* m^n · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
 
 ܢܸܬܸ݁ܠ   [y-h-b]   {Peal impf. 3m.sg.}   (search: netel)
 neṫel (1) — will give (1)
@@ -1976,12 +1994,14 @@ neʿmar (1) — we may dwell (1)
 * neʿmar · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
 
 ܡܲܫܟ݁ܢܵܟ݂   [š-k-n]   {noun m.sg.emph. + 2ms suff.}   (search: mashknak)
-mašk̇nāḵ (1) — Your...Tabernacle (1)
+mašk̇nāḵ (2) — Your...Tabernacle (1), Your Tabernacle (1)
 * bmašk̇nāḵ · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
+* bmašk̇nāḵ · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
 
 ܩܲܕܝܼܫܵܐ   [q-d-š]   {adj. m.sg.emph.}   (search: qadisha)
-qadīšā (1) — holy (1)
+qadīšā (2) — holy (2)
 * qadīšā · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
+* qadīšā · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
 
 ܢܗܲܠܸܟ݂   [h-l-k]   {Pael impf. 1c.pl.}   (search: nhalek)
 nhaleḵ (1) — walk (1)
@@ -1992,9 +2012,139 @@ nhaleḵ (1) — walk (1)
 * bʾūrḥāḵ · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
 
 ܡܘܼܡ   [m-w-m]   {noun m.sg.abs.}   (search: mum)
-mūm (1) — blemish (1)
+mūm (2) — blemish (2)
 * dlā mūm · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+* dlā mūm · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
 
 ܝܵܘ̈ܡܵܬ݂ܵܐ   [y-w-m]   {noun m.pl.emph.}   (search: yawmata)
 yāẅmāṯā (1) — the days (1)
 * yāẅmāṯā · "All the days of our lives" (Slotha d'Marmitha 5, Line 4)
+
+ܢܸܥܡܲܪ   [ʿ-m-r]   {Peal impf. 3m.sg.}   (search: nemar)
+neʿmar (1) — will dwell (1)
+* neʿmar · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
+
+ܢܸܫܪܸܐ   [š-r-ʾ]   {Peal impf. 3m.sg.}   (search: neshre)
+nešreʾ (1) — will live (1)
+* nešreʾ · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
+
+ܛܘܼܪܵܟ݂   [ṭ-w-r]   {noun m.sg.emph. + 2ms suff.}   (search: turak)
+ṭūrāḵ (1) — Your...Mountain (1)
+* bṭūrāḵ · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
+
+ܕܲܟ݂ܝܘܼܬ݂   [d-k-ʾ]   {noun f.sg.cst.}   (search: dakyut)
+daḵyūṯ (1) — purity of (1)
+* bdaḵyūṯ · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+
+ܚܘܼܫܵܒܹ̈ܐ   [ḥ-š-b]   {noun m.pl.emph.}   (search: hushabe)
+ḥūšāb̈ē (1) — thoughts (1)
+* ḥūšāb̈ē · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+
+ܐܲܩܝܼܡܲܝܢܝ   [q-w-m]   {Aphel impv. 2m.sg. + 1cs suff.}   (search: aqimayny)
+ʾaqīmayny (1) — raise me (1)
+* ʾaqīmayny · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+
+ܡܲܕ݂ܒ݁ܚܵܟ݂   [d-b-ḥ]   {noun m.sg.emph. + 2ms suff.}   (search: madbhak)
+maḏḃḥāḵ (1) — Your Madbaha (1)
+* maḏḃḥāḵ · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+
+ܐܲܝܢܵܐ   [ʾ-y-n-ʾ]   {rel. pron. m.sg.}   (search: ayna)
+ʾaynā (1) — the one (1)
+* ʾaynā · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
+
+ܡܗܲܠܸܟ݂   [h-l-k]   {Pael active ptcp. m.sg.abs.}   (search: mhalek)
+mhaleḵ (1) — walking (1)
+* damhaleḵ · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
+
+ܡܡܲܠܸܠ   [m-l-l]   {Pael active ptcp. m.sg.abs.}   (search: mmalel)
+mmalel (1) — speaking (1)
+* wammalel · "Speaking truth in his heart, and not deceitful with his tongue" (Psalm 15 Line 7)
+
+ܩܘܼܫܬܵܐ   [q-w-š-t]   {noun m.sg.emph.}   (search: qushta)
+qūštā (1) — truth (1)
+* qūštā · "Speaking truth in his heart, and not deceitful with his tongue" (Psalm 15 Line 7)
+
+ܢܲܟ݁ܘܼܠܬ݂ܵܢ   [n-k-l]   {adj. m.sg.abs.}   (search: nakultan)
+nak̇ūlṯān (1) — deceitful (1)
+* wlā nak̇ūlṯān · "Speaking truth in his heart, and not deceitful with his tongue" (Psalm 15 Line 7)
+
+ܠܸܫܵܢܹܗ   [l-š-n]   {noun m.sg.emph. + 3ms suff.}   (search: leshaneh)
+lešānēh (1) — his tongue (1)
+* blešānēh · "Speaking truth in his heart, and not deceitful with his tongue" (Psalm 15 Line 7)
+
+ܒܝܼܫܬܵܐ   [b-ʾ-š]   {noun f.sg.emph.}   (search: bishta)
+bīštā (1) — evil (1)
+* bīštā · "And not doing evil to his fellow" (Psalm 15 Line 8)
+
+ܫܘܼܚܕܵܐ   [š-ḥ-d]   {noun m.sg.emph.}   (search: shuhda)
+šūḥdā (2) — a bribe (2)
+* wšūḥdā · "And not accepting a bribe against his neighbor" (Psalm 15 Line 9)
+* wšūḥdā · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
+
+ܩܲܪܝܼܒܹܗ   [q-r-b]   {adj. m.sg.emph. + 3ms suff.}   (search: qaribeh)
+qarībēh (1) — his neighbor (1)
+* qarībēh · "And not accepting a bribe against his neighbor" (Psalm 15 Line 9)
+
+ܡܩܲܒܸ݁ܠ   [q-b-l]   {Pael active ptcp. m.sg.abs.}   (search: mqabel)
+mqaḃel (1) — accepting (1)
+* lā mqaḃel · "And not accepting a bribe against his neighbor" (Psalm 15 Line 9)
+
+ܡܲܣܠܲܝ   [s-l-ʾ]   {adj. m.sg.abs.}   (search: maslay)
+maslay (1) — despised (1)
+* wmaslay · "Despised in his eyes is the provoker" (Psalm 15 Line 10)
+
+ܡܲܪܓ݁ܙܵܢܵܐ   [r-g-z]   {noun m.sg.emph.}   (search: margzana)
+marġzānā (1) — the provoker (1)
+* marġzānā · "Despised in his eyes is the provoker" (Psalm 15 Line 10)
+
+ܕܵܚܠܵܘ̈ܗܝ   [d-ḥ-l]   {noun m.pl.emph. + 3ms suff.}   (search: dahlawhy)
+dāḥlāẅhy (1) — those who fear (1)
+* walḏāḥlāẅhy · "And he honors those who fear Mar Yah" (Psalm 15 Line 11)
+
+ܡܝܲܩܲܪ   [y-q-r]   {Pael active ptcp. m.sg.abs.}   (search: myaqar)
+myaqar (1) — he honors (1)
+* myaqar · "And he honors those who fear Mar Yah" (Psalm 15 Line 11)
+
+ܝܵܡܹ̇ܐ   [y-m-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: yame)
+yām^ē (1) — swearing (1)
+* yām^ē · "Swearing to his fellow and not lying" (Psalm 15 Line 12)
+
+ܡܕܲܓܸ݁ܠ   [d-g-l]   {Pael active ptcp. m.sg.abs.}   (search: mdagel)
+mdaġel (1) — lying (1)
+* wlā mdaġel · "Swearing to his fellow and not lying" (Psalm 15 Line 12)
+
+ܟܸܣܦܹܗ   [k-s-p]   {noun m.sg.emph. + 3ms suff.}   (search: kespeh)
+kespēh (1) — his money (1)
+* wkespēh · "And not lending his money at interest" (Psalm 15 Line 13)
+
+ܪܸܒ݁ܝܼܬ݂ܵܐ   [r-b-ʾ]   {noun f.sg.emph.}   (search: rebita)
+reḃīṯā (1) — interest (1)
+* breḃīṯā · "And not lending his money at interest" (Psalm 15 Line 13)
+
+ܝ᷸ܵܗܹܒ݂   [y-h-b]   {Peal active ptcp. m.sg.abs.}   (search: yaheb)
+yā^^hēḇ (1) — lending (1)
+* lā yā^^hēḇ · "And not lending his money at interest" (Psalm 15 Line 13)
+
+ܙܲܟܵܝܵܐ   [z-k-ʾ]   {adj. m.sg.emph.}   (search: zakaya)
+zakāyā (1) — the innocent (1)
+* zakāyā · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
+
+ܢ᷸ܵܣܹܒ݂   [n-s-b]   {Peal active ptcp. m.sg.abs.}   (search: naseb)
+nā^^sēḇ (1) — taking (1)
+* lā nā^^sēḇ · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
+
+ܗܵܠܹܝܢ   [h-n]   {dem. pron. c.pl.}   (search: haleyn)
+hālēyn (1) — these things (1)
+* hālēyn · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
+
+ܟܹܐܢ   [k-w-n]   {adj. m.sg.abs.}   (search: ken)
+kēʾn (1) — just (1)
+* kēʾn · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
+
+ܗ᷺ܘ   [h-w]   {pron. 3m.sg.}   (search: hw)
+h__w (1) — he is (1)
+* h__w · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
+
+ܡܸܬ݁ܬ݁ܙܝܼܥ   [z-w-ʿ]   {Ettaphal ptcp. m.sg.abs.}   (search: mettzi)
+meṫṫzīʿ (1) — unshaken (1) [wlā]
+* wlā meṫṫzīʿ · "And unshaken for Eternity" (Psalm 15 Line 16)
