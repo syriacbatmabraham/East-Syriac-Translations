@@ -1963,12 +1963,12 @@ daḵ̈yān (1) — pure (1)
 tēʾr̈ātan (1) — our consciences (1)
 * tēʾr̈ātan · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
-ܡܩܲܕ̈ܫܵܢ   [q-d-š]   {adj. f.pl.abs.}   (search: mqadshan)
+ܡܩܲܕ̈ܫܵܢ   [q-d-š]   {Pael passive ptcp. f.pl.abs.}   (search: mqadshan)
 mqad̈šān (1) — hallowed (1)
 * wamqad̈šān · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
 ܫܪܵܪܵܟ݂   [š-r-r]   {noun m.sg.emph. + 2ms suff.}   (search: shrarak)
-šrārāḵ (1) — [Your] Truth (1)
+šrārāḵ (1) — Your Truth (1)
 * bašrārāḵ · "...that when our consciences are pure and hallowed in [Your] Truth" (Assyrian Slotha d'Marmitha 5, Line 1)
 
 ܢܸܥܡܲܪ   [ʿ-m-r]   {Peal impf. 1c.pl.}   (search: nemar)
