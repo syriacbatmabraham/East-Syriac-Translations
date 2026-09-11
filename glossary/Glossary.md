@@ -101,7 +101,7 @@ mhaymnīnan (1) — we are faithful (1)
 * ḥaḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܲܠܵܗܵܐ   [ʾ-l-h]   {noun m.sg.emph.}   (search: alaha)
-ʾalāhā (8) — God (8)
+ʾalāhā (9) — God (9)
 * ʾalāhā · "We are faithful to One God..." (Creed Line 1)
 * dʾalāhā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 * ʾalāhā · "True God from True God" (Creed Line 6)
@@ -110,6 +110,7 @@ mhaymnīnan (1) — we are faithful (1)
 * ʾalāhā · "...God is not there" (Psalm 14 Line 1)
 * lʾalāhā · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
 * dʾalāhā · "For God is in the generation of the righteous" (Psalm 14 Line 15)
+* ʾalāhā · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
 
 ܐܲܒ݂ܵܐ   [ʾ-b]   {noun m.sg.emph.}   (search: aba)
 ʾaḇā (4) — Father (4)
@@ -150,7 +151,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (22) — Mar Yah (22)
+māryā (26) — Mar Yah (26)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -173,6 +174,10 @@ māryā (22) — Mar Yah (22)
 * māryā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
 * māryā · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
 * dmāryā · "And he honors those who fear Mar Yah" (Psalm 15 Line 11)
+* lmāryā · "I have said to Mar Yah: You are my Lord" (Psalm 16 Line 2)
+* māryā · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
+* lmāryā · "I bless Mar Yah, who has counseled me" (Psalm 16 Line 16)
+* lmāryā · "I have set Mar Yah before me at all times" (Psalm 16 Line 18)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -208,7 +213,7 @@ hāw (3) — He who (3)
 * hāw · "He who from the Father [and the Son] comes forth" (Creed Line 17)
 
 ܡ̣ܢ   [m-n]   {prep.}   (search: mn)
-m_n (16) — from (15), at (1)
+m_n (21) — from (19), at (2)
 * dm_n · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * dm_n · "True God from True God" (Creed Line 6)
 * m_n · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
@@ -225,6 +230,11 @@ m_n (16) — from (15), at (1)
 * m_n · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 * m_n · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 * m_n · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
+* m_n · "And my good - it is from beside You" (Psalm 16 Line 6)
+* m_n · "I do not pour their libation from blood" (Psalm 16 Line 10)
+* m_n · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+* m_n · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
+* wm_n · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
 
 ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abuhy)
 ʾaḇūhy (2) — His Father (2)
@@ -299,7 +309,7 @@ bnaÿnāšā (5) — sons of men (5)
 * bnaÿnāšā · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
-meṭl (9) — for (8), because of (1)
+meṭl (12) — for (10), because of (2)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 * meṭl · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
@@ -309,6 +319,9 @@ meṭl (9) — for (8), because of (1)
 * meṭl · "Because of the plundering of the poor..." (Psalm 12 Line 13)
 * meṭl · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 * meṭl · "For Mar Yah is his trust" (Psalm 14 Line 17)
+* meṭl · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
+* meṭl · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
+* meṭl · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -461,8 +474,9 @@ mīẗē (1) — the dead (1)
 * walḥaÿē · "...to judge the dead and the living" (Creed Line 15)
 
 ܚܲܝܹ̈ܐ   [ḥ-y-ʾ]   {noun m.pl.emph.}   (search: haye)
-ḥaÿē (1) — life (1)
+ḥaÿē (2) — life (2)
 * waḇḥaÿē · "...and life unto the Age of ages. Amen" (Creed Line 21)
+* dḥaÿē · "You show me Your Way of life" (Psalm 16 Line 24)
 
 ܫܪܵܪܵܐ   [š-r-r]   {noun m.sg.emph.}   (search: shrara)
 šrārā (2) — Truth (2)
@@ -588,12 +602,13 @@ mlēyn (1) — are full (1)
 * šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܐܲܪܥܵܐ   [ʾ-r-ʿ]   {noun f.sg.emph.}   (search: ara)
-ʾarʿā (5) — earth (5)
+ʾarʿā (6) — earth (6)
 * wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 * bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * ʾarʿā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ʾarʿā · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
 * bʾarʿā · "Choice silver tried in the earth" (Psalm 12 Line 17)
+* dḇʾarʿā · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
 
 ܪܲܒ݁ܘܼܬ݂   [r-b-b]   {noun f.sg.cst.}   (search: rabut)
 raḃūṯ (1) — the greatness of (1)
@@ -637,10 +652,14 @@ nehweʾ (1) — let...be (1)
 * ʾaykanā · "...as we have released our debtors" (Our Father Line 11)
 
 ܐܵܦ   [ʾ-p]   {particle}   (search: ap)
-ʾāp (3) — ⌀ (2), even (1)
+ʾāp (7) — ⌀ (2), even (4), as for (1)
 * ʾāp · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * dʾāp · "...as we have released our debtors" (Our Father Line 11)
 * wʾāplā · "And there is no one doing good - not even one" (Psalm 14 Line 10)
+* wʾāp · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
+* wʾāp · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
+* wʾāp · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
+* wʾāp · "And even my flesh lives in serenity" (Psalm 16 Line 21)
 
 ܗܲܒ݂   [y-h-b]   {Peal impv. 2m.sg.}   (search: hab)
 haḇ (1) — give (1)
@@ -715,8 +734,9 @@ dīlāḵ (1) — Thine (1)
 * ddīlāḵ · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܗ݇ܝܼ   [h-w]   {pron. 3f.sg.}   (search: hi)
-(h)ī (1) — is (1)
+(h)ī (2) — is (1), it is (1)
 * (h)ī · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
+* (h)ī · "And my good - it is from beside You" (Psalm 16 Line 6)
 
 ܡܲܠܟ݁ܘܼܬ݂ܵܐ   [m-l-k]   {noun f.sg.emph.}   (search: malkuta)
 malk̇ūṯā (1) — the Kingdom (1)
@@ -946,10 +966,11 @@ mārā (2) — Lord (2)
 * mārā · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܡܵܪܝ   [m-r-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: mary)
-māry (3) — my Lord (3)
+māry (4) — my Lord (4)
 * māry · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 * māry · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 2)
 * māry · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
+* dmāry · "I have said to Mar Yah: You are my Lord" (Psalm 16 Line 2)
 
 ܡܩܲܕܡܵܢ̈   [q-d-m]   {Pael active ptcp. f.pl.abs.}   (search: mqadman)
 mqadmān̈ (1) — early they come (1)
@@ -1032,8 +1053,9 @@ hwāyā (1) — be (1)
 * lahwāyā · "And by Your desire have come to be" (Ferial Slotha d'Sapra II, Line 10)
 
 ܐܲܢ݇ܬ݁ܘܼ   [ʾ-n-t]   {pron. 2m.sg. + 3ms encl.}   (search: antu)
-ʾa(n)ṫū (1) — You are (1)
+ʾa(n)ṫū (2) — You are (2)
 * dʾa(n)ṫū · "For You are the Cause of their being" (Ferial Slotha d'Sapra II, Line 11)
+* ʾa(n)ṫū · "You are restoring to me my inheritance" (Psalm 16 Line 13)
 
 ܥܸܠܬ݂ܵܐ   [ʿ-l-l]   {noun f.sg.emph.}   (search: elta)
 ʿelṯā (1) — the Cause (1)
@@ -1120,9 +1142,10 @@ saḃrēṯ (2) — I have hoped (2)
 * ʾām^rīṫōn · "...how are you saying to my soul:" (Psalm 11 Line 1)
 
 ܢܲܦ̮ܫܝ   [n-p-š]   {noun f.sg.emph. + 1cs suff.}   (search: napshy)
-nap̮šy (2) — my soul (2)
+nap̮šy (3) — my soul (3)
 * lnap̮šy · "...how are you saying to my soul:" (Psalm 11 Line 1)
 * bnap̮šy · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
+* lnap̮šy · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
 
 ܢܘܼܕ݂ܝ   [n-w-d]   {Peal impv. 2f.sg.}   (search: nudy)
 nūḏy (1) — wander (1)
@@ -1145,10 +1168,13 @@ nūḏy (1) — wander (1)
 * ʾeṫṭakanw · "Sinners have schemed against me..." (Psalm 11 Line 3)
 
 ܠܝܼ   [l]   {prep. + 1cs suff.}   (search: li)
-lī (3) — against me (1), to me (1), over me (1)
+lī (6) — against me (1), to me (4), over me (1)
 * lī · "Sinners have schemed against me..." (Psalm 11 Line 3)
 * lī · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
 * lī · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
+* lī · "You are restoring to me my inheritance" (Psalm 16 Line 13)
+* lī · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+* lī · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
 
 ܒܵܟ݂   [b]   {prep. + 2ms suff.}   (search: bak)
 bāḵ (1) — in You (1)
@@ -1315,8 +1341,9 @@ mḥōṯā (1) — affliction (1)
 * damḥōṯā · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
 
 ܡܢܵܬ݂ܵܐ   [m-n-ʾ]   {noun f.sg.emph.}   (search: mnata)
-mnāṯā (1) — the portion (1)
+mnāṯā (2) — the portion (2)
 * mnāṯā · "And a ruha of affliction, the portion of their cup" (Psalm 11 Line 18)
+* mnāṯā · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
 
 ܟܵܣܗܘܿܢ   [—]   {noun m.sg.emph. + 3mp suff.}   (search: kashon)
 kāshōn (1) — their cup (1)
@@ -1532,8 +1559,9 @@ mdakay (1) — purified (1)
 * bšaḇʿā · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
 
 ܐܲܢ݇ܬ   [ʾ-n-t]   {pron. 2m.sg.}   (search: ant)
-ʾa(n)t (1) — You (1)
+ʾa(n)t (2) — You (1), You are (1)
 * wʾa(n)t · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
+* ʾa(n)t · "I have said to Mar Yah: You are my Lord" (Psalm 16 Line 2)
 
 ܬܸܛܲܪ   [n-ṭ-r]   {Peal impf. 2m.sg.}   (search: tetar)
 teṭar (1) — keep (1)
@@ -1557,8 +1585,9 @@ dārā (2) — generation (2)
 * bḏārā · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 
 ܗܵܢܵܐ   [h-n]   {dem. pron. m.sg.}   (search: hana)
-hānā (1) — this (1)
+hānā (2) — this (2)
 * hānā · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
+* hānā · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
 
 ܟܪܝܼܟ݂ܝܼܢ   [k-r-k]   {Peal passive ptcp. m.pl.abs.}   (search: krikin)
 krīḵīn (1) — circle about (1)
@@ -1681,9 +1710,10 @@ dāwōnā (1) — misery (1)
 * wḏāwōnā · "And misery in my heart every day?" (Psalm 13 Line 7)
 
 ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: leby)
-lēḃy (2) — my heart (2)
+lēḃy (3) — my heart (3)
 * blēḃy · "And misery in my heart every day?" (Psalm 13 Line 7)
 * lēḃy · "My heart rejoices in Your salvation" (Psalm 13 Line 14)
+* lēḃy · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
 
 ܟܠܝܘܿܡ   [k-l + y-w-m]   {quant. + noun m.sg.abs.}   (search: klyom)
 klyōm (1) — every day (1)
@@ -1752,16 +1782,18 @@ kaḏ (2) — when (2)
 * dkaḏ · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
 ܐܹܙܘܼܥ   [z-w-ʿ]   {Peal impf. 1c.sg.}   (search: ezu)
-ʾēzūʿ (1) — I tremble (1)
+ʾēzūʿ (2) — I tremble (1), I may...be shaken (1)
 * ʾēzūʿ · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
+* dlā ʾēzūʿ · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
 
 ܐܸܢܵܐ   [ʾ-n-ʾ]   {pron. 1c.sg.}   (search: ena)
 ʾenā (1) — I (1)
 * ʾenā · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
 
 ܐܸܬ݁ܬܲܟ݂ܠܹ̇ܬ݂   [t-k-l]   {Ethpaal perf. 1c.sg.}   (search: ettaklet)
-ʾeṫtaḵl^ēṯ (1) — I have trusted (1)
+ʾeṫtaḵl^ēṯ (2) — I have trusted (2)
 * ʾeṫtaḵl^ēṯ · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
+* ʾeṫtaḵl^ēṯ · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
 
 ܢܸܪܘܲܙ   [r-w-z]   {Peal impf. 3m.sg.}   (search: nerwaz)
 nerwaz (1) — rejoices (1)
@@ -1840,8 +1872,9 @@ bī̈šē (1) — evil ones (1)
 * ʾaḏīq · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 
 ܢܸܚܙܸܐ   [ḥ-z-ʾ]   {Peal impf. 3m.sg.}   (search: nehze)
-neḥzeʾ (1) — to see (1)
+neḥzeʾ (2) — to see (2)
 * dneḥzeʾ · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+* dneḥzeʾ · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
 
 ܐܸܢ   [ʾ-n]   {conj.}   (search: en)
 ʾen (1) — if (1)
@@ -2005,15 +2038,16 @@ qadīšā (2) — holy (2)
 
 ܢܗܲܠܸܟ݂   [h-l-k]   {Pael impf. 1c.pl.}   (search: nhalek)
 nhaleḵ (1) — walk (1)
-* wanhaleḵ · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+* wanhaleḵ · "And walk in Your Way without blemish" (Slotha d'Marmitha 5, Line 3)
 
 ܐܘܼܪܚܵܟ݂   [ʾ-r-ḥ]   {noun f.sg.emph. + 2ms suff.}   (search: urhak)
-ʾūrḥāḵ (1) — Your way (1)
-* bʾūrḥāḵ · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+ʾūrḥāḵ (2) — Your Way (2)
+* bʾūrḥāḵ · "And walk in Your Way without blemish" (Slotha d'Marmitha 5, Line 3)
+* ʾūrḥāḵ · "You show me Your Way of life" (Psalm 16 Line 24)
 
 ܡܘܼܡ   [m-w-m]   {noun m.sg.abs.}   (search: mum)
 mūm (2) — blemish (2)
-* dlā mūm · "And walk in Your way without blemish" (Slotha d'Marmitha 5, Line 3)
+* dlā mūm · "And walk in Your Way without blemish" (Slotha d'Marmitha 5, Line 3)
 * dlā mūm · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
 
 ܝܵܘ̈ܡܵܬ݂ܵܐ   [y-w-m]   {noun m.pl.emph.}   (search: yawmata)
@@ -2025,8 +2059,9 @@ neʿmar (1) — will dwell (1)
 * neʿmar · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
 
 ܢܸܫܪܸܐ   [š-r-ʾ]   {Peal impf. 3m.sg.}   (search: neshre)
-nešreʾ (1) — will live (1)
+nešreʾ (2) — will live (1), lives (1)
 * nešreʾ · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
+* nešreʾ · "And even my flesh lives in serenity" (Psalm 16 Line 21)
 
 ܛܘܼܪܵܟ݂   [ṭ-w-r]   {noun m.sg.emph. + 2ms suff.}   (search: turak)
 ṭūrāḵ (1) — Your...Mountain (1)
@@ -2148,3 +2183,245 @@ h__w (1) — he is (1)
 ܡܸܬ݁ܬ݁ܙܝܼܥ   [z-w-ʿ]   {Ettaphal ptcp. m.sg.abs.}   (search: mettzi)
 meṫṫzīʿ (1) — unshaken (1) [wlā]
 * wlā meṫṫzīʿ · "And unshaken for Eternity" (Psalm 15 Line 16)
+
+ܢܲܛܲܪܲܝܢܝ   [n-ṭ-r]   {Pael impv. 2m.sg. + 1cs suff.}   (search: natarayny)
+naṭarayny (1) — keep me (1)
+* naṭarayny · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
+
+ܥܠܲܝܟ   [ʿ-l]   {prep. + 2ms suff.}   (search: layk)
+ʿlayk (1) — in You (1)
+* daʿlayk · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
+
+ܐܸܡ̇ܪܹܬ݂   [ʾ-m-r]   {Peal perf. 1c.sg.}   (search: emret)
+ʾem^rēṯ (1) — I have said (1)
+* ʾem^rēṯ · "I have said to Mar Yah: You are my Lord" (Psalm 16 Line 2)
+
+ܫܒ݂ܝܼܚ   [š-b-ḥ]   {adj. m.sg.abs.}   (search: shbih)
+šḇīḥ (1) — glorious (1)
+* šḇīḥ · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܬܘܼܟ݂ܠܵܢܵܟ݂   [t-k-l]   {noun m.sg.emph. + 2ms suff.}   (search: tuklanak)
+tūḵlānāḵ (1) — Your trust (1)
+* tūḵlānāḵ · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܓܵܒ݂ܘܿܠܲܢ   [g-b-l]   {noun m.sg.emph. + 1cp suff.}   (search: gabolan)
+gāḇōlan (1) — O Fashioner (1)
+* gāḇōlan · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܒܹܗ   [b]   {prep. + 3ms suff.}   (search: beh)
+bēh (1) — in it (1)
+* dbēh · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܚܵܕ݂ܝܵܐ   [ḥ-d-y]   {Peal active ptcp. f.sg.abs.}   (search: hadya)
+ḥāḏyā (1) — rejoices (1)
+* ḥāḏyā · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܚܲܠܵܫܘܼܬ݂ܝ   [ḥ-l-š]   {noun f.sg.emph. + 1cs suff.}   (search: halashuty)
+ḥalāšūṯy (1) — my weakness (1)
+* ḥalāšūṯy · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+
+ܛܵܒ݂ܬ݁ܝ   [ṭ-w-b]   {adj. f.sg.emph. + 1cs suff.}   (search: tabty)
+ṭāḇṫy (1) — my good (1)
+* wṭāḇṫy · "And my good - it is from beside You" (Psalm 16 Line 6)
+
+ܠܘܵܬ݂ܵܟ݂   [l-w-t]   {prep. + 2ms suff.}   (search: lwatak)
+lwāṯāḵ (1) — beside You (1)
+* lwāṯāḵ · "And my good - it is from beside You" (Psalm 16 Line 6)
+
+ܩܲܕܝܼܫܹ̈ܐ   [q-d-š]   {adj. m.pl.emph.}   (search: qadishe)
+qadīš̈ē (1) — Holy Ones (1)
+* lqadīš̈ē · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
+
+ܡܫܲܒ݁ܚܹ̈ܐ   [š-b-ḥ]   {adj. m.pl.emph.}   (search: mshabhe)
+mšaḃḥ̈ē (1) — glorious ones (1)
+* wamšaḃḥ̈ē · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
+
+ܟܠܹܗ   [k-l]   {quant. + 3ms suff.}   (search: kleh)
+klēh (1) — all (1)
+* dḵlēh · "All my delight is in them" (Psalm 16 Line 8)
+
+ܨܸܒ݂ܝܵܢܝ   [ṣ-b-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: sebyany)
+ṣeḇyāny (1) — my delight (1)
+* ṣeḇyāny · "All my delight is in them" (Psalm 16 Line 8)
+
+ܒܗܘܿܢ   [b]   {prep. + 3mp suff.}   (search: bhon)
+bhōn (1) — in them (1)
+* bhōn · "All my delight is in them" (Psalm 16 Line 8)
+
+ܢܸܣܓ݁ܘܿܢ   [s-g-ʾ]   {Peal impf. 3m.pl.}   (search: nesgon)
+nesġōn (1) — increase (1)
+* nesġōn · "Their last pains increase quickly" (Psalm 16 Line 9)
+
+ܟܹܐܒܲܝ̈ܗܘܿܢ   [k-ʾ-b]   {noun m.pl.emph. + 3mp suff.}   (search: kebayhon)
+kēʾbaÿhōn (1) — their...pains (1)
+* kēʾbaÿhōn · "Their last pains increase quickly" (Psalm 16 Line 9)
+
+ܐ݇ܚܪܵ̈ܝܹܐ   [ʾ-ḥ-r]   {adj. m.pl.emph.}   (search: hraye)
+(ʾ)ḥr̈āyē (1) — last (1)
+* (ʾ)ḥr̈āyē · "Their last pains increase quickly" (Psalm 16 Line 9)
+
+ܥܓܲܠ   [ʿ-g-l]   {adv.}   (search: gal)
+ʿgal (1) — quickly (1)
+* baʿgal · "Their last pains increase quickly" (Psalm 16 Line 9)
+
+ܐܹܢܲܩܸܐ   [n-q-ʾ]   {Pael impf. 1c.sg.}   (search: enaqe)
+ʾēnaqeʾ (1) — I...pour (1)
+* dlā ʾēnaqeʾ · "I do not pour their libation from blood" (Psalm 16 Line 10)
+
+ܢܘܼܩܵܝܗܘܿܢ   [n-q-ʾ]   {noun m.sg.emph. + 3mp suff.}   (search: nuqayhon)
+nūqāyhōn (1) — their libation (1)
+* nūqāyhōn · "I do not pour their libation from blood" (Psalm 16 Line 10)
+
+ܕܡܵܐ   [d-m]   {noun m.sg.emph.}   (search: dma)
+dmā (1) — blood (1)
+* dmā · "I do not pour their libation from blood" (Psalm 16 Line 10)
+
+ܐܸܬ݁ܕܟܲܪ   [d-k-r]   {Ethpeel impf. 1c.sg.}   (search: etdkar)
+ʾeṫdkar (1) — I...commemorate (1)
+* wlā ʾeṫdkar · "And I do not commemorate their names with my lips" (Psalm 16 Line 11)
+
+ܫܡܵܗܲܝ̈ܗܘܿܢ   [š-m]   {noun m.pl.emph. + 3mp suff.}   (search: shmahayhon)
+šmāhaÿhōn (1) — their names (1)
+* šmāhaÿhōn · "And I do not commemorate their names with my lips" (Psalm 16 Line 11)
+
+ܣܸܦ̈ܘܵܬ݂ܝ   [s-p-t]   {noun f.pl.emph. + 1cs suff.}   (search: sepwaty)
+sep̈wāṯy (1) — my lips (1)
+* bsep̈wāṯy · "And I do not commemorate their names with my lips" (Psalm 16 Line 11)
+
+ܝܵܪܬ݁ܘܼܬ݂ܝ   [y-r-t]   {noun f.sg.emph. + 1cs suff.}   (search: yartuty)
+yārṫūṯy (3) — my inheritance (3)
+* dyārṫūṯy · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
+* yārṫūṯy · "You are restoring to me my inheritance" (Psalm 16 Line 13)
+* yārṫūṯy · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
+
+ܟܵܣܝ   [—]   {noun m.sg.emph. + 1cs suff.}   (search: kasy)
+kāsy (1) — my cup (1)
+* waḏḵāsy · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
+
+ܡܦܲܢܸܐ   [p-n-ʾ]   {Pael active ptcp. m.sg.abs.}   (search: mpane)
+mpaneʾ (1) — restoring (1)
+* mpaneʾ · "You are restoring to me my inheritance" (Psalm 16 Line 13)
+
+ܚܲܒ݂ܠܹ̈ܐ   [ḥ-b-l]   {noun m.pl.emph.}   (search: hable)
+ḥaḇl̈ē (1) — lines (1)
+* ḥaḇl̈ē · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+
+ܢܦܲܠ̣ܘ   [n-p-l]   {Peal perf. 3m.pl.}   (search: npalw)
+npal_w (1) — have fallen (1)
+* npal_w · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+
+ܛܲܪ̈ܩܹܐ   [ṭ-r-q]   {adj. m.pl.emph.}   (search: tarqe)
+ṭar̈qē (1) — choice (1)
+* bṭar̈qē · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+
+ܫܸܦܪܲܬ̤   [š-p-r]   {Peal perf. 3f.sg.}   (search: sheprat)
+šeprat̤ (1) — has been pleasing (1)
+* šeprat̤ · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
+
+ܐܹܒܲܪܸܟ݂   [b-r-k]   {Pael impf. 1c.sg.}   (search: ebarek)
+ʾēbareḵ (1) — I bless (1)
+* ʾēbareḵ · "I bless Mar Yah, who has counseled me" (Psalm 16 Line 16)
+
+ܡܲܠ̣ܟܲܢܝ   [m-l-k]   {Pael perf. 3m.sg. + 1cs suff.}   (search: malkany)
+mal_kany (1) — has counseled me (1)
+* dmal_kany · "I bless Mar Yah, who has counseled me" (Psalm 16 Line 16)
+
+ܠܲܝ̈ܠܵܘܵܬ݂ܵܐ   [l-y-l]   {noun m.pl.emph.}   (search: laylawata)
+laÿlāwāṯā (1) — the nights (1)
+* blaÿlāwāṯā · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
+
+ܪ̈ܕܲܝܵܢܝ   [r-d-ʾ]   {Peal active ptcp. f.pl.abs. + 1cs suff.}   (search: rdayany)
+r̈dayāny (1) — are instructing me (1)
+* r̈dayāny · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
+
+ܟܘܼܠ̈ܝܵܬ݂ܝ   [—]   {noun f.pl.emph. + 1cs suff.}   (search: kulyaty)
+kūl̈yāṯy (1) — my depths (1)
+* kūl̈yāṯy · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
+
+ܣܵܡܹ̇ܬ݂   [s-w-m]   {Peal perf. 1c.sg.}   (search: samet)
+sām^ēṯ (1) — I have set (1)
+* sām^ēṯ · "I have set Mar Yah before me at all times" (Psalm 16 Line 18)
+
+ܠܘܼܩܒܲܠܝ   [q-b-l]   {prep. + 1cs suff.}   (search: luqbaly)
+lūqbaly (1) — before me (1)
+* lūqbaly · "I have set Mar Yah before me at all times" (Psalm 16 Line 18)
+
+ܟܠܙܒܲܢ   [k-l + z-b-n]   {adv.}   (search: klzban)
+klzban (1) — all times (1)
+* bḵlzban · "I have set Mar Yah before me at all times" (Psalm 16 Line 18)
+
+ܗܘ̤ܵܐ   [h-w-ʾ]   {Peal perf. 3m.sg.}   (search: hwa)
+hw̤ā (1) — He has been (1)
+* wahw̤ā · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+
+ܝܲܡܝܼܢܝ   [y-m-n]   {noun f.sg.emph. + 1cs suff.}   (search: yaminy)
+yamīny (1) — my right hand (1)
+* yamīny · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+
+ܚܕ݂ܝܼ   [ḥ-d-y]   {Peal perf. 3m.sg.}   (search: hdi)
+ḥḏī (1) — has rejoiced (1)
+* ḥḏī · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
+
+ܕܵܨ   [d-w-ṣ]   {Peal perf. 3m.sg.}   (search: das)
+dāṣ (1) — has exulted (1)
+* wḏāṣ · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
+
+ܐܝܼܩܵܪܝ   [y-q-r]   {noun m.sg.emph. + 1cs suff.}   (search: iqary)
+ʾīqāry (1) — my honor (1)
+* ʾīqāry · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
+
+ܒܸܣܪܝ   [b-s-r]   {noun m.sg.emph. + 1cs suff.}   (search: besry)
+besry (1) — my flesh (1)
+* besry · "And even my flesh lives in serenity" (Psalm 16 Line 21)
+
+ܫܸܠܝܵܐ   [š-l-ʾ]   {noun m.sg.emph.}   (search: shelya)
+šelyā (1) — serenity (1)
+* bšelyā · "And even my flesh lives in serenity" (Psalm 16 Line 21)
+
+ܫܒܲܩ̣ܬ݁   [š-b-q]   {Peal perf. 2m.sg.}   (search: shbaqt)
+šbaq_ṫ (1) — You have...forsaken (1)
+* dlā šbaq_ṫ · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
+
+ܫܝܘܿܠ   [prop. noun]   {prop. n.}   (search: shyol)
+šyōl (1) — Sheol (1)
+* bašyōl · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
+
+ܝܲܗ̣݇ܒ݂ܬ݁   [y-h-b]   {Peal perf. 2m.sg.}   (search: yahbt)
+ya(h_)ḇṫ (1) — You have...given (1)
+* wlā ya(h_)ḇṫ · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
+
+ܚܲܣܝܵܟ݂   [ḥ-s-ʾ]   {referent adj. m.sg.emph. + 2ms suff.}   (search: hasyak)
+ḥasyāḵ (1) — Your Devout One (1)
+* lḥasyāḵ · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
+
+ܚܒ݂ܵܠܵܐ   [ḥ-b-l]   {noun m.sg.emph.}   (search: hbala)
+ḥḇālā (1) — corruption (1)
+* ḥḇālā · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
+
+ܬܚܵܘܹܝܢܝ   [ḥ-w-ʾ]   {Pael impf. 2m.sg. + 1cs suff.}   (search: thaweyny)
+tḥāwēyny (1) — You show me (1)
+* tḥāwēyny · "You show me Your Way of life" (Psalm 16 Line 24)
+
+ܐܸܣܒܲܥ   [s-b-ʿ]   {Peal impf. 1c.sg.}   (search: esba)
+ʾesbaʿ (1) — I am filled (1)
+* wʾesbaʿ · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
+
+ܚܲܕܘܼܬܹܗ   [ḥ-d-y]   {noun f.sg.emph. + 3ms suff.}   (search: haduteh)
+ḥadūtēh (1) — the joy of (1)
+* ḥadūtēh · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
+
+ܦܲܪܨܘܿܦܵܟ݂   [Gk. loan]   {noun m.sg.emph. + 2ms suff.}   (search: parsopak)
+parṣōpāḵ (1) — Your Face (1)
+* dparṣōpāḵ · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
+
+ܒܲܣܝܼܡܘܼܬ݂ܵܐ   [b-s-m]   {noun f.sg.emph.}   (search: basimuta)
+basīmūṯā (1) — sweetness (1)
+* basīmūṯā · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
+
+ܙܵܟ݂ܘܼܬ݂ܵܐ   [z-k-ʾ]   {noun f.sg.emph.}   (search: zakuta)
+zāḵūṯā (1) — victory (1)
+* dzāḵūṯā · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
+
+ܝܲܡܝܼܢܵܟ݂   [y-m-n]   {noun f.sg.emph. + 2ms suff.}   (search: yaminak)
+yamīnāḵ (1) — Your Right Hand (1)
+* dyamīnāḵ · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
