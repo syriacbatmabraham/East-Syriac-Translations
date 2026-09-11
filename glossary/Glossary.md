@@ -1285,7 +1285,7 @@ bāḥ^rīn (1) — are examining (1)
 bāḥar (1) — is examining (1)
 * bāḥar · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
-ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadike)
+ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadiqe)
 zadī̈qē (2) — the righteous (2)
 * lzadī̈qē · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 * dzadī̈qē · "For God is in the generation of the righteous" (Psalm 14 Line 15)
@@ -2198,27 +2198,27 @@ naṭarayny (1) — keep me (1)
 
 ܫܒ݂ܝܼܚ   [š-b-ḥ]   {adj. m.sg.abs.}   (search: shbih)
 šḇīḥ (1) — glorious (1)
-* šḇīḥ · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+* šḇīḥ · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܬܘܼܟ݂ܠܵܢܵܟ݂   [t-k-l]   {noun m.sg.emph. + 2ms suff.}   (search: tuklanak)
 tūḵlānāḵ (1) — Your trust (1)
-* tūḵlānāḵ · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+* tūḵlānāḵ · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܓܵܒ݂ܘܿܠܲܢ   [g-b-l]   {noun m.sg.emph. + 1cp suff.}   (search: gabolan)
-gāḇōlan (1) — O Fashioner (1)
-* gāḇōlan · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+gāḇōlan (1) — our Fashioner (1)
+* gāḇōlan · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܒܹܗ   [b]   {prep. + 3ms suff.}   (search: beh)
 bēh (1) — in it (1)
-* dbēh · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+* dbēh · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܚܵܕ݂ܝܵܐ   [ḥ-d-y]   {Peal active ptcp. f.sg.abs.}   (search: hadya)
 ḥāḏyā (1) — rejoices (1)
-* ḥāḏyā · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+* ḥāḏyā · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܚܲܠܵܫܘܼܬ݂ܝ   [ḥ-l-š]   {noun f.sg.emph. + 1cs suff.}   (search: halashuty)
 ḥalāšūṯy (1) — my weakness (1)
-* ḥalāšūṯy · "Glorious is Your trust, O Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
+* ḥalāšūṯy · "Glorious is Your trust, our Fashioner; in it my weakness rejoices" (Psalm 16 Line 3)
 
 ܛܵܒ݂ܬ݁ܝ   [ṭ-w-b]   {adj. f.sg.emph. + 1cs suff.}   (search: tabty)
 ṭāḇṫy (1) — my good (1)
@@ -2294,7 +2294,7 @@ yārṫūṯy (3) — my inheritance (3)
 * yārṫūṯy · "You are restoring to me my inheritance" (Psalm 16 Line 13)
 * yārṫūṯy · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
 
-ܟܵܣܝ   [—]   {noun m.sg.emph. + 1cs suff.}   (search: kasy)
+ܟܵܣܝ   [k-s-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: kasy)
 kāsy (1) — my cup (1)
 * waḏḵāsy · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
 
