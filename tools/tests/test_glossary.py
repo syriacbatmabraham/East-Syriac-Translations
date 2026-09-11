@@ -107,6 +107,14 @@ class GlossaryAdversarialChecks(unittest.TestCase):
         corrupted = BASE.replace("{noun m.sg.emph.}", "{noun m.sg.}", 1)
         self.assertIn("invalid-morphology-field", self.codes(corrupted))
 
+    def test_check_09_state_unspecified_noun_is_valid(self):
+        explicit = BASE.replace(
+            "{noun m.sg.emph.}",
+            "{noun m.sg.state-unspecified.}",
+            1,
+        )
+        self.assertNotIn("invalid-morphology-field", self.codes(explicit))
+
     def test_check_09_root_structure(self):
         corrupted = BASE.replace("[ʾ-b]", "[noun m.sg.emph.]", 1)
         self.assertIn("invalid-root-field", self.codes(corrupted))
