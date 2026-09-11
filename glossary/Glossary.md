@@ -1173,7 +1173,7 @@ lī (6) — against me (1), to me (4), over me (1)
 * lī · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
 * lī · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
 * lī · "You are restoring to me my inheritance" (Psalm 16 Line 13)
-* lī · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+* lī · "Lines have fallen to me in choice" (Psalm 16 Line 14)
 * lī · "And even my inheritance has been pleasing to me" (Psalm 16 Line 15)
 
 ܒܵܟ݂   [b]   {prep. + 2ms suff.}   (search: bak)
@@ -2304,15 +2304,15 @@ mpaneʾ (1) — restoring (1)
 
 ܚܲܒ݂ܠܹ̈ܐ   [ḥ-b-l]   {noun m.pl.emph.}   (search: hable)
 ḥaḇl̈ē (1) — lines (1)
-* ḥaḇl̈ē · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+* ḥaḇl̈ē · "Lines have fallen to me in choice" (Psalm 16 Line 14)
 
 ܢܦܲܠ̣ܘ   [n-p-l]   {Peal perf. 3m.pl.}   (search: npalw)
 npal_w (1) — have fallen (1)
-* npal_w · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+* npal_w · "Lines have fallen to me in choice" (Psalm 16 Line 14)
 
 ܛܲܪ̈ܩܹܐ   [ṭ-r-q]   {adj. m.pl.emph.}   (search: tarqe)
 ṭar̈qē (1) — choice (1)
-* bṭar̈qē · "Lines have fallen to me in choice [places]" (Psalm 16 Line 14)
+* bṭar̈qē · "Lines have fallen to me in choice" (Psalm 16 Line 14)
 
 ܫܸܦܪܲܬ̤   [š-p-r]   {Peal perf. 3f.sg.}   (search: sheprat)
 šeprat̤ (1) — has been pleasing (1)
