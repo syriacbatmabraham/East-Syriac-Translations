@@ -448,6 +448,11 @@ def _valid_person_gender_number(token: str) -> bool:
 def _valid_nominal_morph(base: str) -> bool:
     if base.endswith(" indecl."):
         return base.startswith(("noun ", "adj. ", "prop. n."))
+    for prefix in ("noun ", "referent noun "):
+        if base.startswith(prefix):
+            rest = base[len(prefix):]
+            if re.fullmatch(r"[mfc]\.(?:sg|pl)\.state-unspecified\.", rest):
+                return True
     prefixes = ("noun ", "adj. ", "verbal noun ", "referent noun ", "referent adj. ")
     for prefix in prefixes:
         if base.startswith(prefix):
