@@ -2334,7 +2334,7 @@ laÿlāwāṯā (1) — the nights (1)
 r̈dayāny (1) — are instructing me (1)
 * r̈dayāny · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
 
-ܟܘܼܠ̈ܝܵܬ݂ܝ   [—]   {noun f.pl.emph. + 1cs suff.}   (search: kulyaty)
+ܟܘܼܠ̈ܝܵܬ݂ܝ   [k-l]   {noun f.pl.emph. + 1cs suff.}   (search: kulyaty)
 kūl̈yāṯy (1) — my depths (1)
 * kūl̈yāṯy · "And even in the nights my depths are instructing me" (Psalm 16 Line 17)
 
@@ -2382,7 +2382,7 @@ besry (1) — my flesh (1)
 šbaq_ṫ (1) — You have...forsaken (1)
 * dlā šbaq_ṫ · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
 
-ܫܝܘܿܠ   [prop. noun]   {prop. n.}   (search: shyol)
+ܫܝܘܿܠ   [prop. noun]   {noun f.sg.state-unspecified.}   (search: shyol)
 šyōl (1) — Sheol (1)
 * bašyōl · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
 
