@@ -87,7 +87,7 @@ Preserve the Syriac sense. Do not force Syriac morphological tense, aspect, or v
 
 ## 7. Working Sequence
 1. **Receive the Syriac.** The user supplies the source text to be prepared.
-2. **Normalize and expose the page-state.** Normalize mechanically under Translit §16 and return the normalized Syriac together with the required letter-by-letter list of every letter and the marks currently carried by it. Do not treat this output as page-confirmed.
+2. **Normalize and expose the page-state.** Normalize mechanically under Translit §16 and return the normalized Syriac together with the required letter-by-letter page-state audit in the presentation format of §7.1. Do not treat this output as page-confirmed.
 3. **User page audit.** The user compares that normalized/page-state output against the governing page and supplies every correction needed.
 4. **Confirm the Syriac layer.** Apply the user's corrections, return the updated normalized Syriac and its mechanically derived canonical transliteration, and obtain the user's confirmation. This is the **Syriac confirmation**: the confirmed script and transliteration become the authoritative textual basis for all later translation work (§1.2; §9.2).
 5. **Begin word-by-word only when prompted.** The user selects the first line or lines. Review every token in order under the **Word-by-Word Standard**, including repeats where relevant.
@@ -96,6 +96,37 @@ Preserve the Syriac sense. Do not force Syriac morphological tense, aspect, or v
 8. **Draft Glossary entries.** After English confirmation, draft every required new or updated Glossary entry, phrase entry, count, rendering, morphology, root, and citation context. Present the draft to the user without committing it.
 9. **Confirm the Glossary entries.** Incorporate the user's corrections and obtain approval of the Glossary draft. This completes the second confirmation layer: settled English plus approved Glossary entries.
 10. **Commit and validate atomically.** Add or update the complete three-block text, source registry entry where needed, approved Glossary entries, and any required major-decision record together; then run the full check suite (§11). Only the passing repository state is citable as a repository-confirmed text.
+
+
+### 7.1 Page-audit presentation
+
+The page-state audit is a **human comparison aid** for checking the normalized Syriac against the governing printed page. It does not add interpretation to the encoded page-state.
+
+For every source word:
+
+1. show the complete Syriac word;
+2. enumerate **every letter in source order**;
+3. identify each letter by a spelled-out, readily recognizable letter name, not by the Syriac glyph alone; exact English spelling of the letter name is not itself standardized;
+4. after the letter name, list **every in-scope mark carried by that letter** using the mark identities of the Transliteration Rules;
+5. where a mark is a vowel, give both its standardized vowel name and its canonical value in square brackets;
+6. where a letter carries no in-scope mark, write **no markings**; and
+7. where position is material — especially a generic point between letters or a two-letter span — state that position explicitly rather than making the reader infer it from notation.
+
+The standardized vowel labels in page-audit output are:
+
+| Page-state | Required audit label |
+|---|---|
+| pṯāḥā | **ptaha [a]** |
+| zqāpā | **zqapa [ā]** |
+| zlāmā pšīqā | **zlama pshiqa [e]** |
+| zlāmā qašyā | **zlama qashya [ē]** |
+| yodh + ḥḇāṣā sign | **hbasa [ī]** |
+| waw + rwāḥā sign | **rwaha [ō]** |
+| waw + rḇāṣā / ʾeṣāṣā sign | **rbasa/esasa [ū]** |
+
+These labels are presentation vocabulary only. The underlying page-state identities, Unicode normalization, carrier discipline, and canonical transliteration remain governed by the Transliteration Rules. If a carrier bears two distinct verified vowel page-states, list **both** standardized vowel labels in canonical mark order (Translit §§4.2 and 5.1).
+
+Non-vocalic marks are likewise spelled out rather than represented only by symbols: **qushshaya**, **rukkakha**, **syame**, **generic point above/below**, **generic point above/below between letters**, **one-letter line above/below**, **two-letter span above/below**, **two dots below**, **breve below**, and **superscript alap**, as applicable. The audit description records the visible/normalized page-state and does not infer a mark's phonological function beyond the identities already defined by the Transliteration Rules.
 
 ## 8. Standard Clause Response
 1. Syriac line
