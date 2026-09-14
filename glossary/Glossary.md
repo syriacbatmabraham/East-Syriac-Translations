@@ -14,9 +14,11 @@ The `{...}` field records the **part of speech and the morphology of the form**,
 root. Together, canonical headword + root + `{...}` morphology uniquely identify an entry.
 `[—]` marks a root not yet established (§10.20).
 
-Counts are **indexed decision counts**, not raw corpus-token totals. Repetitions, same-locus
-witness duplicates, and common liturgical units excluded by General Rules §§10.13 and 10.18
-do not increment them; `+n` records indexed decisions omitted from bullets under §10.11.
+Counts are **indexed decision counts**, not raw corpus-token totals. Every indexed decision
+is retained as an explicit occurrence bullet under General Rules §10.11; each rendering count
+equals the number of bullets assigned to it, and the headword total equals the sum of the
+rendering counts. Repetitions, same-locus witness duplicates, and common liturgical units
+excluded by General Rules §§10.13 and 10.18 do not increment them.
 
 Abbreviations: person `1 2 3` · gender `m f c` · number `sg pl` · state `abs cst emph` ·
 `perf impf impv inf` · `active ptcp. passive ptcp.` (`ptcp.` alone where the stem does not

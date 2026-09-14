@@ -25,7 +25,7 @@ HEADER_RE = re.compile(
 )
 DETAIL_RE = re.compile(r"^(?P<canonical>.+?) \((?P<total>\d+)\) — (?P<renderings>.+)$")
 RENDERING_RE = re.compile(
-    r"^(?P<text>.+?) \((?P<count>\d+(?:\+\d+)?)\)(?: (?P<binding>\[[^\]]+\]))?$"
+    r"^(?P<text>.+?) \((?P<count>\d+)\)(?: (?P<binding>\[[^\]]+\]))?$"
 )
 BULLET_RE = re.compile(
     r'^\* (?P<attested>.+?) · "(?P<context>.*)" \((?P<citation>.+)\)'
@@ -59,13 +59,8 @@ class GlossaryIssue:
 @dataclass(frozen=True)
 class GlossaryRendering:
     text: str
-    base: int
-    extra: int
+    count: int
     binding: str | None = None
-
-    @property
-    def total(self) -> int:
-        return self.base + self.extra
 
 
 @dataclass(frozen=True)
@@ -135,13 +130,6 @@ class _ParsedEntry:
     issues: tuple[GlossaryIssue, ...]
 
 
-def _parse_count(text: str) -> tuple[int, int]:
-    if "+" in text:
-        base, extra = text.split("+", 1)
-        return int(base), int(extra)
-    return int(text), 0
-
-
 def _parse_entry(lines: list[str], index: int, section: str) -> _ParsedEntry:
     header = lines[index]
     header_match = HEADER_RE.match(header)
@@ -181,8 +169,8 @@ def _parse_entry(lines: list[str], index: int, section: str) -> _ParsedEntry:
                 )
             )
             continue
-        base, extra = _parse_count(match.group("count"))
-        renderings.append(GlossaryRendering(match.group("text"), base, extra, match.group("binding")))
+        count = int(match.group("count"))
+        renderings.append(GlossaryRendering(match.group("text"), count, match.group("binding")))
 
     occurrences: list[GlossaryOccurrence] = []
     cursor = detail_index + 1
@@ -657,22 +645,21 @@ def check_glossary(
         issues.append(GlossaryIssue("glossary-non-nfc", "Glossary is not NFC normalized."))
 
     for entry in entries:
-        base_sum = sum(rendering.base for rendering in entry.renderings)
-        total_sum = sum(rendering.total for rendering in entry.renderings)
-        if len(entry.occurrences) != base_sum:
+        rendering_sum = sum(rendering.count for rendering in entry.renderings)
+        if len(entry.occurrences) != rendering_sum:
             issues.append(
                 GlossaryIssue(
-                    "entry-base-count-mismatch",
-                    f"{len(entry.occurrences)} bullets != Σbase {base_sum}.",
+                    "entry-rendering-count-mismatch",
+                    f"{len(entry.occurrences)} bullets != Σrendering counts {rendering_sum}.",
                     entry.line,
                     entry.canonical,
                 )
             )
-        if entry.decision_total != total_sum:
+        if entry.decision_total != rendering_sum:
             issues.append(
                 GlossaryIssue(
                     "entry-decision-total-mismatch",
-                    f"Decision total {entry.decision_total} != Σ(base+extra) {total_sum}.",
+                    f"Decision total {entry.decision_total} != Σrendering counts {rendering_sum}.",
                     entry.line,
                     entry.canonical,
                 )

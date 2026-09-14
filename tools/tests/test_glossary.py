@@ -60,9 +60,13 @@ class GlossaryAdversarialChecks(unittest.TestCase):
         corrupted = "# a\u0304\n" + BASE
         self.assertIn("glossary-non-nfc", self.codes(corrupted))
 
-    def test_check_03_base_count(self):
+    def test_check_03_rendering_count(self):
         corrupted = BASE.replace("ʾaḇā (1) — Father (1)", "ʾaḇā (2) — Father (2)")
-        self.assertIn("entry-base-count-mismatch", self.codes(corrupted))
+        self.assertIn("entry-rendering-count-mismatch", self.codes(corrupted))
+
+    def test_check_03_plus_count_is_invalid(self):
+        corrupted = BASE.replace("Father (1)", "Father (1+1)", 1)
+        self.assertIn("glossary-rendering-format", self.codes(corrupted))
 
     def test_check_03_decision_total(self):
         corrupted = BASE.replace("ʾaḇā (1) — Father (1)", "ʾaḇā (2) — Father (1)")
