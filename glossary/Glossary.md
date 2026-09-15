@@ -234,7 +234,7 @@ m_n (21) — from (19), at (2)
 * m_n · "Who will give salvation to Israyel from Zion?" (Psalm 14 Line 18)
 * m_n · "And my good - it is from beside You" (Psalm 16 Line 6)
 * m_n · "I do not pour their libation from blood" (Psalm 16 Line 10)
-* m_n · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+* m_n · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 * m_n · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
 * wm_n · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
 
@@ -1784,9 +1784,9 @@ kaḏ (2) — when (2)
 * dkaḏ · "...that when our consciences are pure and hallowed in [Your] Truth" (Slotha d'Marmitha 5, Line 1)
 
 ܐܹܙܘܼܥ   [z-w-ʿ]   {Peal impf. 1c.sg.}   (search: ezu)
-ʾēzūʿ (2) — I tremble (1), I may...be shaken (1)
+ʾēzūʿ (2) — I tremble (1), I am unshaken (1) [dlā]
 * ʾēzūʿ · "Nor my oppressors rejoice over me when I tremble" (Psalm 13 Line 12)
-* dlā ʾēzūʿ · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+* dlā ʾēzūʿ · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 
 ܐܸܢܵܐ   [ʾ-n-ʾ]   {pron. 1c.sg.}   (search: ena)
 ʾenā (1) — I (1)
@@ -2354,11 +2354,11 @@ klzban (1) — all times (1)
 
 ܗܘ̤ܵܐ   [h-w-ʾ]   {Peal perf. 3m.sg.}   (search: hwa)
 hw̤ā (1) — He has been (1)
-* wahw̤ā · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+* wahw̤ā · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 
 ܝܲܡܝܼܢܝ   [y-m-n]   {noun f.sg.emph. + 1cs suff.}   (search: yaminy)
 yamīny (1) — my right hand (1)
-* yamīny · "And He has been at my right hand, that I may not be shaken" (Psalm 16 Line 19)
+* yamīny · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 
 ܚܕ݂ܝܼ   [ḥ-d-y]   {Peal perf. 3m.sg.}   (search: hdi)
 ḥḏī (1) — has rejoiced (1)
