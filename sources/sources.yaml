@@ -42,10 +42,16 @@ confirmed_texts:
   Ferial Ramsha/04_Our_Father.txt:
     citation_label: Our Father
     source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/05_Diaconal_Exhortation.txt:
+    citation_label: Ferial Ramsha Diaconal Exhortation
+    source_of_record: breviarium_chaldaicum
   Ferial Ramsha/06_Ferial_Slotha_d'Ramsha.txt:
     citation_label: Ferial Slotha d'Ramsha
     source_of_record: breviarium_chaldaicum
 
+  Ferial Sapra/01_Diaconal_Exhortation.txt:
+    citation_label: Ferial Sapra Diaconal Exhortation
+    source_of_record: breviarium_chaldaicum
   Ferial Sapra/02_Ferial_Slotha_d'Sapra_I.txt:
     citation_label: Ferial Slotha d'Sapra I
     source_of_record: breviarium_chaldaicum
