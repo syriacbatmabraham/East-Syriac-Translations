@@ -9,7 +9,9 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class MarhetanaRepositoryMigrationTests(unittest.TestCase):
     def test_confirmed_and_glossary_data_use_direct_span_encoding(self):
-        confirmed = (ROOT / "confirmed-texts" / "Our_Father.txt").read_text(encoding="utf-8")
+        confirmed = (
+            ROOT / "confirmed-texts" / "Ferial Ramsha" / "04_Our_Father.txt"
+        ).read_text(encoding="utf-8")
         glossary = (ROOT / "glossary" / "Glossary.md").read_text(encoding="utf-8")
 
         old_syriac = "ܫܒܲܩ̣" + "݇" + "ܢ" + "݇"

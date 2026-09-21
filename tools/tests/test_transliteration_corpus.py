@@ -17,13 +17,15 @@ class ConfirmedCorpusTransliterationTests(unittest.TestCase):
     def test_every_confirmed_text_passes_complete_checker(self):
         files = sorted(
             path
-            for path in (ROOT / "confirmed-texts").iterdir()
-            if path.is_file() and path.suffix.lower() in {".txt", ".md"}
+            for path in (ROOT / "confirmed-texts").rglob("*")
+            if path.is_file()
+            and path.suffix.lower() in {".txt", ".md"}
+            and path.stat().st_size > 0
         )
         self.assertTrue(files, "confirmed-texts corpus is empty")
 
         for path in files:
-            with self.subTest(file=path.name):
+            with self.subTest(file=path.relative_to(ROOT / "confirmed-texts").as_posix()):
                 result = check_confirmed_text_path(path)
                 self.assertTrue(
                     result.ok,
