@@ -140,7 +140,7 @@ The checker validates:
 - valid canonical inverse parsing on every transliteration line;
 - exact canonical → Syriac reconstruction;
 - **independent fresh Syriac → canonical derivation** and byte-for-byte comparison with the stored transliteration line;
-- one `sources/sources.yaml` record for every confirmed file and no stale registry records;
+- one `sources/sources.yaml` record for every populated confirmed file and no stale registry records; nested confirmed texts are identified by their path relative to `confirmed-texts/`, so identical basenames may coexist in different collections;
 - one declared `source_of_record` and one unique stable `citation_label` for every confirmed text.
 
 Block detection does **not** assume that every blank line ends a block. A stanza break is itself a blank logical line, so the parser searches for the unique pair of separator runs that yields three equal layers with the same stanza pattern. This lets stanza breaks remain legal without making the three-layer format ambiguous.
@@ -193,7 +193,7 @@ assert not provenance_issues
 expected = result.expected_transliteration_block
 ```
 
-The live corpus regression runs every current confirmed `.txt`/`.md` file through the same content checker and separately verifies the source registry. Therefore a Syriac edit with stale transliteration, unequal layers, malformed stanza alignment, file-hygiene corruption, a missing source designation, or a stale confirmed filename fails CI.
+The live corpus regression recursively runs every populated confirmed `.txt`/`.md` file through the same content checker and separately verifies the source registry. Zero-byte placeholders are intentionally skipped until the text is confirmed and populated. Therefore a Syriac edit with stale transliteration, unequal layers, malformed stanza alignment, file-hygiene corruption, a missing source designation, or a stale confirmed filename fails CI.
 
 ## Validation
 

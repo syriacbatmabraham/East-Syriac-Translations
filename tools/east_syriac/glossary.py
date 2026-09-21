@@ -933,8 +933,12 @@ def check_glossary_path(
     registry = parse_source_registry(registry_path.read_text(encoding="utf-8"))
     documents: dict[str, ConfirmedTextDocument] = {}
     preflight: list[GlossaryIssue] = []
-    for path in sorted(confirmed_dir.iterdir()):
-        if not path.is_file() or path.suffix.lower() not in {".txt", ".md"}:
+    for path in sorted(confirmed_dir.rglob("*")):
+        if (
+            not path.is_file()
+            or path.suffix.lower() not in {".txt", ".md"}
+            or path.stat().st_size == 0
+        ):
             continue
         checked = check_confirmed_text_path(path)
         if not checked.ok or checked.document is None:
@@ -942,12 +946,12 @@ def check_glossary_path(
                 preflight.append(
                     GlossaryIssue(
                         "confirmed-corpus-preflight-failed",
-                        f"{path.name}: {issue.code}: {issue.message}",
+                        f"{path.relative_to(confirmed_dir).as_posix()}: {issue.code}: {issue.message}",
                         issue.line,
                     )
                 )
             continue
-        documents[path.name] = checked.document
+        documents[path.relative_to(confirmed_dir).as_posix()] = checked.document
     result = check_glossary(glossary_path.read_text(encoding="utf-8"), documents, registry)
     if preflight:
         return GlossaryCheckResult(result.entries, tuple(preflight) + result.issues)

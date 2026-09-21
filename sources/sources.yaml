@@ -1,5 +1,8 @@
 # Machine-readable source-of-record / baseline metadata.
 # Only explicit designations are recorded; omission is not a source inference.
+# Confirmed-text keys are paths relative to confirmed-texts/.
+# Collection folders are organizational and do not determine source_of_record.
+# Zero-byte placeholders are omitted until populated and confirmed.
 # For non-Psalm Scripture, see General Rules §§1.1 and 4.2: Mosul is the baseline witness,
 # and an explicitly documented textual harmonization may supply the canonical reading.
 
@@ -26,16 +29,27 @@ confirmed_texts:
         witness_label: Catholic
         reading: "[waḇrā]"
         source: syro_malabar_editio_typica
-  Our_Father.txt:
-    citation_label: Our Father
-    source_of_record: breviarium_chaldaicum
-  Teshbhotha_l-Alaha.txt:
+
+  Ferial Ramsha/01_Teshbhotha_l-Alaha.txt:
     citation_label: Teshbhotha l'Alaha
     source_of_record: breviarium_chaldaicum
-  Ferial_Slotha_d_Sapra_I.txt:
+  Ferial Ramsha/02_Teshbhotha_l-Alaha.txt:
+    citation_label: Ferial Ramsha Teshbhotha l'Alaha II
+    source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/03_Teshbhotha_l-Alaha.txt:
+    citation_label: Ferial Ramsha Teshbhotha l'Alaha III
+    source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/04_Our_Father.txt:
+    citation_label: Our Father
+    source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/06_Ferial_Slotha_d'Ramsha.txt:
+    citation_label: Ferial Slotha d'Ramsha
+    source_of_record: breviarium_chaldaicum
+
+  Ferial Sapra/02_Ferial_Slotha_d'Sapra_I.txt:
     citation_label: Ferial Slotha d'Sapra I
     source_of_record: breviarium_chaldaicum
-  Ferial_Slotha_d_Sapra_II.txt:
+  Ferial Sapra/03_Ferial_Slotha_d'Sapra_II.txt:
     citation_label: Ferial Slotha d'Sapra II
     source_of_record: breviarium_chaldaicum
     editorial_apparatus:
@@ -45,34 +59,32 @@ confirmed_texts:
       - line: 9
         witness_label: Assyrian Ferial Slotha d'Sapra II
         reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
-  Ferial_Slotha_d_Ramsha.txt:
-    citation_label: Ferial Slotha d'Ramsha
-    source_of_record: breviarium_chaldaicum
-  Slotha_d_Marmitha_4.txt:
+
+  Ksawa d'Mazmore/14_Slotha_d'Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
-  Slotha_d_Marmitha_5.txt:
+  Ksawa d'Mazmore/15_Psalm_11.txt:
+    citation_label: Psalm 11
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/16_Psalm_12.txt:
+    citation_label: Psalm 12
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/17_Psalm_13.txt:
+    citation_label: Psalm 13
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/18_Psalm_14.txt:
+    citation_label: Psalm 14
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/19_Slotha_d'Marmitha_5.txt:
     citation_label: Slotha d'Marmitha 5
     source_of_record: breviarium_chaldaicum
     editorial_apparatus:
       - line: 1
         witness_label: Assyrian Slotha d'Marmitha 5
         reading: "[bašrārāḵ]"
-  Psalm_11.txt:
-    citation_label: Psalm 11
-    source_of_record: ksawa_d_mazmore
-  Psalm_12.txt:
-    citation_label: Psalm 12
-    source_of_record: ksawa_d_mazmore
-  Psalm_13.txt:
-    citation_label: Psalm 13
-    source_of_record: ksawa_d_mazmore
-  Psalm_14.txt:
-    citation_label: Psalm 14
-    source_of_record: ksawa_d_mazmore
-  Psalm_15.txt:
+  Ksawa d'Mazmore/20_Psalm_15.txt:
     citation_label: Psalm 15
     source_of_record: ksawa_d_mazmore
-  Psalm_16.txt:
+  Ksawa d'Mazmore/21_Psalm_16.txt:
     citation_label: Psalm 16
     source_of_record: ksawa_d_mazmore

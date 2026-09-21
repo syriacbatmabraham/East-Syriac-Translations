@@ -245,8 +245,10 @@ def check_source_registry_path(
     registry_path = Path(registry_path)
     confirmed_dir = Path(confirmed_dir)
     filenames = {
-        path.name
-        for path in confirmed_dir.iterdir()
-        if path.is_file() and path.suffix.lower() in {".txt", ".md"}
+        path.relative_to(confirmed_dir).as_posix()
+        for path in confirmed_dir.rglob("*")
+        if path.is_file()
+        and path.suffix.lower() in {".txt", ".md"}
+        and path.stat().st_size > 0
     }
     return check_source_registry(registry_path.read_text(encoding="utf-8"), filenames)

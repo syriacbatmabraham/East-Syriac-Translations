@@ -30,7 +30,7 @@ def _parser() -> argparse.ArgumentParser:
         "paths",
         nargs="*",
         default=["confirmed-texts"],
-        help="confirmed text file(s) or directories; default: confirmed-texts",
+        help="confirmed text file(s) or directories; zero-byte placeholders are ignored; default: confirmed-texts",
     )
     parser.add_argument(
         "--show-derived",
@@ -48,7 +48,9 @@ def _expand(paths: list[str]) -> list[Path]:
             found.extend(
                 candidate
                 for candidate in sorted(path.rglob("*"))
-                if candidate.is_file() and candidate.suffix.lower() in ALLOWED_SUFFIXES
+                if candidate.is_file()
+                and candidate.suffix.lower() in ALLOWED_SUFFIXES
+                and candidate.stat().st_size > 0
             )
         else:
             found.append(path)

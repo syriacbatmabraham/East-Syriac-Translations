@@ -8,7 +8,7 @@ The project aims at a liturgically resonant English translation that preserves S
 
 - `rules/` — the project's working rules, including translation and canonical-transliteration policy.
 - `glossary/` — the human-readable form-first concordance.
-- `confirmed-texts/` — texts that have passed the project's internal confirmation process. Each file contains three aligned blocks: pointed Syriac, canonical transliteration, and English.
+- `confirmed-texts/` — confirmed texts arranged in project-defined collections and liturgical order. Subfolders are organizational, not source-of-record designations. Each populated confirmed file contains three aligned blocks: pointed Syriac, canonical transliteration, and English. Zero-byte placeholders may reserve an agreed position for a text still undergoing confirmation and are ignored by corpus validation until populated.
 - `sources/` — provenance and source-of-record documentation, with machine-readable designations in `sources/sources.yaml`. Third-party source files are not assumed to be redistributable and are not automatically included here.
 - `tools/` — validation, transliteration, ingestion, corpus, and database tooling.
 
