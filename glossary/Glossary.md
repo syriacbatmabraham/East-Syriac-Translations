@@ -103,7 +103,7 @@ mhaymnīnan (1) — we are faithful (1)
 * ḥaḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܲܠܵܗܵܐ   [ʾ-l-h]   {noun m.sg.emph.}   (search: alaha)
-ʾalāhā (9) — God (9)
+ʾalāhā (10) — God (10)
 * ʾalāhā · "We are faithful to One God..." (Creed Line 1)
 * dʾalāhā · "...Isho M'shiha, the Son of God, the Only One" (Creed Line 3)
 * ʾalāhā · "True God from True God" (Creed Line 6)
@@ -113,6 +113,7 @@ mhaymnīnan (1) — we are faithful (1)
 * lʾalāhā · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
 * dʾalāhā · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 * ʾalāhā · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
+* ʾalāhā · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
 
 ܐܲܒ݂ܵܐ   [ʾ-b]   {noun m.sg.emph.}   (search: aba)
 ʾaḇā (4) — Father (4)
@@ -144,8 +145,10 @@ klhēyn (4) — all (3), all of them (1)
 * klhēyn · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
 
 ܐܲܝܠܹܝܢ   [ʾ-y-n-ʾ]   {rel. pron. c.pl.}   (search: ayleyn)
-ʾaylēyn (1) — things (1)
+ʾaylēyn (3) — things (1), those (2)
 * ʾaylēyn · "Maker of all things, seen and unseen" (Creed Line 2)
+* lʾaylēyn · "And a Savior to those who hope" (Psalm 17 Line 17)
+* ʾaylēyn · "From those who stand against Your Right Hand" (Psalm 17 Line 18)
 
 ܡܸܬܚܲܙ̈ܝܵܢ   [ḥ-z-ʾ]   {Ethpeel ptcp. f.pl.abs.}   (search: methazyan)
 metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
@@ -153,7 +156,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (26) — Mar Yah (26)
+māryā (29) — Mar Yah (29)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -180,6 +183,9 @@ māryā (26) — Mar Yah (26)
 * māryā · "Mar Yah, the portion of my inheritance and my cup" (Psalm 16 Line 12)
 * lmāryā · "I bless Mar Yah, who has counseled me" (Psalm 16 Line 16)
 * lmāryā · "I have set Mar Yah before me at all times" (Psalm 16 Line 18)
+* māryā · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
+* māryā · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
+* māryā · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -215,7 +221,7 @@ hāw (3) — He who (3)
 * hāw · "He who from the Father [and the Son] comes forth" (Creed Line 17)
 
 ܡ̣ܢ   [m-n]   {prep.}   (search: mn)
-m_n (21) — from (19), at (2)
+m_n (31) — from (29), at (2)
 * dm_n · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * dm_n · "True God from True God" (Creed Line 6)
 * m_n · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
@@ -237,6 +243,16 @@ m_n (21) — from (19), at (2)
 * m_n · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 * m_n · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
 * wm_n · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
+* dlā m_n · "And listen to my prayer, which is not from deceitful lips" (Psalm 17 Line 2)
+* m_n · "From before You my justice goes forth" (Psalm 17 Line 6)
+* m_n · "Rather, You have kept me from evil ways" (Psalm 17 Line 12)
+* m_n · "From those who stand against Your Right Hand" (Psalm 17 Line 18)
+* m_n · "From before these sinners who have plundered me" (Psalm 17 Line 21)
+* m_n · "And deliver my soul from the wicked and from the Sword" (Psalm 17 Line 29)
+* wm_n · "And deliver my soul from the wicked and from the Sword" (Psalm 17 Line 29)
+* wm_n · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+* m_n · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+* wm_n · "And from the dead of the grave" (Psalm 17 Line 31)
 
 ܐܲܒ݂ܘܼܗܝ   [ʾ-b]   {noun m.sg.emph. + 3ms suff.}   (search: abuhy)
 ʾaḇūhy (2) — His Father (2)
@@ -249,9 +265,11 @@ m_n (21) — from (19), at (2)
 * wʾeṯīleḏ · "And was conceived and begotten from Mariam the Virgin" (Creed Line 11)
 
 ܩܕܵܡ   [q-d-m]   {prep.}   (search: qdam)
-qdām (2) — before (2)
+qdām (4) — before (4)
 * qdām · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * qḏām · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+* qḏām · "From before these sinners who have plundered me" (Psalm 17 Line 21)
+* qḏām · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
 
 ܟܠܗܘܿܢ   [k-l]   {quant. + 3mp suff.}   (search: klhon)
 klhōn (4) — all (3), all of them (1)
@@ -303,12 +321,13 @@ meṭlātan (1) — for the sake of us (1)
 * dmeṭlātan · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 
 ܒܢܲܝ̈ܢܵܫܵܐ   [b-r + ʾ-n-š]   {noun c.pl.emph.}   (search: bnaynasha)
-bnaÿnāšā (5) — sons of men (5)
+bnaÿnāšā (6) — sons of men (6)
 * bnaÿnāšā · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * laḇnaÿnāšā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * laḇnaÿnāšā · "His eyes are seeing and His eyelids are examining the sons of men" (Psalm 11 Line 13)
 * bnaÿnāšā · "The sons of men are speaking emptiness" (Psalm 12 Line 6)
 * bnaÿnāšā · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
+* daḇnaÿnāšā · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
 meṭl (12) — for (10), because of (2)
@@ -425,11 +444,13 @@ yāẅmīn (1) — day (1)
 * yāẅmīn · "...and He arose on the third day, as it is written" (Creed Line 13)
 
 ܐܲܝܟ݂   [ʾ-y-k]   {particle}   (search: ayk)
-ʾayḵ (4) — as (2), like (2)
+ʾayḵ (6) — as (2), like (4)
 * ʾayḵ · "...and He arose on the third day, as it is written" (Creed Line 13)
 * ʾayḵ · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
 * ʾayḵ · "Snares have come down upon the wicked like rain" (Psalm 11 Line 16)
 * ʾayḵ · "As the contemptible high place of the sons of Edom" (Psalm 12 Line 22)
+* ʾayḵ · "Guard me like the pupil of an eye" (Psalm 17 Line 19)
+* wʾayḵ · "Like a lion's cub sitting in hiding" (Psalm 17 Line 27)
 
 ܟܬ݂ܝܼܒ݂   [k-t-b]   {Peal passive ptcp. m.sg.abs.}   (search: ktib)
 kṯīḇ (1) — written (1)
@@ -476,9 +497,10 @@ mīẗē (1) — the dead (1)
 * walḥaÿē · "...to judge the dead and the living" (Creed Line 15)
 
 ܚܲܝܹ̈ܐ   [ḥ-y-ʾ]   {noun m.pl.emph.}   (search: haye)
-ḥaÿē (2) — life (2)
+ḥaÿē (3) — life (3)
 * waḇḥaÿē · "...and life unto the Age of ages. Amen" (Creed Line 21)
 * dḥaÿē · "You show me Your Way of life" (Psalm 16 Line 24)
+* bḥaÿē · "You separate them in life" (Psalm 17 Line 32)
 
 ܫܪܵܪܵܐ   [š-r-r]   {noun m.sg.emph.}   (search: shrara)
 šrārā (2) — Truth (2)
@@ -604,13 +626,14 @@ mlēyn (1) — are full (1)
 * šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܐܲܪܥܵܐ   [ʾ-r-ʿ]   {noun f.sg.emph.}   (search: ara)
-ʾarʿā (6) — earth (6)
+ʾarʿā (7) — earth (7)
 * wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 * bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * ʾarʿā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ʾarʿā · "And faithfulness has ceased from the earth" (Psalm 12 Line 2)
 * bʾarʿā · "Choice silver tried in the earth" (Psalm 12 Line 17)
 * dḇʾarʿā · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
+* bʾarʿā · "They have set their eyes to cast me down to the earth" (Psalm 17 Line 25)
 
 ܪܲܒ݁ܘܼܬ݂   [r-b-b]   {noun f.sg.cst.}   (search: rabut)
 raḃūṯ (1) — the greatness of (1)
@@ -720,8 +743,9 @@ nesyōnā (1) — testing (1)
 * lnesyōnā · "Do not enter us into testing" (Our Father Line 12)
 
 ܐܸܠܵܐ   [ʾ-l-ʾ]   {conj.}   (search: ela)
-ʾelā (1) — but (1)
+ʾelā (2) — but (1), rather (1)
 * ʾelā · "But deliver us from the Evil One" (Our Father Line 13)
+* ʾelā · "Rather, You have kept me from evil ways" (Psalm 17 Line 12)
 
 ܦܲܨܵܢ   [p-ṣ-ʾ]   {Pael impv. 2m.sg. + 1cp suff.}   (search: pasan)
 paṣān (1) — deliver us (1)
@@ -771,7 +795,7 @@ mr̈āwmē (1) — the heights (1)
 * bamr̈āwmē · "Glorification to God in the heights" (Teshbhotha l'Alaha Line 1)
 
 ܥܲܠ   [ʿ-l]   {prep.}   (search: al)
-ʿal (8) — on (1), upon (4), in (1), against (2)
+ʿal (9) — on (1), upon (4), in (1), against (2), over (1)
 * wʿal · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
 * ʿal · "Wander and dwell upon the mountains like a bird" (Psalm 11 Line 2)
 * ʿal · "And have set their arrows upon the string" (Psalm 11 Line 7)
@@ -780,6 +804,7 @@ mr̈āwmē (1) — the heights (1)
 * ʿal · "Mar Yah has looked from Heaven upon the sons of men" (Psalm 14 Line 7)
 * ʿal · "And not accepting a bribe against his neighbor" (Psalm 15 Line 9)
 * ʿal · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
+* ʿal · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
 
 ܫܠܵܡܵܐ   [š-l-m]   {noun m.sg.emph.}   (search: shlama)
 šlāmā (2) — peace (2)
@@ -833,10 +858,11 @@ q^ārē (1) — calls (1)
 * q^ārē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 
 ܚܲܛܵܝܹ̈ܐ   [ḥ-ṭ-ʾ]   {adj. m.pl.emph.}   (search: hataye)
-ḥaṭāÿē (3) — sinners (3)
+ḥaṭāÿē (4) — sinners (4)
 * lḥaṭāÿē · "And who continually calls sinners..." (Ferial Slotha d'Sapra I, Line 3)
 * ḥaṭāÿē · "Sinners have schemed against me..." (Psalm 11 Line 3)
 * ḥaṭāÿē · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
+* ḥaṭāÿē · "From before these sinners who have plundered me" (Psalm 17 Line 21)
 
 ܨܹܐܕ݂ܵܘܗܝ   [ṣ-y-d]   {prep. + 3ms suff.}   (search: sedawhy)
 ṣēʾḏāwhy (1) — unto Him (1)
@@ -968,11 +994,12 @@ mārā (2) — Lord (2)
 * mārā · "Rescue Your Church from evil ones; O Lord of creatures" (Psalm 14 Line 3)
 
 ܡܵܪܝ   [m-r-ʾ]   {noun m.sg.emph. + 1cs suff.}   (search: mary)
-māry (4) — my Lord (4)
+māry (5) — my Lord (5)
 * māry · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 * māry · "My Lord, we confess unto Your Divinity..." (Ferial Slotha d'Ramsha, Line 1)
 * māry · "Establish, my Lord, Your hope in us" (Slotha d'Marmitha 4, Line 1)
 * dmāry · "I have said to Mar Yah: You are my Lord" (Psalm 16 Line 2)
+* māry · "My Lord and my God, have mercy on me..." (Psalm 17 Line 3)
 
 ܡܩܲܕܡܵܢ̈   [q-d-m]   {Pael active ptcp. f.pl.abs.}   (search: mqadman)
 mqadmān̈ (1) — early they come (1)
@@ -1144,10 +1171,12 @@ saḃrēṯ (2) — I have hoped (2)
 * ʾām^rīṫōn · "...how are you saying to my soul:" (Psalm 11 Line 1)
 
 ܢܲܦ̮ܫܝ   [n-p-š]   {noun f.sg.emph. + 1cs suff.}   (search: napshy)
-nap̮šy (3) — my soul (3)
+nap̮šy (5) — my soul (5)
 * lnap̮šy · "...how are you saying to my soul:" (Psalm 11 Line 1)
 * bnap̮šy · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
 * lnap̮šy · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
+* dnap̮šy · "And the enemies of my soul who have set against me" (Psalm 17 Line 22)
+* lnap̮šy · "And deliver my soul from the wicked and from the Sword" (Psalm 17 Line 29)
 
 ܢܘܼܕ݂ܝ   [n-w-d]   {Peal impv. 2f.sg.}   (search: nudy)
 nūḏy (1) — wander (1)
@@ -1241,9 +1270,10 @@ zadīqā (1) — the Righteous One (1)
 * zadīqā · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
 
 ܕܹܝܢ   [d-y-n]   {conj.}   (search: deyn)
-dēyn (2) — but (1), nevertheless (1)
+dēyn (3) — but (2), nevertheless (1)
 * dēyn · "But the Righteous One, what is He doing?" (Psalm 11 Line 10)
 * dēyn · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
+* dēyn · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
 ܡܵܢܵܐ   [m-n]   {interrog. pron.}   (search: mana)
 mānā (1) — what (1)
@@ -1301,9 +1331,10 @@ r̈āḥ^may (1) — the lovers of (1)
 * walr̈āḥ^may · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
 
 ܥܵܘ̣ܠܵܐ   [ʿ-w-l]   {noun m.sg.emph.}   (search: awla)
-ʿāw_lā (2) — unrighteousness (2)
+ʿāw_lā (3) — unrighteousness (3)
 * ʿāw_lā · "And the lovers of unrighteousness, His soul has hated" (Psalm 11 Line 15)
 * ʿāw_lā · "And all doers of unrighteousness have not known" (Psalm 14 Line 11)
+* ʿāw_lā · "...and You have not found unrighteousness in me" (Psalm 17 Line 9)
 
 ܣܢܵܬ̤   [s-n-ʾ]   {Peal perf. 3f.sg.}   (search: snat)
 snāt̤ (1) — has hated (1)
@@ -1362,17 +1393,19 @@ zadīq (1) — righteous (1)
 * (h)w_ · "For Mar Yah is his trust" (Psalm 14 Line 17)
 
 ܙܲܕܝܼܩܘܼܬ݂ܵܐ   [z-d-q]   {noun f.sg.emph.}   (search: zadiquta)
-zadīqūṯā (2) — righteousness (2)
+zadīqūṯā (3) — righteousness (3)
 * wzadīqūṯā · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 * zadīqūṯā · "The one walking without blemish and doing righteousness" (Psalm 15 Line 6)
+* bzadīqūṯā · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
 ܪܵܚܹ̇ܡ   [r-ḥ-m]   {Peal active ptcp. m.sg.abs.}   (search: rahem)
 rāḥ^ēm (1) — He loves (1)
 * rāḥ^ēm · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 
 ܬܪܝܼܨܘܼܬ݂ܵܐ   [t-r-ṣ]   {noun f.sg.emph.}   (search: trisuta)
-trīṣūṯā (1) — uprightness (1)
+trīṣūṯā (2) — uprightness (2)
 * waṯrīṣūṯā · "And His Face is seeing uprightness" (Psalm 11 Line 20)
+* trīṣūṯā · "And Your eyes see uprightness" (Psalm 17 Line 7)
 
 ܐܲܦܵܘ̈ܗܝ   [ʾ-p-ʾ]   {noun f.pl.emph. + 3ms suff.}   (search: apawhy)
 ʾapāẅhy (1) — His Face (1)
@@ -1439,10 +1472,12 @@ gaḇrā (1) — a man (1)
 * lḥaḇrēh · "Swearing to his fellow and not lying" (Psalm 15 Line 12)
 
 ܣܸܦ̈ܘܵܬ݂ܵܐ   [s-p-t]   {noun f.pl.emph.}   (search: sepwata)
-sep̈wāṯā (3) — lips (3)
+sep̈wāṯā (5) — lips (5)
 * bsep̈wāṯā · "A man with his fellow in divided lips" (Psalm 12 Line 7)
 * sep̈wāṯā · "Mar Yah destroys all divided lips" (Psalm 12 Line 9)
 * wsep̈wāṯā · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
+* sep̈wāṯā · "And listen to my prayer, which is not from deceitful lips" (Psalm 17 Line 2)
+* dsep̈wāṯā · "In speech of the lips" (Psalm 17 Line 11)
 
 ܡܦܲ̈ܠܓ݂ܵܬ݂ܵܐ   [p-l-g]   {Pael passive ptcp. f.pl.emph.}   (search: mpalgata)
 mp̈alḡāṯā (2) — divided (2)
@@ -1680,8 +1715,9 @@ tahpeḵ (1) — will You turn (1)
 * tahpeḵ · "How long will You turn Your Face from me?" (Psalm 13 Line 2)
 
 ܐܲܦܲܝ̈ܟ   [ʾ-p-ʾ]   {noun f.pl.emph. + 2ms suff.}   (search: apayk)
-ʾapaÿk (1) — Your Face (1)
+ʾapaÿk (2) — Your Face (2)
 * ʾapaÿk · "How long will You turn Your Face from me?" (Psalm 13 Line 2)
+* ʾapaÿk · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
 ܡܹܢܝ   [m-n]   {prep. + 1cs suff.}   (search: meny)
 mēny (1) — from me (1)
@@ -1712,10 +1748,11 @@ dāwōnā (1) — misery (1)
 * wḏāwōnā · "And misery in my heart every day?" (Psalm 13 Line 7)
 
 ܠܹܒ݁ܝ   [l-b-b]   {noun m.sg.emph. + 1cs suff.}   (search: leby)
-lēḃy (3) — my heart (3)
+lēḃy (4) — my heart (4)
 * blēḃy · "And misery in my heart every day?" (Psalm 13 Line 7)
 * lēḃy · "My heart rejoices in Your salvation" (Psalm 13 Line 14)
 * lēḃy · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
+* lēḃy · "You have examined my heart..." (Psalm 17 Line 8)
 
 ܟܠܝܘܿܡ   [k-l + y-w-m]   {quant. + noun m.sg.abs.}   (search: klyom)
 klyōm (1) — every day (1)
@@ -1731,20 +1768,23 @@ bʿeldḇāḇy (2) — my enemy (2)
 * bʿeldḇāḇy · "And that my enemy may not say: I have conquered him" (Psalm 13 Line 11)
 
 ܥܠܲܝ   [ʿ-l]   {prep. + 1cs suff.}   (search: lay)
-ʿlay (1) — over me (1)
+ʿlay (2) — over me (1), against me (1)
 * ʿlay · "How long will my enemy be exalted over me?" (Psalm 13 Line 8)
+* ʿlay · "And the enemies of my soul who have set against me" (Psalm 17 Line 22)
 
 ܚܘܼܪ   [ḥ-w-r]   {Peal impv. 2m.sg.}   (search: hur)
-ḥūr (1) — look (1)
+ḥūr (2) — look (2)
 * ḥūr · "Look and answer me, Mar Yah my God" (Psalm 13 Line 9)
+* ḥūr · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
 
 ܥܢܝܼܢܝ   [ʿ-n-ʾ]   {Peal impv. 2m.sg. + 1cs suff.}   (search: niny)
 ʿnīny (1) — answer me (1)
 * waʿnīny · "Look and answer me, Mar Yah my God" (Psalm 13 Line 9)
 
 ܐܲܠܵܗܝ   [ʾ-l-h]   {noun m.sg.emph. + 1cs suff.}   (search: alahy)
-ʾalāhy (1) — my God (1)
+ʾalāhy (2) — my God (2)
 * ʾalāhy · "Look and answer me, Mar Yah my God" (Psalm 13 Line 9)
+* wʾalāhy · "My Lord and my God, have mercy on me..." (Psalm 17 Line 3)
 
 ܐܲܢܗܲܪ   [n-h-r]   {Aphel impv. 2m.sg.}   (search: anhar)
 ʾanhar (1) — enlighten (1)
@@ -1789,8 +1829,10 @@ kaḏ (2) — when (2)
 * dlā ʾēzūʿ · "And He has been at my right hand, so that I am unshaken" (Psalm 16 Line 19)
 
 ܐܸܢܵܐ   [ʾ-n-ʾ]   {pron. 1c.sg.}   (search: ena)
-ʾenā (1) — I (1)
+ʾenā (3) — I (3)
 * ʾenā · "Nevertheless, I have trusted in Your grace" (Psalm 13 Line 13)
+* ʾenā · "I have called You, for You have answered me" (Psalm 17 Line 14)
+* ʾenā · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
 ܐܸܬ݁ܬܲܟ݂ܠܹ̇ܬ݂   [t-k-l]   {Ethpaal perf. 1c.sg.}   (search: ettaklet)
 ʾeṫtaḵl^ēṯ (2) — I have trusted (2)
@@ -1891,8 +1933,9 @@ sak̇ūlṯān (1) — discerning (1)
 * dsak̇ūlṯān · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
 
 ܒܵܥܹ̇ܐ   [b-ʿ-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: bae)
-bāʿ^ē (1) — is seeking (1)
+bāʿ^ē (2) — is seeking (1), seeking (1)
 * wḇāʿ^ē · "To see if there is one who is discerning and is seeking God" (Psalm 14 Line 8)
+* dḇāʿ^ē · "They resemble a lion seeking to crush" (Psalm 17 Line 26)
 
 ܣ̣ܛܵܘ   [s-ṭ-ʾ]   {Peal perf. 3m.pl.}   (search: staw)
 s_ṭāw (1) — have turned aside (1)
@@ -1977,8 +2020,9 @@ neṫel (1) — will give (1)
 * īsrāyēl · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
 
 ܡܵܐ   [m-n]   {interrog. pron.}   (search: ma)
-mā (1) — when (1)
+mā (2) — when (2)
 * mā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+* mā · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
 
 ܡܲܗܦܸܟ݂   [h-p-k]   {Aphel active ptcp. m.sg.abs.}   (search: mahpek)
 mahpeḵ (1) — returns (1)
@@ -2034,9 +2078,10 @@ mašk̇nāḵ (2) — Your...Tabernacle (1), Your Tabernacle (1)
 * bmašk̇nāḵ · "Mar Yah, who will dwell in Your Tabernacle?" (Psalm 15 Line 1)
 
 ܩܲܕܝܼܫܵܐ   [q-d-š]   {adj. m.sg.emph.}   (search: qadisha)
-qadīšā (2) — holy (2)
+qadīšā (3) — holy (3)
 * qadīšā · "We may dwell in Your holy Tabernacle" (Slotha d'Marmitha 5, Line 2)
 * qadīšā · "And who will live on Your holy Mountain?" (Psalm 15 Line 2)
+* qadīšā · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
 
 ܢܗܲܠܸܟ݂   [h-l-k]   {Pael impf. 1c.pl.}   (search: nhalek)
 nhaleḵ (1) — walk (1)
@@ -2171,8 +2216,9 @@ nā^^sēḇ (1) — taking (1)
 * lā nā^^sēḇ · "And not taking a bribe against the innocent" (Psalm 15 Line 14)
 
 ܗܵܠܹܝܢ   [h-n]   {dem. pron. c.pl.}   (search: haleyn)
-hālēyn (1) — these things (1)
+hālēyn (2) — these things (1), these (1)
 * hālēyn · "Whoever is doing these things - he is just" (Psalm 15 Line 15)
+* hālēyn · "From before these sinners who have plundered me" (Psalm 17 Line 21)
 
 ܟܹܐܢ   [k-w-n]   {adj. m.sg.abs.}   (search: ken)
 kēʾn (1) — just (1)
@@ -2187,8 +2233,9 @@ meṫṫzīʿ (1) — unshaken (1) [wlā]
 * wlā meṫṫzīʿ · "And unshaken for Eternity" (Psalm 15 Line 16)
 
 ܢܲܛܲܪܲܝܢܝ   [n-ṭ-r]   {Pael impv. 2m.sg. + 1cs suff.}   (search: natarayny)
-naṭarayny (1) — keep me (1)
+naṭarayny (2) — keep me (1), guard me (1)
 * naṭarayny · "Keep me, O God, for I have trusted in You" (Psalm 16 Line 1)
+* naṭarayny · "Guard me like the pupil of an eye" (Psalm 17 Line 19)
 
 ܥܠܲܝܟ   [ʿ-l]   {prep. + 2ms suff.}   (search: layk)
 ʿlayk (1) — in You (1)
@@ -2393,8 +2440,9 @@ ya(h_)ḇṫ (1) — You have...given (1)
 * wlā ya(h_)ḇṫ · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
 
 ܚܲܣܝܵܟ݂   [ḥ-s-ʾ]   {referent adj. m.sg.emph. + 2ms suff.}   (search: hasyak)
-ḥasyāḵ (1) — Your Devout One (1)
+ḥasyāḵ (2) — Your Devout One (2)
 * lḥasyāḵ · "And You have not given Your Devout One over to see corruption" (Psalm 16 Line 23)
+* lḥasyāḵ · "Make Your Devout One a wonder" (Psalm 17 Line 16)
 
 ܚܒ݂ܵܠܵܐ   [ḥ-b-l]   {noun m.sg.emph.}   (search: hbala)
 ḥḇālā (1) — corruption (1)
@@ -2405,8 +2453,9 @@ tḥāwēyny (1) — You show me (1)
 * tḥāwēyny · "You show me Your Way of life" (Psalm 16 Line 24)
 
 ܐܸܣܒܲܥ   [s-b-ʿ]   {Peal impf. 1c.sg.}   (search: esba)
-ʾesbaʿ (1) — I am filled (1)
+ʾesbaʿ (2) — I am filled (1), I am satisfied (1)
 * wʾesbaʿ · "And I am filled from the joy of Your Face" (Psalm 16 Line 25)
+* wʾesbaʿ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
 
 ܚܲܕܘܼܬܹܗ   [ḥ-d-y]   {noun f.sg.emph. + 3ms suff.}   (search: haduteh)
 ḥadūtēh (1) — the joy of (1)
@@ -2425,5 +2474,363 @@ zāḵūṯā (1) — victory (1)
 * dzāḵūṯā · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
 
 ܝܲܡܝܼܢܵܟ݂   [y-m-n]   {noun f.sg.emph. + 2ms suff.}   (search: yaminak)
-yamīnāḵ (1) — Your Right Hand (1)
+yamīnāḵ (2) — Your Right Hand (2)
 * dyamīnāḵ · "And from the sweetness of the victory of Your Right Hand" (Psalm 16 Line 26)
+
+* yamīnāḵ · "From those who stand against Your Right Hand" (Psalm 17 Line 18)
+
+ܫܡܲܥ   [š-m-ʿ]   {Peal impv. 2m.sg.}   (search: shma)
+šmaʿ (2) — hear (2)
+* šmaʿ · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
+* wašmaʿ · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
+
+ܒܵܥܘܼܬ݂ܝ   [b-ʿ-ʾ]   {noun f.sg.emph. + 1cs suff.}   (search: bauty)
+bāʿūṯy (1) — my pleading (1)
+* bḇāʿūṯy · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
+
+ܨܘܼܬ݂   [ṣ-w-t]   {Peal impv. 2m.sg.}   (search: sut)
+ṣūṯ (1) — listen (1)
+* wṣūṯ · "And listen to my prayer, which is not from deceitful lips" (Psalm 17 Line 2)
+
+ܨܠܘܿܬ݂ܝ   [ṣ-l-ʾ]   {noun f.sg.emph. + 1cs suff.}   (search: sloty)
+ṣlōṯy (1) — my prayer (1)
+* ṣlōṯy · "And listen to my prayer, which is not from deceitful lips" (Psalm 17 Line 2)
+
+ܢܲܟ݁ܘܼܠܬ݂ܵܢ̈ܝܵܬ݂ܵܐ   [n-k-l]   {adj. f.pl.emph.}   (search: nakultanyata)
+nak̇ūlṯān̈yāṯā (1) — deceitful (1)
+* nak̇ūlṯān̈yāṯā · "And listen to my prayer, which is not from deceitful lips" (Psalm 17 Line 2)
+
+ܪܲܚܸܡܥܠܲܝ   [r-ḥ-m + ʿ-l]   {Pael impv. 2m.sg. + prep. + 1cs suff.}   (search: rahemlay)
+raḥemʿlay (1) — have mercy on me (1)
+* raḥemʿlay · "My Lord and my God, have mercy on me..." (Psalm 17 Line 3)
+
+ܪܕ݂ܝܼܦ   [r-d-p]   {Peal passive ptcp. m.sg.abs.}   (search: rdip)
+rḏīp (1) — being pursued (1)
+* darḏīp · "...for I am being pursued unrightly" (Psalm 17 Line 3)
+
+ܐ݇ܢܵܐ   [ʾ-n-ʾ]   {pron. 1c.sg.}   (search: na)
+(ʾ)nā (1) — I (1)
+* (ʾ)nā · "...for I am being pursued unrightly" (Psalm 17 Line 3)
+
+ܟܹܐܢܘܼ   [k-w-n]   {noun f.sg.abs.}   (search: kenu)
+kēʾnū (1) — unrightly (1) [dlā]
+* dlā bkēʾnū · "...for I am being pursued unrightly" (Psalm 17 Line 3)
+
+ܩܕܵܡܲܝܟ   [q-d-m]   {prep. + 2ms suff.}   (search: qdamayk)
+qdāmayk (1) — before You (1)
+* qḏāmayk · "From before You my justice goes forth" (Psalm 17 Line 6)
+
+ܕܝܼܢܝ   [d-y-n]   {noun m.sg.emph. + 1cs suff.}   (search: diny)
+dīny (1) — my justice (1)
+* dīny · "From before You my justice goes forth" (Psalm 17 Line 6)
+
+ܢܸܦܘܿܩ   [n-p-q]   {Peal impf. 3m.sg.}   (search: nepoq)
+nepōq (1) — goes forth (1)
+* nepōq · "From before You my justice goes forth" (Psalm 17 Line 6)
+
+ܥܲܝ̈ܢܲܝܟ   [ʿ-y-n]   {noun f.pl.emph. + 2ms suff.}   (search: aynayk)
+ʿaÿnayk (1) — Your eyes (1)
+* wʿaÿnayk · "And Your eyes see uprightness" (Psalm 17 Line 7)
+
+ܢܸܚ̈ܙܝܵܢ   [ḥ-z-ʾ]   {Peal impf. 3f.pl.}   (search: nehzyan)
+neḥ̈zyān (1) — see (1)
+* neḥ̈zyān · "And Your eyes see uprightness" (Psalm 17 Line 7)
+
+ܒܚܲܪܬ݁   [b-ḥ-r]   {Peal perf. 2m.sg.}   (search: bhart)
+bḥarṫ (1) — You have examined (1)
+* bḥarṫ · "You have examined my heart..." (Psalm 17 Line 8)
+
+ܣܥܲܪܬܵܢܝ   [s-ʿ-r]   {Peal perf. 2m.sg. + 1cs suff.}   (search: sartany)
+sʿartāny (1) — You have visited me (1)
+* wasʿartāny · "...and You have visited me in the night" (Psalm 17 Line 8)
+
+ܠܸܠܝܵܐ   [l-y-l]   {noun m.sg.emph.}   (search: lelya)
+lelyā (1) — the night (1)
+* blelyā · "...and You have visited me in the night" (Psalm 17 Line 8)
+
+ܒܩܲܝ̣ܬܵܢܝ   [b-q-y]   {Peal perf. 2m.sg. + 1cs suff.}   (search: bqaytany)
+bqay_tāny (1) — You have tested me (1)
+* waḇqay_tāny · "And You have tested me..." (Psalm 17 Line 9)
+
+ܐܸܫ᷺ܟܲܚܬ݁   [ʾ-š-k-ḥ]   {Peal perf. 2m.sg.}   (search: eshkaht)
+ʾeš__kaḥṫ (1) — You have...found (1)
+* wlā ʾeš__kaḥṫ · "...and You have not found unrighteousness in me" (Psalm 17 Line 9)
+
+ܒܝܼ   [b]   {prep. + 1cs suff.}   (search: bi)
+bī (1) — in me (1)
+* bī · "...and You have not found unrighteousness in me" (Psalm 17 Line 9)
+
+ܥ̣ܒܲܪܘ   [ʿ-b-r]   {Peal perf. 3m.pl.}   (search: barw)
+ʿ_barw (1) — have...passed (1)
+* wlā ʿ_barw · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
+
+ܦܘܼܡܝ   [p-w-m]   {noun m.sg.emph. + 1cs suff.}   (search: pumy)
+pūmy (1) — my mouth (1)
+* pūmy · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
+
+ܥܒ݂ܵܕܹ݁̈ܐ   [ʿ-b-d]   {noun m.pl.emph.}   (search: abade)
+ʿḇāḋ̈ē (1) — works (1)
+* ʿḇāḋ̈ē · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
+
+ܡܲܡܠܠܵܐ   [m-l-l]   {noun m.sg.emph.}   (search: mamlla)
+mamllā (1) — speech (1)
+* bmamllā · "In speech of the lips" (Psalm 17 Line 11)
+
+ܢܲܛܲܪܬܵܢܝ   [n-ṭ-r]   {Peal perf. 2m.sg. + 1cs suff.}   (search: natartany)
+naṭartāny (1) — You have kept me (1)
+* naṭartāny · "Rather, You have kept me from evil ways" (Psalm 17 Line 12)
+
+ܐܘܼܪ̈ܚܵܬ݂ܵܐ   [ʾ-r-ḥ]   {noun f.pl.emph.}   (search: urhata)
+ʾūr̈ḥāṯā (1) — ways (1)
+* ʾūr̈ḥāṯā · "Rather, You have kept me from evil ways" (Psalm 17 Line 12)
+
+ܒܝܼܫܵܬ݂ܵܐ   [b-ʾ-š]   {adj. f.pl.emph.}   (search: bishata)
+bīšāṯā (1) — evil (1)
+* bīšāṯā · "Rather, You have kept me from evil ways" (Psalm 17 Line 12)
+
+ܣ᷺ܲܡܸܟ݂ܬ݁   [s-m-k]   {Peal perf. 2m.sg.}   (search: samekt)
+sa__meḵṫ (1) — You have supported (1)
+* sa__meḵṫ · "You have supported my paces on Your paths, so that my steps are unshaken" (Psalm 17 Line 13)
+
+ܗܲܠ̈ܟ݂ܵܬ݂ܝ   [h-l-k]   {noun f.pl.emph. + 1cs suff.}   (search: halkaty)
+hal̈ḵāṯy (1) — my paces (1)
+* hal̈ḵāṯy · "You have supported my paces on Your paths, so that my steps are unshaken" (Psalm 17 Line 13)
+
+ܫܒ݂ܝܼ̈ܠܲܝܟ   [š-b-l]   {noun m.pl.emph. + 2ms suff.}   (search: shbilayk)
+šḇī̈layk (1) — Your paths (1)
+* bašḇī̈layk · "You have supported my paces on Your paths, so that my steps are unshaken" (Psalm 17 Line 13)
+
+ܢܙܘܼ̈ܥܵܢ   [z-w-ʿ]   {Peal impf. 3f.pl.}   (search: nzuan)
+nzṻʿān (1) — are unshaken (1) [dlā]
+* dlā nzṻʿān · "You have supported my paces on Your paths, so that my steps are unshaken" (Psalm 17 Line 13)
+
+ܦܣܵܥܵܬ݂̈ܝ   [p-s-ʿ]   {noun f.pl.emph. + 1cs suff.}   (search: psaaty)
+psāʿāṯ̈y (1) — my steps (1)
+* psāʿāṯ̈y · "You have supported my paces on Your paths, so that my steps are unshaken" (Psalm 17 Line 13)
+
+ܩܪܹܝ̇ܬ݂ܵܟ݂   [q-r-ʾ]   {Peal perf. 1c.sg. + 2ms suff.}   (search: qreytak)
+qrēy^ṯāḵ (1) — I have called You (1)
+* qrēy^ṯāḵ · "I have called You, for You have answered me" (Psalm 17 Line 14)
+
+ܥ̣ܢܲܝܬܵܢܝ   [ʿ-n-ʾ]   {Peal perf. 2m.sg. + 1cs suff.}   (search: anaytany)
+ʿ_naytāny (1) — You have answered me (1)
+* daʿ_naytāny · "I have called You, for You have answered me" (Psalm 17 Line 14)
+
+ܨܠܝܼ   [ṣ-l-ʾ]   {Peal impv. 2m.sg.}   (search: sli)
+ṣlī (1) — incline (1)
+* ṣlī · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
+
+ܠܘܵܬ݂ܝ   [l-w-t]   {prep. + 1cs suff.}   (search: lwaty)
+lwāṯy (1) — toward me (1)
+* lwāṯy · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
+
+ܐܸܕ݂ܢܵܟ݂   [ʾ-d-n]   {noun f.sg.emph. + 2ms suff.}   (search: ednak)
+ʾeḏnāḵ (1) — Your ear (1)
+* ʾeḏnāḵ · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
+
+ܡܸܠܲܝ̈   [m-l-l]   {noun f.pl.emph. + 1cs suff.}   (search: melay)
+melaÿ (1) — my words (1)
+* melaÿ · "O God, incline Your ear toward me, and hear my words" (Psalm 17 Line 15)
+
+ܥܒܸܕܲܝܗܝ   [ʿ-b-d]   {Peal impv. 2m.sg. + 3ms suff.}   (search: bedayhy)
+ʿbedayhy (1) — make (1)
+* ʿbedayhy · "Make Your Devout One a wonder" (Psalm 17 Line 16)
+
+ܬܸܕ݂ܡܘܼܪܬܵܐ   [d-m-r]   {noun f.sg.emph.}   (search: tedmurta)
+teḏmūrtā (1) — a wonder (1)
+* teḏmūrtā · "Make Your Devout One a wonder" (Psalm 17 Line 16)
+
+ܦܵ̇ܪܘܿܩܵܐ   [p-r-q]   {Peal active ptcp. m.sg.emph.}   (search: paroq)
+p^ārōqā (1) — a Savior (1)
+* wp^ārōqā · "And a Savior to those who hope" (Psalm 17 Line 17)
+
+ܡܣܲܒ݁ܪܝܼܢ   [s-b-r]   {Pael active ptcp. m.pl.abs.}   (search: msabrin)
+msaḃrīn (1) — who hope (1)
+* damsaḃrīn · "And a Savior to those who hope" (Psalm 17 Line 17)
+
+ܩܵܝ̇ܡܝܼܢ   [q-w-m]   {Peal active ptcp. m.pl.abs.}   (search: qaymin)
+qāy^mīn (1) — who stand (1)
+* dqāy^mīn · "From those who stand against Your Right Hand" (Psalm 17 Line 18)
+
+ܠܘܼܩܒܲܠ   [q-b-l]   {prep.}   (search: luqbal)
+lūqbal (1) — against (1)
+* lūqbal · "From those who stand against Your Right Hand" (Psalm 17 Line 18)
+
+ܒܵܒ݂ܬ݂ܵܐ   [b-b]   {noun f.sg.emph.}   (search: babta)
+bāḇṯā (1) — the pupil (1)
+* bāḇṯā · "Guard me like the pupil of an eye" (Psalm 17 Line 19)
+
+ܥܲܝܢܵܐ   [ʿ-y-n]   {noun f.sg.emph.}   (search: ayna)
+ʿaynā (1) — an eye (1)
+* dʿaynā · "Guard me like the pupil of an eye" (Psalm 17 Line 19)
+
+ܛܸܠܵܠܵܐ   [ṭ-l-l]   {noun m.sg.emph.}   (search: telala)
+ṭelālā (1) — the shadow (1)
+* waḇṭelālā · "And hide me in the shadow of Your wings" (Psalm 17 Line 20)
+
+ܟܸܢ̈ܦܲܝܟ   [k-n-p]   {noun f.pl.emph. + 2ms suff.}   (search: kenpayk)
+ken̈payk (1) — Your wings (1)
+* dken̈payk · "And hide me in the shadow of Your wings" (Psalm 17 Line 20)
+
+ܣܲܬܲܪܲܝܢܝ   [s-t-r]   {Pael impv. 2m.sg. + 1cs suff.}   (search: satarayny)
+satarayny (1) — hide me (1)
+* satarayny · "And hide me in the shadow of Your wings" (Psalm 17 Line 20)
+
+ܒܲܙܘܼܢܝ   [b-z-z]   {Peal perf. 3m.pl. + 1cs suff.}   (search: bazuny)
+bazūny (1) — have plundered me (1)
+* dbazūny · "From before these sinners who have plundered me" (Psalm 17 Line 21)
+
+ܒܥܸܠܕܒ݂ܵܒܹܝ̈ܗ̇   [b-ʿ-l + d-b-b]   {noun m.pl.emph. + 3fs suff.}   (search: beldbabeyh)
+bʿeldḇābēÿh^ (1) — the enemies (1)
+* waḇʿeldḇābēÿh^ · "And the enemies of my soul who have set against me" (Psalm 17 Line 22)
+
+ܣܵܡ̣ܘ   [s-w-m]   {Peal perf. 3m.pl.}   (search: samw)
+sām_w (2) — have set (2)
+* dsām_w · "And the enemies of my soul who have set against me" (Psalm 17 Line 22)
+* sām_w · "They have set their eyes to cast me down to the earth" (Psalm 17 Line 25)
+
+ܣܟ݂ܘܿܪ   [s-k-r]   {Peal impv. 2m.sg.}   (search: skor)
+sḵōr (1) — shut (1)
+* sḵōr · "Shut the mouth of those who have spoken arrogance" (Psalm 17 Line 23)
+
+ܦܘܼܡܗܘܿܢ   [p-w-m]   {noun m.sg.emph. + 3mp suff.}   (search: pumhon)
+pūmhōn (1) — the mouth (1)
+* pūmhōn · "Shut the mouth of those who have spoken arrogance" (Psalm 17 Line 23)
+
+ܡܲܠܸܠ̣ܘ   [m-l-l]   {Pael perf. 3m.pl.}   (search: malelw)
+malel_w (1) — have spoken (1)
+* dmalel_w · "Shut the mouth of those who have spoken arrogance" (Psalm 17 Line 23)
+
+ܫܲܒ݂ܗ݈ܪܵܢܘܼܬ݂ܵܐ   [š-b-h-r]   {noun f.sg.emph.}   (search: shabhranuta)
+šaḇ(_h)rānūṯā (1) — arrogance (1)
+* šaḇ(_h)rānūṯā · "Shut the mouth of those who have spoken arrogance" (Psalm 17 Line 23)
+
+ܫܲܒ݁ܚ̣ܘܼܢܝ   [š-b-ḥ]   {Pael perf. 3m.pl. + 1cs suff.}   (search: shabhuny)
+šaḃḥ_ūny (1) — they have glorified me (1)
+* šaḃḥ_ūny · "They have glorified me, and now they have encircled me" (Psalm 17 Line 24)
+
+ܗܵܫܵܐ   [h-š-ʾ]   {adv.}   (search: hasha)
+hāšā (1) — now (1)
+* whāšā · "They have glorified me, and now they have encircled me" (Psalm 17 Line 24)
+
+ܟܲܪܟ݂ܘܼܢܝ   [k-r-k]   {Peal perf. 3m.pl. + 1cs suff.}   (search: karkuny)
+karḵūny (1) — they have encircled me (1)
+* karḵūny · "They have glorified me, and now they have encircled me" (Psalm 17 Line 24)
+
+ܥܲܝܢܲܝ̈ܗܘܿܢ   [ʿ-y-n]   {noun f.pl.emph. + 3mp suff.}   (search: aynayhon)
+ʿaynaÿhōn (1) — their eyes (1)
+* ʿaynaÿhōn · "They have set their eyes to cast me down to the earth" (Psalm 17 Line 25)
+
+ܢܲܪܡܘܼܢܵܢܝ   [r-m-ʾ]   {Aphel impf. 3m.pl. + 1cs suff.}   (search: narmunany)
+narmūnāny (1) — to cast me down (1)
+* dnarmūnāny · "They have set their eyes to cast me down to the earth" (Psalm 17 Line 25)
+
+ܕܵܡܹ̇ܝܢ   [d-m-ʾ]   {Peal active ptcp. m.pl.abs.}   (search: dameyn)
+dām^ēyn (1) — they resemble (1)
+* dām^ēyn · "They resemble a lion seeking to crush" (Psalm 17 Line 26)
+
+ܐܲܪܝܵܐ   [ʾ-r-y]   {noun m.sg.emph.}   (search: arya)
+ʾaryā (2) — a lion (1), lion's (1)
+* lʾaryā · "They resemble a lion seeking to crush" (Psalm 17 Line 26)
+* dʾaryā · "Like a lion's cub sitting in hiding" (Psalm 17 Line 27)
+
+ܡܸܬ݂ܒܲܪ   [t-b-r]   {Ethpeel inf.}   (search: metbar)
+meṯbar (1) — to crush (1)
+* lmeṯbar · "They resemble a lion seeking to crush" (Psalm 17 Line 26)
+
+ܓܘܼܪܝܵܐ   [g-w-r]   {noun m.sg.emph.}   (search: gurya)
+gūryā (1) — a...cub (1)
+* gūryā · "Like a lion's cub sitting in hiding" (Psalm 17 Line 27)
+
+ܝܵܬܹ݁ܒ݂   [y-t-b]   {Peal active ptcp. m.sg.abs.}   (search: yateb)
+yāṫēḇ (1) — sitting (1)
+* dyāṫēḇ · "Like a lion's cub sitting in hiding" (Psalm 17 Line 27)
+
+ܛܘܼܫܝܵܐ   [ṭ-š-ʾ]   {noun m.sg.emph.}   (search: tushya)
+ṭūšyā (1) — hiding (1)
+* bṭūšyā · "Like a lion's cub sitting in hiding" (Psalm 17 Line 27)
+
+ܩܘܼܡ   [q-w-m]   {Peal impv. 2m.sg.}   (search: qum)
+qūm (1) — arise (1)
+* qūm · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
+
+ܐܲܦܲܝ̈ܗܘܿܢ   [ʾ-p-ʾ]   {noun f.pl.emph. + 3mp suff.}   (search: apayhon)
+ʾapaÿhōn (1) — their faces (1)
+* ʾapaÿhōn · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
+
+ܐܲܒ݂ܪܸܟ݂   [b-r-k]   {Aphel impv. 2m.sg.}   (search: abrek)
+ʾaḇreḵ (1) — make...kneel (1)
+* wʾaḇreḵ · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
+
+ܦܲܨܵܗ̇   [p-ṣ-ʾ]   {Pael impv. 2m.sg. + 3fs suff.}   (search: pasah)
+paṣāh^ (1) — deliver (1)
+* wpaṣāh^ · "And deliver my soul from the wicked and from the Sword" (Psalm 17 Line 29)
+
+ܚܲܪܒܵܐ   [ḥ-r-b]   {noun c.sg.emph.}   (search: harba)
+ḥarbā (1) — the Sword (1)
+* ḥarbā · "And deliver my soul from the wicked and from the Sword" (Psalm 17 Line 29)
+
+ܡܝܼ̈ܬܹܐ   [m-w-t]   {adj. m.pl.emph.}   (search: mite)
+mī̈tē (2) — the dead (2)
+* mī̈tē · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+* mī̈tē · "And from the dead of the grave" (Psalm 17 Line 31)
+
+ܡܵܝ̇ܬ݁ܝܼܢ   [m-w-t]   {Peal active ptcp. m.pl.abs.}   (search: maytin)
+māy^ṫīn (1) — who are dying (1)
+* dmāy^ṫīn · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+
+ܐܝܼܕܲܝ̈ܟ   [y-d]   {noun f.pl.emph. + 2ms suff.}   (search: idayk)
+ʾīdaÿk (1) — Your hands (1)
+* ʾīdaÿk · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+
+ܚܸܦܪܵܐ   [ḥ-p-r]   {noun m.sg.emph.}   (search: hepra)
+ḥeprā (1) — the grave (1)
+* dḥeprā · "And from the dead of the grave" (Psalm 17 Line 31)
+
+ܬܦܲܠܸܓ݂   [p-l-g]   {Pael impf. 2m.sg.}   (search: tpaleg)
+tpaleḡ (1) — You separate (1)
+* tpaleḡ · "You separate them in life" (Psalm 17 Line 32)
+
+ܣܝܼ̈ܡܵܬ݂ܵܟ݂   [s-w-m]   {noun f.pl.emph. + 2ms suff.}   (search: simatak)
+sī̈māṯāḵ (1) — Your hoards (1)
+* wsī̈māṯāḵ · "Your hoards have filled their belly" (Psalm 17 Line 33)
+
+ܡܠܝܼ   [m-l-ʾ]   {Pael perf. 3m.sg.}   (search: mli)
+mlī (1) — have filled (1)
+* mlī · "Your hoards have filled their belly" (Psalm 17 Line 33)
+
+ܟܲܪܣܗܘܿܢ   [k-r-s]   {noun f.sg.emph. + 3mp suff.}   (search: karshon)
+karshōn (1) — their belly (1)
+* karshōn · "Your hoards have filled their belly" (Psalm 17 Line 33)
+
+ܢܸܣܒ݁ܥܘܿܢ   [s-b-ʿ]   {Peal impf. 3m.pl.}   (search: nesbon)
+nesḃʿōn (1) — they are satisfied with (1)
+* nesḃʿōn · "They are satisfied with sons..." (Psalm 17 Line 34)
+
+ܒ̈ܢܲܝܵܐ   [b-r]   {noun m.pl.emph.}   (search: bnaya)
+b̈nayā (1) — sons (1)
+* b̈nayā · "They are satisfied with sons..." (Psalm 17 Line 34)
+
+ܢܸܫܒ݁ܩܘܿܢ   [š-b-q]   {Peal impf. 3m.pl.}   (search: neshbqon)
+nešḃqōn (1) — leave (1)
+* wnešḃqōn · "...and leave what remains to their sons" (Psalm 17 Line 34)
+
+ܫܲܪܟܵܐ   [š-r-k]   {noun m.sg.emph.}   (search: sharka)
+šarkā (1) — what remains (1)
+* šarkā · "...and leave what remains to their sons" (Psalm 17 Line 34)
+
+ܒܢܲܝ̈ܗܘܿܢ   [b-r]   {noun m.pl.emph. + 3mp suff.}   (search: bnayhon)
+bnaÿhōn (1) — their sons (1)
+* laḇnaÿhōn · "...and leave what remains to their sons" (Psalm 17 Line 34)
+
+ܐܸܚܙܸܐ   [ḥ-z-ʾ]   {Peal impf. 1c.sg.}   (search: ehze)
+ʾeḥzeʾ (1) — I see (1)
+* ʾeḥzeʾ · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
+
+ܐܸܬ݁ܬ݁ܥܝܼܪܲܬ̤   [ʿ-y-r]   {Ethpeel perf. 3f.sg.}   (search: ettirat)
+ʾeṯṯʿīrat̤ (1) — has awakened (1)
+* dʾeṯṯʿīrat̤ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
+
+ܗܲܝܡܵܢܘܼܬ݂ܵܟ݂   [h-y-m-n]   {noun f.sg.emph. + 2ms suff.}   (search: haymanutak)
+haymānūṯāḵ (1) — Your faithfulness (1)
+* haymānūṯāḵ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
