@@ -2551,7 +2551,7 @@ sʿartāny (1) — You have visited me (1)
 lelyā (1) — the night (1)
 * blelyā · "...and You have visited me in the night" (Psalm 17 Line 8)
 
-ܒܩܲܝ̣ܬܵܢܝ   [b-q-y]   {Peal perf. 2m.sg. + 1cs suff.}   (search: bqaytany)
+ܒܩܲܝ̣ܬܵܢܝ   [b-q-ʾ]   {Peal perf. 2m.sg. + 1cs suff.}   (search: bqaytany)
 bqay_tāny (1) — You have tested me (1)
 * waḇqay_tāny · "And You have tested me..." (Psalm 17 Line 9)
 
@@ -2571,7 +2571,7 @@ bī (1) — in me (1)
 pūmy (1) — my mouth (1)
 * pūmy · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
 
-ܥܒ݂ܵܕܹ݁̈ܐ   [ʿ-b-d]   {noun m.pl.emph.}   (search: abade)
+ܥܒ݂ܵܕܹ݁̈ܐ   [ʿ-b-d]   {noun m.pl.emph.}   (search: bade)
 ʿḇāḋ̈ē (1) — works (1)
 * ʿḇāḋ̈ē · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
 
@@ -2615,7 +2615,7 @@ psāʿāṯ̈y (1) — my steps (1)
 qrēy^ṯāḵ (1) — I have called You (1)
 * qrēy^ṯāḵ · "I have called You, for You have answered me" (Psalm 17 Line 14)
 
-ܥ̣ܢܲܝܬܵܢܝ   [ʿ-n-ʾ]   {Peal perf. 2m.sg. + 1cs suff.}   (search: anaytany)
+ܥ̣ܢܲܝܬܵܢܝ   [ʿ-n-ʾ]   {Peal perf. 2m.sg. + 1cs suff.}   (search: naytany)
 ʿ_naytāny (1) — You have answered me (1)
 * daʿ_naytāny · "I have called You, for You have answered me" (Psalm 17 Line 14)
 
@@ -2643,7 +2643,7 @@ melaÿ (1) — my words (1)
 teḏmūrtā (1) — a wonder (1)
 * teḏmūrtā · "Make Your Devout One a wonder" (Psalm 17 Line 16)
 
-ܦܵ̇ܪܘܿܩܵܐ   [p-r-q]   {Peal active ptcp. m.sg.emph.}   (search: paroq)
+ܦܵ̇ܪܘܿܩܵܐ   [p-r-q]   {noun m.sg.emph.}   (search: paroqa)
 p^ārōqā (1) — a Savior (1)
 * wp^ārōqā · "And a Savior to those who hope" (Psalm 17 Line 17)
 
@@ -2798,7 +2798,7 @@ tpaleḡ (1) — You separate (1)
 sī̈māṯāḵ (1) — Your hoards (1)
 * wsī̈māṯāḵ · "Your hoards have filled their belly" (Psalm 17 Line 33)
 
-ܡܠܝܼ   [m-l-ʾ]   {Pael perf. 3m.sg.}   (search: mli)
+ܡܠܝܼ   [m-l-ʾ]   {Peal perf. 3f.pl.}   (search: mli)
 mlī (1) — have filled (1)
 * mlī · "Your hoards have filled their belly" (Psalm 17 Line 33)
 
@@ -2830,7 +2830,7 @@ bnaÿhōn (1) — their sons (1)
 ʾeḥzeʾ (1) — I see (1)
 * ʾeḥzeʾ · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
-ܐܸܬ݁ܬ݁ܥܝܼܪܲܬ̤   [ʿ-y-r]   {Ethpeel perf. 3f.sg.}   (search: ettirat)
+ܐܸܬ݁ܬ݁ܥܝܼܪܲܬ̤   [ʿ-y-r]   {Ettaphal perf. 3f.sg.}   (search: ettirat)
 ʾeṫṫʿīrat̤ (1) — has awakened (1)
 * dʾeṫṫʿīrat̤ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
 

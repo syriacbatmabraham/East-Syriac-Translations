@@ -47,6 +47,18 @@ ROOT_COMPONENT_RE = re.compile(r"^[A-Za-zʾʿḥṭṣš]+(?:-[A-Za-zʾʿḥṭ�
 PERSON_FEATURE_RE = re.compile(r"^[123](?:m|f|c)?(?:sg|pl)$|^[123]c?p(?:l)?$|^[123](?:m|f|c)p$")
 SUFFIX_RE = re.compile(r"^[123](?:m|f|c)?(?:s|p|sg|pl)?\s+(?:suff\.|encl\.)$")
 
+_SEARCH_NOTATION = str.maketrans("", "", "^_()[]⁀‿")
+
+
+def _derive_search_key(canonical: str) -> str:
+    """Derive the General Rules §10.14 fold key from a canonical headword."""
+    folded = canonical.lower().replace("š", "sh").replace("ʾ", "").replace("ʿ", "")
+    folded = "".join(
+        ch for ch in unicodedata.normalize("NFD", folded)
+        if not unicodedata.combining(ch)
+    )
+    return folded.translate(_SEARCH_NOTATION)
+
 
 @dataclass(frozen=True)
 class GlossaryIssue:
@@ -680,6 +692,16 @@ def check_glossary(
             )
         else:
             identities[identity] = entry
+        expected_search_key = _derive_search_key(entry.canonical)
+        if entry.search_key != expected_search_key:
+            issues.append(
+                GlossaryIssue(
+                    "invalid-search-key",
+                    f"Search key {entry.search_key!r} != deterministic §10.14 fold {expected_search_key!r}.",
+                    entry.line,
+                    entry.canonical,
+                )
+            )
         if not _valid_root(entry.root):
             issues.append(
                 GlossaryIssue(

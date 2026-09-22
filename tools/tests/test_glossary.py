@@ -10,7 +10,7 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 from east_syriac.confirmed_text import ConfirmedTextDocument
-from east_syriac.glossary import _rendering_traceable, check_glossary, check_glossary_path
+from east_syriac.glossary import _derive_search_key, _rendering_traceable, check_glossary, check_glossary_path
 from east_syriac.provenance import ConfirmedTextProvenance, SourceRegistry
 
 
@@ -122,6 +122,23 @@ class GlossaryAdversarialChecks(unittest.TestCase):
     def test_check_09_root_structure(self):
         corrupted = BASE.replace("[ʾ-b]", "[noun m.sg.emph.]", 1)
         self.assertIn("invalid-root-field", self.codes(corrupted))
+
+    def test_search_key_is_deterministically_derived(self):
+        cases = {
+            "ʿḇāḋ̈ē": "bade",
+            "ʿ_naytāny": "naytany",
+            "p^ārōqā": "paroqa",
+            "šbaq_⁀n": "shbaqn",
+            "ʾīšōʿ": "isho",
+            "ḥaḏ bšaḇʿā": "had bshaba",
+        }
+        for canonical, expected in cases.items():
+            with self.subTest(canonical=canonical):
+                self.assertEqual(_derive_search_key(canonical), expected)
+
+    def test_search_key_mismatch_is_rejected(self):
+        corrupted = BASE.replace("(search: aba)", "(search: wrong)", 1)
+        self.assertIn("invalid-search-key", self.codes(corrupted))
 
     def test_check_10a_context_literal_span(self):
         corrupted = BASE.replace('"...good"', '"...kind"')
