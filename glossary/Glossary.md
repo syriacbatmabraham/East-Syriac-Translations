@@ -644,7 +644,7 @@ raḃūṯ (1) — the greatness of (1)
 šūḇḥāḵ (1) — Thy glory (1)
 * šūḇḥāḵ · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
-ܥܝܼܪܹ̈ܐ   [ʿ-y-r]   {referent noun m.pl.emph.}   (search: ire)
+ܥܝܼܪܹ̈ܐ   [ʿ-w-r]   {referent noun m.pl.emph.}   (search: ire)
 ʿīr̈ē (1) — Watchers (1)
 * ʿīr̈ē · "Watchers and men cry out to You..." (Our Father Line 6)
 
@@ -2830,7 +2830,7 @@ bnaÿhōn (1) — their sons (1)
 ʾeḥzeʾ (1) — I see (1)
 * ʾeḥzeʾ · "But I - in righteousness - I see Your Face" (Psalm 17 Line 35)
 
-ܐܸܬ݁ܬ݁ܥܝܼܪܲܬ̤   [ʿ-y-r]   {Ettaphal perf. 3f.sg.}   (search: ettirat)
+ܐܸܬ݁ܬ݁ܥܝܼܪܲܬ̤   [ʿ-w-r]   {Ettaphal perf. 3f.sg.}   (search: ettirat)
 ʾeṫṫʿīrat̤ (1) — has awakened (1)
 * dʾeṫṫʿīrat̤ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
 
