@@ -66,34 +66,34 @@ confirmed_texts:
         witness_label: Assyrian Ferial Slotha d'Sapra II
         reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
 
-  Ksawa d'Mazmore/14_Slotha_d'Marmitha_4.txt:
+  Ksawa d'Mazmore/014_Slotha_d'Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
-  Ksawa d'Mazmore/15_Psalm_11.txt:
+  Ksawa d'Mazmore/015_Psalm_11.txt:
     citation_label: Psalm 11
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/16_Psalm_12.txt:
+  Ksawa d'Mazmore/016_Psalm_12.txt:
     citation_label: Psalm 12
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/17_Psalm_13.txt:
+  Ksawa d'Mazmore/017_Psalm_13.txt:
     citation_label: Psalm 13
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/18_Psalm_14.txt:
+  Ksawa d'Mazmore/018_Psalm_14.txt:
     citation_label: Psalm 14
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/19_Slotha_d'Marmitha_5.txt:
+  Ksawa d'Mazmore/019_Slotha_d'Marmitha_5.txt:
     citation_label: Slotha d'Marmitha 5
     source_of_record: breviarium_chaldaicum
     editorial_apparatus:
       - line: 1
         witness_label: Assyrian Slotha d'Marmitha 5
         reading: "[bašrārāḵ]"
-  Ksawa d'Mazmore/20_Psalm_15.txt:
+  Ksawa d'Mazmore/020_Psalm_15.txt:
     citation_label: Psalm 15
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/21_Psalm_16.txt:
+  Ksawa d'Mazmore/021_Psalm_16.txt:
     citation_label: Psalm 16
     source_of_record: ksawa_d_mazmore
-  Ksawa d'Mazmore/22_Psalm_17.txt:
+  Ksawa d'Mazmore/022_Psalm_17.txt:
     citation_label: Psalm 17
     source_of_record: ksawa_d_mazmore
