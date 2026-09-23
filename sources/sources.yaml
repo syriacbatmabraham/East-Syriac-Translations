@@ -54,6 +54,12 @@ confirmed_texts:
   Ferial Ramsha/11_Diaconal_Exhortation.txt:
     citation_label: Ferial Ramsha Diaconal Exhortation III
     source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/14_Diaconal_Exhortation.txt:
+    citation_label: Ferial Ramsha Diaconal Exhortation IV
+    source_of_record: breviarium_chaldaicum
+  Ferial Ramsha/16_Diaconal_Exhortation.txt:
+    citation_label: Ferial Ramsha Diaconal Exhortation V
+    source_of_record: breviarium_chaldaicum
 
   Ferial Sapra/01_Diaconal_Exhortation.txt:
     citation_label: Ferial Sapra Diaconal Exhortation
