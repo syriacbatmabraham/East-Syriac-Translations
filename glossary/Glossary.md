@@ -86,6 +86,11 @@ blebā waḇlebā (1) — in doubled hearts (1)
 * ʿdamā lʾemaṯy · "How long will You place sorrow in my soul?" (Psalm 13 Line 6)
 * ʿdamā lʾemaṯy · "How long will my enemy be exalted over me?" (Psalm 13 Line 8)
 
+
+ܕܵܪ ܕܵܪ̈ܝܼܢ   [d-w-r + d-w-r]   {noun phrase}   (search: dar darin)
+dār dār̈īn (1) — generations upon generations (1)
+* walḏārdār̈īn · "And unto generations upon generations is His faithfulness" (Psalm 100 Line 14)
+
 ---
 
 ## Forms
@@ -156,7 +161,7 @@ metḥaz̈yān (2) — seen (1), (un)seen (1) [wadlā]
 * wadlā meṯḥaz̈yān · "Maker of all things, seen and unseen" (Creed Line 2)
 
 ܡܵܪܝܵܐ   [m-r-ʾ]   {noun m.sg.emph.}   (search: marya)
-māryā (29) — Mar Yah (29)
+māryā (34) — Mar Yah (34)
 * māryā · "And to One Mar Yah..." (Creed Line 3)
 * bmāryā · "In Mar Yah I have hoped..." (Psalm 11 Line 1)
 * māryā · "...in You, Mar Yah, I have hoped" (Psalm 11 Line 3)
@@ -186,6 +191,11 @@ māryā (29) — Mar Yah (29)
 * māryā · "Hear, O Holy Mar Yah, and look upon my pleading" (Psalm 17 Line 1)
 * māryā · "Arise, Mar Yah, before their faces, and make them kneel" (Psalm 17 Line 28)
 * māryā · "And from the dead who are dying from Your hands, Mar Yah" (Psalm 17 Line 30)
+* lmāryā · "Glorify Mar Yah, all the earth" (Psalm 100 Line 1)
+* lmāryā · "Serve Mar Yah in gladness" (Psalm 100 Line 2)
+* māryā · "Know that He is Mar Yah our God" (Psalm 100 Line 8)
+* māryā · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
+* māryā · "O Giver of light, Mar Yah..." (Ferial Sapra Psalm 100, Line 2)
 
 ܐܝܼܫܘܿܥ   [prop. noun]   {prop. n.}   (search: isho)
 ʾīšōʿ (1) — Isho (1)
@@ -260,9 +270,10 @@ m_n (31) — from (29), at (2)
 * dʾaḇūhy · "Son of the Nature of His Father..." (Creed Line 7)
 
 ܐܸܬ݂ܝܼܠܸܕ݂   [y-l-d]   {Ethpeel perf. 3m.sg.}   (search: etiled)
-ʾeṯīleḏ (2) — begotten (2)
+ʾeṯīleḏ (3) — begotten (3)
 * ʾeṯīleḏ · "He who was begotten from His Father before all ages..." (Creed Line 5)
 * wʾeṯīleḏ · "And was conceived and begotten from Mariam the Virgin" (Creed Line 11)
+* dʾeṯīleḏ · "To the Child who was begotten to us..." (Psalm 100 Line 4)
 
 ܩܕܵܡ   [q-d-m]   {prep.}   (search: qdam)
 qdām (4) — before (4)
@@ -330,7 +341,7 @@ bnaÿnāšā (6) — sons of men (6)
 * daḇnaÿnāšā · "And the works of the sons of men have not passed over my mouth" (Psalm 17 Line 10)
 
 ܡܸܛܠ   [m-ṭ-l]   {prep.}   (search: metl)
-meṭl (13) — for (11), because of (2)
+meṭl (14) — for (12), because of (2)
 * wmeṭl · "He who, for the sake of us, sons of men, and for our salvation..." (Creed Line 8)
 * meṭl · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 * meṭl · "For, behold, sinners have drawn the bow" (Psalm 11 Line 6)
@@ -344,6 +355,7 @@ meṭl (13) — for (11), because of (2)
 * meṭl · "Because of this, my heart has rejoiced and my honor has exulted" (Psalm 16 Line 20)
 * meṭl · "For You have not forsaken my soul in Sheol" (Psalm 16 Line 22)
 * meṭl · "I have called You, for You have answered me" (Psalm 17 Line 14)
+* meṭl · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
 
 ܦܘܼܪܩܵܢܲܢ   [p-r-q]   {noun m.sg.emph. + 1cp suff.}   (search: purqanan)
 pūrqānan (1) — our salvation (1)
@@ -513,10 +525,11 @@ nāpēq (1) — comes forth (1)
 * nāpēq · "He who from the Father [and the Son] comes forth" (Creed Line 17)
 
 ܒܪܵܐ   [b-r]   {noun m.sg.emph.}   (search: bra)
-brā (3) — the Son (3)
+brā (4) — the Son (4)
 * [waḇrā] · "He who from the Father [and the Son] comes forth" (Catholic Creed Line 17)
 * wlaḇrā · "Glory to the Father, to the Son..." (Our Father Line 15)
 * waḇrā · "The Lord of all, the Father, the Son..." (Ferial Slotha d'Sapra I, Line 10)
+* wlaḇrā · "...and to the Son who was given to us..." (Psalm 100 Line 4)
 
 ܡܲܚܝܵܢܵܐ   [ḥ-y-ʾ]   {adj. m.sg.emph.}   (search: mahyana)
 maḥyānā (1) — Life-Giving (1)
@@ -573,12 +586,13 @@ paḡr̈ē (1) — bodies (1)
 * lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
 
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
-ʿālam (5) — Eternity (5)
+ʿālam (6) — Eternity (6)
 * ʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * lʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
 * lʿālam · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
 * lʿālam · "How long, Mar Yah? Will You forget me for Eternity?" (Psalm 13 Line 1)
 * lʿālam · "And unshaken for Eternity" (Psalm 15 Line 16)
+* lʿālam · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
 
 ܥܵܠܡܝܼܢ   [ʿ-l-m]   {noun m.pl.abs.}   (search: almin)
 ʿālmīn (4) — → ʿālam ʿālmīn (2), forever (2)
@@ -627,7 +641,7 @@ mlēyn (1) — are full (1)
 * šmaÿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 
 ܐܲܪܥܵܐ   [ʾ-r-ʿ]   {noun f.sg.emph.}   (search: ara)
-ʾarʿā (7) — earth (7)
+ʾarʿā (8) — earth (8)
 * wʾarʿā · "The heavens and the earth are full of the greatness of Thy glory" (Our Father Line 5)
 * bʾarʿā · "let Thy desire be: on earth as it is in Heaven" (Our Father Line 9)
 * ʾarʿā · "And on earth, peace and good hope to the sons of men" (Teshbhotha l'Alaha Line 2)
@@ -635,6 +649,7 @@ mlēyn (1) — are full (1)
 * bʾarʿā · "Choice silver tried in the earth" (Psalm 12 Line 17)
 * dḇʾarʿā · "And as for the Holy Ones on earth and the glorious ones" (Psalm 16 Line 7)
 * bʾarʿā · "They have set their eyes to cast me down to the earth" (Psalm 17 Line 25)
+* ʾarʿā · "Glorify Mar Yah, all the earth" (Psalm 100 Line 1)
 
 ܪܲܒ݁ܘܼܬ݂   [r-b-b]   {noun f.sg.cst.}   (search: rabut)
 raḃūṯ (1) — the greatness of (1)
@@ -657,11 +672,12 @@ qā^^ʿēyn (1) — cry out (1)
 * qā^^ʿēyn · "Watchers and men cry out to You..." (Our Father Line 6)
 
 ܠܵܟ݂   [l]   {prep. + 2ms suff.}   (search: lak)
-lāḵ (4) — to You (2), You (1), unto You (1)
+lāḵ (5) — to You (3), You (1), unto You (1)
 * lāḵ · "Watchers and men cry out to You..." (Our Father Line 6)
 * lāḵ · "Early they come to You, my Lord" (Ferial Slotha d'Sapra II, Line 1)
 * lāḵ · "Who call and beseech You" (Slotha d'Marmitha 4, Line 6)
 * lāḵ · "Be reconciled to me and save me; that I may confess unto You, Mar Yah" (Psalm 13 Line 3)
+* lāḵ · "...we are lifting glory to You" (Ferial Sapra Psalm 100, Line 2)
 
 ܢܸܗܘܸܐ   [h-w-ʾ]   {Peal impf. 3m.sg.}   (search: nehwe)
 nehweʾ (1) — let...be (1)
@@ -692,10 +708,12 @@ haḇ (1) — give (1)
 * haḇ · "Give us this day the bread we need" (Our Father Line 10)
 
 ܠܲܢ   [l]   {prep. + 1cp suff.}   (search: lan)
-lan (3) — us (3)
+lan (5) — us (3), to us (2)
 * lan · "Give us this day the bread we need" (Our Father Line 10)
 * lan · "And release us our debts and sins..." (Our Father Line 11)
 * lan · "Make us worthy..." (Slotha d'Marmitha 5, Line 1)
+* lan · "To the Child who was begotten to us..." (Psalm 100 Line 4)
+* lan · "...or who was baptized to us..." (Psalm 100 Line 4)
 
 ܠܲܚܡܵܐ   [l-ḥ-m]   {noun m.sg.emph.}   (search: lahma)
 laḥmā (2) — bread (2)
@@ -724,8 +742,10 @@ yāwmānā (1) — this day (1)
 * ḥṭāhaÿn · "Let Your grace absolve our sins" (Slotha d'Marmitha 4, Line 3)
 
 ܚܢܲܢ   [ʾ-n-ʾ]   {pron. 1c.pl.}   (search: hnan)
-ḥnan (1) — we (1)
+ḥnan (3) — we (1), we ourselves (1), we are (1)
 * ḥnan · "...as we have released our debtors" (Our Father Line 11)
+* ḥnan · "That He has made us, and not we ourselves" (Psalm 100 Line 9)
+* ḥnan · "We are His people and the sheep of His pasture" (Psalm 100 Line 10)
 
 ܫܒܲܩ̣͞ܢ   [š-b-q]   {Peal perf. 1c.pl.}   (search: shbaqn)
 šbaq_⁀n (1) — have released (1)
@@ -774,14 +794,18 @@ malk̇ūṯā (1) — the Kingdom (1)
 * wḥaylā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 
 ܬܸܫܒ݁ܘܿܚܬܵܐ   [š-b-ḥ]   {noun f.sg.emph.}   (search: teshbohta)
-tešḃōḥtā (2) — glory (1), glorification (1)
+tešḃōḥtā (3) — glory (1), glorification (2)
 * wtešḃōḥtā · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14)
 * tešḃōḥtā · "Glorification to God in the heights" (Teshbhotha l'Alaha Line 1)
+* btešḃōḥtā · "Enter before Him in glorification" (Psalm 100 Line 7)
 
 ܫܘܼܒ݂ܚܵܐ   [š-b-ḥ]   {noun m.sg.emph.}   (search: shubha)
-šūḇḥā (2) — glory (2)
+šūḇḥā (5) — glory (5)
 * šūḇḥā · "Glory to the Father, to the Son..." (Our Father Line 15)
 * wšūḇḥā · "And we lift up continual glory without ceasing..." (Ferial Slotha d'Ramsha, Line 3)
+* šūḇḥā · "The righteous ones are putting on glory..." (Psalm 100 Line 3)
+* bšūḇḥā · "Enter His gates in thanksgiving and His courts in glory" (Psalm 100 Line 11)
+* šūḇḥā · "...we are lifting glory to You" (Ferial Sapra Psalm 100, Line 2)
 
 ܥܕܲܡܵܐ   [ʿ-d-m]   {prep.}   (search: dama)
 ʿdamā (5) — unto (1), → ʿdamā lʾemaṯy (4)
@@ -882,16 +906,18 @@ ptaḥlāh^ (1) — open (1)
 * ptaḥlāh^ · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 
 ܡܵܪܲܢ   [m-r-ʾ]   {noun m.sg.emph. + 1cp suff.}   (search: maran)
-māran (4) — our Lord (4)
+māran (5) — our Lord (5)
 * māran · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 * māran · "And our lips are our own; who is our Lord?" (Psalm 12 Line 12)
 * māran · "...our Lord and our God..." (Slotha d'Marmitha 5, Line 1)
 * māran · "In purity of thoughts, our Lord, raise me before Your Madbaha" (Psalm 15 Line 3)
+* dmāran · "...to meet our Lord as He is coming" (Psalm 100 Line 3)
 
 ܐܲܠܵܗܲܢ   [ʾ-l-h]   {noun m.sg.emph. + 1cp suff.}   (search: alahan)
-ʾalāhan (2) — our God (2)
+ʾalāhan (3) — our God (3)
 * wʾalāhan · "Open, our Lord and our God..." (Ferial Slotha d'Sapra I, Line 4)
 * wʾalāhan · "...our Lord and our God..." (Slotha d'Marmitha 5, Line 1)
+* ʾalāhan · "Know that He is Mar Yah our God" (Psalm 100 Line 8)
 
 ܬܲܪܥܵܐ   [t-r-ʿ]   {noun m.sg.emph.}   (search: tara)
 tarʿā (1) — the door (1)
@@ -977,9 +1003,10 @@ meṯkašpīn (2) — beseech (2)
 * wmeṯkašpīn · "Who call and beseech You" (Slotha d'Marmitha 4, Line 6)
 
 ܠܹܗ   [l]   {prep. + 3ms suff.}   (search: leh)
-lēh (2) — Him (1), itself (1)
+lēh (3) — Him (1), itself (1), to Him (1)
 * lēh · "...His servants who call and beseech Him" (Ferial Slotha d'Sapra I, Line 8)
 * lēh · "Deceit has increased, and love itself has abated..." (Psalm 12 Line 3)
+* lēh · "Give thanks to Him and bless His Name" (Psalm 100 Line 12)
 
 ܙܲܒ݂ܢܹ̈ܐ   [z-b-n]   {noun m.pl.emph.}   (search: zabne)
 zaḇn̈ē (1) — times (1)
@@ -1319,9 +1346,10 @@ bāḥar (1) — is examining (1)
 * bāḥar · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 
 ܙܲܕܝܼ̈ܩܹܐ   [z-d-q]   {adj. m.pl.emph.}   (search: zadiqe)
-zadī̈qē (2) — the righteous (2)
+zadī̈qē (3) — the righteous (2), the righteous ones (1)
 * lzadī̈qē · "Mar Yah is examining the righteous and the unrighteous" (Psalm 11 Line 14)
 * dzadī̈qē · "For God is in the generation of the righteous" (Psalm 14 Line 15)
+* zaḋī̈qē · "The righteous ones are putting on glory..." (Psalm 100 Line 3)
 
 ܥܵܘܵ̇̈ܠܹܐ   [ʿ-w-l]   {adj. m.pl.emph.}   (search: awale)
 ʿāẅ^ālē (1) — the unrighteous (1)
@@ -1389,10 +1417,11 @@ zadīq (1) — righteous (1)
 * dzadīq · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 
 ܗ݇ܘ̣   [h-w]   {pron. 3m.sg.}   (search: hw)
-(h)w_ (3) — is (3)
+(h)w_ (4) — is (3), is He (1)
 * (h)w_ · "For Mar Yah is righteous, and He loves righteousness" (Psalm 11 Line 19)
 * (h)w_ · "For God is in the generation of the righteous" (Psalm 14 Line 15)
 * (h)w_ · "For Mar Yah is his trust" (Psalm 14 Line 17)
+* (h)w_ · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
 
 ܙܲܕܝܼܩܘܼܬ݂ܵܐ   [z-d-q]   {noun f.sg.emph.}   (search: zadiquta)
 zadīqūṯā (3) — righteousness (3)
@@ -2024,9 +2053,10 @@ neṫel (1) — will give (1)
 * īsrāyēl · "Yaqob will exult and Israyel will rejoice" (Psalm 14 Line 20)
 
 ܡܵܐ   [m-n]   {interrog. pron.}   (search: ma)
-mā (2) — when (2)
+mā (3) — when (2), as (1)
 * mā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
 * mā · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
+* mā · "...to meet our Lord as He is coming" (Psalm 100 Line 3)
 
 ܡܲܗܦܸܟ݂   [h-p-k]   {Aphel active ptcp. m.sg.abs.}   (search: mahpek)
 mahpeḵ (1) — returns (1)
@@ -2037,8 +2067,9 @@ mahpeḵ (1) — returns (1)
 * šḇīṯā · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
 
 ܥܲܡܹܗ   [ʿ-m-m]   {noun m.sg.emph. + 3ms suff.}   (search: ameh)
-ʿamēh (1) — His people (1)
+ʿamēh (2) — His people (2)
 * dʿamēh · "When Mar Yah returns the captivity of His people" (Psalm 14 Line 19)
+* ʿamēh · "We are His people and the sheep of His pasture" (Psalm 100 Line 10)
 
 ܢܕ݂ܘܼܨ   [d-w-ṣ]   {Peal impf. 3m.sg.}   (search: ndus)
 nḏūṣ (1) — will exult (1)
@@ -2837,3 +2868,153 @@ bnaÿhōn (1) — their sons (1)
 ܗܲܝܡܵܢܘܼܬ݂ܵܟ݂   [h-y-m-n]   {noun f.sg.emph. + 2ms suff.}   (search: haymanutak)
 haymānūṯāḵ (1) — Your faithfulness (1)
 * haymānūṯāḵ · "And I am satisfied when Your faithfulness has awakened" (Psalm 17 Line 36)
+
+ܫܲܒܲܚܘ   [š-b-ḥ]   {Pael impv. 2m.pl.}   (search: shabahw)
+šabaḥw (1) — glorify (1)
+* šabaḥw · "Glorify Mar Yah, all the earth" (Psalm 100 Line 1)
+
+ܟܠ݈ܵܗ̇   [k-l]   {quant. + 3fs suff.}   (search: klah)
+k(_lā)h^ (1) — all (1)
+* k(_lā)h^ · "Glorify Mar Yah, all the earth" (Psalm 100 Line 1)
+
+ܦܠܘܿܚܘ   [p-l-ḥ]   {Peal impv. 2m.pl.}   (search: plohw)
+plōḥw (1) — serve (1)
+* plōḥw · "Serve Mar Yah in gladness" (Psalm 100 Line 2)
+
+ܚܲܕ݂ܘܼܬ݂ܵܐ   [ḥ-d-y]   {noun f.sg.emph.}   (search: haduta)
+ḥaḏūṯā (1) — gladness (1)
+* bḥaḏūṯā · "Serve Mar Yah in gladness" (Psalm 100 Line 2)
+
+ܠ᷸ܵܒ݂ܫܝܼܢ   [l-b-š]   {Peal active ptcp. m.pl.abs.}   (search: labshin)
+lā^^ḇšīn (1) — are putting on (1)
+* lā^^ḇšīn · "The righteous ones are putting on glory..." (Psalm 100 Line 3)
+
+ܠܥܸܠ   [ʿ-l]   {adv.}   (search: lel)
+lʿel (1) — above (1)
+* walʿel · "...and they are flying above in the clouds..." (Psalm 100 Line 3)
+
+ܥܢܵܢܹ̈ܐ   [ʿ-n-n]   {noun f.pl.emph.}   (search: nane)
+ʿnān̈ē (1) — the clouds (1)
+* baʿnān̈ē · "...and they are flying above in the clouds..." (Psalm 100 Line 3)
+
+ܦܵ̇ܪܚܝܼܢ   [p-r-ḥ]   {Peal active ptcp. m.pl.abs.}   (search: parhin)
+p^ārḥīn (1) — are flying (1)
+* p^ārḥīn · "...and they are flying above in the clouds..." (Psalm 100 Line 3)
+
+ܐܘܼܪܥܹܗ   [ʾ-r-ʿ]   {noun m.sg.emph. + 3ms suff.}   (search: ureh)
+ʾūrʿēh (1) — meet (1)
+* lʾūrʿēh · "...to meet our Lord as He is coming" (Psalm 100 Line 3)
+
+ܐܵܬܹ݁ܐ   [ʾ-t-ʾ]   {Peal active ptcp. m.sg.abs.}   (search: ate)
+ʾāṫē (1) — is coming (1)
+* dʾāṫē · "...to meet our Lord as He is coming" (Psalm 100 Line 3)
+
+ܝܲܠܕܵܐ   [y-l-d]   {noun m.sg.emph.}   (search: yalda)
+yaldā (1) — the Child (1)
+* lyaldā · "To the Child who was begotten to us..." (Psalm 100 Line 4)
+
+ܐܵܘ   [ʾ-w]   {conj.}   (search: aw)
+ʾāw (1) — or (1)
+* ʾāw · "...or who was baptized to us..." (Psalm 100 Line 4)
+
+ܐܸܬ݂͟ܥܡܸܕ݂   [ʿ-m-d]   {Ethpeel perf. 3m.sg.}   (search: etmed)
+ʾeṯ‿ʿmeḏ (1) — baptized (1)
+* dʾeṯ‿ʿmeḏ · "...or who was baptized to us..." (Psalm 100 Line 4)
+
+ܐܸܬ݂͟ܝܼܗܹܒ݂ܠܲܢ   [y-h-b + l]   {Ethpeel perf. 3m.sg. + prep. + 1cp suff.}   (search: etiheblan)
+ʾeṯ‿īhēḇlan (1) — given to us (1)
+* dʾeṯ‿īhēḇlan · "...and to the Son who was given to us..." (Psalm 100 Line 4)
+
+ܢܵܘܕܹܐ   [y-d-ʾ]   {Aphel impf. 1c.pl.}   (search: nawde)
+nāwdē (1) — we confess (1)
+* nāwdē · "...we confess and glorify" (Psalm 100 Line 4)
+
+ܢܫܲܒܲܚ   [š-b-ḥ]   {Pael impf. 1c.pl.}   (search: nshabah)
+nšabaḥ (1) — glorify (1)
+* wanšabaḥ · "...we confess and glorify" (Psalm 100 Line 4)
+
+ܥܘܿܠܘ   [ʿ-l-l]   {Peal impv. 2m.pl.}   (search: olw)
+ʿōlw (2) — enter (2)
+* ʿōlw · "Enter before Him in glorification" (Psalm 100 Line 7)
+* ʿōlw · "Enter His gates in thanksgiving and His courts in glory" (Psalm 100 Line 11)
+
+ܩܕ݂ܵܡܵܘܗܝ   [q-d-m]   {prep. + 3ms suff.}   (search: qdamawhy)
+qḏāmāwhy (1) — before Him (1)
+* qḏāmāwhy · "Enter before Him in glorification" (Psalm 100 Line 7)
+
+ܕܲܥܘ   [y-d-ʿ]   {Peal impv. 2m.pl.}   (search: daw)
+daʿw (1) — know (1)
+* daʿw · "Know that He is Mar Yah our God" (Psalm 100 Line 8)
+
+ܗܘ̤ܝܘܼ   [h-w]   {pron. 3m.sg.}   (search: hwyu)
+hw̤yū (2) — He is (1), He (1)
+* dhw̤yū · "Know that He is Mar Yah our God" (Psalm 100 Line 8)
+* whw̤yū · "That He has made us, and not we ourselves" (Psalm 100 Line 9)
+
+ܥܲܒ݂ܕܲܢ   [ʿ-b-d]   {Peal perf. 3m.sg. + 1cp suff.}   (search: abdan)
+ʿaḇdan (1) — has made us (1)
+* ʿaḇdan · "That He has made us, and not we ourselves" (Psalm 100 Line 9)
+
+ܗ݇ܘ̣ܵܐ   [h-w-ʾ]   {Peal perf. 3m.sg.}   (search: hwa)
+(h)w_ā (1) — ⌀ (1)
+* wlā (h)w_ā · "That He has made us, and not we ourselves" (Psalm 100 Line 9)
+
+ܥܵܢܵ̈ܐ   [ʿ-n-ʾ]   {noun f.sg.emph.}   (search: ana)
+ʿān̈ā (1) — the sheep (1)
+* wʿān̈ā · "We are His people and the sheep of His pasture" (Psalm 100 Line 10)
+
+ܡܲܪܥܝܼܬܹܗ   [r-ʿ-ʾ]   {noun f.sg.emph. + 3ms suff.}   (search: mariteh)
+marʿītēh (1) — His pasture (1)
+* dmarʿītēh · "We are His people and the sheep of His pasture" (Psalm 100 Line 10)
+
+ܬܲܪ̈ܥܵܘܗܝ   [t-r-ʿ]   {noun m.pl.emph. + 3ms suff.}   (search: tarawhy)
+tar̈ʿāwhy (1) — His gates (1)
+* btar̈ʿāwhy · "Enter His gates in thanksgiving and His courts in glory" (Psalm 100 Line 11)
+
+ܬܵܘܕܝܼܬ݂ܵܐ   [y-d-ʾ]   {noun f.sg.emph.}   (search: tawdita)
+tāwdīṯā (1) — thanksgiving (1)
+* bṯāwdīṯā · "Enter His gates in thanksgiving and His courts in glory" (Psalm 100 Line 11)
+
+ܕܵܪܵ̈ܘܗܝ   [d-r]   {noun f.pl.emph. + 3ms suff.}   (search: darawhy)
+dār̈āwhy (1) — His courts (1)
+* walḏār̈āwhy · "Enter His gates in thanksgiving and His courts in glory" (Psalm 100 Line 11)
+
+ܐܵܘܕܵܘ   [y-d-ʾ]   {Aphel impv. 2m.pl.}   (search: awdaw)
+ʾāwdāw (1) — give thanks (1)
+* ʾāwdāw · "Give thanks to Him and bless His Name" (Psalm 100 Line 12)
+
+ܒܲܪܸܟ݂ܘ   [b-r-k]   {Pael impv. 2m.pl.}   (search: barekw)
+bareḵw (1) — bless (1)
+* wbareḵw · "Give thanks to Him and bless His Name" (Psalm 100 Line 12)
+
+ܫܡܹܗ   [š-m]   {noun m.sg.emph. + 3ms suff.}   (search: shmeh)
+šmēh (1) — His Name (1)
+* lašmēh · "Give thanks to Him and bless His Name" (Psalm 100 Line 12)
+
+ܛܵܒ݂   [ṭ-w-b]   {adj. m.sg.abs.}   (search: tab)
+ṭāḇ (1) — good (1)
+* dṭāḇ · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
+
+ܛܲܝܒܘܼܬܹܗ   [ṭ-w-b]   {noun f.sg.emph. + 3ms suff.}   (search: taybuteh)
+ṭaybūtēh (1) — His goodness (1)
+* ṭaybūtēh · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
+
+ܕܵܪܕܵܪ̈ܝܼܢ   [d-w-r + d-w-r]   {noun m.sg.cst. + noun m.pl.abs.}   (search: dardarin)
+dārdār̈īn (1) — → dār dār̈īn (1)
+* walḏārdār̈īn · "And unto generations upon generations is His faithfulness" (Psalm 100 Line 14) → dār dār̈īn
+
+ܗܲܝܡܵܢܘܼܬܹܗ   [h-y-m-n]   {noun f.sg.emph. + 3ms suff.}   (search: haymanuteh)
+haymānūtēh (1) — His faithfulness (1)
+* haymānūtēh · "And unto generations upon generations is His faithfulness" (Psalm 100 Line 14)
+
+ܝܵܗܹ̇ܒ݂   [y-h-b]   {Peal active ptcp. m.sg.abs.}   (search: yaheb)
+yāh^ēḇ (1) — Giver (1)
+* yāh^ēḇ · "O Giver of light, Mar Yah..." (Ferial Sapra Psalm 100, Line 2)
+
+ܢܘܼܗܪܵܐ   [n-h-r]   {noun m.sg.emph.}   (search: nuhra)
+nūhrā (1) — light (1)
+* nūhrā · "O Giver of light, Mar Yah..." (Ferial Sapra Psalm 100, Line 2)
+
+ܡܲܣܩܝܼܢܲܢ   [s-l-q]   {Aphel active ptcp. m.pl.abs. + 1cp encl.}   (search: masqinan)
+masqīnan (1) — we are lifting (1)
+* masqīnan · "...we are lifting glory to You" (Ferial Sapra Psalm 100, Line 2)

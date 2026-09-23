@@ -77,6 +77,9 @@ confirmed_texts:
       - line: 9
         witness_label: Assyrian Ferial Slotha d'Sapra II
         reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
+  Ferial Sapra/04_Psalm_100.txt:
+    citation_label: Ferial Sapra Psalm 100
+    source_of_record: breviarium_chaldaicum
 
   Ferial Sapra/05_Diaconal_Exhortation.txt:
     citation_label: Ferial Sapra Diaconal Exhortation II
@@ -112,4 +115,7 @@ confirmed_texts:
     source_of_record: ksawa_d_mazmore
   Ksawa d'Mazmore/022_Psalm_17.txt:
     citation_label: Psalm 17
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/139_Psalm_100.txt:
+    citation_label: Psalm 100
     source_of_record: ksawa_d_mazmore
