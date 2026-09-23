@@ -69,6 +69,10 @@ confirmed_texts:
         witness_label: Assyrian Ferial Slotha d'Sapra II
         reading: "[ʾayleyn daḇremzāḵ ʾeṫtaqanÿ]"
 
+  Ferial Sapra/05_Diaconal_Exhortation.txt:
+    citation_label: Ferial Sapra Diaconal Exhortation II
+    source_of_record: breviarium_chaldaicum
+
   Ksawa d'Mazmore/014_Slotha_d'Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
