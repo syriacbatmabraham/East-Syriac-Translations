@@ -62,12 +62,12 @@ Editorial apparatus is preserved literally alongside the letter-for-letter mappi
 | `(_x)` | one-letter line below (§6.1) | restore U+0748 on that letter |
 | `x⁀y` | one physical two-letter line above (§6.2) | restore U+035E after the first Syriac base |
 | `x‿y` | one physical two-letter line below (§6.2) | restore U+035F after the first Syriac base |
-| `[…]` | editorial addition or alternate | preserve the brackets |
+| `[…]` | editorial addition, witness alternate, or registered source alternative | preserve the brackets |
 | `(English label:)` | source or witness label | preserve the label |
 
 `⁀` is U+2040 CHARACTER TIE. `‿` is U+203F UNDERTIE. They are canonical transliteration symbols, not combining marks on the Latin letters.
 
-Syriac inside editorial brackets transliterates normally. English-only interpretive brackets have no transliteration counterpart.
+Syriac inside editorial brackets transliterates normally. Alternatives supplied by the source itself use these brackets, with the `source_alternatives` declaration defined in General Rules §9.1.1; they are fully checked and indexed. English-only interpretive brackets have no transliteration counterpart.
 
 Example: `ʾaḇā [waḇrā] nāpēq`
 

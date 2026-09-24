@@ -14,7 +14,7 @@ from collections import defaultdict
 from typing import Iterable, Mapping
 
 from .confirmed_text import ConfirmedTextDocument, check_confirmed_text_path
-from .provenance import SourceRegistry, parse_source_registry
+from .provenance import SourceRegistry, parse_source_registry, check_source_alternatives, source_alternative_matches
 from .transliteration import TransliterationError, transliterate_text
 from .transliteration_inverse import reverse_transliterate
 
@@ -120,6 +120,7 @@ class CorpusToken:
     canonical: str
     syriac: str
     in_brackets: bool
+    bracket_groups: frozenset[int] = frozenset()
 
 
 @dataclass(frozen=True)
@@ -297,36 +298,48 @@ def _strip_interpretive_supplements(english: str, source_bracket_count: int) -> 
     return result.strip()
 
 
-def _tokenize_layer(text: str) -> tuple[tuple[str, bool], ...]:
-    tokens: list[tuple[str, bool]] = []
+def _tokenize_layer_details(text: str) -> tuple[tuple[str, bool, frozenset[int]], ...]:
+    tokens: list[tuple[str, bool, frozenset[int]]] = []
     current: list[str] = []
     depth = 0
     token_bracketed = False
+    group_number = 0
+    token_groups: set[int] = set()
 
     def flush() -> None:
-        nonlocal current, token_bracketed
+        nonlocal current, token_bracketed, token_groups
         if current:
-            tokens.append(("".join(current), token_bracketed))
+            tokens.append(("".join(current), token_bracketed, frozenset(token_groups)))
         current = []
         token_bracketed = False
+        token_groups = set()
 
     for ch in text:
         if ch == " ":
             flush()
             continue
         if ch == "[":
+            if depth == 0:
+                group_number += 1
             depth += 1
             token_bracketed = True
+            token_groups.add(group_number)
             continue
         if ch == "]":
             token_bracketed = True
+            token_groups.add(group_number)
             depth = max(0, depth - 1)
             continue
         if depth:
             token_bracketed = True
+            token_groups.add(group_number)
         current.append(ch)
     flush()
     return tuple(tokens)
+
+
+def _tokenize_layer(text: str) -> tuple[tuple[str, bool], ...]:
+    return tuple((text, bracketed) for text, bracketed, _ in _tokenize_layer_details(text))
 
 
 def build_corpus(documents: Mapping[str, ConfirmedTextDocument]) -> tuple[CorpusLine, ...]:
@@ -343,14 +356,14 @@ def build_corpus(documents: Mapping[str, ConfirmedTextDocument]) -> tuple[Corpus
             clean_canonical = _strip_labels(canonical, labels)
             clean_english = _strip_labels(english, labels)
             clean_english = _strip_interpretive_supplements(clean_english, clean_syriac.count("["))
-            syriac_tokens = _tokenize_layer(clean_syriac)
-            canonical_tokens = _tokenize_layer(clean_canonical)
+            syriac_tokens = _tokenize_layer_details(clean_syriac)
+            canonical_tokens = _tokenize_layer_details(clean_canonical)
             if len(syriac_tokens) != len(canonical_tokens):
                 size = min(len(syriac_tokens), len(canonical_tokens))
                 syriac_tokens = syriac_tokens[:size]
                 canonical_tokens = canonical_tokens[:size]
             tokens = tuple(
-                CorpusToken(can[0], syr[0], can[1] or syr[1])
+                CorpusToken(can[0], syr[0], can[1] or syr[1], can[2])
                 for syr, can in zip(syriac_tokens, canonical_tokens, strict=True)
             )
             corpus.append(CorpusLine(filename, line_no, clean_canonical, clean_english, tokens))
@@ -722,6 +735,19 @@ def check_glossary(
             )
 
     corpus = build_corpus(documents)
+    issues.extend(GlossaryIssue(issue.code, issue.message, issue.line)
+                  for issue in check_source_alternatives(registry, documents))
+    alternative_groups = {
+        (record.filename, alt.line, alt.bracket)
+        for record in registry.confirmed_texts for alt in record.source_alternatives
+        if source_alternative_matches(alt, documents.get(record.filename))
+    }
+    alternative_loci = {
+        (line.filename, line.line, index)
+        for line in corpus for index, token in enumerate(line.tokens)
+        if token.bracket_groups and all(
+            (line.filename, line.line, group) in alternative_groups for group in token.bracket_groups)
+    }
     lines_by_locus = _line_map(corpus)
     assignment_count: dict[tuple[str, int, tuple[str, ...]], int] = defaultdict(int)
     covered: set[tuple[str, int, int]] = set()
@@ -778,6 +804,14 @@ def check_glossary(
             else:
                 start, end = matches[ordinal]
                 bracketed = any(corpus_line.tokens[i].in_brackets for i in range(start, end))
+                source_alternative = bracketed and all(
+                    (target.filename, target.line, i) in alternative_loci
+                    for i in range(start, end) if corpus_line.tokens[i].in_brackets)
+                if source_alternative and target.witness:
+                    issues.append(GlossaryIssue(
+                        "source-alternative-has-witness",
+                        "A source alternative uses the text's own citation, without an external witness qualifier.",
+                        occurrence.line, entry.canonical))
                 if target.witness and not bracketed:
                     issues.append(
                         GlossaryIssue(
@@ -787,7 +821,7 @@ def check_glossary(
                             entry.canonical,
                         )
                     )
-                if bracketed and not target.witness:
+                if bracketed and not source_alternative and not target.witness:
                     issues.append(
                         GlossaryIssue(
                             "apparatus-occurrence-missing-witness",
@@ -821,7 +855,7 @@ def check_glossary(
             locus = (line.filename, line.line, token_index)
             if _is_negative_or_proclitic(token) or _is_acclamation(token):
                 intrinsic.add(locus)
-            if token.in_brackets:
+            if token.in_brackets and locus not in alternative_loci:
                 for other_index, other in enumerate(line.tokens):
                     if other_index == token_index or other.in_brackets:
                         continue

@@ -147,6 +147,10 @@ Block detection does **not** assume that every blank line ends a block. A stanza
 
 The stored transliteration supplies **no page-state information** to the checker. The checker can always derive the expected Latin independently from the Syriac because direct two-letter spans are encoded with U+035E/U+035F in that Syriac layer. A stale or malformed stored Latin line is therefore diagnosable without losing the mechanically expected result. This removes the former circular exception for adjacent-line grouping.
 
+### Source alternatives
+
+Registered alternatives from the source of record use square brackets and the `source_alternatives` schema documented in `sources/README.md`. The provenance checker verifies the declared logical line, bracket-group number, and exact canonical reading. The Glossary checker indexes these words under the text's own citation; other bracketed readings still require witness-qualified citations. Editorial parentheses and English-only supplements retain their existing behavior. Regression cases are in `tests/test_source_alternatives.py`.
+
 ### Confirmed-text use
 
 Check the whole authoritative corpus and its provenance registry:

@@ -128,3 +128,8 @@ confirmed_texts:
   Ksawa d'Mazmore/139_Psalm_100.txt:
     citation_label: Psalm 100
     source_of_record: ksawa_d_mazmore
+    source_alternatives:
+      - line: 4
+        bracket: 1
+        label: Den'ha
+        reading: "[ʾāw dʾeṯ‿ʿmeḏ lan]"
