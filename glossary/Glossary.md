@@ -78,7 +78,7 @@ seḡdṯā (1) — reverence (1)
 mqarḇīnan (1) — we are...offering (1)
 * mqarḇīnan · "And we are continually offering reverence and gratitude..." (Ferial Slotha d'Shabahw l'Marya Line 2)
 
-ܒ݁ܵܪܘܿܝܵܐ   [b-r-ʾ]   {noun m.sg.emph.}   (search: baroya)
+ܒܵ݁ܪܘܿܝܵܐ   [b-r-ʾ]   {noun m.sg.emph.}   (search: baroya)
 ḃārōyā (1) — Creator (1)
 * wḃārōyā · "For You are the Lord and Creator of all..." (Ferial Slotha d'Shabahw l'Marya Line 3)
 
