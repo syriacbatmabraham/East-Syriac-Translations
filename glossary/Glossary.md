@@ -55,9 +55,11 @@ participle tense remains `ptcp.`.
 | Shaphel | older causative, usually lexicalized | — |
 | Eshtaphal | passive of Shaphel | — |
 
-A **phrase** is tabled in its own section below and governs the rendering of its
-components. Each component entry still records the occurrence, but points to the phrase
-with `→` in place of a rendering of its own (§10.6).
+A **phrase** is tabled in its own section below. Each occurrence bullet records its
+actual attested wording, including attached proclitics and solid or spaced spelling.
+These occurrences alone cover the phrase’s source tokens; they are not duplicated in
+component form entries or their counts. Independently used forms keep their own entries.
+The phrase headword identifies the entry and need not occur verbatim in the text (§10.6).
 
 **Search keys** are lowercase, diacritics stripped, `ʾ` and `ʿ` dropped, `š` folded to `sh`,
 and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped. Collisions are expected. Human discretion is expected.
@@ -100,11 +102,10 @@ mhaymnīnan (1) — we are faithful (1)
 * mhaymnīnan · "We are faithful to One God..." (Creed Line 1)
 
 ܚܲܕ   [ḥ-d]   {num. m.sg.abs.}   (search: had)
-ḥad (5) — one (4), → ḥaḏ bšaḇʿā (1)
+ḥad (4) — one (4)
 * bḥad · "We are faithful to One God..." (Creed Line 1)
 * wabḥad · "And to One Mar Yah..." (Creed Line 3)
 * waḇḥad · "And to One Ruha d'Qudsha, the Ruha of Truth" (Creed Line 16)
-* ḥaḏ · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
 * ḥaḏ · "And there is no one doing good - not even one" (Psalm 14 Line 10)
 
 ܐܲܠܵܗܵܐ   [ʾ-l-h]   {noun m.sg.emph.}   (search: alaha)
@@ -580,11 +581,6 @@ qyāmtā (1) — resurrection (1)
 paḡr̈ē (1) — bodies (1)
 * dpaḡr̈ē · "the resurrection of bodies..." (Creed Line 21)
 
-ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.cst.}   (search: alam)
-ʿālam (2) — → ʿālam ʿālmīn (2)
-* dalʿālam · "...and life unto the Age of ages. Amen" (Creed Line 21) → ʿālam ʿālmīn
-* lʿālam · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
-
 ܥܵܠܲܡ   [ʿ-l-m]   {noun m.sg.abs.}   (search: alam)
 ʿālam (6) — Eternity (6)
 * ʿālam · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
@@ -592,12 +588,10 @@ paḡr̈ē (1) — bodies (1)
 * lʿālam · "Rescue me and deliver me for Eternity from this generation" (Psalm 12 Line 20)
 * lʿālam · "How long, Mar Yah? Will You forget me for Eternity?" (Psalm 13 Line 1)
 * lʿālam · "And unshaken for Eternity" (Psalm 15 Line 16)
-* lʿālam · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
+* walʿālam · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
 
 ܥܵܠܡܝܼܢ   [ʿ-l-m]   {noun m.pl.abs.}   (search: almin)
-ʿālmīn (4) — → ʿālam ʿālmīn (2), forever (2)
-* ʿālmīn · "...and life unto the Age of ages. Amen" (Creed Line 21) → ʿālam ʿālmīn
-* ʿālmīn · "For Thine is the Kingdom, the power and the glory, unto the Age of ages. Amen" (Our Father Line 14) → ʿālam ʿālmīn
+ʿālmīn (2) — forever (2)
 * lʿālmīn · "In every moment, forever" (Teshbhotha l'Alaha Line 3)
 * lʿālmīn · "...and the Ruha d'Qudsha, forever" (Ferial Slotha d'Sapra I, Line 10)
 
@@ -808,12 +802,8 @@ tešḃōḥtā (3) — glory (1), glorification (2)
 * šūḇḥā · "...we are lifting glory to You" (Ferial Sapra Psalm 100, Line 2)
 
 ܥܕܲܡܵܐ   [ʿ-d-m]   {prep.}   (search: dama)
-ʿdamā (5) — unto (1), → ʿdamā lʾemaṯy (4)
+ʿdamā (1) — unto (1)
 * waʿdamā · "From Eternity and unto Eternity, amen amen" (Our Father Line 16)
-* ʿdamā · "How long, Mar Yah? Will You forget me for Eternity?" (Psalm 13 Line 1) → ʿdamā lʾemaṯy
-* ʿdamā · "How long will You turn Your Face from me?" (Psalm 13 Line 2) → ʿdamā lʾemaṯy
-* ʿdamā · "How long will You place sorrow in my soul?" (Psalm 13 Line 6) → ʿdamā lʾemaṯy
-* ʿdamā · "How long will my enemy be exalted over me?" (Psalm 13 Line 8) → ʿdamā lʾemaṯy
 
 ܡܪܵ̈ܘܡܹܐ   [r-w-m]   {noun m.pl.emph.}   (search: mrawme)
 mr̈āwmē (1) — the heights (1)
@@ -1276,10 +1266,8 @@ tr̈īṣay (1) — the upright of (1)
 * baṯr̈īṣay · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
 
 ܠܸܒܵܐ   [l-b-b]   {noun m.sg.emph.}   (search: leba)
-lebā (3) — heart (1), → blebā waḇlebā (2)
+lebā (1) — heart (1)
 * lebā · "To shoot in obscurity at the upright of heart" (Psalm 11 Line 8)
-* blebā · "In doubled hearts they are speaking" (Psalm 12 Line 8) → blebā waḇlebā
-* waḇlebā · "In doubled hearts they are speaking" (Psalm 12 Line 8) → blebā waḇlebā
 
 ܡܸܕܸܡ   [m-d-m]   {indef. pron.}   (search: medem)
 medem (1) — what (1)
@@ -1622,10 +1610,6 @@ bḥīr (1) — tried (1)
 mdakay (1) — purified (1)
 * wamdakay · "And purified seven times" (Psalm 12 Line 18)
 
-ܫܲܒ݂ܥܵܐ   [š-b-ʿ]   {num. m.}   (search: shaba)
-šaḇʿā (1) — → ḥaḏ bšaḇʿā (1)
-* bšaḇʿā · "And purified seven times" (Psalm 12 Line 18) → ḥaḏ bšaḇʿā
-
 ܐܲܢ݇ܬ   [ʾ-n-t]   {pron. 2m.sg.}   (search: ant)
 ʾa(n)t (2) — You (1), You are (1)
 * wʾa(n)t · "And You, Mar Yah, keep them" (Psalm 12 Line 19)
@@ -1731,13 +1715,6 @@ nēʾṯōn (1) — let them come (1)
 ܣܵ̇ܓ݂ܘܿܕܲܝ̈ܟ   [s-g-d]   {noun m.pl.emph. + 2ms suff.}   (search: sagodayk)
 s^āḡōdaÿk (1) — Your reverencers (1)
 * ds^āḡōdaÿk · "Let them come to the aid of Your reverencers" (Slotha d'Marmitha 4, Line 5)
-
-ܐܸܡܲܬ݂ܝ   [ʾ-m-t-y]   {interrog. adv.}   (search: ematy)
-ʾemaṯy (4) — → ʿdamā lʾemaṯy (4)
-* lʾemaṯy · "How long, Mar Yah? Will You forget me for Eternity?" (Psalm 13 Line 1) → ʿdamā lʾemaṯy
-* lʾemaṯy · "How long will You turn Your Face from me?" (Psalm 13 Line 2) → ʿdamā lʾemaṯy
-* lʾemaṯy · "How long will You place sorrow in my soul?" (Psalm 13 Line 6) → ʿdamā lʾemaṯy
-* lʾemaṯy · "How long will my enemy be exalted over me?" (Psalm 13 Line 8) → ʿdamā lʾemaṯy
 
 ܬܸܛܥܹܝܢܝ   [ṭ-ʿ-ʾ]   {Peal impf. 2m.sg. + 1cs suff.}   (search: teteyny)
 teṭʿēyny (1) — will You forget me (1)
@@ -2998,10 +2975,6 @@ bareḵw (1) — bless (1)
 ܛܲܝܒܘܼܬܹܗ   [ṭ-w-b]   {noun f.sg.emph. + 3ms suff.}   (search: taybuteh)
 ṭaybūtēh (1) — His goodness (1)
 * ṭaybūtēh · "For good is He, Mar Yah, and unto Eternity is His goodness" (Psalm 100 Line 13)
-
-ܕܵܪܕܵܪ̈ܝܼܢ   [d-w-r + d-w-r]   {noun m.sg.cst. + noun m.pl.abs.}   (search: dardarin)
-dārdār̈īn (1) — → dār dār̈īn (1)
-* walḏārdār̈īn · "And unto generations upon generations is His faithfulness" (Psalm 100 Line 14) → dār dār̈īn
 
 ܗܲܝܡܵܢܘܼܬܹܗ   [h-y-m-n]   {noun f.sg.emph. + 3ms suff.}   (search: haymanuteh)
 haymānūtēh (1) — His faithfulness (1)

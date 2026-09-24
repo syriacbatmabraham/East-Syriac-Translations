@@ -692,6 +692,13 @@ def check_glossary(
 
     identities: dict[tuple[str, str, str], GlossaryEntry] = {}
     for entry in entries:
+        if any(rendering.text.startswith("→") for rendering in entry.renderings) or any(
+            occurrence.phrase_pointer for occurrence in entry.occurrences
+        ):
+            issues.append(GlossaryIssue(
+                "duplicate-phrase-component-entry",
+                "Record phrase occurrences only in the phrase entry, without component pointers (§10.6).",
+                entry.line, entry.canonical))
         identity = (entry.canonical, entry.root, entry.morphology)
         previous = identities.get(identity)
         if previous is not None:
@@ -749,12 +756,12 @@ def check_glossary(
             (line.filename, line.line, group) in alternative_groups for group in token.bracket_groups)
     }
     lines_by_locus = _line_map(corpus)
-    assignment_count: dict[tuple[str, int, tuple[str, ...]], int] = defaultdict(int)
     covered: set[tuple[str, int, int]] = set()
     valid_contexts: dict[int, list[str]] = defaultdict(list)
     context_records: list[tuple[GlossaryOccurrence, CitationTarget, CorpusLine, tuple[int, int]]] = []
 
-    for entry_index, entry in enumerate(entries):
+    # Reserve phrase spans before assigning independent forms on the same line.
+    for entry_index, entry in sorted(enumerate(entries), key=lambda item: item[1].section != "phrases"):
         for occurrence in entry.occurrences:
             target = _resolve_citation(occurrence.citation, registry)
             if target is None:
@@ -781,10 +788,15 @@ def check_glossary(
 
             attested = _normalize_attested(occurrence.attested)
             matches = _sequence_matches(corpus_line, attested)
-            key = (target.filename, target.line, attested)
-            ordinal = assignment_count[key]
-            assignment_count[key] += 1
-            if ordinal >= len(matches):
+            available = [span for span in matches if all(
+                (target.filename, target.line, index) not in covered
+                for index in range(*span))]
+            if not available:
+                if matches:
+                    issues.append(GlossaryIssue(
+                        "overlapping-glossary-occurrences",
+                        "This occurrence claims source tokens already covered by another phrase or form occurrence (§10.6).",
+                        occurrence.line, entry.canonical))
                 issues.append(
                     GlossaryIssue(
                         "attested-form-not-in-line",
@@ -802,7 +814,7 @@ def check_glossary(
                     )
                 )
             else:
-                start, end = matches[ordinal]
+                start, end = available[0]
                 bracketed = any(corpus_line.tokens[i].in_brackets for i in range(start, end))
                 source_alternative = bracketed and all(
                     (target.filename, target.line, i) in alternative_loci
@@ -830,9 +842,8 @@ def check_glossary(
                             entry.canonical,
                         )
                     )
-                if entry.section == "forms":
-                    for token_index in range(start, end):
-                        covered.add((target.filename, target.line, token_index))
+                loci = {(target.filename, target.line, index) for index in range(start, end)}
+                covered.update(loci)
 
             intervals = _context_intervals(occurrence.context, corpus_line.english_text)
             if not intervals:

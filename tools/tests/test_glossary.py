@@ -149,6 +149,71 @@ class GlossaryAdversarialChecks(unittest.TestCase):
         self.assertIn("overlapping-contexts", self.codes(corrupted))
 
 
+class PhraseOccurrenceTests(unittest.TestCase):
+    PHRASE = '''# Glossary
+
+## Phrases
+
+ܕܵܪ ܕܵܪ̈ܝܼܢ   [d-w-r + d-w-r]   {noun phrase}   (search: dar darin)
+dār dār̈īn (1) — generations upon generations (1)
+* walḏārdār̈īn · "And unto generations upon generations" (Sample Line 1)
+
+## Forms
+'''
+
+    def check(self, text=None, attested="walḏārdār̈īn"):
+        documents = {"Sample.txt": ConfirmedTextDocument(
+            (" ".join(["ܕܵܪ"] * len(attested.split())),), (attested,),
+            ("And unto generations upon generations",))}
+        return check_glossary(self.PHRASE if text is None else text, documents, REGISTRY)
+
+    def test_solid_occurrence_covers_text_without_matching_spaced_headword(self):
+        result = self.check()
+        self.assertTrue(result.ok, result.issues)
+
+    def test_spaced_occurrence_covers_all_components(self):
+        result = self.check(self.PHRASE.replace("* walḏārdār̈īn", "* walḏār dār̈īn"),
+                            "walḏār dār̈īn")
+        self.assertTrue(result.ok, result.issues)
+
+    def test_headword_does_not_substitute_for_wrong_occurrence(self):
+        result = self.check(self.PHRASE.replace("* walḏārdār̈īn", "* dār dār̈īn"))
+        self.assertIn("attested-form-not-in-line", {i.code for i in result.issues})
+        self.assertIn("missing-corpus-occurrence", {i.code for i in result.issues})
+
+    def test_duplicate_solid_occurrence_is_rejected(self):
+        text = self.PHRASE.replace("(1)", "(2)")
+        text = text.replace("\n## Forms", '* walḏārdār̈īn · "And unto generations upon generations" (Sample Line 1)\n\n## Forms')
+        self.assertIn("orphan-glossary-occurrence", {i.code for i in self.check(text).issues})
+
+    def test_phrase_component_overlap_is_rejected_in_either_order(self):
+        component = '''
+ܕܵܪ̈ܝܼܢ   [d-w-r]   {noun m.pl.abs.}   (search: darin)
+dār̈īn (1) — generations (1)
+* dār̈īn · "And unto generations upon generations" (Sample Line 1)
+'''
+        phrase = self.PHRASE.replace("* walḏārdār̈īn", "* walḏār dār̈īn")
+        for text in (phrase + component, "## Forms\n" + component + phrase):
+            result = self.check(text, "walḏār dār̈īn")
+            self.assertIn("overlapping-glossary-occurrences", {i.code for i in result.issues})
+
+    def test_legacy_component_pointer_is_rejected(self):
+        text = BASE.replace("— Father (1)", "— → example phrase (1)")
+        result = check_glossary(text, DOCS, REGISTRY)
+        self.assertIn("duplicate-phrase-component-entry", {i.code for i in result.issues})
+
+    def test_independent_component_on_same_line_remains_available(self):
+        component = '''
+ܕܵܪ̈ܝܼܢ   [d-w-r]   {noun m.pl.abs.}   (search: darin)
+dār̈īn (1) — generations (1)
+* dār̈īn · "And unto generations upon generations" (Sample Line 1)
+'''
+        phrase = self.PHRASE.replace("* walḏārdār̈īn", "* walḏār dār̈īn")
+        for text in (phrase + component, "## Forms\n" + component + phrase):
+            result = self.check(text, "walḏār dār̈īn dār̈īn")
+            self.assertTrue(result.ok, result.issues)
+
+
 class LiveGlossaryCorpusTests(unittest.TestCase):
     def test_authoritative_glossary_reconciles_with_confirmed_corpus(self):
         result = check_glossary_path(
