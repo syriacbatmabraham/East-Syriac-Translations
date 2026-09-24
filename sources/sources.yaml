@@ -94,6 +94,20 @@ confirmed_texts:
     citation_label: Ferial Sapra Diaconal Exhortation II
     source_of_record: breviarium_chaldaicum
 
+  Ferial Sapra/06_Ferial_Slotha_d'Shabahw_l'Marya.txt:
+    citation_label: Ferial Slotha d'Shabahw l'Marya
+    source_of_record: breviarium_chaldaicum
+    editorial_apparatus:
+      - line: 1
+        witness_label: Assyrian Ferial Slotha d'Shabahw l'Marya
+        reading: "lāḵ māry šūḇḥā wṯāwdīṯā masqīnan"
+      - line: 2
+        witness_label: Assyrian Ferial Slotha d'Shabahw l'Marya
+        reading: "wseḡdṯā wqūbāl ṭayḃūṯā lašmāḵ ḥayā wqadīšā bʾamīnū mqarḇīnan"
+      - line: 3
+        witness_label: Assyrian Ferial Slotha d'Shabahw l'Marya
+        reading: "dʾa(n)tū mārā wḃārōyā dḵl ʾaḇā waḇrā wrūḥā dqūḏšā lʿālmīn"
+
   Ksawa d'Mazmore/014_Slotha_d'Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
