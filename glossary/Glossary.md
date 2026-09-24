@@ -66,22 +66,6 @@ and notation characters (`^` `_` `(` `)` `[` `]` `⁀` `‿`) dropped. Collision
 
 ---
 
-ܣܸܓ݂ܕܬ݂ܵܐ   [s-g-d]   {noun f.sg.emph.}   (search: segdta)
-seḡdṯā (1) — reverence (1)
-* wseḡdṯā · "And we are continually offering reverence and gratitude..." (Ferial Slotha d'Shabahw l'Marya Line 2)
-
-ܚܲܝܵܐ   [ḥ-y-ʾ]   {adj. m.sg.emph.}   (search: haya)
-ḥayā (1) — living (1)
-* ḥayā · "...to Your living and holy Name" (Ferial Slotha d'Shabahw l'Marya Line 2)
-
-ܡܩܲܪܒ݂ܝܼܢܲܢ   [q-r-b]   {Pael active ptcp. m.pl.abs. + 1cp encl.}   (search: mqarbinan)
-mqarḇīnan (1) — we are...offering (1)
-* mqarḇīnan · "And we are continually offering reverence and gratitude..." (Ferial Slotha d'Shabahw l'Marya Line 2)
-
-ܒܵ݁ܪܘܿܝܵܐ   [b-r-ʾ]   {noun m.sg.emph.}   (search: baroya)
-ḃārōyā (1) — Creator (1)
-* wḃārōyā · "For You are the Lord and Creator of all..." (Ferial Slotha d'Shabahw l'Marya Line 3)
-
 ## Phrases
 
 ܩܘܼܒܵܠ ܛܲܝܒ݁ܘܼܬ݂ܵܐ   [q-b-l + ṭ-w-b]   {noun phrase}   (search: qubal taybuta)
@@ -116,6 +100,22 @@ dār dār̈īn (1) — generations upon generations (1)
 ---
 
 ## Forms
+
+ܣܸܓ݂ܕܬ݂ܵܐ   [s-g-d]   {noun f.sg.emph.}   (search: segdta)
+seḡdṯā (1) — reverence (1)
+* wseḡdṯā · "And we are continually offering reverence and gratitude..." (Ferial Slotha d'Shabahw l'Marya Line 2)
+
+ܚܲܝܵܐ   [ḥ-y-ʾ]   {adj. m.sg.emph.}   (search: haya)
+ḥayā (1) — living (1)
+* ḥayā · "...to Your living and holy Name" (Ferial Slotha d'Shabahw l'Marya Line 2)
+
+ܡܩܲܪܒ݂ܝܼܢܲܢ   [q-r-b]   {Pael active ptcp. m.pl.abs. + 1cp encl.}   (search: mqarbinan)
+mqarḇīnan (1) — we are...offering (1)
+* mqarḇīnan · "And we are continually offering reverence and gratitude..." (Ferial Slotha d'Shabahw l'Marya Line 2)
+
+ܒܵ݁ܪܘܿܝܵܐ   [b-r-ʾ]   {noun m.sg.emph.}   (search: baroya)
+ḃārōyā (1) — Creator (1)
+* wḃārōyā · "For You are the Lord and Creator of all..." (Ferial Slotha d'Shabahw l'Marya Line 3)
 
 ܡܗܲܝܡܢܝܼܢܲܢ   [h-y-m-n]   {Pael active ptcp. m.pl.abs. + 1cp encl.}   (search: mhaymninan)
 mhaymnīnan (1) — we are faithful (1)
