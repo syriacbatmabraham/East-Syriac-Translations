@@ -3394,7 +3394,7 @@ neqrēyny (1) — he calls Me (1)
 * bʾūlṣānā · "I am with him in distress" (Psalm 91 Line 33)
 
 ܐܹܝܲܩܪܝܼܘܗܝ   [y-q-r]   {Pael impf. 1c.sg. + 3ms suff.}   (search: eyaqriwhy)
-ʾēyaqrīwhy (1) — I honor him (1)
+ʾēyaqrīwhy (1) — I...honor him (1)
 * wʾēyaqrīwhy · "I strengthen him and honor him" (Psalm 91 Line 34)
 
 ܢܘܼܓ݂ܪܵܐ   [n-g-r]   {noun m.sg.emph.}   (search: nugra)
