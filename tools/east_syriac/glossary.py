@@ -647,6 +647,9 @@ _COMMON_LITURGICAL_UNITS: tuple[tuple[str, ...], ...] = (
     ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"),  # in all times and seasons
     ("bḵl", "ʿedān"),                  # in every moment (spaced)
     ("bḵlʿedān",),                     # in every moment (solid)
+    # The closing invocation is also reused after different introductory
+    # titles (e.g. "Lord and Creator of all" vs "Lord of all").
+    ("ʾaḇā", "waḇrā", "wrūḥā", "dqūḏšā", "lʿālmīn"),
 )
 
 

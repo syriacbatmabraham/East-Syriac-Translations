@@ -290,6 +290,16 @@ class WitnessPrefixAndCommonUnitTests(unittest.TestCase):
             {("b.txt", 3, 1), ("b.txt", 3, 2), ("b.txt", 4, 1)},
         )
 
+    def test_shared_doxology_tail_inside_longer_prayer_is_exempt(self):
+        tail = ("ʾaḇā", "waḇrā", "wrūḥā", "dqūḏšā", "lʿālmīn")
+        anchor = self._line("a.txt", 10, ("mārā", "dḵl") + tail)
+        embedded = self._line("b.txt", 3, ("dʾantū", "mārā", "wḇārōyā", "dḵl") + tail)
+        covered = {("a.txt", 10, i) for i in range(2, 7)}
+        self.assertEqual(
+            _common_liturgical_unit_exemptions((anchor, embedded), covered, set()),
+            {("b.txt", 3, i) for i in range(4, 9)},
+        )
+
     def test_partially_indexed_repeated_unit_is_not_silently_exempted(self):
         first = self._line("a.txt", 1, ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
         second = self._line("b.txt", 2, ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
