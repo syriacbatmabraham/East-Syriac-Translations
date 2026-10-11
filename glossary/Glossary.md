@@ -3320,7 +3320,7 @@ nnaṭrūnāḵ (1) — guard you (1)
 ʾūr̈ḥāṯāḵ (1) — your ways (1)
 * ʾūr̈ḥāṯāḵ · "To guard you in all your ways" (Psalm 91 Line 26)
 
-ܕܪܵ̈ܥܲܝܗܘܿܢ   [d-r-ʿ]   {noun f.pl.emph. + 3mp suff.}   (search: drayhon)
+ܕܪܵ̈ܥܲܝܗܘܿܢ   [d-r-ʿ]   {noun f.pl.emph. + 3mp suff.}   (search: draayhon)
 dr̈āʿayhōn (1) — their arms (1)
 * dr̈āʿayhōn · "And upon their arms they bear you" (Psalm 91 Line 27)
 
@@ -3405,7 +3405,7 @@ nūḡrā (1) — length (1)
 ʾēsaḃʿīwhy (1) — I satisfy him (1)
 * ʾēsaḃʿīwhy · "With length of days I satisfy him, and I show him My salvation" (Psalm 91 Line 35)
 
-ܐܹܚܵܘܹܝܗܝ   [ḥ-w-ʾ]   {Pael impf. 1c.sg. + 3ms suff.}   (search: ehawehy)
+ܐܹܚܵܘܹܝܗܝ   [ḥ-w-ʾ]   {Pael impf. 1c.sg. + 3ms suff.}   (search: ehaweyhy)
 ʾēḥāwēyhy (1) — I show him (1)
 * wʾēḥāwēyhy · "With length of days I satisfy him, and I show him My salvation" (Psalm 91 Line 35)
 
