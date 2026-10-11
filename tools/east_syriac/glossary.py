@@ -303,14 +303,26 @@ def _tokenize_layer_details(text: str) -> tuple[tuple[str, bool, frozenset[int]]
     current: list[str] = []
     depth = 0
     token_bracketed = False
+    outside_brackets: list[str] = []
     group_number = 0
     token_groups: set[int] = set()
 
     def flush() -> None:
-        nonlocal current, token_bracketed, token_groups
+        nonlocal current, outside_brackets, token_bracketed, token_groups
         if current:
-            tokens.append(("".join(current), token_bracketed, frozenset(token_groups)))
+            # An inline witness adds only part of a word: [la]šmāḵ.
+            # Index its unbracketed source-of-record form (šmāḵ), not an
+            # invented separate witness word. A wholly bracketed word remains
+            # a witness token and requires its qualified citation.
+            partial_addition = token_bracketed and bool(outside_brackets)
+            indexed = outside_brackets if partial_addition else current
+            tokens.append((
+                "".join(indexed),
+                token_bracketed and not partial_addition,
+                frozenset() if partial_addition else frozenset(token_groups),
+            ))
         current = []
+        outside_brackets = []
         token_bracketed = False
         token_groups = set()
 
@@ -333,6 +345,8 @@ def _tokenize_layer_details(text: str) -> tuple[tuple[str, bool, frozenset[int]]
         if depth:
             token_bracketed = True
             token_groups.add(group_number)
+        else:
+            outside_brackets.append(ch)
         current.append(ch)
     flush()
     return tuple(tokens)
@@ -626,6 +640,47 @@ def _duplicate_line_exemptions(
     return exempt
 
 
+# These formulas may recur within longer clauses as well as on whole lines.
+# Only exact canonical token sequences are equivalent: the spaced and solid
+# forms of "in every moment" remain distinct indexed forms.
+_COMMON_LITURGICAL_UNITS: tuple[tuple[str, ...], ...] = (
+    ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"),  # in all times and seasons
+    ("bḵl", "ʿedān"),                  # in every moment (spaced)
+    ("bḵlʿedān",),                     # in every moment (solid)
+)
+
+
+def _common_liturgical_unit_exemptions(
+    corpus: tuple[CorpusLine, ...],
+    covered: set[tuple[str, int, int]],
+    intrinsic: set[tuple[str, int, int]],
+) -> set[tuple[str, int, int]]:
+    """Exempt repeat occurrences of already indexed, exact liturgical units.
+
+    Do not globally ignore the formula: one complete indexed exemplar must
+    exist. A partly indexed repeat is *not* exempted, so overlapping or
+    inconsistent Glossary assignments remain visible to the checker.
+    """
+    exempt: set[tuple[str, int, int]] = set()
+    indexed = covered | intrinsic
+    for unit in _COMMON_LITURGICAL_UNITS:
+        spans: list[set[tuple[str, int, int]]] = []
+        n = len(unit)
+        for line in corpus:
+            for start in range(len(line.signature) - n + 1):
+                if line.signature[start:start + n] == unit:
+                    spans.append({
+                        (line.filename, line.line, position)
+                        for position in range(start, start + n)
+                    })
+        if not any(span <= indexed for span in spans):
+            continue
+        for span in spans:
+            if span.isdisjoint(indexed):
+                exempt.update(span)
+    return exempt
+
+
 def _inline_repetition_exemptions(
     corpus: tuple[CorpusLine, ...],
     covered: set[tuple[str, int, int]],
@@ -875,8 +930,10 @@ def check_glossary(
                         break
 
     repeated = _inline_repetition_exemptions(corpus, covered, intrinsic)
-    duplicate_lines = _duplicate_line_exemptions(corpus, covered, intrinsic | repeated)
-    exempt = intrinsic | repeated | duplicate_lines
+    common_units = _common_liturgical_unit_exemptions(corpus, covered, intrinsic)
+    duplicate_lines = _duplicate_line_exemptions(
+        corpus, covered, intrinsic | repeated | common_units)
+    exempt = intrinsic | repeated | common_units | duplicate_lines
 
     for line in corpus:
         for token_index, token in enumerate(line.tokens):

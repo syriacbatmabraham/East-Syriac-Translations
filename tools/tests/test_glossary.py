@@ -10,7 +10,10 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 from east_syriac.confirmed_text import ConfirmedTextDocument
-from east_syriac.glossary import _derive_search_key, _rendering_traceable, check_glossary, check_glossary_path
+from east_syriac.glossary import (
+    CorpusLine, CorpusToken, _common_liturgical_unit_exemptions, _derive_search_key,
+    _rendering_traceable, _tokenize_layer_details, check_glossary, check_glossary_path,
+)
 from east_syriac.provenance import ConfirmedTextProvenance, SourceRegistry
 
 
@@ -212,6 +215,89 @@ dār̈īn (1) — generations (1)
         for text in (phrase + component, "## Forms\n" + component + phrase):
             result = self.check(text, "walḏār dār̈īn dār̈īn")
             self.assertTrue(result.ok, result.issues)
+
+
+class WitnessPrefixAndCommonUnitTests(unittest.TestCase):
+    def test_partial_word_addition_preserves_unprefixed_headword(self):
+        self.assertEqual(
+            _tokenize_layer_details("[la]šmāḵ"),
+            (("šmāḵ", False, frozenset()),),
+        )
+        self.assertEqual(
+            _tokenize_layer_details("[la]"),
+            (("la", True, frozenset({1})),),
+        )
+
+        glossary = """# Glossary
+
+## Forms
+
+ܫܡܵܟ݂   [š-m]   {noun m.sg.emph. + 2ms suff.}   (search: shmak)
+šmāḵ (1) — Your Name (1)
+* šmāḵ · "...Your Name" (Sample Line 1)
+"""
+        documents = {
+            "Sample.txt": ConfirmedTextDocument(
+                ("(Assyrian adds:) [ܠܲ]ܫܡܵܟ݂",),
+                ("(Assyrian adds:) [la]šmāḵ",),
+                ("(Assyrian adds:) [to] Your Name",),
+            ),
+        }
+        result = check_glossary(glossary, documents, REGISTRY)
+        self.assertTrue(result.ok, result.issues)
+
+        wrong_witness = glossary.replace(
+            "(Sample Line 1)", "(Assyrian Sample Line 1)")
+        result = check_glossary(wrong_witness, documents, REGISTRY)
+        self.assertIn(
+            "witness-citation-not-in-apparatus",
+            {issue.code for issue in result.issues},
+        )
+
+    @staticmethod
+    def _line(filename: str, number: int, tokens: tuple[str, ...]) -> CorpusLine:
+        return CorpusLine(
+            filename, number, " ".join(tokens), "",
+            tuple(CorpusToken(token, "", False) for token in tokens),
+        )
+
+    def test_embedded_time_formula_is_exempt_after_indexing(self):
+        anchor = self._line("a.txt", 1, ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
+        embedded = self._line(
+            "b.txt", 3, ("wmeṯkašpīn", "lāḵ", "bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
+        different = self._line("c.txt", 4, ("bḵlhōn", "zaḇn̈ē", "ʿedān̈ē"))
+        covered = {("a.txt", 1, i) for i in range(3)}
+        self.assertEqual(
+            _common_liturgical_unit_exemptions(
+                (anchor, embedded, different), covered, set()),
+            {("b.txt", 3, i) for i in (2, 3, 4)},
+        )
+        self.assertEqual(
+            _common_liturgical_unit_exemptions(
+                (anchor, embedded), set(), set()),
+            set(),
+        )
+
+    def test_common_formula_keeps_spaced_and_solid_forms_distinct(self):
+        spaced = self._line("a.txt", 1, ("bḵl", "ʿedān"))
+        solid = self._line("a.txt", 2, ("bḵlʿedān",))
+        spaced_repeat = self._line("b.txt", 3, ("qārē", "bḵl", "ʿedān"))
+        solid_repeat = self._line("b.txt", 4, ("qārē", "bḵlʿedān"))
+        covered = {("a.txt", 1, 0), ("a.txt", 1, 1), ("a.txt", 2, 0)}
+        self.assertEqual(
+            _common_liturgical_unit_exemptions(
+                (spaced, solid, spaced_repeat, solid_repeat), covered, set()),
+            {("b.txt", 3, 1), ("b.txt", 3, 2), ("b.txt", 4, 1)},
+        )
+
+    def test_partially_indexed_repeated_unit_is_not_silently_exempted(self):
+        first = self._line("a.txt", 1, ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
+        second = self._line("b.txt", 2, ("bḵlhōn", "zaḇn̈ē", "wʿedān̈ē"))
+        covered = {("a.txt", 1, i) for i in range(3)} | {("b.txt", 2, 0)}
+        self.assertEqual(
+            _common_liturgical_unit_exemptions((first, second), covered, set()),
+            set(),
+        )
 
 
 class LiveGlossaryCorpusTests(unittest.TestCase):
