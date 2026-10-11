@@ -108,6 +108,14 @@ confirmed_texts:
         witness_label: Assyrian Ferial Slotha d'Shabahw l'Marya
         reading: "dʾa(n)tū mārā wḃārōyā dḵl ʾaḇā waḇrā wrūḥā dqūḏšā lʿālmīn"
 
+  Ferial Sapra/08_Slotha_d'Yateb_b'Setareh.txt:
+    citation_label: Ferial Slotha d'Yateb b'Setareh
+    source_of_record: breviarium_chaldaicum
+    editorial_apparatus:
+      - line: 4
+        witness_label: Assyrian Ferial Slotha d'Yateb b'Setareh
+        reading: "[la]"
+
   Ksawa d'Mazmore/014_Slotha_d'Marmitha_4.txt:
     citation_label: Slotha d'Marmitha 4
     source_of_record: breviarium_chaldaicum
