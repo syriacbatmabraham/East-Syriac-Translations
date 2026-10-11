@@ -108,6 +108,10 @@ confirmed_texts:
         witness_label: Assyrian Ferial Slotha d'Shabahw l'Marya
         reading: "dʾa(n)tū mārā wḃārōyā dḵl ʾaḇā waḇrā wrūḥā dqūḏšā lʿālmīn"
 
+  Ferial Sapra/07_Psalm_91.txt:
+    citation_label: Ferial Sapra Psalm 91
+    source_of_record: breviarium_chaldaicum
+
   Ferial Sapra/08_Slotha_d'Yateb_b'Setareh.txt:
     citation_label: Ferial Slotha d'Yateb b'Setareh
     source_of_record: breviarium_chaldaicum
@@ -146,6 +150,9 @@ confirmed_texts:
     source_of_record: ksawa_d_mazmore
   Ksawa d'Mazmore/022_Psalm_17.txt:
     citation_label: Psalm 17
+    source_of_record: ksawa_d_mazmore
+  Ksawa d'Mazmore/127_Psalm_91.txt:
+    citation_label: Psalm 91
     source_of_record: ksawa_d_mazmore
   Ksawa d'Mazmore/139_Psalm_100.txt:
     citation_label: Psalm 100
